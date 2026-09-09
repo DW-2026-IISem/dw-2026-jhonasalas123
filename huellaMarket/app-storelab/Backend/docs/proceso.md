@@ -15,3 +15,9 @@
 #### **1.4 — Crear `.env` mínimo (puerto)**
 
 ![](images/clipboard-2360521614.png)
+
+## **FASE 2 — `01_BASE_DEPS_Y_PUERTO`**
+
+#### **2.1 — Dependencias de producción**
+
+![](images/clipboard-1704057600.png)
