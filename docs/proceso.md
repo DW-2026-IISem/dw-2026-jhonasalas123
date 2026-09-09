@@ -29,3 +29,7 @@
 #### **2.3 — Script para liberar puerto (evita EADDRINUSE)**
 
 ![](images/clipboard-3307021868.png)
+
+#### **2.4 — Actualizar scripts npm en package.json**
+
+![](images/clipboard-2527095474.png)
