@@ -133,3 +133,7 @@
 #### **6.6 — config/jwt/jwt.config.ts**
 
 ![](images/clipboard-4107577516.png)
+
+#### **6.7 — config/swagger/swagger.constants.ts**
+
+![](images/clipboard-3183677986.png)
