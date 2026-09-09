@@ -65,3 +65,9 @@
 #### **4.5 — Factory registerAs de entorno**
 
 ![](images/clipboard-3132439565.png)
+
+## **FASE 5 — `04_BASE_DATABASE_SEQUELIZE`**
+
+#### **5.1 — Constante SEQUELIZE_TOKEN**
+
+![](images/clipboard-675955641.png)
