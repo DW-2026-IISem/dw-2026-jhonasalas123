@@ -21,3 +21,7 @@
 #### **2.1 — Dependencias de producción**
 
 ![](images/clipboard-575585045.png)
+
+#### **2.2 — Dependencias de desarrollo**
+
+![](images/clipboard-1320736721.png)
