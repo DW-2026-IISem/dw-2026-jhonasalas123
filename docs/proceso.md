@@ -145,3 +145,7 @@
 #### **6.9 — common/enums/status.enum.ts**
 
 ![](images/clipboard-1132031916.png)
+
+#### **6.10 — common/enums/http-method.enum.ts**
+
+![](images/clipboard-4167640335.png)
