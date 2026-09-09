@@ -33,3 +33,7 @@
 #### **2.4 — Actualizar scripts npm en package.json**
 
 ![](images/clipboard-2527095474.png)
+
+#### **2.5 — Verificar arranque base**
+
+![](images/clipboard-4018784774.png)
