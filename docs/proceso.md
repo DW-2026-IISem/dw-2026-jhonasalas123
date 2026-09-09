@@ -157,3 +157,7 @@
 #### **6.12 — common/constants/app.constants.ts**
 
 ![](images/clipboard-3939694231.png)
+
+#### **6.13 — common/constants/pagination.constants.ts**
+
+![](images/clipboard-702927215.png)
