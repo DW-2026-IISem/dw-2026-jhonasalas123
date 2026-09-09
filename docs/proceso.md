@@ -137,3 +137,7 @@
 #### **6.7 — config/swagger/swagger.constants.ts**
 
 ![](images/clipboard-3183677986.png)
+
+#### **6.8 — config/swagger/swagger.config.ts**
+
+![](images/clipboard-967285254.png)
