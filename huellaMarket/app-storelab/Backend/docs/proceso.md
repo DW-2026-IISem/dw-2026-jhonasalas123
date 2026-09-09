@@ -1,0 +1,11 @@
+# **Manual de creación del Backend — NestJS + Sequelize (Clean Architecture)**
+
+#### **1.1 — Crear carpetas padre y permisos**
+
+![](images/clipboard-644357831.png)
+
+#### **1.2 — Instalar Nest CLI** 
+
+![](images/clipboard-3330699498.png)
+
+#### **1.3 — Crear proyecto NestJS**
