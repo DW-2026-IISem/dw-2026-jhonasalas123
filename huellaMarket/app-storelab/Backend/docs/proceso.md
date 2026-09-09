@@ -11,3 +11,7 @@
 #### **1.3 — Crear proyecto NestJS**
 
 ![](images/clipboard-2209616918.png)
+
+#### **1.4 — Crear `.env` mínimo (puerto)**
+
+![](images/clipboard-2360521614.png)
