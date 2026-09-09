@@ -125,3 +125,7 @@
 #### **6.4 — config/logger/logger.module.ts**
 
 ![](images/clipboard-4154241842.png)
+
+#### **6.5 — config/jwt/jwt.constants.ts**
+
+![](images/clipboard-2939679971.png)
