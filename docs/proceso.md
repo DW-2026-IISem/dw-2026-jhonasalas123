@@ -189,3 +189,7 @@
 #### **6.20 — common/interceptors/response.interceptor.ts**
 
 ![](images/clipboard-1978915518.png)
+
+#### **6.21 — common/interceptors/logging.interceptor.ts**
+
+![](images/clipboard-399237753.png)
