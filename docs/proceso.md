@@ -99,3 +99,7 @@
 #### **5.8 — DatabaseSeederService (sin seeders aún)**
 
 ![](images/clipboard-3574642465.png)
+
+#### **5.9 — Módulo global Sequelize**
+
+![](images/clipboard-2344343252.png)
