@@ -177,3 +177,7 @@
 #### **6.17 — common/exceptions/validation.exception.ts**
 
 ![](images/clipboard-1388653081.png)
+
+#### **6.18 — common/filters/global-exception.filter.ts**
+
+![](images/clipboard-931421141.png)
