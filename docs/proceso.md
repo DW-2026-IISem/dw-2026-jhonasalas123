@@ -71,3 +71,7 @@
 #### **5.1 — Constante SEQUELIZE_TOKEN**
 
 ![](images/clipboard-675955641.png)
+
+#### **5.2 — Tipos auxiliares de database config**
+
+![](images/clipboard-2653562849.png)
