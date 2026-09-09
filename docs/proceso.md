@@ -107,3 +107,9 @@
 #### **5.10 — Verificar conexión a BD**
 
 ![](images/clipboard-3445661240.png)
+
+## **FASE 6 — `05_BASE_APP_COMMON_SECURITY`**
+
+#### **6.1 — config/app/app.constants.ts**
+
+![](images/clipboard-1896226440.png)
