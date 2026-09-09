@@ -43,3 +43,9 @@
 #### **3.1 — Crear árbol base de carpetas**
 
 ![](images/clipboard-1270465686.png)
+
+## **FASE 4 — `03_BASE_ENTORNO_ENV`**
+
+#### **4.1 — Crear `.env.example` y actualizar `.env` completo**
+
+![](images/clipboard-2094063001.png)
