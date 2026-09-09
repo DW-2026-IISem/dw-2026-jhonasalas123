@@ -57,3 +57,7 @@
 #### **4.3 — Validación de entorno con class-validator**
 
 ![](images/clipboard-2325963463.png)
+
+#### **4.4 — Resolver de credenciales por motor**
+
+![](images/clipboard-2904547181.png)
