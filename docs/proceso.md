@@ -141,3 +141,7 @@
 #### **6.8 — config/swagger/swagger.config.ts**
 
 ![](images/clipboard-967285254.png)
+
+#### **6.9 — common/enums/status.enum.ts**
+
+![](images/clipboard-1132031916.png)
