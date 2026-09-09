@@ -87,3 +87,7 @@
 #### **5.5 — database.providers.ts**
 
 ![](images/clipboard-1888495285.png)
+
+#### **5.6 — Opciones Sequelize por dialecto**
+
+![](images/clipboard-2292136099.png)
