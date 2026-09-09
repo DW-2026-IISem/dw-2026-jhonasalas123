@@ -149,3 +149,7 @@
 #### **6.10 — common/enums/http-method.enum.ts**
 
 ![](images/clipboard-4167640335.png)
+
+#### **6.11 — common/enums/sort-order.enum.ts**
+
+![](images/clipboard-1902255360.png)
