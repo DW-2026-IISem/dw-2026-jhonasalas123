@@ -53,3 +53,7 @@
 #### **4.2 — Interface de entorno**
 
 ![](images/clipboard-1915459264.png)
+
+#### **4.3 — Validación de entorno con class-validator**
+
+![](images/clipboard-2325963463.png)
