@@ -79,3 +79,7 @@
 #### **5.3 — database.config.ts**
 
 ![](images/clipboard-1496151154.png)
+
+#### **5.4 — database.module.ts / providers**
+
+![](images/clipboard-2662395270.png)
