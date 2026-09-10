@@ -319,3 +319,7 @@
 #### **7.8 — features/business/clients/infrastructure/persistence/repositories/client.repository.ts**
 
 ![](images/clipboard-1567943118.png)
+
+#### **7.9 — features/business/clients/infrastructure/persistence/migrations/create-clients-table.migration.ts**
+
+![](images/clipboard-1720976768.png)
