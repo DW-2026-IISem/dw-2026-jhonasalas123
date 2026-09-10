@@ -359,3 +359,7 @@
 #### **7.18 — features/business/clients/application/use-cases/get-client.use-case.ts**
 
 ![](images/clipboard-1719984560.png)
+
+#### **7.19 — features/business/clients/application/use-cases/list-clients.use-case.ts**
+
+![](images/clipboard-4027609254.png)
