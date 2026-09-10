@@ -417,3 +417,7 @@
 #### **8.3 — features/business/product-types/domain/interfaces/product-type-repository.interface.ts**
 
 ![](images/clipboard-2373279083.png)
+
+#### **8.4 — features/business/product-types/infrastructure/persistence/models/product-type.model.ts**
+
+![](images/clipboard-3746581091.png)
