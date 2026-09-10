@@ -303,3 +303,7 @@
 #### **7.4 — features/business/clients/domain/interfaces/client-repository.interface.ts**
 
 ![](images/clipboard-3966737841.png)
+
+#### **7.5 — features/business/clients/domain/validators/client-email.validator.ts**
+
+![](images/clipboard-290711077.png)
