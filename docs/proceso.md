@@ -523,3 +523,7 @@
 #### **9.3 — features/business/products/domain/exceptions/invalid-product-stock.exception.ts**
 
 ![](images/clipboard-3958029187.png)
+
+#### **9.4 — features/business/products/domain/exceptions/product-not-found.exception.ts**
+
+![](images/clipboard-1230852227.png)
