@@ -477,3 +477,7 @@
 #### **8.18 — features/business/product-types/presentation/http/serializers/product-type.serializer.ts**
 
 ![](images/clipboard-2651258699.png)
+
+#### **8.19 — features/business/product-types/presentation/http/controllers/product-types.controller.ts**
+
+![](images/clipboard-3573081554.png)
