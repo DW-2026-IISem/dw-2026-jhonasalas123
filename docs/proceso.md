@@ -355,3 +355,7 @@
 #### **7.17 — features/business/clients/application/use-cases/delete-client.use-case.ts**
 
 ![](images/clipboard-3088216013.png)
+
+#### **7.18 — features/business/clients/application/use-cases/get-client.use-case.ts**
+
+![](images/clipboard-1719984560.png)
