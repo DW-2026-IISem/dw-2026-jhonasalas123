@@ -331,3 +331,7 @@
 #### **7.11 — features/business/clients/application/dto/client-filter.dto.ts**
 
 ![](images/clipboard-2229405414.png)
+
+#### **7.12 — features/business/clients/application/dto/client-response.dto.ts**
+
+![](images/clipboard-222020099.png)
