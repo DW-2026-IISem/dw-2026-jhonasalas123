@@ -505,3 +505,7 @@
 #### **8.25 — Actualizar app.module.ts**
 
 ![](images/clipboard-2852762864.png)
+
+#### **8.26 — Verificar tabla `product_types`**
+
+![](images/clipboard-563707239.png)
