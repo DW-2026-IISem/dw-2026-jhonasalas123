@@ -217,3 +217,7 @@
 #### **6.27 — common/decorators/current-user.decorator.ts**
 
 ![](images/clipboard-3376819292.png)
+
+#### **6.28 — common/decorators/resource.decorator.ts**
+
+![](images/clipboard-2218335861.png)
