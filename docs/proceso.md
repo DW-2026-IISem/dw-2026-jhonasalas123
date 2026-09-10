@@ -367,3 +367,7 @@
 #### **7.20 — features/business/clients/application/use-cases/update-client.use-case.ts**
 
 ![](images/clipboard-160154529.png)
+
+#### **7.21 — features/business/clients/presentation/http/serializers/client.serializer.ts**
+
+![](images/clipboard-2147250508.png)
