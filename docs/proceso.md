@@ -489,3 +489,7 @@
 #### **8.21 — features/business/product-types/product-types.module.ts**
 
 ![](images/clipboard-2078598359.png)
+
+#### **8.22 — Actualizar sequelize.factory.ts (registrar modelos)**
+
+![](images/clipboard-3592349215.png)

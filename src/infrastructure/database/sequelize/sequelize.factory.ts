@@ -3,9 +3,11 @@ import { DatabaseDialect } from '../../../config/environment/env.interface';
 import { getSequelizeOptions } from './sequelize.options';
 
 import { ClientModel } from '../../../features/business/clients/infrastructure/persistence/models/client.model';
+import { ProductTypeModel } from '../../../features/business/product-types/infrastructure/persistence/models/product-type.model';
 
 export const ALL_MODELS = [
   ClientModel,
+  ProductTypeModel,
 ];
 
 export async function createSequelizeInstance(
