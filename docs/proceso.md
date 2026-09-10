@@ -425,3 +425,7 @@
 #### **8.5 — features/business/product-types/infrastructure/persistence/repositories/product-type.repository.ts**
 
 ![](images/clipboard-896540932.png)
+
+#### **8.6 — features/business/product-types/infrastructure/persistence/migrations/create-product-types-table.migration.ts**
+
+![](images/clipboard-2900324270.png)
