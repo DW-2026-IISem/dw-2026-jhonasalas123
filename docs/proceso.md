@@ -237,3 +237,7 @@
 #### **6.32 — common/types/nullable.type.ts**
 
 ![](images/clipboard-2647756880.png)
+
+#### **6.33 — common/types/optional.type.ts**
+
+![](images/clipboard-1748815955.png)
