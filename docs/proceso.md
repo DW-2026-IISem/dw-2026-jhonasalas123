@@ -285,3 +285,9 @@
 #### **6.44 — Verificar bootstrap transversal**
 
 ![](images/clipboard-3473132701.png)
+
+## **FASE 7 — `06_BUSINESS_CLIENTS`**
+
+#### **7.1 — features/business/clients/domain/entities/client.entity.ts**
+
+![](images/clipboard-1431266673.png)
