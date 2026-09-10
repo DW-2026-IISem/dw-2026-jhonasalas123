@@ -465,3 +465,7 @@
 #### **8.15 — features/business/product-types/application/use-cases/get-product-type.use-case.ts**
 
 ![](images/clipboard-4034449054.png)
+
+#### **8.16 — features/business/product-types/application/use-cases/list-product-types.use-case.ts**
+
+![](images/clipboard-4161913725.png)
