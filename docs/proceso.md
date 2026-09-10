@@ -453,3 +453,7 @@
 #### **8.12 — features/business/product-types/application/mappers/product-type.mapper.ts**
 
 ![](images/clipboard-2709370058.png)
+
+#### **8.13 — features/business/product-types/application/use-cases/create-product-type.use-case.ts**
+
+![](images/clipboard-2775619550.png)
