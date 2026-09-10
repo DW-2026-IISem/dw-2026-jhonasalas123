@@ -433,3 +433,7 @@
 #### **8.7 — features/business/product-types/infrastructure/persistence/seeders/product-types.seeder.ts**
 
 ![](images/clipboard-2916315597.png)
+
+#### **8.8 — features/business/product-types/application/dto/create-product-type.dto.ts**
+
+![](images/clipboard-1382026142.png)
