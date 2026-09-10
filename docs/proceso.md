@@ -253,3 +253,7 @@
 #### **6.36 — common/utils/string.util.ts**
 
 ![](images/clipboard-3152760715.png)
+
+#### **6.37 — infrastructure/security/hashing/password-hasher.interface.ts**
+
+![](images/clipboard-2936896169.png)
