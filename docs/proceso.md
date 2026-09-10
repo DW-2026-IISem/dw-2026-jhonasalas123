@@ -441,3 +441,7 @@
 #### **8.9 — features/business/product-types/application/dto/product-type-filter.dto.ts**
 
 ![](images/clipboard-4032845014.png)
+
+#### **8.10 — features/business/product-types/application/dto/product-type-response.dto.ts**
+
+![](images/clipboard-1919898583.png)
