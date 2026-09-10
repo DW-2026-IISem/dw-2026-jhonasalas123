@@ -413,3 +413,7 @@
 #### **8.2 — features/business/product-types/domain/exceptions/product-type-not-found.exception.ts**
 
 ![](images/clipboard-1821105710.png)
+
+#### **8.3 — features/business/product-types/domain/interfaces/product-type-repository.interface.ts**
+
+![](images/clipboard-2373279083.png)
