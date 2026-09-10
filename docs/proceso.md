@@ -249,3 +249,7 @@
 #### **6.35 — common/utils/date.util.ts**
 
 ![](images/clipboard-637079936.png)
+
+#### **6.36 — common/utils/string.util.ts**
+
+![](images/clipboard-3152760715.png)
