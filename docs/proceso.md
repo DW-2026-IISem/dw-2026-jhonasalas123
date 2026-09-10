@@ -409,3 +409,7 @@
 #### **8.1 — features/business/product-types/domain/entities/product-type.entity.ts**
 
 ![](images/clipboard-694799460.png)
+
+#### **8.2 — features/business/product-types/domain/exceptions/product-type-not-found.exception.ts**
+
+![](images/clipboard-1821105710.png)
