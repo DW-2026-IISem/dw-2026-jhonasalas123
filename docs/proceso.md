@@ -387,3 +387,7 @@
 #### **7.25 — Actualizar sequelize.factory.ts (registrar modelos)**
 
 ![](images/clipboard-497501752.png)
+
+#### **7.26 — Actualizar business.module.ts**
+
+![](images/clipboard-1679250301.png)
