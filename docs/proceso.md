@@ -375,3 +375,7 @@
 #### **7.22 — features/business/clients/presentation/http/controllers/clients.controller.ts**
 
 ![](images/clipboard-1534942438.png)
+
+#### **7.23 — features/business/clients/index.ts**
+
+![](images/clipboard-3247686518.png)
