@@ -531,3 +531,7 @@
 #### **9.5 — features/business/products/domain/interfaces/product-repository.interface.ts**
 
 ![](images/clipboard-2824975003.png)
+
+#### **9.6 — features/business/products/domain/validators/product-price.validator.ts**
+
+![](images/clipboard-1035984560.png)
