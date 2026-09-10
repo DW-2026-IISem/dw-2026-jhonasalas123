@@ -395,3 +395,7 @@
 #### **7.27 — Actualizar database-seeder.service.ts**
 
 ![](images/clipboard-95650476.png)
+
+#### **7.28 — Actualizar app.module.ts**
+
+![](images/clipboard-3417103229.png)
