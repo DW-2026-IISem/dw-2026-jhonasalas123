@@ -347,3 +347,7 @@
 #### **7.15 — features/business/clients/application/mappers/client.mapper.ts**
 
 ![](images/clipboard-2260049568.png)
+
+#### **7.16 — features/business/clients/application/use-cases/create-client.use-case.ts**
+
+![](images/clipboard-869224407.png)
