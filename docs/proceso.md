@@ -485,3 +485,7 @@
 #### **8.20 — features/business/product-types/index.ts**
 
 ![](images/clipboard-876814702.png)
+
+#### **8.21 — features/business/product-types/product-types.module.ts**
+
+![](images/clipboard-2078598359.png)
