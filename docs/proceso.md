@@ -205,3 +205,7 @@
 #### **6.24 — common/pipes/parse-positive-int.pipe.ts**
 
 ![](images/clipboard-682144508.png)
+
+#### **6.25 — common/decorators/public.decorator.ts**
+
+![](images/clipboard-2532470218.png)
