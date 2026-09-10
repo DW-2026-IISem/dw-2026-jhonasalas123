@@ -457,3 +457,7 @@
 #### **8.13 — features/business/product-types/application/use-cases/create-product-type.use-case.ts**
 
 ![](images/clipboard-2775619550.png)
+
+#### **8.14 — features/business/product-types/application/use-cases/delete-product-type.use-case.ts**
+
+![](images/clipboard-3506829798.png)
