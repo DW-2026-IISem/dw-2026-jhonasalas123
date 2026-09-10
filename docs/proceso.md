@@ -225,3 +225,7 @@
 #### **6.29 — common/interfaces/authenticated-user.interface.ts**
 
 ![](images/clipboard-1104190971.png)
+
+#### **6.30 — common/interfaces/pagination.interface.ts**
+
+![](images/clipboard-3387150617.png)
