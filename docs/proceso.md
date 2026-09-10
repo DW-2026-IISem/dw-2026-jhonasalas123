@@ -265,3 +265,7 @@
 #### **6.39 — infrastructure/security/tokens/token.interface.ts**
 
 ![](images/clipboard-1048628365.png)
+
+#### **6.40 — infrastructure/security/tokens/token.service.ts**
+
+![](images/clipboard-2504478888.png)
