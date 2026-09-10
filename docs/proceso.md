@@ -383,3 +383,7 @@
 #### **7.24 — features/business/clients/clients.module.ts**
 
 ![](images/clipboard-82377584.png)
+
+#### **7.25 — Actualizar sequelize.factory.ts (registrar modelos)**
+
+![](images/clipboard-497501752.png)
