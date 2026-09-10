@@ -295,3 +295,7 @@
 #### **7.2 — features/business/clients/domain/exceptions/client-email-already-exists.exception.ts**
 
 ![](images/clipboard-3777060882.png)
+
+#### **7.3 — features/business/clients/domain/exceptions/client-not-found.exception.ts**
+
+![](images/clipboard-707563238.png)
