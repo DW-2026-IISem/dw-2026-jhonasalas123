@@ -201,3 +201,7 @@
 #### **6.23 — common/pipes/validation.pipe.ts**
 
 ![](images/clipboard-3418885715.png)
+
+#### **6.24 — common/pipes/parse-positive-int.pipe.ts**
+
+![](images/clipboard-682144508.png)
