@@ -497,3 +497,7 @@
 #### **8.23 — Actualizar business.module.ts**
 
 ![](images/clipboard-2049412918.png)
+
+#### **8.24 — Actualizar database-seeder.service.ts**
+
+![](images/clipboard-1106831598.png)
