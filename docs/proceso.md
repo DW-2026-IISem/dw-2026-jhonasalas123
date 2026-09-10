@@ -371,3 +371,7 @@
 #### **7.21 — features/business/clients/presentation/http/serializers/client.serializer.ts**
 
 ![](images/clipboard-2147250508.png)
+
+#### **7.22 — features/business/clients/presentation/http/controllers/clients.controller.ts**
+
+![](images/clipboard-1534942438.png)
