@@ -229,3 +229,7 @@
 #### **6.30 — common/interfaces/pagination.interface.ts**
 
 ![](images/clipboard-3387150617.png)
+
+#### **6.31 — common/interfaces/api-response.interface.ts**
+
+![](images/clipboard-2359661714.png)
