@@ -245,3 +245,7 @@
 #### **6.34 — common/utils/pagination.util.ts**
 
 ![](images/clipboard-2998110863.png)
+
+#### **6.35 — common/utils/date.util.ts**
+
+![](images/clipboard-637079936.png)
