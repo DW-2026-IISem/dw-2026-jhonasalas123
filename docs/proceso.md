@@ -307,3 +307,7 @@
 #### **7.5 — features/business/clients/domain/validators/client-email.validator.ts**
 
 ![](images/clipboard-290711077.png)
+
+#### **7.6 — features/business/clients/domain/validators/client-phone.validator.ts**
+
+![](images/clipboard-3016966922.png)
