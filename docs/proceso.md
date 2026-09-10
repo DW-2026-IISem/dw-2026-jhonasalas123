@@ -363,3 +363,7 @@
 #### **7.19 — features/business/clients/application/use-cases/list-clients.use-case.ts**
 
 ![](images/clipboard-4027609254.png)
+
+#### **7.20 — features/business/clients/application/use-cases/update-client.use-case.ts**
+
+![](images/clipboard-160154529.png)
