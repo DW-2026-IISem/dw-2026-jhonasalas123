@@ -379,3 +379,7 @@
 #### **7.23 — features/business/clients/index.ts**
 
 ![](images/clipboard-3247686518.png)
+
+#### **7.24 — features/business/clients/clients.module.ts**
+
+![](images/clipboard-82377584.png)
