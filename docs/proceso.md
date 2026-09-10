@@ -519,3 +519,7 @@
 #### **9.2 — features/business/products/domain/exceptions/invalid-product-price.exception.ts**
 
 ![](images/clipboard-145114593.png)
+
+#### **9.3 — features/business/products/domain/exceptions/invalid-product-stock.exception.ts**
+
+![](images/clipboard-3958029187.png)
