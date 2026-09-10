@@ -515,3 +515,7 @@
 #### **9.1 — features/business/products/domain/entities/product.entity.ts**
 
 ![](images/clipboard-715789671.png)
+
+#### **9.2 — features/business/products/domain/exceptions/invalid-product-price.exception.ts**
+
+![](images/clipboard-145114593.png)
