@@ -493,3 +493,7 @@
 #### **8.22 — Actualizar sequelize.factory.ts (registrar modelos)**
 
 ![](images/clipboard-3592349215.png)
+
+#### **8.23 — Actualizar business.module.ts**
+
+![](images/clipboard-2049412918.png)
