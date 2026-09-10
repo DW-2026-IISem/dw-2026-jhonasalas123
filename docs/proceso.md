@@ -327,3 +327,7 @@
 #### **7.10 — features/business/clients/infrastructure/persistence/seeders/clients.seeder.ts**
 
 ![](images/clipboard-3698252388.png)
+
+#### **7.11 — features/business/clients/application/dto/client-filter.dto.ts**
+
+![](images/clipboard-2229405414.png)
