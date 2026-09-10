@@ -509,3 +509,9 @@
 #### **8.26 — Verificar tabla `product_types`**
 
 ![](images/clipboard-563707239.png)
+
+## **FASE 9 — `08_BUSINESS_PRODUCTS`**
+
+#### **9.1 — features/business/products/domain/entities/product.entity.ts**
+
+![](images/clipboard-715789671.png)
