@@ -241,3 +241,7 @@
 #### **6.33 — common/types/optional.type.ts**
 
 ![](images/clipboard-1748815955.png)
+
+#### **6.34 — common/utils/pagination.util.ts**
+
+![](images/clipboard-2998110863.png)
