@@ -311,3 +311,7 @@
 #### **7.6 — features/business/clients/domain/validators/client-phone.validator.ts**
 
 ![](images/clipboard-3016966922.png)
+
+#### **7.7 — features/business/clients/infrastructure/persistence/models/client.model.ts**
+
+![](images/clipboard-500992739.png)
