@@ -335,3 +335,7 @@
 #### **7.12 — features/business/clients/application/dto/client-response.dto.ts**
 
 ![](images/clipboard-222020099.png)
+
+#### **7.13 — features/business/clients/application/dto/create-client.dto.ts**
+
+![](images/clipboard-2525773992.png)
