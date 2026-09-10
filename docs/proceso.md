@@ -501,3 +501,7 @@
 #### **8.24 — Actualizar database-seeder.service.ts**
 
 ![](images/clipboard-1106831598.png)
+
+#### **8.25 — Actualizar app.module.ts**
+
+![](images/clipboard-2852762864.png)
