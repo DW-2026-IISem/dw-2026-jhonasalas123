@@ -473,3 +473,7 @@
 #### **8.17 — features/business/product-types/application/use-cases/update-product-type.use-case.ts**
 
 ![](images/clipboard-713126940.png)
+
+#### **8.18 — features/business/product-types/presentation/http/serializers/product-type.serializer.ts**
+
+![](images/clipboard-2651258699.png)
