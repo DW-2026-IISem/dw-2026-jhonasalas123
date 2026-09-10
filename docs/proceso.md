@@ -233,3 +233,7 @@
 #### **6.31 — common/interfaces/api-response.interface.ts**
 
 ![](images/clipboard-2359661714.png)
+
+#### **6.32 — common/types/nullable.type.ts**
+
+![](images/clipboard-2647756880.png)
