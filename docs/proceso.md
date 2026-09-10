@@ -343,3 +343,7 @@
 #### **7.14 — features/business/clients/application/dto/update-client.dto.ts**
 
 ![](images/clipboard-1833941271.png)
+
+#### **7.15 — features/business/clients/application/mappers/client.mapper.ts**
+
+![](images/clipboard-2260049568.png)
