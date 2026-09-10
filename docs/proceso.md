@@ -429,3 +429,7 @@
 #### **8.6 — features/business/product-types/infrastructure/persistence/migrations/create-product-types-table.migration.ts**
 
 ![](images/clipboard-2900324270.png)
+
+#### **8.7 — features/business/product-types/infrastructure/persistence/seeders/product-types.seeder.ts**
+
+![](images/clipboard-2916315597.png)
