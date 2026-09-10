@@ -323,3 +323,7 @@
 #### **7.9 — features/business/clients/infrastructure/persistence/migrations/create-clients-table.migration.ts**
 
 ![](images/clipboard-1720976768.png)
+
+#### **7.10 — features/business/clients/infrastructure/persistence/seeders/clients.seeder.ts**
+
+![](images/clipboard-3698252388.png)
