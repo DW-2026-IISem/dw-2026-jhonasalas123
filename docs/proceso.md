@@ -299,3 +299,7 @@
 #### **7.3 — features/business/clients/domain/exceptions/client-not-found.exception.ts**
 
 ![](images/clipboard-707563238.png)
+
+#### **7.4 — features/business/clients/domain/interfaces/client-repository.interface.ts**
+
+![](images/clipboard-3966737841.png)
