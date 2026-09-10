@@ -315,3 +315,7 @@
 #### **7.7 — features/business/clients/infrastructure/persistence/models/client.model.ts**
 
 ![](images/clipboard-500992739.png)
+
+#### **7.8 — features/business/clients/infrastructure/persistence/repositories/client.repository.ts**
+
+![](images/clipboard-1567943118.png)
