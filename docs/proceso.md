@@ -403,3 +403,9 @@
 #### **7.29 — Verificar tabla física `clients` y API**
 
 ![](images/clipboard-2071816516.png)
+
+## **FASE 8 — `07_BUSINESS_PRODUCT_TYPES`**
+
+#### **8.1 — features/business/product-types/domain/entities/product-type.entity.ts**
+
+![](images/clipboard-694799460.png)
