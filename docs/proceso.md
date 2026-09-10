@@ -449,3 +449,7 @@
 #### **8.11 — features/business/product-types/application/dto/update-product-type.dto.ts**
 
 ![](images/clipboard-2022023377.png)
+
+#### **8.12 — features/business/product-types/application/mappers/product-type.mapper.ts**
+
+![](images/clipboard-2709370058.png)
