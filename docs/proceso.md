@@ -575,3 +575,7 @@
 #### **9.16 — features/business/products/application/mappers/product.mapper.ts**
 
 ![](images/clipboard-2158981675.png)
+
+#### **9.17 — features/business/products/application/use-cases/create-product.use-case.ts**
+
+![](images/clipboard-2339930617.png)
