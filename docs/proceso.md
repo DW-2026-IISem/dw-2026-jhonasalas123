@@ -603,3 +603,7 @@
 #### **9.23 — features/business/products/presentation/http/controllers/products.controller.ts**
 
 ![](images/clipboard-3024420827.png)
+
+#### **9.24 — features/business/products/index.ts**
+
+![](images/clipboard-912435158.png)
