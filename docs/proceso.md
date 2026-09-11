@@ -611,3 +611,7 @@
 #### **9.25 — features/business/products/products.module.ts**
 
 ![](images/clipboard-324429656.png)
+
+#### **9.26 — Actualizar sequelize.factory.ts (registrar modelos)**
+
+![](images/clipboard-389590358.png)
