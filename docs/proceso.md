@@ -623,3 +623,7 @@
 #### **9.28 — Actualizar database-seeder.service.ts**
 
 ![](images/clipboard-2819861082.png)
+
+#### **9.29 — Actualizar app.module.ts**
+
+![](images/clipboard-274397684.png)
