@@ -563,3 +563,7 @@
 #### **9.13 — features/business/products/application/dto/product-filter.dto.ts**
 
 ![](images/clipboard-3644007537.png)
+
+#### **9.14 — features/business/products/application/dto/product-response.dto.ts**
+
+![](images/clipboard-3899688369.png)
