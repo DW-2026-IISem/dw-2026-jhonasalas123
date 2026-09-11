@@ -607,3 +607,7 @@
 #### **9.24 — features/business/products/index.ts**
 
 ![](images/clipboard-912435158.png)
+
+#### **9.25 — features/business/products/products.module.ts**
+
+![](images/clipboard-324429656.png)
