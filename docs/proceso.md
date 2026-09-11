@@ -571,3 +571,7 @@
 #### **9.15 — features/business/products/application/dto/update-product.dto.ts**
 
 ![](images/clipboard-1772747195.png)
+
+#### **9.16 — features/business/products/application/mappers/product.mapper.ts**
+
+![](images/clipboard-2158981675.png)
