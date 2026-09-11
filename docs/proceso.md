@@ -539,3 +539,7 @@
 #### **9.7 — features/business/products/domain/validators/product-stock.validator.ts**
 
 ![](images/clipboard-1783560227.png)
+
+#### **9.8 — features/business/products/infrastructure/persistence/models/product.model.ts**
+
+![](images/clipboard-861124502.png)
