@@ -543,3 +543,7 @@
 #### **9.8 — features/business/products/infrastructure/persistence/models/product.model.ts**
 
 ![](images/clipboard-861124502.png)
+
+#### **9.9 — features/business/products/infrastructure/persistence/repositories/product.repository.ts**
+
+![](images/clipboard-3850153246.png)
