@@ -591,3 +591,7 @@
 #### **9.20 — features/business/products/application/use-cases/list-products.use-case.ts**
 
 ![](images/clipboard-3594336737.png)
+
+#### **9.21 — features/business/products/application/use-cases/update-product.use-case.ts**
+
+![](images/clipboard-646446265.png)
