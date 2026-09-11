@@ -547,3 +547,7 @@
 #### **9.9 — features/business/products/infrastructure/persistence/repositories/product.repository.ts**
 
 ![](images/clipboard-3850153246.png)
+
+#### **9.10 — features/business/products/infrastructure/persistence/migrations/create-products-table.migration.ts**
+
+![](images/clipboard-1886181459.png)
