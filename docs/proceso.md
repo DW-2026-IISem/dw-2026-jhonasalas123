@@ -599,3 +599,7 @@
 #### **9.22 — features/business/products/presentation/http/serializers/product.serializer.ts**
 
 ![](images/clipboard-476671576.png)
+
+#### **9.23 — features/business/products/presentation/http/controllers/products.controller.ts**
+
+![](images/clipboard-3024420827.png)
