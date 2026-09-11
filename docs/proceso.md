@@ -595,3 +595,7 @@
 #### **9.21 — features/business/products/application/use-cases/update-product.use-case.ts**
 
 ![](images/clipboard-646446265.png)
+
+#### **9.22 — features/business/products/presentation/http/serializers/product.serializer.ts**
+
+![](images/clipboard-476671576.png)
