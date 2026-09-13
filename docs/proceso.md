@@ -653,3 +653,7 @@
 #### 5. Validador de correo electrónico del Cliente
 
 ![](images/clipboard-2249393315.png)
+
+#### 6. Validador de teléfono del Cliente
+
+![](images/clipboard-141473876.png)
