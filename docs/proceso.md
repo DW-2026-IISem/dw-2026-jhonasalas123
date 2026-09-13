@@ -665,3 +665,7 @@
 #### 8. Repositorio de Clientes
 
 ![](images/clipboard-1645818042.png)
+
+#### 9. Migración de la tabla Clientes
+
+![](images/clipboard-2031641347.png)
