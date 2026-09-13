@@ -693,3 +693,7 @@
 #### 15. Mapper de la entidad Cliente
 
 ![](images/clipboard-2884141733.png)
+
+#### 16. Caso de uso para crear la entidad Cliente
+
+![](images/clipboard-1093480125.png)
