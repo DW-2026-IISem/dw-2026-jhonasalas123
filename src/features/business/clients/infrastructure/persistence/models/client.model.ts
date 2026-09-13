@@ -3,6 +3,7 @@ import {
   Column,
   CreatedAt,
   DataType,
+  HasMany,
   Model,
   PrimaryKey,
   Table,
@@ -19,6 +20,12 @@ export class ClientModel extends Model {
 
   @Column({ type: DataType.STRING(150), allowNull: false })
   declare name: string;
+
+  @Column({ type: DataType.STRING(30), allowNull: true })
+  declare documentType: string | null;
+
+  @Column({ type: DataType.STRING(30), allowNull: true, unique: true })
+  declare documentNumber: string | null;
 
   @Column({ type: DataType.STRING(255), allowNull: true })
   declare address: string | null;
@@ -45,5 +52,10 @@ export class ClientModel extends Model {
   @UpdatedAt
   declare updatedAt: Date;
 
- 
+  @HasMany(
+    () =>
+      require('../../../../sales/infrastructure/persistence/models/sale.model')
+        .SaleModel,
+  )
+  declare sales: unknown[];
 }

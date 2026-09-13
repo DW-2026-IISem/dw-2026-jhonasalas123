@@ -657,3 +657,7 @@
 #### 6. Validador de teléfono del Cliente
 
 ![](images/clipboard-141473876.png)
+
+#### 7. Modelo de persistencia de Clientes
+
+![](images/clipboard-1050149030.png)
