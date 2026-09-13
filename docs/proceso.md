@@ -713,3 +713,7 @@
 #### 20. Caso de uso para actualizar la entidad Cliente
 
 ![](images/clipboard-3543413634.png)
+
+#### 21. Serializador HTTP de la entidad Cliente
+
+![](images/clipboard-619966626.png)
