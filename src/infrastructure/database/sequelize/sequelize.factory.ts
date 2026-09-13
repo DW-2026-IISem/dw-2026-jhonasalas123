@@ -3,38 +3,22 @@ import { DatabaseDialect } from '../../../config/environment/env.interface';
 import { getSequelizeOptions } from './sequelize.options';
 
 import { ClientModel } from '../../../features/business/clients/infrastructure/persistence/models/client.model';
-import { ProductTypeModel } from '../../../features/business/product-types/infrastructure/persistence/models/product-type.model';
-import { ProductModel } from '../../../features/business/products/infrastructure/persistence/models/product.model';
 
 export const ALL_MODELS = [
   ClientModel,
-  ProductTypeModel,
-  ProductModel,
 ];
 
 export async function createSequelizeInstance(
   dialect: DatabaseDialect,
 ): Promise<Sequelize> {
-  const options = getSequelizeOptions(dialect);
-
-  let dialectModule: any;
-
-  switch (dialect) {
-    case DatabaseDialect.MySQL:
-      dialectModule = require('mysql2');
-      break;
-    case DatabaseDialect.Postgres:
-      dialectModule = require('pg');
-      break;
-    case DatabaseDialect.MSSQL:
-      dialectModule = require('tedious');
-      break;
-    case DatabaseDialect.Oracle:
-      dialectModule = require('oracledb');
-      break;
-    default:
-      throw new Error(`Dialecto no soportado: ${dialect}`);
+  if (dialect !== DatabaseDialect.MySQL) {
+    throw new Error(
+      `HuellaMarket actualmente solo soporta MySQL. Dialecto recibido: ${dialect}`,
+    );
   }
+
+  const options = getSequelizeOptions(DatabaseDialect.MySQL);
+  const dialectModule = require('mysql2');
 
   const sequelize = new Sequelize({
     ...options,
@@ -44,10 +28,10 @@ export async function createSequelizeInstance(
 
   try {
     await sequelize.authenticate();
-    console.log(`✅ Conexión exitosa a ${dialect.toUpperCase()}`);
+    console.log('✅ Conexión exitosa a MYSQL');
   } catch (error: any) {
     console.error(
-      `❌ Error conectando a ${dialect.toUpperCase()}:`,
+      '❌ Error conectando a MYSQL:',
       error.message,
     );
     throw error;

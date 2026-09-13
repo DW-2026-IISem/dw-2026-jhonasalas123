@@ -729,3 +729,7 @@
 #### **24. Módulo de la entidad Cliente**
 
 ![](images/clipboard-902435255.png)
+
+#### 25. Fábrica de conexión de Sequelize para la base de datos
+
+![](images/clipboard-2415011056.png)
