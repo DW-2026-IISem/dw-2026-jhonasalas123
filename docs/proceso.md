@@ -697,3 +697,7 @@
 #### 16. Caso de uso para crear la entidad Cliente
 
 ![](images/clipboard-1093480125.png)
+
+#### 17. Caso de uso para eliminar la entidad Cliente
+
+![](images/clipboard-1087912338.png)
