@@ -631,3 +631,7 @@
 #### **9.30 — Verificar tabla `products`**
 
 #### ![](images/clipboard-2728597939.png)
+
+#### Código 1. Creación de la entidad Cliente para HuellaMarket
+
+![](images/clipboard-1095980821.png)

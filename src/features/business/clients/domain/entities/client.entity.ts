@@ -5,6 +5,8 @@ import { isValidPhone } from '../validators/client-phone.validator';
 export interface ClientProps {
   id?: number;
   name: string;
+  documentType?: string;
+  documentNumber?: string;
   address?: string;
   phone?: string;
   email?: string;
@@ -17,6 +19,8 @@ export interface ClientProps {
 export class Client {
   id?: number;
   name: string;
+  documentType?: string;
+  documentNumber?: string;
   address?: string;
   phone?: string;
   email?: string;
@@ -28,6 +32,8 @@ export class Client {
   private constructor(props: ClientProps) {
     this.id = props.id;
     this.name = props.name;
+    this.documentType = props.documentType;
+    this.documentNumber = props.documentNumber;
     this.address = props.address;
     this.phone = props.phone;
     this.email = props.email;
@@ -69,6 +75,14 @@ export class Client {
         throw new Error('El nombre del cliente es requerido');
       }
       this.name = props.name;
+    }
+
+    if (props.documentType !== undefined) {
+      this.documentType = props.documentType;
+    }
+
+    if (props.documentNumber !== undefined) {
+      this.documentNumber = props.documentNumber;
     }
 
     if (props.address !== undefined) {
