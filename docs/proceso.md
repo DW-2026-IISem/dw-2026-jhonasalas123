@@ -673,3 +673,7 @@
 #### 10. Seeder de Clientes
 
 ![](images/clipboard-4066356764.png)
+
+#### 11. DTO de filtros de Clientes
+
+![](images/clipboard-599492451.png)
