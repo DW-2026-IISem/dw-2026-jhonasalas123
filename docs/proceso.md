@@ -632,7 +632,7 @@
 
 #### ![](images/clipboard-2728597939.png)
 
-###  Entidad Cliente — HuellaMarket
+### Entidad Cliente — HuellaMarket
 
 #### Código 1. Creación de la entidad Cliente para HuellaMarket
 
@@ -681,3 +681,7 @@
 #### 12.DTO de respuesta para clientes de HuellaMarket
 
 ![](images/clipboard-3779266152.png)
+
+#### 13. DTO de creación de la entidad Cliente
+
+![](images/clipboard-1808844266.png)
