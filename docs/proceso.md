@@ -709,3 +709,7 @@
 #### 19. Caso de uso para listar los clientes
 
 ![](images/clipboard-2033392550.png)
+
+#### 20. Caso de uso para actualizar la entidad Cliente
+
+![](images/clipboard-3543413634.png)
