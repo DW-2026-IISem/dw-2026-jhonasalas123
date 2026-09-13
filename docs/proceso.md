@@ -689,3 +689,7 @@
 #### 14. DTO de actualización de la entidad Cliente
 
 ![](images/clipboard-3373732758.png)
+
+#### 15. Mapper de la entidad Cliente
+
+![](images/clipboard-2884141733.png)
