@@ -661,3 +661,7 @@
 #### 7. Modelo de persistencia de Clientes
 
 ![](images/clipboard-1050149030.png)
+
+#### 8. Repositorio de Clientes
+
+![](images/clipboard-1645818042.png)
