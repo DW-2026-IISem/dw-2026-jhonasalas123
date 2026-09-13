@@ -635,3 +635,7 @@
 #### Código 1. Creación de la entidad Cliente para HuellaMarket
 
 ![](images/clipboard-1095980821.png)
+
+#### 2. Excepción: correo del cliente ya registrado
+
+![](images/clipboard-18920932.png)
