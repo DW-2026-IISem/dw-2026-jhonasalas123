@@ -685,3 +685,7 @@
 #### 13. DTO de creación de la entidad Cliente
 
 ![](images/clipboard-1808844266.png)
+
+#### 14. DTO de actualización de la entidad Cliente
+
+![](images/clipboard-3373732758.png)
