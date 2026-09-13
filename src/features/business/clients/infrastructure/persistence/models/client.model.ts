@@ -3,7 +3,6 @@ import {
   Column,
   CreatedAt,
   DataType,
-  HasMany,
   Model,
   PrimaryKey,
   Table,
@@ -46,6 +45,5 @@ export class ClientModel extends Model {
   @UpdatedAt
   declare updatedAt: Date;
 
-  @HasMany(() => require('../../../../sales/infrastructure/persistence/models/sale.model').SaleModel)
-  declare sales: unknown[];
+ 
 }

@@ -627,3 +627,7 @@
 #### **9.29 — Actualizar app.module.ts**
 
 ![](images/clipboard-274397684.png)
+
+#### **9.30 — Verificar tabla `products`**
+
+#### ![](images/clipboard-2728597939.png)
