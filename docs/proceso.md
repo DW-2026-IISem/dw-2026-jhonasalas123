@@ -737,3 +737,7 @@
 #### 26. Módulo empresarial de HuellaMarket
 
 ![](images/clipboard-426750508.png)
+
+#### **27. Servicio de seeders de la base de datos**
+
+![](images/clipboard-3465472806.png)
