@@ -649,3 +649,7 @@
 #### 4. Interfaz del repositorio de Clientes
 
 ![](images/clipboard-3694671922.png)
+
+#### 5. Validador de correo electrónico del Cliente
+
+![](images/clipboard-2249393315.png)
