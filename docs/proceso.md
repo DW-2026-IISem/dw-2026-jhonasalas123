@@ -701,3 +701,7 @@
 #### 17. Caso de uso para eliminar la entidad Cliente
 
 ![](images/clipboard-1087912338.png)
+
+#### 18. Caso de uso para consultar un cliente
+
+![](images/clipboard-2510522351.png)
