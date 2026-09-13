@@ -733,3 +733,7 @@
 #### 25. Fábrica de conexión de Sequelize para la base de datos
 
 ![](images/clipboard-2415011056.png)
+
+#### 26. Módulo empresarial de HuellaMarket
+
+![](images/clipboard-426750508.png)
