@@ -741,3 +741,7 @@
 #### **27. Servicio de seeders de la base de datos**
 
 ![](images/clipboard-3465472806.png)
+
+#### 28. Módulo principal de la aplicación HuellaMarket
+
+![](images/clipboard-233002794.png)
