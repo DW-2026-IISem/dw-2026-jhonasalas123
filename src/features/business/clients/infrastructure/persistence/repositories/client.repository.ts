@@ -15,7 +15,10 @@ import { ClientModel } from '../models/client.model';
 @Injectable()
 export class ClientRepository implements IClientRepository {
   async create(client: Client): Promise<Client> {
-    const model = await ClientModel.create(ClientMapper.toPersistence(client));
+    const model = await ClientModel.create(
+      ClientMapper.toPersistence(client),
+    );
+
     return ClientMapper.toDomain(model);
   }
 
@@ -23,7 +26,9 @@ export class ClientRepository implements IClientRepository {
     await ClientModel.update(ClientMapper.toPersistence(client), {
       where: { id: client.id },
     });
+
     const updated = await ClientModel.findByPk(client.id!);
+
     return ClientMapper.toDomain(updated!);
   }
 
@@ -33,11 +38,25 @@ export class ClientRepository implements IClientRepository {
 
   async findById(id: number): Promise<Client | null> {
     const model = await ClientModel.findByPk(id);
+
     return model ? ClientMapper.toDomain(model) : null;
   }
 
   async findByEmail(email: string): Promise<Client | null> {
-    const model = await ClientModel.findOne({ where: { email } });
+    const model = await ClientModel.findOne({
+      where: { email },
+    });
+
+    return model ? ClientMapper.toDomain(model) : null;
+  }
+
+  async findByNumeroDocumento(
+    numeroDocumento: string,
+  ): Promise<Client | null> {
+    const model = await ClientModel.findOne({
+      where: { numeroDocumento },
+    });
+
     return model ? ClientMapper.toDomain(model) : null;
   }
 
@@ -50,8 +69,21 @@ export class ClientRepository implements IClientRepository {
     const where = params.search
       ? {
           [Op.or]: [
-            { name: { [Op.like]: `%${params.search}%` } },
-            { email: { [Op.like]: `%${params.search}%` } },
+            {
+              nombre: {
+                [Op.like]: `%${params.search}%`,
+              },
+            },
+            {
+              numeroDocumento: {
+                [Op.like]: `%${params.search}%`,
+              },
+            },
+            {
+              email: {
+                [Op.like]: `%${params.search}%`,
+              },
+            },
           ],
         }
       : {};

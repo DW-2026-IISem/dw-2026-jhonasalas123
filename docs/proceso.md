@@ -745,3 +745,7 @@
 #### 28. Módulo principal de la aplicación HuellaMarket
 
 ![](images/clipboard-233002794.png)
+
+#### **29.Verificar tabla física `clients` y API**
+
+![](images/clipboard-2903724853.png)

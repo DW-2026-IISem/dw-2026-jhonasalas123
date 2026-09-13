@@ -15,5 +15,8 @@ export interface IClientRepository {
   delete(id: number): Promise<void>;
   findById(id: number): Promise<Client | null>;
   findByEmail(email: string): Promise<Client | null>;
+  findByNumeroDocumento(
+    numeroDocumento: string,
+  ): Promise<Client | null>;
   findAll(params: ClientFindAllParams): Promise<PaginatedResult<Client>>;
 }

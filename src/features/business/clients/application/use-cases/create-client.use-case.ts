@@ -1,9 +1,4 @@
 import { Inject, Injectable } from '@nestjs/common';
-import {
-  type IPasswordHasher,
-  PASSWORD_HASHER,
-} from '../../../../../infrastructure/security/hashing/password-hasher.interface';
-import { ClientEmailAlreadyExistsException } from '../../domain/exceptions/client-email-already-exists.exception';
 import { Client } from '../../domain/entities/client.entity';
 import {
   CLIENT_REPOSITORY,
@@ -17,32 +12,29 @@ export class CreateClientUseCase {
   constructor(
     @Inject(CLIENT_REPOSITORY)
     private readonly clientRepository: IClientRepository,
-    @Inject(PASSWORD_HASHER)
-    private readonly passwordHasher: IPasswordHasher,
   ) {}
 
   async execute(dto: CreateClientDto) {
-    if (dto.email) {
-      const existing = await this.clientRepository.findByEmail(dto.email);
-      if (existing) {
-        throw new ClientEmailAlreadyExistsException(dto.email);
-      }
-    }
+    const existing = await this.clientRepository.findByNumeroDocumento(
+      dto.numeroDocumento,
+    );
 
-    let password = dto.password;
-    if (password) {
-      password = await this.passwordHasher.hash(password);
+    if (existing) {
+      throw new Error(
+        `El cliente con número de documento ${dto.numeroDocumento} ya existe`,
+      );
     }
 
     const client = Client.create({
-      name: dto.name,
-      address: dto.address,
-      phone: dto.phone,
+      tipoDocumento: dto.tipoDocumento,
+      numeroDocumento: dto.numeroDocumento,
+      nombre: dto.nombre,
+      telefono: dto.telefono,
       email: dto.email,
-      password,
     });
 
     const created = await this.clientRepository.create(client);
+
     return ClientMapper.toResponse(created);
   }
 }
