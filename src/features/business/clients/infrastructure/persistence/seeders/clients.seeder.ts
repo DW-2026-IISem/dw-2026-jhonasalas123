@@ -13,6 +13,8 @@ export async function seedClients(): Promise<void> {
   await ClientModel.bulkCreate([
     {
       name: 'Juan Pérez',
+      documentType: 'CC',
+      documentNumber: '1000000001',
       address: 'Calle Principal 123',
       phone: '+57 300 1234567',
       email: 'juan.perez@example.com',
@@ -21,6 +23,8 @@ export async function seedClients(): Promise<void> {
     },
     {
       name: 'María García',
+      documentType: 'CC',
+      documentNumber: '1000000002',
       address: 'Av. Central 456',
       phone: '+57 310 9876543',
       email: 'maria.garcia@example.com',

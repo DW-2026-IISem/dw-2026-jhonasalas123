@@ -669,3 +669,7 @@
 #### 9. Migración de la tabla Clientes
 
 ![](images/clipboard-2031641347.png)
+
+#### 10. Seeder de Clientes
+
+![](images/clipboard-4066356764.png)
