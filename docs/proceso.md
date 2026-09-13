@@ -725,3 +725,7 @@
 #### 23. Índice de exportación del módulo Cliente
 
 ![](images/clipboard-417754141.png)
+
+#### **24. Módulo de la entidad Cliente**
+
+![](images/clipboard-902435255.png)
