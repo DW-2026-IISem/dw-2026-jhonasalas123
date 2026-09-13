@@ -717,3 +717,7 @@
 #### 21. Serializador HTTP de la entidad Cliente
 
 ![](images/clipboard-619966626.png)
+
+#### 22. Controlador HTTP de la entidad Cliente
+
+![](images/clipboard-2610847358.png)
