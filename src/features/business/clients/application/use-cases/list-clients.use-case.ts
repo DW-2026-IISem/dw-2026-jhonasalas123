@@ -15,6 +15,7 @@ export class ListClientsUseCase {
 
   async execute(filter: ClientFilterDto) {
     const result = await this.clientRepository.findAll(filter);
+
     return {
       items: result.items.map((client) => ClientMapper.toResponse(client)),
       meta: result.meta,

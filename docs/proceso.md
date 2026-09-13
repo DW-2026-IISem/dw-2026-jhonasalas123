@@ -705,3 +705,7 @@
 #### 18. Caso de uso para consultar un cliente
 
 ![](images/clipboard-2510522351.png)
+
+#### 19. Caso de uso para listar los clientes
+
+![](images/clipboard-2033392550.png)
