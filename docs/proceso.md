@@ -721,3 +721,7 @@
 #### 22. Controlador HTTP de la entidad Cliente
 
 ![](images/clipboard-2610847358.png)
+
+#### 23. Índice de exportación del módulo Cliente
+
+![](images/clipboard-417754141.png)
