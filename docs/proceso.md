@@ -645,3 +645,7 @@
 #### 3. Excepción: Cliente no encontrado
 
 ![](images/clipboard-528012484.png)
+
+#### 4. Interfaz del repositorio de Clientes
+
+![](images/clipboard-3694671922.png)
