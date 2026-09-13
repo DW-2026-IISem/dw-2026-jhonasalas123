@@ -677,3 +677,7 @@
 #### 11. DTO de filtros de Clientes
 
 ![](images/clipboard-599492451.png)
+
+#### 12.DTO de respuesta para clientes de HuellaMarket
+
+![](images/clipboard-3779266152.png)
