@@ -869,3 +869,7 @@
 #### 6.Seeder de FichaSanitaria
 
 ![](images/clipboard-2343528616.png)
+
+#### 7.DTO de filtros de FichaSanitaria
+
+![](images/clipboard-733524433.png)
