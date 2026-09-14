@@ -893,3 +893,7 @@
 #### 12.Caso de uso para crear FichaSanitaria
 
 ![](images/clipboard-4277532415.png)
+
+#### 13.Caso de uso para eliminar FichaSanitaria
+
+![](images/clipboard-1588998976.png)
