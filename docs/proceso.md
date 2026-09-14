@@ -789,3 +789,7 @@
 #### 9.DTO para actualizar Mascota
 
 ![](images/clipboard-3330983509.png)
+
+#### 10.Mapper de Mascota
+
+![](images/clipboard-1707720661.png)
