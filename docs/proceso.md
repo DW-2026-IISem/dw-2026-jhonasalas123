@@ -885,3 +885,7 @@
 #### 10.DTO para actualizar FichaSanitaria
 
 ![](images/clipboard-942411606.png)
+
+#### 11.Mapper de FichaSanitaria
+
+![](images/clipboard-2905771346.png)
