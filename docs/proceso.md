@@ -845,3 +845,7 @@
 ### Entidad FichaSanitaria — HuellaMarket
 
 ![](images/clipboard-2855430725.png)
+
+#### 1.Excepción de FichaSanitaria no encontrada
+
+![](images/clipboard-1699277094.png)
