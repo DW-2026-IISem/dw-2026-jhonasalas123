@@ -937,3 +937,7 @@
 #### 23.Integración del seeder de Ficha Sanitaria
 
 ![](images/clipboard-440043703.png)
+
+#### 24.Integración de Ficha Sanitaria en AppModule
+
+![](images/clipboard-1591418173.png)
