@@ -913,3 +913,7 @@
 #### 17.Serializador de Ficha Sanitaria
 
 ![](images/clipboard-1566829870.png)
+
+#### 18.Controlador de Ficha Sanitaria
+
+![](images/clipboard-1258769679.png)
