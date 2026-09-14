@@ -753,3 +753,7 @@
 ### Entidad Mascotas — HuellaMarket
 
 ![](images/clipboard-1543065268.png)
+
+#### 1.Excepción de Mascota no encontrada
+
+![](images/clipboard-3835843843.png)
