@@ -953,3 +953,7 @@
 #### 1.Excepción de ServicioMascota no encontrada
 
 ![](images/clipboard-1064478990.png)
+
+#### 2.Interfaz del repositorio de ServicioMascota
+
+![](images/clipboard-13198249.png)
