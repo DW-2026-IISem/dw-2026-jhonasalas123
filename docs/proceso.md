@@ -1029,3 +1029,7 @@
 #### 20.Módulo de ServicioMascota
 
 ![](images/clipboard-1295328492.png)
+
+#### 21.Integración de ServicioMascota en Sequelize
+
+![](images/clipboard-725748169.png)
