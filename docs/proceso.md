@@ -773,3 +773,7 @@
 #### 5.Seeder de Mascota
 
 ![](images/clipboard-3310665617.png)
+
+#### 6.DTO de filtros de Mascota
+
+![](images/clipboard-3796294721.png)
