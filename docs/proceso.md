@@ -857,3 +857,7 @@
 #### 3.Modelo de persistencia de FichaSanitaria
 
 ![](images/clipboard-1593443124.png)
+
+#### 4.Repositorio de FichaSanitaria
+
+![](images/clipboard-132916377.png)
