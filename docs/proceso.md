@@ -805,3 +805,7 @@
 #### 13.Caso de uso para consultar Mascota
 
 ![](images/clipboard-3278218849.png)
+
+#### 14.Caso de uso para listar Mascotas
+
+![](images/clipboard-4210245006.png)
