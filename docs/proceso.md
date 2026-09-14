@@ -781,3 +781,7 @@
 #### 7.DTO de respuesta de Mascota
 
 ![](images/clipboard-815392910.png)
+
+#### 8.DTO para crear Mascota
+
+![](images/clipboard-2399156844.png)
