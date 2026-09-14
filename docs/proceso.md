@@ -949,3 +949,7 @@
 ### Entidad ServicioMascota — HuellaMarket
 
 ![](images/clipboard-816941957.png)
+
+#### 1.Excepción de ServicioMascota no encontrada
+
+![](images/clipboard-1064478990.png)
