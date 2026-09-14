@@ -985,3 +985,7 @@
 #### 9.DTO para crear un ServicioMascota
 
 ![](images/clipboard-1521774668.png)
+
+#### 10.DTO para actualizar un ServicioMascota
+
+![](images/clipboard-2518199338.png)
