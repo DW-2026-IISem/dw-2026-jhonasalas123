@@ -1005,3 +1005,7 @@
 #### 14.Use Case para obtener un ServicioMascota
 
 ![](images/clipboard-4070924612.png)
+
+#### 15.Use Case para listar ServiciosMascota
+
+![](images/clipboard-2746461595.png)
