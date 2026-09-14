@@ -769,3 +769,7 @@
 #### 4.Migración de la tabla Mascota
 
 ![](images/clipboard-3553105859.png)
+
+#### 5.Seeder de Mascota
+
+![](images/clipboard-3310665617.png)
