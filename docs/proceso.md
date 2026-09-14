@@ -757,3 +757,7 @@
 #### 1.Excepción de Mascota no encontrada
 
 ![](images/clipboard-3835843843.png)
+
+#### 2.Interfaz del repositorio de Mascota
+
+![](images/clipboard-522738917.png)
