@@ -989,3 +989,7 @@
 #### 10.DTO para actualizar un ServicioMascota
 
 ![](images/clipboard-2518199338.png)
+
+#### 11.Mapper de ServicioMascota
+
+![](images/clipboard-1702205935.png)
