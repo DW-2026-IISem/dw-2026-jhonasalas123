@@ -957,3 +957,7 @@
 #### 2.Interfaz del repositorio de ServicioMascota
 
 ![](images/clipboard-13198249.png)
+
+#### 3.Modelo Sequelize de ServicioMascota
+
+![](images/clipboard-3648792236.png)
