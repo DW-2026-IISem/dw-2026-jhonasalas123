@@ -793,3 +793,7 @@
 #### 10.Mapper de Mascota
 
 ![](images/clipboard-1707720661.png)
+
+#### 11.Caso de uso para crear Mascota
+
+![](images/clipboard-978240580.png)
