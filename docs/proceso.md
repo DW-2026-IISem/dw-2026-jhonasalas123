@@ -929,3 +929,7 @@
 #### 21.Integración del modelo de Ficha Sanitaria en Sequelize
 
 ![](images/clipboard-2389579350.png)
+
+#### 22.Integración del módulo de Ficha Sanitaria en BusinessModule
+
+![](images/clipboard-858070304.png)
