@@ -997,3 +997,7 @@
 #### 12.Use Case para crear ServicioMascota
 
 ![](images/clipboard-1077637805.png)
+
+#### 13.Use Case para eliminar ServicioMascota
+
+![](images/clipboard-3695112177.png)
