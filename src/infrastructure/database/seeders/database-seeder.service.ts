@@ -1,6 +1,7 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { seedClients } from '../../../features/business/clients/infrastructure/persistence/seeders/clients.seeder';
 import { seedHealthRecords } from '../../../features/business/health-records/infrastructure/persistence/seeders/health-records.seeder';
+import { seedPetServices } from '../../../features/business/pet-services/infrastructure/persistence/seeders/pet-services.seeder';
 
 /**
  * Ejecuta seeders en orden de dependencias.
@@ -18,6 +19,8 @@ export class DatabaseSeederService implements OnModuleInit {
     try {
       await seedClients();
       await seedHealthRecords();
+      await seedPetServices();
+
       this.logger.log('✅ Seeders ejecutados');
     } catch (error: any) {
       this.logger.error(`❌ Error en seeders: ${error.message}`, error.stack);
