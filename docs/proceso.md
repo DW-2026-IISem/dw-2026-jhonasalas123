@@ -749,3 +749,7 @@
 #### **29.Verificar tabla física `clients` y API**
 
 ![](images/clipboard-2903724853.png)
+
+### Entidad Mascotas — HuellaMarket
+
+![](images/clipboard-1543065268.png)
