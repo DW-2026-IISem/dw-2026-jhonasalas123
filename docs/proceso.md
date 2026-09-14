@@ -785,3 +785,7 @@
 #### 8.DTO para crear Mascota
 
 ![](images/clipboard-2399156844.png)
+
+#### 9.DTO para actualizar Mascota
+
+![](images/clipboard-3330983509.png)
