@@ -1045,3 +1045,7 @@
 #### 24.Módulo principal de HuellaMarket
 
 ![](images/clipboard-3701815808.png)
+
+####  **Verificar tabla física ServicioMascota y API**
+
+![](images/clipboard-533247970.png)
