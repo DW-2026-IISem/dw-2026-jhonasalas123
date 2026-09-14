@@ -849,3 +849,7 @@
 #### 1.Excepción de FichaSanitaria no encontrada
 
 ![](images/clipboard-1699277094.png)
+
+#### 2.Interfaz del repositorio de FichaSanitaria
+
+![](images/clipboard-2299879324.png)
