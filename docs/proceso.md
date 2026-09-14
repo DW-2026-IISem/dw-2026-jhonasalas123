@@ -865,3 +865,7 @@
 #### 5.Migración de FichaSanitaria
 
 ![](images/clipboard-1272730729.png)
+
+#### 6.Seeder de FichaSanitaria
+
+![](images/clipboard-2343528616.png)
