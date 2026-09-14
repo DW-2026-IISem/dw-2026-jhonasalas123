@@ -765,3 +765,7 @@
 #### 3.Modelo Sequelize de Mascota
 
 ![](images/clipboard-2373893534.png)
+
+#### 4.Migración de la tabla Mascota
+
+![](images/clipboard-3553105859.png)
