@@ -853,3 +853,7 @@
 #### 2.Interfaz del repositorio de FichaSanitaria
 
 ![](images/clipboard-2299879324.png)
+
+#### 3.Modelo de persistencia de FichaSanitaria
+
+![](images/clipboard-1593443124.png)
