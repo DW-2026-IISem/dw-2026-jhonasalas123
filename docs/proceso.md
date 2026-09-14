@@ -933,3 +933,7 @@
 #### 22.Integración del módulo de Ficha Sanitaria en BusinessModule
 
 ![](images/clipboard-858070304.png)
+
+#### 23.Integración del seeder de Ficha Sanitaria
+
+![](images/clipboard-440043703.png)
