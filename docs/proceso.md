@@ -905,3 +905,7 @@
 #### 15.Caso de uso para listar FichaSanitaria
 
 ![](images/clipboard-4083046542.png)
+
+#### 16.Caso de uso para actualizar FichaSanitaria
+
+![](images/clipboard-638670776.png)
