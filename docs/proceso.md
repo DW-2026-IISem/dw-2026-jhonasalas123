@@ -897,3 +897,7 @@
 #### 13.Caso de uso para eliminar FichaSanitaria
 
 ![](images/clipboard-1588998976.png)
+
+#### 14.Caso de uso para consultar FichaSanitaria
+
+![](images/clipboard-911139132.png)
