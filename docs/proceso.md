@@ -993,3 +993,7 @@
 #### 11.Mapper de ServicioMascota
 
 ![](images/clipboard-1702205935.png)
+
+#### 12.Use Case para crear ServicioMascota
+
+![](images/clipboard-1077637805.png)
