@@ -797,3 +797,7 @@
 #### 11.Caso de uso para crear Mascota
 
 ![](images/clipboard-978240580.png)
+
+#### 12.Caso de uso para eliminar Mascota
+
+![](images/clipboard-381356802.png)
