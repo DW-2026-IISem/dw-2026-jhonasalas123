@@ -777,3 +777,7 @@
 #### 6.DTO de filtros de Mascota
 
 ![](images/clipboard-3796294721.png)
+
+#### 7.DTO de respuesta de Mascota
+
+![](images/clipboard-815392910.png)
