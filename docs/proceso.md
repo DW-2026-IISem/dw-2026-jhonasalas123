@@ -825,3 +825,7 @@
 #### 18.Módulo de Mascota
 
 ![](images/clipboard-242989651.png)
+
+#### 19.Fábrica de Sequelize con Mascota
+
+![](images/clipboard-2774052929.png)
