@@ -801,3 +801,7 @@
 #### 12.Caso de uso para eliminar Mascota
 
 ![](images/clipboard-381356802.png)
+
+#### 13.Caso de uso para consultar Mascota
+
+![](images/clipboard-3278218849.png)
