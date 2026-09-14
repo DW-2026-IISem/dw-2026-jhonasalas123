@@ -909,3 +909,7 @@
 #### 16.Caso de uso para actualizar FichaSanitaria
 
 ![](images/clipboard-638670776.png)
+
+#### 17.Serializador de Ficha Sanitaria
+
+![](images/clipboard-1566829870.png)
