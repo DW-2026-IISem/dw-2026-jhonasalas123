@@ -917,3 +917,7 @@
 #### 18.Controlador de Ficha Sanitaria
 
 ![](images/clipboard-1258769679.png)
+
+#### 19.Índice del módulo de Ficha Sanitaria
+
+![](images/clipboard-4110633021.png)
