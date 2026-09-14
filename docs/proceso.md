@@ -809,3 +809,7 @@
 #### 14.Caso de uso para listar Mascotas
 
 ![](images/clipboard-4210245006.png)
+
+#### 15.Serializador de Mascota
+
+![](images/clipboard-2926617013.png)
