@@ -1009,3 +1009,7 @@
 #### 15.Use Case para listar ServiciosMascota
 
 ![](images/clipboard-2746461595.png)
+
+#### 16.Use Case para actualizar ServicioMascota
+
+![](images/clipboard-1000542796.png)
