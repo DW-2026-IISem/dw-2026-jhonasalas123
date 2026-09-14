@@ -837,3 +837,7 @@
 #### 21.Servicio de Seeders de Base de Datos
 
 ![](images/clipboard-362496133.png)
+
+#### **22.Verificar tabla física Mascota y API**
+
+![](images/clipboard-2964144257.png)
