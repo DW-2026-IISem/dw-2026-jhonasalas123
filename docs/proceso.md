@@ -861,3 +861,7 @@
 #### 4.Repositorio de FichaSanitaria
 
 ![](images/clipboard-132916377.png)
+
+#### 5.Migración de FichaSanitaria
+
+![](images/clipboard-1272730729.png)
