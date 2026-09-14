@@ -977,3 +977,7 @@
 #### 7.DTO de filtro de ServicioMascota
 
 ![](images/clipboard-1651220586.png)
+
+#### 8.DTO de respuesta de ServicioMascota
+
+![](images/clipboard-2244796897.png)
