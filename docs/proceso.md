@@ -945,3 +945,7 @@
 #### **25.Verificar tabla física Ficha Sanitaria y API**
 
 ![](images/clipboard-452605707.png)
+
+### Entidad ServicioMascota — HuellaMarket
+
+![](images/clipboard-816941957.png)
