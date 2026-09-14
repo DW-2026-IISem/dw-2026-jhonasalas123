@@ -973,3 +973,7 @@
 #### 6.Seeder de ServicioMascota
 
 ![](images/clipboard-1229137612.png)
+
+#### 7.DTO de filtro de ServicioMascota
+
+![](images/clipboard-1651220586.png)
