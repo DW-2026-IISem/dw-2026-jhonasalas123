@@ -881,3 +881,7 @@
 #### 9.DTO para crear FichaSanitaria
 
 ![](images/clipboard-2214176920.png)
+
+#### 10.DTO para actualizar FichaSanitaria
+
+![](images/clipboard-942411606.png)
