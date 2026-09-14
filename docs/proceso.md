@@ -841,3 +841,7 @@
 #### **22.Verificar tabla física Mascota y API**
 
 ![](images/clipboard-2964144257.png)
+
+### Entidad FichaSanitaria — HuellaMarket
+
+![](images/clipboard-2855430725.png)
