@@ -761,3 +761,7 @@
 #### 2.Interfaz del repositorio de Mascota
 
 ![](images/clipboard-522738917.png)
+
+#### 3.Modelo Sequelize de Mascota
+
+![](images/clipboard-2373893534.png)
