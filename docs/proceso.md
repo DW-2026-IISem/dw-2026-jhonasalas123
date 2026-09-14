@@ -1041,3 +1041,7 @@
 #### 23.Integración del Seeder de ServicioMascota
 
 ![](images/clipboard-296347706.png)
+
+#### 24.Módulo principal de HuellaMarket
+
+![](images/clipboard-3701815808.png)
