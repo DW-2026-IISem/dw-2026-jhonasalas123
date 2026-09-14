@@ -941,3 +941,7 @@
 #### 24.Integración de Ficha Sanitaria en AppModule
 
 ![](images/clipboard-1591418173.png)
+
+#### **25.Verificar tabla física Ficha Sanitaria y API**
+
+![](images/clipboard-452605707.png)
