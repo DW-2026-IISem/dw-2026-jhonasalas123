@@ -921,3 +921,7 @@
 #### 19.Índice del módulo de Ficha Sanitaria
 
 ![](images/clipboard-4110633021.png)
+
+#### 20.Módulo de Ficha Sanitaria
+
+![](images/clipboard-3827738712.png)
