@@ -873,3 +873,7 @@
 #### 7.DTO de filtros de FichaSanitaria
 
 ![](images/clipboard-733524433.png)
+
+#### 8.DTO de respuesta de FichaSanitaria
+
+![](images/clipboard-4062132013.png)
