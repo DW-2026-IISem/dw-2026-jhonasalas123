@@ -3,11 +3,11 @@ import { DatabaseDialect } from '../../../config/environment/env.interface';
 import { getSequelizeOptions } from './sequelize.options';
 
 import { ClientModel } from '../../../features/business/clients/infrastructure/persistence/models/client.model';
-import { PetModel } from '../../../features/business/pets/infrastructure/persistence/models/pet.model';
+import { HealthRecordModel } from '../../../features/business/health-records/infrastructure/persistence/models/health-record.model';
 
 export const ALL_MODELS = [
   ClientModel,
-  PetModel,
+  HealthRecordModel,
 ];
 
 export async function createSequelizeInstance(

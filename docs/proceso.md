@@ -925,3 +925,7 @@
 #### 20.Módulo de Ficha Sanitaria
 
 ![](images/clipboard-3827738712.png)
+
+#### 21.Integración del modelo de Ficha Sanitaria en Sequelize
+
+![](images/clipboard-2389579350.png)
