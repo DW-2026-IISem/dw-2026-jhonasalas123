@@ -1013,3 +1013,7 @@
 #### 16.Use Case para actualizar ServicioMascota
 
 ![](images/clipboard-1000542796.png)
+
+#### 17.Serializer de ServicioMascota
+
+![](images/clipboard-3612779242.png)
