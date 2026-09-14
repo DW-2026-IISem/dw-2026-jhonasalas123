@@ -901,3 +901,7 @@
 #### 14.Caso de uso para consultar FichaSanitaria
 
 ![](images/clipboard-911139132.png)
+
+#### 15.Caso de uso para listar FichaSanitaria
+
+![](images/clipboard-4083046542.png)
