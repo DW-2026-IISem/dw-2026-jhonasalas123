@@ -877,3 +877,7 @@
 #### 8.DTO de respuesta de FichaSanitaria
 
 ![](images/clipboard-4062132013.png)
+
+#### 9.DTO para crear FichaSanitaria
+
+![](images/clipboard-2214176920.png)
