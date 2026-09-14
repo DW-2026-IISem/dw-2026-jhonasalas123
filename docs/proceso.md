@@ -889,3 +889,7 @@
 #### 11.Mapper de FichaSanitaria
 
 ![](images/clipboard-2905771346.png)
+
+#### 12.Caso de uso para crear FichaSanitaria
+
+![](images/clipboard-4277532415.png)
