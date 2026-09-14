@@ -981,3 +981,7 @@
 #### 8.DTO de respuesta de ServicioMascota
 
 ![](images/clipboard-2244796897.png)
+
+#### 9.DTO para crear un ServicioMascota
+
+![](images/clipboard-1521774668.png)
