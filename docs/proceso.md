@@ -1079,3 +1079,7 @@
 #### 7. DTO de filtro para CitaServicio
 
 ![](images/clipboard-815914991.png)
+
+#### 8. DTO de respuesta para CitaServicio
+
+![](images/clipboard-3836273464.png)
