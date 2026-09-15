@@ -1071,3 +1071,7 @@
 #### 5.Migración de CitaServicio
 
 ![](images/clipboard-2719689286.png)
+
+#### 6.Seeder de CitaServicio
+
+![](images/clipboard-495882171.png)
