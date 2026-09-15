@@ -1059,3 +1059,9 @@
 #### 2. Interfaz del repositorio de CitaServicio
 
 ![](images/clipboard-4058671076.png)
+
+#### 3.Modelo de CitaServicio
+
+![](images/clipboard-1565570219.png)
+
+#### 
