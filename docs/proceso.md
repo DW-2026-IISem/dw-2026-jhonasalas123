@@ -1083,3 +1083,7 @@
 #### 8. DTO de respuesta para CitaServicio
 
 ![](images/clipboard-3836273464.png)
+
+#### 9. DTO de creación para CitaServicio
+
+![](images/clipboard-2849596331.png)
