@@ -1052,6 +1052,10 @@
 
 ### Entidad CitaServicio — HuellaMarket
 
-### Excepción de CitaServicio no encontrado
+#### 1.Excepción de CitaServicio no encontrado
 
 ![](images/clipboard-2347565863.png)
+
+#### 2. Interfaz del repositorio de CitaServicio
+
+![](images/clipboard-4058671076.png)
