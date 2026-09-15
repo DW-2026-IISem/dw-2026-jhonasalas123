@@ -1075,3 +1075,7 @@
 #### 6.Seeder de CitaServicio
 
 ![](images/clipboard-495882171.png)
+
+#### 7. DTO de filtro para CitaServicio
+
+![](images/clipboard-815914991.png)
