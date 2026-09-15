@@ -1049,3 +1049,9 @@
 ####  **Verificar tabla física ServicioMascota y API**
 
 ![](images/clipboard-533247970.png)
+
+### Entidad CitaServicio — HuellaMarket
+
+### Excepción de CitaServicio no encontrado
+
+![](images/clipboard-2347565863.png)
