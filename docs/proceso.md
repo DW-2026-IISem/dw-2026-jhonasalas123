@@ -1067,3 +1067,7 @@
 #### 4.Repositorio de CitaServicio
 
 ![](images/clipboard-1533046666.png)
+
+#### 5.Migración de CitaServicio
+
+![](images/clipboard-2719689286.png)
