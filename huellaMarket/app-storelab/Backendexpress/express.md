@@ -27,3 +27,7 @@
 ### **2.5.2 `src/config/index.ts` (esqueleto)**
 
 ![](images/clipboard-4134049196.png)
+
+### **Cierre del ISS**
+
+![](images/clipboard-490996149.png)
