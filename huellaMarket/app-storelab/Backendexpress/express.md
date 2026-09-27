@@ -24,4 +24,6 @@
 
 ![](images/clipboard-621899492.png)
 
-### 
+### **2.5.2 `src/config/index.ts` (esqueleto)**
+
+![](images/clipboard-4134049196.png)
