@@ -9,3 +9,7 @@
 ### **2.2 Estructura de carpetas (features)**
 
 ![](images/clipboard-2172004904.png)
+
+### **2.3 Dependencias base (Express + TypeScript)**
+
+![](images/clipboard-4185457043.png)
