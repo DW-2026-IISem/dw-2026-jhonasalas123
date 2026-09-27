@@ -13,3 +13,7 @@
 ### **2.3 Dependencias base (Express + TypeScript)**
 
 ![](images/clipboard-4185457043.png)
+
+### **2.4 TypeScript (`tsconfig.json`)**
+
+![](images/clipboard-3553742170.png)
