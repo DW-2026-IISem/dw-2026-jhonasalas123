@@ -31,3 +31,9 @@
 ### **Cierre del ISS**
 
 ![](images/clipboard-490996149.png)
+
+### **3. ISS-02 — Infraestructura de base de datos**
+
+### **3.1 Drivers Sequelize y `.env`**
+
+![](images/clipboard-142485250.png)
