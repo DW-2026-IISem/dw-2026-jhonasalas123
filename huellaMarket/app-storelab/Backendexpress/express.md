@@ -37,3 +37,7 @@
 ### **3.1 Drivers Sequelize y `.env`**
 
 ![](images/clipboard-142485250.png)
+
+### **3.2 Configuración Sequelize (`database/db.ts`)**
+
+![](images/clipboard-2435250765.png)
