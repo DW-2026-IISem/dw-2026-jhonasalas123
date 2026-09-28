@@ -59,3 +59,9 @@
 ### **4.3 Agregador Routes + cableado en Config**
 
 ![](images/clipboard-1916871547.png)
+
+## **5. ISS-03-B — Feature Client — GetAll y GetOne**
+
+### 5.1client.controller.ts
+
+![](images/clipboard-781329076.png)
