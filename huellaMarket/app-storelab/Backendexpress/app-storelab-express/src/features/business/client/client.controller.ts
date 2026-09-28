@@ -4,6 +4,7 @@ import {
   Post,
   Put,
   Patch,
+  Delete,
   Param,
   Body,
   NotFoundException,
@@ -122,5 +123,40 @@ export class ClientController {
   }
 
   // ================== DELETE ==================
-  // (rellenar en ISS-03-E)
+
+  /** Eliminación física */
+  @Delete(":id")
+  public async deletePhysical(@Param("id") id: string) {
+    const client = await Client.findByPk(Number(id));
+
+    if (!client) {
+      throw new NotFoundException("Client not found");
+    }
+
+    await client.destroy();
+
+    return {
+      message: "Client permanently deleted",
+      id: Number(id),
+    };
+  }
+
+  /** Eliminación lógica → is_active = false */
+  @Patch(":id/deactivate")
+  public async deleteLogical(@Param("id") id: string) {
+    const client = await Client.findByPk(Number(id));
+
+    if (!client) {
+      throw new NotFoundException("Client not found");
+    }
+
+    await client.update({
+      is_active: false,
+    });
+
+    return {
+      message: "Client deactivated (logical delete)",
+      client,
+    };
+  }
 }

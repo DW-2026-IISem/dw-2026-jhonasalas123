@@ -85,3 +85,9 @@
 ## **7. ISS-03-D — Feature Client — Update (PUT) y Update (PATCH)**
 
 ![](images/clipboard-2246169289.png)
+
+## **8. ISS-03-E — Feature Client — Eliminar (físico y lógico)**
+
+![](images/clipboard-1413222718.png)
+
+## ![](images/clipboard-3561001537.png)

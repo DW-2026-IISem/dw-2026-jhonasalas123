@@ -73,6 +73,33 @@ let ClientController = class ClientController {
         await client.update(body);
         return { client };
     }
+    // ================== DELETE ==================
+    /** Eliminación física */
+    async deletePhysical(id) {
+        const client = await client_model_1.Client.findByPk(Number(id));
+        if (!client) {
+            throw new common_1.NotFoundException("Client not found");
+        }
+        await client.destroy();
+        return {
+            message: "Client permanently deleted",
+            id: Number(id),
+        };
+    }
+    /** Eliminación lógica → is_active = false */
+    async deleteLogical(id) {
+        const client = await client_model_1.Client.findByPk(Number(id));
+        if (!client) {
+            throw new common_1.NotFoundException("Client not found");
+        }
+        await client.update({
+            is_active: false,
+        });
+        return {
+            message: "Client deactivated (logical delete)",
+            client,
+        };
+    }
 };
 exports.ClientController = ClientController;
 __decorate([
@@ -112,6 +139,20 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", Promise)
 ], ClientController.prototype, "updatePatch", null);
+__decorate([
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ClientController.prototype, "deletePhysical", null);
+__decorate([
+    (0, common_1.Patch)(":id/deactivate"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ClientController.prototype, "deleteLogical", null);
 exports.ClientController = ClientController = __decorate([
     (0, common_1.Controller)("api/clientes")
 ], ClientController);

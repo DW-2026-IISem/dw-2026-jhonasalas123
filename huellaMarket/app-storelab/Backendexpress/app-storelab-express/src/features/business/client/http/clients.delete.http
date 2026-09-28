@@ -1,0 +1,12 @@
+### Feature Client — DELETE físico / DELETE lógico
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:3000
+@id = 3
+
+# @name deleteClientPhysical
+DELETE {{baseUrl}}/api/clientes/{{id}}
+
+###
+
+# @name deleteClientLogical
+PATCH {{baseUrl}}/api/clientes/{{id}}/deactivate
