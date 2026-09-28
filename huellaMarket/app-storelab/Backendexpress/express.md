@@ -94,4 +94,10 @@
 
 ## **9. ISS-04 — Seeders con Faker (feature + runner externo)**
 
+### **9.1 Seeder dentro del feature Client**
+
 ### ![](images/clipboard-2283409529.png)
+
+### **9.2 SeedersRunner + conteos por entidad (`database/seeders`)**
+
+![](images/clipboard-1402672218.png)

@@ -1,0 +1,39 @@
+import { faker } from "@faker-js/faker";
+import { Client } from "./client.model";
+
+/**
+ * Seeder del feature Client.
+ * Genera datos falsos con @faker-js/faker.
+ *
+ * Idempotente: si ya existen clientes, no vuelve a insertar.
+ */
+export async function seedClients(count: number): Promise<number> {
+  if (count <= 0) {
+    console.log("⏭️  clients: count=0, se omite");
+    return 0;
+  }
+
+  const existing = await Client.count();
+
+  if (existing > 0) {
+    console.log(
+      `⏭️  clients: ya hay ${existing} registro(s), se omite seeder`
+    );
+    return 0;
+  }
+
+  const rows = Array.from({ length: count }, () => ({
+    tipo_documento: "CC",
+    numero_documento: faker.string.numeric(10),
+    nombre: faker.person.fullName(),
+    telefono: faker.phone.number({ style: "national" }),
+    email: faker.internet.email().toLowerCase(),
+    is_active: true,
+  }));
+
+  await Client.bulkCreate(rows);
+
+  console.log(`✅ clients: insertados ${count} registro(s) falsos`);
+
+  return count;
+}
