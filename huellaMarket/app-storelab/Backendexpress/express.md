@@ -1,10 +1,10 @@
 ## App-storelab-express
 
-### **1. ISS-00 — Requisitos previos**
+## **1. ISS-00 — Requisitos previos**
 
 ![](images/clipboard-2953996840.png)
 
-### **2. ISS-01 — Esqueleto del proyecto**
+## **2. ISS-01 — Esqueleto del proyecto**
 
 ### **2.2 Estructura de carpetas (features)**
 
@@ -32,7 +32,7 @@
 
 ![](images/clipboard-490996149.png)
 
-### **3. ISS-02 — Infraestructura de base de datos**
+## **3. ISS-02 — Infraestructura de base de datos**
 
 ### **3.1 Drivers Sequelize y `.env`**
 
@@ -45,3 +45,9 @@
 ### **3.3 Carpeta seeders**
 
 ![](images/clipboard-1949935651.png)
+
+## **4. ISS-03-A — Feature Client — fundación (modelo, esqueleto, HTTP, cableado)**
+
+### **4.1 Modelo Client**
+
+![](images/clipboard-2526539959.png)
