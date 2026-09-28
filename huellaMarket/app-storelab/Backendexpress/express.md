@@ -69,3 +69,7 @@
 ###  5.2`client.routes.ts`
 
 ![](images/clipboard-3873015014.png)
+
+### 5.3 Archivo HTTP
+
+![](images/clipboard-984687895.png)
