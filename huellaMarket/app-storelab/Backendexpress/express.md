@@ -101,3 +101,7 @@
 ### **9.2 SeedersRunner + conteos por entidad (`database/seeders`)**
 
 ![](images/clipboard-1402672218.png)
+
+### 9.2.2 Rinner
+
+![](images/clipboard-906212647.png)
