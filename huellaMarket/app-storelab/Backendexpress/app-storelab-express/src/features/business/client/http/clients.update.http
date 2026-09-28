@@ -1,0 +1,28 @@
+### Feature Client — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:3000
+@id = 3
+
+# @name updateClientPut
+PUT {{baseUrl}}/api/clientes/{{id}}
+Content-Type: application/json
+
+{
+  "tipo_documento": "CC",
+  "numero_documento": "1234567890",
+  "nombre": "Ana Pérez Actualizada",
+  "telefono": "3009876543",
+  "email": "ana.perez@example.com",
+  "is_active": true
+}
+
+###
+
+# @name updateClientPatch
+PATCH {{baseUrl}}/api/clientes/{{id}}
+Content-Type: application/json
+
+{
+  "telefono": "3011112233",
+  "nombre": "Ana Pérez Modificada"
+}

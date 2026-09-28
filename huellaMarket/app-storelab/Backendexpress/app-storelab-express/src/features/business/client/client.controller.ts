@@ -2,6 +2,8 @@ import {
   Controller,
   Get,
   Post,
+  Put,
+  Patch,
   Param,
   Body,
   NotFoundException,
@@ -65,7 +67,59 @@ export class ClientController {
   }
 
   // ================== UPDATE ==================
-  // (rellenar en ISS-03-D)
+
+  @Put(":id")
+  public async updatePut(
+    @Param("id") id: string,
+    @Body() body: {
+      tipo_documento: string;
+      numero_documento: string;
+      nombre: string;
+      telefono?: string;
+      email?: string;
+      is_active?: boolean;
+    }
+  ) {
+    const client = await Client.findByPk(Number(id));
+
+    if (!client) {
+      throw new NotFoundException("Client not found");
+    }
+
+    await client.update({
+      tipo_documento: body.tipo_documento,
+      numero_documento: body.numero_documento,
+      nombre: body.nombre,
+      telefono: body.telefono,
+      email: body.email,
+      is_active: body.is_active ?? client.is_active,
+    });
+
+    return { client };
+  }
+
+  @Patch(":id")
+  public async updatePatch(
+    @Param("id") id: string,
+    @Body() body: Partial<{
+      tipo_documento: string;
+      numero_documento: string;
+      nombre: string;
+      telefono: string;
+      email: string;
+      is_active: boolean;
+    }>
+  ) {
+    const client = await Client.findByPk(Number(id));
+
+    if (!client) {
+      throw new NotFoundException("Client not found");
+    }
+
+    await client.update(body);
+
+    return { client };
+  }
 
   // ================== DELETE ==================
   // (rellenar en ISS-03-E)

@@ -81,3 +81,7 @@
 ## **6. ISS-03-C — Feature Client — Crear cliente**
 
 ![](images/clipboard-1028473867.png)
+
+## **7. ISS-03-D — Feature Client — Update (PUT) y Update (PATCH)**
+
+![](images/clipboard-2246169289.png)

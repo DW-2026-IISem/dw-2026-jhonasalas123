@@ -49,6 +49,30 @@ let ClientController = class ClientController {
         });
         return { client };
     }
+    // ================== UPDATE ==================
+    async updatePut(id, body) {
+        const client = await client_model_1.Client.findByPk(Number(id));
+        if (!client) {
+            throw new common_1.NotFoundException("Client not found");
+        }
+        await client.update({
+            tipo_documento: body.tipo_documento,
+            numero_documento: body.numero_documento,
+            nombre: body.nombre,
+            telefono: body.telefono,
+            email: body.email,
+            is_active: body.is_active ?? client.is_active,
+        });
+        return { client };
+    }
+    async updatePatch(id, body) {
+        const client = await client_model_1.Client.findByPk(Number(id));
+        if (!client) {
+            throw new common_1.NotFoundException("Client not found");
+        }
+        await client.update(body);
+        return { client };
+    }
 };
 exports.ClientController = ClientController;
 __decorate([
@@ -72,6 +96,22 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], ClientController.prototype, "create", null);
+__decorate([
+    (0, common_1.Put)(":id"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], ClientController.prototype, "updatePut", null);
+__decorate([
+    (0, common_1.Patch)(":id"),
+    __param(0, (0, common_1.Param)("id")),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], ClientController.prototype, "updatePatch", null);
 exports.ClientController = ClientController = __decorate([
     (0, common_1.Controller)("api/clientes")
 ], ClientController);
