@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.testConnection = exports.getDatabaseInfo = exports.sequelize = void 0;
 const sequelize_1 = require("sequelize");
 const dotenv_1 = __importDefault(require("dotenv"));
+const client_model_1 = require("../features/business/client/client.model");
 dotenv_1.default.config();
 const dbConfigurations = {
     mysql: {
@@ -35,6 +36,7 @@ exports.sequelize = new sequelize_1.Sequelize(selectedConfig.database, selectedC
         idle: 10000
     }
 });
+(0, client_model_1.initClientModel)(exports.sequelize);
 const getDatabaseInfo = () => {
     return {
         engine: selectedEngine,

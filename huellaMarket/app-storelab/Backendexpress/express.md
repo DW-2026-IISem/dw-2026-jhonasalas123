@@ -73,3 +73,7 @@
 ### 5.3 Archivo HTTP
 
 ![](images/clipboard-984687895.png)
+
+### GET ALL funcionando
+
+![](images/clipboard-2522999163.png)

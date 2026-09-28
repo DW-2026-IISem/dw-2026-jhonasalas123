@@ -22,10 +22,12 @@ export const initClientModel = (sequelize: Sequelize) => {
         primaryKey: true
       },
       tipo_documento: {
+        field: "tipoDocumento",
         type: DataTypes.STRING,
         allowNull: false
       },
       numero_documento: {
+        field: "numeroDocumento",
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
@@ -36,14 +38,15 @@ export const initClientModel = (sequelize: Sequelize) => {
       },
       telefono: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         unique: true
       },
       is_active: {
+        field: "isActive",
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true
@@ -53,7 +56,7 @@ export const initClientModel = (sequelize: Sequelize) => {
       sequelize,
       tableName: "clients",
       timestamps: true,
-      underscored: true
+      underscored: false
     }
   );
 

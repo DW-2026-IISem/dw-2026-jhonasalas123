@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
+import { initClientModel } from "../features/business/client/client.model";
 
 dotenv.config();
 
@@ -49,6 +50,8 @@ export const sequelize = new Sequelize(
     }
   }
 );
+
+initClientModel(sequelize);
 
 export const getDatabaseInfo = () => {
   return {
