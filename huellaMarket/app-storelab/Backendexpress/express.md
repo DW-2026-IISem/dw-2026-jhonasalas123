@@ -65,3 +65,7 @@
 ### 5.1client.controller.ts
 
 ![](images/clipboard-781329076.png)
+
+###  5.2`client.routes.ts`
+
+![](images/clipboard-3873015014.png)
