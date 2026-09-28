@@ -51,3 +51,7 @@
 ### **4.1 Modelo Client**
 
 ![](images/clipboard-2526539959.png)
+
+### **4.2 Esqueleto controller / routes + carpeta HTTP**
+
+![](images/clipboard-4056139014.png)
