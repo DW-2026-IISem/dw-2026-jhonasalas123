@@ -91,3 +91,7 @@
 ![](images/clipboard-1413222718.png)
 
 ## ![](images/clipboard-3561001537.png)
+
+## **9. ISS-04 — Seeders con Faker (feature + runner externo)**
+
+### ![](images/clipboard-2283409529.png)
