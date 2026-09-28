@@ -1,4 +1,13 @@
-import { Controller, Get, Param, NotFoundException } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Body,
+  NotFoundException,
+  HttpCode,
+  HttpStatus,
+} from "@nestjs/common";
 import { Client } from "./client.model";
 
 @Controller("api/clientes")
@@ -33,7 +42,27 @@ export class ClientController {
   }
 
   // ================== CREATE ==================
-  // (rellenar en ISS-03-C)
+
+  @Post()
+  @HttpCode(HttpStatus.CREATED)
+  public async create(@Body() body: {
+    tipo_documento: string;
+    numero_documento: string;
+    nombre: string;
+    telefono?: string;
+    email?: string;
+  }) {
+    const client = await Client.create({
+      tipo_documento: body.tipo_documento,
+      numero_documento: body.numero_documento,
+      nombre: body.nombre,
+      telefono: body.telefono,
+      email: body.email,
+      is_active: true,
+    });
+
+    return { client };
+  }
 
   // ================== UPDATE ==================
   // (rellenar en ISS-03-D)
@@ -41,4 +70,3 @@ export class ClientController {
   // ================== DELETE ==================
   // (rellenar en ISS-03-E)
 }
-

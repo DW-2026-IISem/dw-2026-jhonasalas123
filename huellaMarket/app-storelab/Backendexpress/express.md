@@ -74,6 +74,10 @@
 
 ![](images/clipboard-984687895.png)
 
-### GET ALL funcionando
+### Get all funcionando
 
 ![](images/clipboard-2522999163.png)
+
+## **6. ISS-03-C — Feature Client — Crear cliente**
+
+![](images/clipboard-1028473867.png)
