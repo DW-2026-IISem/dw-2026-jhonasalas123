@@ -66,7 +66,7 @@
 
 ![](images/clipboard-781329076.png)
 
-###  5.2`client.routes.ts`
+### 5.2`client.routes.ts`
 
 ![](images/clipboard-3873015014.png)
 
@@ -105,3 +105,9 @@
 ### 9.2.2 Rinner
 
 ![](images/clipboard-906212647.png)
+
+## **Modelo Mascota**
+
+![](images/clipboard-4185960399.png)
+
+## 
