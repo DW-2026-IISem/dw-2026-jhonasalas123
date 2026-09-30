@@ -6,6 +6,24 @@ export class PetRoutes {
 
   public routes(app: Application): void {
     // ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================
-    // (rellenar en ISS-03-B…E)
+
+    // getAll
+    app
+      .route("/api/mascotas")
+      .get(this.petController.getAll.bind(this.petController));
+
+    // getOne
+    app
+      .route("/api/mascotas/:id")
+      .get(this.petController.getOne.bind(this.petController));
+
+    // ================== CREATE ==================
+    // (rellenar en ISS-03-C)
+
+    // ================== UPDATE ==================
+    // (rellenar en ISS-03-D)
+
+    // ================== DELETE ==================
+    // (rellenar en ISS-03-E)
   }
 }

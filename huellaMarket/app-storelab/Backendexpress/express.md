@@ -133,3 +133,7 @@
 ## **ISS-03-B — Feature Pet — GetAll y GetOne**
 
 ![](images/clipboard-3262388338.png)
+
+### **Rutas — PARCHE `pet.routes.ts`**
+
+![](images/clipboard-1638905410.png)
