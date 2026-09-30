@@ -10,7 +10,7 @@ require("../features/business/client/client.model");
 const index_1 = require("../routes/index");
 dotenv_1.default.config();
 exports.config = {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 4000,
 };
 class App {
     constructor(app) {

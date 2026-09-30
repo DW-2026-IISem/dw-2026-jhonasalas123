@@ -7,15 +7,15 @@ class Pet extends sequelize_1.Model {
 }
 exports.Pet = Pet;
 Pet.init({
-    name: {
-        type: sequelize_1.DataTypes.STRING,
+    nombre: {
+        type: sequelize_1.DataTypes.STRING(100),
         allowNull: false,
     },
-    description: {
+    descripcion: {
         type: sequelize_1.DataTypes.TEXT,
         allowNull: true,
     },
-    is_active: {
+    isActive: {
         type: sequelize_1.DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false,

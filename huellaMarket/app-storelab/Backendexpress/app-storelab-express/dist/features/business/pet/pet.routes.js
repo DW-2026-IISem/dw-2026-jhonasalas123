@@ -8,7 +8,22 @@ class PetRoutes {
     }
     routes(app) {
         // ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================
-        // (rellenar en ISS-03-B…E)
+        // getAll
+        app
+            .route("/api/mascotas")
+            .get(this.petController.getAll.bind(this.petController));
+        // getOne
+        app
+            .route("/api/mascotas/:id")
+            .get(this.petController.getOne.bind(this.petController));
+        // ================== CREATE ==================
+        app
+            .route("/api/mascotas")
+            .post(this.petController.create.bind(this.petController));
+        // ================== UPDATE ==================
+        // (rellenar en ISS-03-D)
+        // ================== DELETE ==================
+        // (rellenar en ISS-03-E)
     }
 }
 exports.PetRoutes = PetRoutes;

@@ -137,3 +137,9 @@
 ### **Rutas — PARCHE `pet.routes.ts`**
 
 ![](images/clipboard-1638905410.png)
+
+## **ISS-03-C — Feature pet — Crear mascota**
+
+### **Controller — PARCHE `pet.controller.ts`**
+
+![](images/clipboard-137300065.png)

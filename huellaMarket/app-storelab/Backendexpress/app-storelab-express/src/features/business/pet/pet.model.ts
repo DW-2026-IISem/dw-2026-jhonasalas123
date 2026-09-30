@@ -3,33 +3,33 @@ import { sequelize } from "../../../database/db";
 
 export interface PetI {
   id?: number;
-  name: string;
-  description: string;
-  is_active: boolean;
+  nombre: string;
+  descripcion: string;
+  isActive: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
 export class Pet extends Model {
   public id!: number;
-  public name!: string;
-  public description!: string;
-  public is_active!: boolean;
+  public nombre!: string;
+  public descripcion!: string;
+  public isActive!: boolean;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
 
 Pet.init(
   {
-    name: {
-      type: DataTypes.STRING,
+    nombre: {
+      type: DataTypes.STRING(100),
       allowNull: false,
     },
-    description: {
+    descripcion: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    is_active: {
+    isActive: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false,

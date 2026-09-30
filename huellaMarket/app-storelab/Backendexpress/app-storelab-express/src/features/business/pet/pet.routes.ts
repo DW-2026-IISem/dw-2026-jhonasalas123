@@ -18,7 +18,10 @@ export class PetRoutes {
       .get(this.petController.getOne.bind(this.petController));
 
     // ================== CREATE ==================
-    // (rellenar en ISS-03-C)
+    
+app
+  .route("/api/mascotas")
+  .post(this.petController.create.bind(this.petController));
 
     // ================== UPDATE ==================
     // (rellenar en ISS-03-D)
