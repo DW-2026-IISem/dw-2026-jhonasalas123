@@ -19,7 +19,7 @@ export class App {
   }
 
   public routes(): void {
-    this.routePrv.clientRoutes.routes(this.app);
+    this.routePrv.petRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {

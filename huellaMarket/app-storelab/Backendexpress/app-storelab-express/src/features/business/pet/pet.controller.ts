@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Pet, PetI } from "./pet.model";
+import { Pet } from "./pet.model";
 
 function paramId(req: Request): number {
   const raw = req.params.id;
@@ -9,7 +9,41 @@ function paramId(req: Request): number {
 
 export class PetController {
   // ================== READ ==================
-  // (rellenar en ISS-03-B) getAll, luego getOne
+
+  public async getAll(req: Request, res: Response) {
+    try {
+      const pets = await Pet.findAll({
+        where: { is_active: true },
+      });
+
+      res.status(200).json({ pets });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error fetching pets",
+        detail: String(error),
+      });
+    }
+  }
+
+  public async getOne(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+
+      const pet = await Pet.findByPk(id);
+
+      if (!pet) {
+        res.status(404).json({ error: "Pet not found" });
+        return;
+      }
+
+      res.status(200).json({ pet });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error fetching pet",
+        detail: String(error),
+      });
+    }
+  }
 
   // ================== CREATE ==================
   // (rellenar en ISS-03-C)

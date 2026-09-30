@@ -129,3 +129,7 @@
 ### **Agregador Routes + cableado en Config**
 
 ![](images/clipboard-627784261.png)
+
+## **ISS-03-B — Feature Pet — GetAll y GetOne**
+
+![](images/clipboard-3262388338.png)

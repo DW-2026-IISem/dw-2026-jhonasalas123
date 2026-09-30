@@ -1,0 +1,1 @@
+{"version":3,"file":"counts.js","sourceRoot":"","sources":["../../../src/database/seeders/counts.ts"],"names":[],"mappings":";;AAAA,8CAKC;AALD,SAAgB,iBAAiB;IAC/B,OAAO;QACL,OAAO,EAAE,MAAM,CAAC,OAAO,CAAC,GAAG,CAAC,YAAY,IAAI,EAAE,CAAC;QAC/C,IAAI,EAAE,MAAM,CAAC,OAAO,CAAC,GAAG,CAAC,SAAS,IAAI,EAAE,CAAC;KAC1C,CAAC;AACJ,CAAC"}

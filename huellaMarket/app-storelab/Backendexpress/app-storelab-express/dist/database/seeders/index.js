@@ -1,0 +1,47 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.runAllSeeders = runAllSeeders;
+const dotenv_1 = __importDefault(require("dotenv"));
+const db_1 = require("../db");
+require("../../features/business/client/client.model");
+require("../../features/business/pet/pet.model");
+const client_seeder_1 = require("../../features/business/client/client.seeder");
+const pet_seeder_1 = require("../../features/business/pet/pet.seeder");
+const counts_1 = require("./counts");
+dotenv_1.default.config();
+/**
+ * SeedersRunner — ejecuta TODOS los seeders de features.
+ *
+ * Ubicación: src/database/seeders/
+ * Cada feature exporta su propio seeder.
+ */
+async function runAllSeeders() {
+    const counts = (0, counts_1.resolveSeedCounts)();
+    console.log("🌱 Iniciando SeedersRunner...");
+    console.log("📊 Conteos:", counts);
+    const ok = await (0, db_1.testConnection)();
+    if (!ok) {
+        throw new Error("No hay conexión a la base de datos");
+    }
+    await db_1.sequelize.sync({ force: false, alter: true });
+    // Orden: business (padres → hijos)
+    await (0, client_seeder_1.seedClients)(counts.clients);
+    await (0, pet_seeder_1.seedPets)(counts.pets);
+    console.log("🌱 SeedersRunner finalizado");
+}
+if (require.main === module) {
+    runAllSeeders()
+        .then(async () => {
+        await db_1.sequelize.close();
+        process.exit(0);
+    })
+        .catch(async (err) => {
+        console.error("❌ Error en seeders:", err);
+        await db_1.sequelize.close();
+        process.exit(1);
+    });
+}
+//# sourceMappingURL=index.js.map

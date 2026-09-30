@@ -18,7 +18,7 @@ class App {
         this.app = app;
     }
     routes() {
-        this.routePrv.clientRoutes.routes(this.app);
+        this.routePrv.petRoutes.routes(this.app);
     }
     async dbConnection() {
         try {
