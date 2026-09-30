@@ -117,3 +117,7 @@
 ###  Registrar Mascota
 
 ![](images/clipboard-2885131217.png)
+
+### Actualizacion `counts.ts`
+
+![](images/clipboard-2333766391.png)
