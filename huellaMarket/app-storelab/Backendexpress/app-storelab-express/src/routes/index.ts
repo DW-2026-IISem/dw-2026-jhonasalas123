@@ -1,5 +1,5 @@
-import { ClientRoutes } from "../features/business/client/client.routes";
+import { PetRoutes } from "../features/business/pet/pet.routes";
 
 export class Routes {
-  public clientRoutes: ClientRoutes = new ClientRoutes();
+  public petRoutes: PetRoutes = new PetRoutes();
 }
