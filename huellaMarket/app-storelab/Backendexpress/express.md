@@ -110,6 +110,10 @@
 
 ![](images/clipboard-4185960399.png)
 
-## Seeder de Mascota
+### Seeder de Mascota
 
 ![](images/clipboard-1294511916.png)
+
+###  Registrar Mascota
+
+![](images/clipboard-2885131217.png)

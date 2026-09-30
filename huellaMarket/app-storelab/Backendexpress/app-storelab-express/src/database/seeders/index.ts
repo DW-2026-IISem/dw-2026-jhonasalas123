@@ -1,7 +1,9 @@
 import dotenv from "dotenv";
 import { sequelize, testConnection } from "../db";
 import "../../features/business/client/client.model";
+import "../../features/business/pet/pet.model";
 import { seedClients } from "../../features/business/client/client.seeder";
+import { seedPets } from "../../features/business/pet/pet.seeder";
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -28,6 +30,7 @@ export async function runAllSeeders(): Promise<void> {
 
   // Orden: business (padres → hijos)
   await seedClients(counts.clients);
+  await seedPets();
 
   console.log("🌱 SeedersRunner finalizado");
 }
