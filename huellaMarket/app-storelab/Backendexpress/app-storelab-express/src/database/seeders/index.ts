@@ -30,7 +30,7 @@ export async function runAllSeeders(): Promise<void> {
 
   // Orden: business (padres → hijos)
   await seedClients(counts.clients);
-  await seedPets();
+  await seedPets(counts.pets);
 
   console.log("🌱 SeedersRunner finalizado");
 }

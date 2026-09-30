@@ -121,3 +121,7 @@
 ### Actualizacion `counts.ts`
 
 ![](images/clipboard-2333766391.png)
+
+### **Esqueleto controller / routes + carpeta HTTP**
+
+![](images/clipboard-2206312952.png)
