@@ -151,3 +151,9 @@
 ## **ISS-03-E — Feature pet — Eliminar (físico y lógico)**
 
 ![](images/clipboard-1620632760.png)
+
+## **ISS-04 — Seeders con Faker (feature + runner externo)**
+
+## **Seeder dentro del feature pet**
+
+![](images/clipboard-2186064451.png)

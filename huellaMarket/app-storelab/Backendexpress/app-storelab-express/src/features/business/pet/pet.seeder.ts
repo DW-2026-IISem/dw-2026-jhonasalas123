@@ -1,17 +1,32 @@
 import { Pet } from "./pet.model";
 
-export async function seedPets(count = 10) {
-  const pets = [];
-
-  for (let i = 1; i <= count; i++) {
-    pets.push({
-      name: `Mascota ${i}`,
-      description: `Mascota de prueba ${i}`,
-      is_active: true,
-    });
+/**
+ * Seeder del feature Pet.
+ * Se invoca desde `src/database/seeders` (SeedersRunner).
+ *
+ * Idempotente: si ya hay filas, no vuelve a insertar.
+ */
+export async function seedPets(count: number): Promise<number> {
+  if (count <= 0) {
+    console.log("⏭️  pets: count=0, se omite");
+    return 0;
   }
 
-  await Pet.bulkCreate(pets);
+  const existing = await Pet.count();
 
-  console.log(`✅ ${count} mascotas creadas correctamente`);
+  if (existing > 0) {
+    console.log(`⏭️  pets: ya hay ${existing} registro(s), se omite seeder`);
+    return 0;
+  }
+
+  const rows = Array.from({ length: count }, (_, i) => ({
+    nombre: `Mascota ${i + 1}`,
+    descripcion: `Mascota de prueba ${i + 1}`,
+    isActive: true,
+  }));
+
+  await Pet.bulkCreate(rows);
+
+  console.log(`✅ pets: insertados ${count} registro(s)`);
+  return count;
 }
