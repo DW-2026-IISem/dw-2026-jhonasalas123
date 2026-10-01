@@ -48,26 +48,72 @@ export class PetController {
   // ================== CREATE ==================
 
   public async create(req: Request, res: Response) {
-    try {
-      const body = req.body as PetI;
+  try {
+    const body = req.body as PetI;
 
-      const pet = await Pet.create({
+    const pet = await Pet.create({
+      nombre: body.nombre,
+      descripcion: body.descripcion,
+      isActive: body.isActive ?? true,
+    });
+
+    res.status(201).json({ pet });
+  } catch (error) {
+    res.status(500).json({
+      error: "Error creating pet",
+      detail: String(error),
+    });
+  }
+}
+
+  // ================== UPDATE ==================
+  public async updatePut(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const body = req.body as PetI;
+      const pet = await Pet.findByPk(id);
+
+      if (!pet) {
+        res.status(404).json({ error: "Pet not found" });
+        return;
+      }
+
+      await pet.update({
         nombre: body.nombre,
         descripcion: body.descripcion,
-        isActive: body.isActive ?? true,
+        isActive: body.isActive ?? pet.isActive,
       });
 
-      res.status(201).json({ pet });
+      res.status(200).json({ pet });
     } catch (error) {
       res.status(500).json({
-        error: "Error creating pet",
+        error: "Error updating pet (PUT)",
         detail: String(error),
       });
     }
   }
 
-  // ================== UPDATE ==================
-  // (rellenar en ISS-03-D)
+  public async updatePatch(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const body = req.body as Partial<PetI>;
+      const pet = await Pet.findByPk(id);
+
+      if (!pet) {
+        res.status(404).json({ error: "Pet not found" });
+        return;
+      }
+
+      await pet.update(body);
+
+      res.status(200).json({ pet });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error updating pet (PATCH)",
+        detail: String(error),
+      });
+    }
+  }
 
   // ================== DELETE ==================
   // (rellenar en ISS-03-E)

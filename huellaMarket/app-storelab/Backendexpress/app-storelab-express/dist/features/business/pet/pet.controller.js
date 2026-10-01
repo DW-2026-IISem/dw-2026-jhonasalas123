@@ -58,6 +58,49 @@ class PetController {
             });
         }
     }
+    // ================== UPDATE ==================
+    async updatePut(req, res) {
+        try {
+            const id = paramId(req);
+            const body = req.body;
+            const pet = await pet_model_1.Pet.findByPk(id);
+            if (!pet) {
+                res.status(404).json({ error: "Pet not found" });
+                return;
+            }
+            await pet.update({
+                nombre: body.nombre,
+                descripcion: body.descripcion,
+                isActive: body.isActive ?? pet.isActive,
+            });
+            res.status(200).json({ pet });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error updating pet (PUT)",
+                detail: String(error),
+            });
+        }
+    }
+    async updatePatch(req, res) {
+        try {
+            const id = paramId(req);
+            const body = req.body;
+            const pet = await pet_model_1.Pet.findByPk(id);
+            if (!pet) {
+                res.status(404).json({ error: "Pet not found" });
+                return;
+            }
+            await pet.update(body);
+            res.status(200).json({ pet });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error updating pet (PATCH)",
+                detail: String(error),
+            });
+        }
+    }
 }
 exports.PetController = PetController;
 //# sourceMappingURL=pet.controller.js.map

@@ -18,7 +18,7 @@ export class PetRoutes {
       .get(this.petController.getOne.bind(this.petController));
 
     // ================== CREATE ==================
-    
+   
 app
   .route("/api/mascotas")
   .post(this.petController.create.bind(this.petController));

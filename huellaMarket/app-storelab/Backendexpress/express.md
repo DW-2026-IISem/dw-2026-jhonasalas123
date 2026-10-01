@@ -143,3 +143,7 @@
 ### **Controller — PARCHE `pet.controller.ts`**
 
 ![](images/clipboard-137300065.png)
+
+## **ISS-03-D — Feature pet — Update (PUT) y Update (PATCH)**
+
+![](images/clipboard-2478151403.png)
