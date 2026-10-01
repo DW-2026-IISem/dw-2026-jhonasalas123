@@ -173,3 +173,7 @@
 ### **OpenAPI dentro del feature pet**
 
 ![](images/clipboard-138488024.png)
+
+### **Registry externo + montaje en Config**
+
+![](images/clipboard-2044688940.png)
