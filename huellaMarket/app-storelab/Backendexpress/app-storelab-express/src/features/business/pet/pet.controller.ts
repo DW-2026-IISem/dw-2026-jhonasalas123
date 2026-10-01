@@ -116,5 +116,52 @@ export class PetController {
   }
 
   // ================== DELETE ==================
-  // (rellenar en ISS-03-E)
+   public async deletePhysical(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const pet = await Pet.findByPk(id);
+
+      if (!pet) {
+        res.status(404).json({ error: "Pet not found" });
+        return;
+      }
+
+      await pet.destroy();
+
+      res.status(200).json({
+        message: "Pet permanently deleted",
+        id,
+      });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error deleting pet",
+        detail: String(error),
+      });
+    }
+  }
+
+  /** Eliminación lógica → isActive = false */
+  public async deleteLogical(req: Request, res: Response) {
+    try {
+      const id = paramId(req);
+      const pet = await Pet.findByPk(id);
+
+      if (!pet) {
+        res.status(404).json({ error: "Pet not found" });
+        return;
+      }
+
+      await pet.update({ isActive: false });
+
+      res.status(200).json({
+        message: "Pet deactivated (logical delete)",
+        pet,
+      });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error deactivating pet",
+        detail: String(error),
+       });
+    }
+  }
 }

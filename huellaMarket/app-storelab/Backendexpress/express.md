@@ -147,3 +147,7 @@
 ## **ISS-03-D — Feature pet — Update (PUT) y Update (PATCH)**
 
 ![](images/clipboard-2478151403.png)
+
+## **ISS-03-E — Feature pet — Eliminar (físico y lógico)**
+
+![](images/clipboard-1620632760.png)

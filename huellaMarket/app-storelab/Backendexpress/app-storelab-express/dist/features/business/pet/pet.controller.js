@@ -101,6 +101,50 @@ class PetController {
             });
         }
     }
+    // ================== DELETE ==================
+    async deletePhysical(req, res) {
+        try {
+            const id = paramId(req);
+            const pet = await pet_model_1.Pet.findByPk(id);
+            if (!pet) {
+                res.status(404).json({ error: "Pet not found" });
+                return;
+            }
+            await pet.destroy();
+            res.status(200).json({
+                message: "Pet permanently deleted",
+                id,
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deleting pet",
+                detail: String(error),
+            });
+        }
+    }
+    /** Eliminación lógica → isActive = false */
+    async deleteLogical(req, res) {
+        try {
+            const id = paramId(req);
+            const pet = await pet_model_1.Pet.findByPk(id);
+            if (!pet) {
+                res.status(404).json({ error: "Pet not found" });
+                return;
+            }
+            await pet.update({ isActive: false });
+            res.status(200).json({
+                message: "Pet deactivated (logical delete)",
+                pet,
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deactivating pet",
+                detail: String(error),
+            });
+        }
+    }
 }
 exports.PetController = PetController;
 //# sourceMappingURL=pet.controller.js.map
