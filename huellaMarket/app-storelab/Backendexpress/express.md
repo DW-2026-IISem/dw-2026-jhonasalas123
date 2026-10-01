@@ -167,3 +167,9 @@
 ###  **Runner**
 
 ![](images/clipboard-983147737.png)
+
+## **ISS-05 — Swagger / OpenAPI (feature + registry externo)**
+
+### **OpenAPI dentro del feature pet**
+
+![](images/clipboard-138488024.png)

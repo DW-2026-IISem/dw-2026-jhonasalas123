@@ -27,7 +27,8 @@
     "mysql2": "^3.24.4",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.2",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@faker-js/faker": "^10.6.0",
@@ -38,6 +39,7 @@
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
     "@types/node": "^22.20.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "nodemon": "^3.1.14",
     "ts-node": "^10.9.2",
     "typescript": "~5.9.2"
