@@ -154,6 +154,12 @@
 
 ## **ISS-04 — Seeders con Faker (feature + runner externo)**
 
-## **Seeder dentro del feature pet**
+### **Seeder dentro del feature pet**
 
 ![](images/clipboard-2186064451.png)
+
+### **SeedersRunner + conteos por entidad (`database/seeders`)**
+
+### **Conteos**
+
+![](images/clipboard-2278938281.png)
