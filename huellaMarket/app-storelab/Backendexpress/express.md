@@ -245,3 +245,7 @@
 ### **ISS-03-B — Feature petService — GetAll y GetOne**
 
 ![](images/clipboard-671930400.png)
+
+## **ISS-03-C — Feature petService — Crear Serviciomascota**
+
+![](images/clipboard-1959782840.png)
