@@ -22,6 +22,7 @@ export class App {
   public routes(): void {
     this.routePrv.petRoutes.routes(this.app);
     this.routePrv.healthRecordRoutes.routes(this.app);
+    this.routePrv.petServiceRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {

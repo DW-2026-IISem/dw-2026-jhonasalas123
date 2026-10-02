@@ -235,3 +235,7 @@
 ### Controller de ServicioMascota
 
 ![](images/clipboard-3567655662.png)
+
+### **Agregador Routes + cableado en Config**
+
+![](images/clipboard-1861405672.png)
