@@ -221,3 +221,7 @@
 ### Seeder Runner
 
 ![](images/clipboard-974439264.png)
+
+### **Conteos**
+
+![](images/clipboard-3159369256.png)
