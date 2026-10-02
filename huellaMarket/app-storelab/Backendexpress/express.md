@@ -106,6 +106,8 @@
 
 ![](images/clipboard-906212647.png)
 
+## Entidad Mascota 
+
 ## **Modelo Mascota**
 
 ![](images/clipboard-4185960399.png)
@@ -177,3 +179,9 @@
 ### **Registry externo + montaje en Config**
 
 ![](images/clipboard-2044688940.png)
+
+## Entidad-FichaSanitaria
+
+### Modelo FichaSanitaria
+
+![](images/clipboard-871044821.png)
