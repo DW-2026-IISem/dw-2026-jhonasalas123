@@ -228,6 +228,8 @@
 
 ## Entidad-ServicioMascota 
 
+### **ISS-03-A — Feature petService — fundación (modelo, esqueleto, HTTP, cableado)**
+
 ### Modelo de ServicioMascota
 
 ![](images/clipboard-734718797.png)
@@ -239,3 +241,7 @@
 ### **Agregador Routes + cableado en Config**
 
 ![](images/clipboard-1861405672.png)
+
+### **ISS-03-B — Feature petService — GetAll y GetOne**
+
+![](images/clipboard-671930400.png)

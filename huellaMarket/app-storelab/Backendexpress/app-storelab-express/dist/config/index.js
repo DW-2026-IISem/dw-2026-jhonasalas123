@@ -21,6 +21,7 @@ class App {
     routes() {
         this.routePrv.petRoutes.routes(this.app);
         this.routePrv.healthRecordRoutes.routes(this.app);
+        this.routePrv.petServiceRoutes.routes(this.app);
     }
     async dbConnection() {
         try {
