@@ -1,0 +1,13 @@
+### Feature HealthRecord — CREATE
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+
+# @name createHealthRecord
+POST {{baseUrl}}/api/fichas-sanitarias
+Content-Type: application/json
+
+{
+  "nombre": "Ficha sanitaria de Rocky",
+  "descripcion": "Registro sanitario de la mascota",
+  "is_active": true
+}
