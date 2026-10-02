@@ -210,6 +210,10 @@
 
 ![](images/clipboard-2420833123.png)
 
-## **Seeder FichaSanitaria**
+### **Seeder FichaSanitaria**
 
 ![](images/clipboard-893872930.png)
+
+### **Swagger FichaSanitaria**
+
+![](images/clipboard-1975769426.png)
