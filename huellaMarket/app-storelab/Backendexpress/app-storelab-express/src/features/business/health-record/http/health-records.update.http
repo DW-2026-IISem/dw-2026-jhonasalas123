@@ -1,0 +1,24 @@
+### Feature HealthRecord — UPDATE (PUT) / UPDATE (PATCH)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name updateHealthRecordPut
+PUT {{baseUrl}}/api/fichas-sanitarias/{{id}}
+Content-Type: application/json
+
+{
+  "nombre": "Ficha sanitaria de Rocky Actualizada",
+  "descripcion": "Registro sanitario actualizado",
+  "is_active": true
+}
+
+###
+
+# @name updateHealthRecordPatch
+PATCH {{baseUrl}}/api/fichas-sanitarias/{{id}}
+Content-Type: application/json
+
+{
+  "descripcion": "Descripción modificada parcialmente"
+}
