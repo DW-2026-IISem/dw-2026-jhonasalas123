@@ -217,3 +217,7 @@
 ### **Swagger FichaSanitaria**
 
 ![](images/clipboard-1975769426.png)
+
+### Seeder Runner
+
+![](images/clipboard-974439264.png)

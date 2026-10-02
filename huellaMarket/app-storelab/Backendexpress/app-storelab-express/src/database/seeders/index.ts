@@ -1,9 +1,15 @@
 import dotenv from "dotenv";
 import { sequelize, testConnection } from "../db";
+
 import "../../features/business/client/client.model";
-import "../../features/business/pet/pet.model";
 import { seedClients } from "../../features/business/client/client.seeder";
+
+import "../../features/business/pet/pet.model";
 import { seedPets } from "../../features/business/pet/pet.seeder";
+
+import "../../features/business/health-record/health-record.model";
+import { seedHealthRecords } from "../../features/business/health-record/health-record.seeder";
+
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -11,8 +17,7 @@ dotenv.config();
 /**
  * SeedersRunner — ejecuta TODOS los seeders de features.
  *
- * Ubicación: src/database/seeders/
- * Cada feature exporta su propio seeder.
+ * Ubicación: `src/database/seeders/`
  */
 export async function runAllSeeders(): Promise<void> {
   const counts = resolveSeedCounts();
@@ -31,6 +36,7 @@ export async function runAllSeeders(): Promise<void> {
   // Orden: business (padres → hijos)
   await seedClients(counts.clients);
   await seedPets(counts.pets);
+  await seedHealthRecords(counts.healthRecords);
 
   console.log("🌱 SeedersRunner finalizado");
 }
