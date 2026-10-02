@@ -1,0 +1,12 @@
+### Feature HealthRecord — DELETE físico / DELETE lógico (is_active = false)
+### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+@baseUrl = http://localhost:4000
+@id = 1
+
+# @name deleteHealthRecordPhysical
+DELETE {{baseUrl}}/api/fichas-sanitarias/{{id}}
+
+###
+
+# @name deleteHealthRecordLogical
+PATCH {{baseUrl}}/api/fichas-sanitarias/{{id}}/deactivate

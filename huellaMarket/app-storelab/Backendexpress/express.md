@@ -205,3 +205,7 @@
 ### UPDATE
 
 ![](images/clipboard-194935501.png)
+
+### DELETE
+
+![](images/clipboard-2420833123.png)
