@@ -189,3 +189,5 @@
 ### **Controller + routes (CRUD completo)**
 
 ![](images/clipboard-4035572561.png)
+
+![](images/clipboard-3538804418.png)
