@@ -185,3 +185,7 @@
 ### Modelo FichaSanitaria
 
 ![](images/clipboard-871044821.png)
+
+### **Controller + routes (CRUD completo)**
+
+![](images/clipboard-4035572561.png)
