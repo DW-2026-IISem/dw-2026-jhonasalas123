@@ -225,3 +225,9 @@
 ### **Conteos**
 
 ![](images/clipboard-3159369256.png)
+
+## Entidad-ServicioMascota 
+
+### Modelo de ServicioMascota
+
+![](images/clipboard-734718797.png)

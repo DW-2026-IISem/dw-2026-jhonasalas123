@@ -7,16 +7,17 @@ exports.runAllSeeders = runAllSeeders;
 const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("../db");
 require("../../features/business/client/client.model");
-require("../../features/business/pet/pet.model");
 const client_seeder_1 = require("../../features/business/client/client.seeder");
+require("../../features/business/pet/pet.model");
 const pet_seeder_1 = require("../../features/business/pet/pet.seeder");
+require("../../features/business/health-record/health-record.model");
+const health_record_seeder_1 = require("../../features/business/health-record/health-record.seeder");
 const counts_1 = require("./counts");
 dotenv_1.default.config();
 /**
  * SeedersRunner — ejecuta TODOS los seeders de features.
  *
- * Ubicación: src/database/seeders/
- * Cada feature exporta su propio seeder.
+ * Ubicación: `src/database/seeders/`
  */
 async function runAllSeeders() {
     const counts = (0, counts_1.resolveSeedCounts)();
@@ -30,6 +31,7 @@ async function runAllSeeders() {
     // Orden: business (padres → hijos)
     await (0, client_seeder_1.seedClients)(counts.clients);
     await (0, pet_seeder_1.seedPets)(counts.pets);
+    await (0, health_record_seeder_1.seedHealthRecords)(counts.healthRecords);
     console.log("🌱 SeedersRunner finalizado");
 }
 if (require.main === module) {
