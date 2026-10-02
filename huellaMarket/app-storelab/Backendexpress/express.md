@@ -106,7 +106,7 @@
 
 ![](images/clipboard-906212647.png)
 
-## Entidad Mascota 
+## Entidad Mascota
 
 ## **Modelo Mascota**
 
@@ -116,7 +116,7 @@
 
 ![](images/clipboard-1294511916.png)
 
-###  Registrar Mascota
+### Registrar Mascota
 
 ![](images/clipboard-2885131217.png)
 
@@ -166,7 +166,7 @@
 
 ![](images/clipboard-2278938281.png)
 
-###  **Runner**
+### **Runner**
 
 ![](images/clipboard-983147737.png)
 
@@ -209,3 +209,7 @@
 ### DELETE
 
 ![](images/clipboard-2420833123.png)
+
+## **Seeder FichaSanitaria**
+
+![](images/clipboard-893872930.png)
