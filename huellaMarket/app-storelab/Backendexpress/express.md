@@ -226,7 +226,7 @@
 
 ![](images/clipboard-3159369256.png)
 
-## Entidad-ServicioMascota 
+## Entidad-ServicioMascota
 
 ### **ISS-03-A — Feature petService — fundación (modelo, esqueleto, HTTP, cableado)**
 
@@ -249,3 +249,7 @@
 ## **ISS-03-C — Feature petService — Crear Serviciomascota**
 
 ![](images/clipboard-1959782840.png)
+
+##  **ISS-03-D — Feature Client — Update (PUT) y Update (PATCH)**
+
+![![](images/clipboard-1694453696.png)](images/clipboard-3933299201.png)
