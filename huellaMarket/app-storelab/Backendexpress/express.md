@@ -347,3 +347,7 @@
 ![](images/clipboard-787751894.png)
 
 ![](images/clipboard-3862946770.png)
+
+### GET ALL
+
+![](images/clipboard-38379870.png)
