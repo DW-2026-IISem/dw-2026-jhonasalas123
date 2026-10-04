@@ -14,6 +14,7 @@ require("../features/business/provider/provider.model");
 require("../features/business/inventory/inventory.model");
 require("../features/business/sale/sale.model");
 require("../features/business/sale-detail/sale-detail.model");
+require("../features/business/payment/payment.model");
 const index_1 = require("../routes/index");
 dotenv_1.default.config();
 exports.config = {
@@ -32,6 +33,7 @@ class App {
         this.routePrv.productRoutes.routes(this.app);
         this.routePrv.providerRoutes.routes(this.app);
         this.routePrv.inventoryRoutes.routes(this.app);
+        this.routePrv.paymentRoutes.routes(this.app);
         this.routePrv.saleDetailRoutes.routes(this.app);
         this.routePrv.saleRoutes.routes(this.app);
     }

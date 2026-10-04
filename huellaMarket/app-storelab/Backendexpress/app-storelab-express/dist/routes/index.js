@@ -10,6 +10,7 @@ const provider_routes_1 = require("../features/business/provider/provider.routes
 const inventory_routes_1 = require("../features/business/inventory/inventory.routes");
 const sale_routes_1 = require("../features/business/sale/sale.routes");
 const sale_detail_routes_1 = require("../features/business/sale-detail/sale-detail.routes");
+const payment_routes_1 = require("../features/business/payment/payment.routes");
 class Routes {
     constructor() {
         this.petRoutes = new pet_routes_1.PetRoutes();
@@ -19,6 +20,7 @@ class Routes {
         this.productRoutes = new product_routes_1.ProductRoutes();
         this.providerRoutes = new provider_routes_1.ProviderRoutes();
         this.inventoryRoutes = new inventory_routes_1.InventoryRoutes();
+        this.paymentRoutes = new payment_routes_1.PaymentRoutes();
         this.saleDetailRoutes = new sale_detail_routes_1.SaleDetailRoutes();
         this.saleRoutes = new sale_routes_1.SaleRoutes();
     }

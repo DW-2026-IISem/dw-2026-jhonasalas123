@@ -24,6 +24,7 @@ import { seedServiceAppointments } from "../../features/business/service-appoint
 import { seedInventories } from "../../features/business/inventory/inventory.seeder";
 import { seedSales } from "../../features/business/sale/sale.seeder";
 import { seedSaleDetails } from "../../features/business/sale-detail/sale-detail.seeder";
+import { seedPayments } from "../../features/business/payment/payment.seeder";
 
 import { resolveSeedCounts } from "./counts";
 
@@ -57,6 +58,7 @@ export async function runAllSeeders(): Promise<void> {
     await seedProviders(counts.providers);
   await seedServiceAppointments(counts.service_appointments);
   await seedInventories(counts.inventories);
+  await seedPayments(counts.payments);
   await seedSaleDetails(counts.saleDetails);
   await seedSales(counts.sales);
 

@@ -503,3 +503,7 @@
 ### Controller + Routes
 
 ![](images/clipboard-1436311315.png)
+
+### Seeder + conteo + runner
+
+![](images/clipboard-3145381981.png)
