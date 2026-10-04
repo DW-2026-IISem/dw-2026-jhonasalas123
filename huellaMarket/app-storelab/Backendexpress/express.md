@@ -519,3 +519,7 @@
 ### POST + PUT + PATCH
 
 ![](images/clipboard-3894138759.png)
+
+# **Cierre**
+
+![](images/clipboard-3483697605.png)
