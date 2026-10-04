@@ -515,3 +515,7 @@
 ### GetAll y GetOne
 
 ![](images/clipboard-49806785.png)
+
+### POST + PUT + PATCH
+
+![](images/clipboard-3894138759.png)
