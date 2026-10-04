@@ -1,8 +1,18 @@
 "use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PetServiceController = void 0;
+const swagger_1 = require("@nestjs/swagger");
 const pet_service_model_1 = require("./pet-service.model");
-class PetServiceController {
+let PetServiceController = class PetServiceController {
     // GET /api/servicios-mascota
     async getAll(req, res) {
         try {
@@ -154,6 +164,60 @@ class PetServiceController {
             });
         }
     }
-}
+};
 exports.PetServiceController = PetServiceController;
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Obtener todos los servicios de mascotas" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicios obtenidos correctamente" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "getAll", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Obtener un servicio de mascota por ID" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicio encontrado" }),
+    (0, swagger_1.ApiResponse)({ status: 404, description: "Servicio no encontrado" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "getOne", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Crear un servicio de mascota" }),
+    (0, swagger_1.ApiResponse)({ status: 201, description: "Servicio creado correctamente" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "create", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Actualizar un servicio de mascota" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicio actualizado correctamente" }),
+    (0, swagger_1.ApiResponse)({ status: 404, description: "Servicio no encontrado" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "updatePut", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Actualizar parcialmente un servicio de mascota" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicio actualizado parcialmente" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "updatePatch", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Eliminar físicamente un servicio de mascota" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicio eliminado correctamente" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "deletePhysical", null);
+__decorate([
+    (0, swagger_1.ApiOperation)({ summary: "Desactivar un servicio de mascota" }),
+    (0, swagger_1.ApiResponse)({ status: 200, description: "Servicio desactivado correctamente" }),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", Promise)
+], PetServiceController.prototype, "deleteLogical", null);
+exports.PetServiceController = PetServiceController = __decorate([
+    (0, swagger_1.ApiTags)("Servicios de Mascotas")
+], PetServiceController);
 //# sourceMappingURL=pet-service.controller.js.map

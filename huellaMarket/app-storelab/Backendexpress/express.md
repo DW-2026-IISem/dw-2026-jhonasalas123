@@ -279,3 +279,7 @@
 ##  **ISS-05 — Swagger / OpenAPI (feature + registry externo)**
 
 ![](images/clipboard-450018100.png)
+
+### **OpenAPI**
+
+![](images/clipboard-2359937609.png)
