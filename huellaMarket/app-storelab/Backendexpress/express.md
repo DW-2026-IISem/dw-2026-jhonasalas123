@@ -391,3 +391,7 @@
 ### **GetAll y GetOne**
 
 ![](images/clipboard-2678205855.png)
+
+### POST + PUT + PATCH + DELETE lógico
+
+![](images/clipboard-3306285842.png)
