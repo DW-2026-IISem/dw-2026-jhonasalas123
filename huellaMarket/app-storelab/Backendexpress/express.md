@@ -265,3 +265,7 @@
 ###  **Seeder Feature petService**
 
 ![](images/clipboard-3607874329.png)
+
+### **SeedersRunner + conteos por entidad**
+
+![](images/clipboard-3920671844.png)
