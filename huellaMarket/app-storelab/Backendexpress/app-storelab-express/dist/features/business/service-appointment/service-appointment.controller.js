@@ -106,11 +106,52 @@ class ServiceAppointmentController {
     }
     // ISS-03-E — DELETE físico /api/citas-servicio/:id
     async deletePhysical(req, res) {
-        // TODO: implementar
+        try {
+            const id = Number(req.params.id);
+            const service_appointment = await service_appointment_model_1.ServiceAppointment.findByPk(id);
+            if (!service_appointment) {
+                res.status(404).json({
+                    error: "Service appointment not found",
+                });
+                return;
+            }
+            await service_appointment.destroy();
+            res.status(200).json({
+                message: "Service appointment deleted successfully",
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deleting service appointment",
+                detail: String(error),
+            });
+        }
     }
     // ISS-03-E — DELETE lógico /api/citas-servicio/:id/deactivate
     async deleteLogical(req, res) {
-        // TODO: implementar
+        try {
+            const id = Number(req.params.id);
+            const service_appointment = await service_appointment_model_1.ServiceAppointment.findByPk(id);
+            if (!service_appointment) {
+                res.status(404).json({
+                    error: "Service appointment not found",
+                });
+                return;
+            }
+            await service_appointment.update({
+                isActive: false,
+            });
+            res.status(200).json({
+                message: "Service appointment deactivated successfully",
+                service_appointment,
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deactivating service appointment",
+                detail: String(error),
+            });
+        }
     }
 }
 exports.ServiceAppointmentController = ServiceAppointmentController;

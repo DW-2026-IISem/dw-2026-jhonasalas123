@@ -305,3 +305,7 @@
 ###  **Update (PUT) y Update (PATCH)**
 
 ![](images/clipboard-4130193148.png)
+
+### **Eliminar (físico y lógico)**
+
+![](images/clipboard-2297112852.png)
