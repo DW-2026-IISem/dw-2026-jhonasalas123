@@ -379,3 +379,7 @@
 ### **Agregador Routes + cableado en Config**
 
 ![](images/clipboard-2584044214.png)
+
+### Seeder
+
+![](images/clipboard-1292041531.png)

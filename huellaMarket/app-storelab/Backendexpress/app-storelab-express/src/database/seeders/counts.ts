@@ -10,6 +10,7 @@ export type SeedCounts = {
   healthRecords: number;
   pet_services: number;
   products: number;
+    providers: number;
   service_appointments: number;
 };
 
@@ -19,6 +20,7 @@ export const DEFAULT_SEED_COUNTS: SeedCounts = {
   healthRecords: 10,
   pet_services: 10,
   products: 10,
+    providers: 10,
   service_appointments: 10,
 };
 
