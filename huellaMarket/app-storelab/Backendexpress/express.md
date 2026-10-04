@@ -372,7 +372,7 @@
 
 ![](images/clipboard-3595449174.png)
 
-### controller + rutas 
+### controller + rutas
 
 ![](images/clipboard-2369224728.png)
 
@@ -384,7 +384,7 @@
 
 ![](images/clipboard-1292041531.png)
 
-###  Swagger 
+### Swagger
 
 ![](images/clipboard-1167979107.png)
 
@@ -402,7 +402,7 @@
 
 ![](images/clipboard-323184114.png)
 
-###  Controller + Routes
+### Controller + Routes
 
 ![](images/clipboard-3241429605.png)
 
@@ -410,7 +410,7 @@
 
 ![](images/clipboard-2361040934.png)
 
-### Seeder 
+### Seeder
 
 ![](images/clipboard-1407212615.png)
 
@@ -420,11 +420,11 @@
 
 ![](images/clipboard-3842101440.png)
 
-###  Registro de Inventario en Swagger
+### Registro de Inventario en Swagger
 
 ![](images/clipboard-144624698.png)
 
-### GET ONE 
+### GET ONE
 
 ![](images/clipboard-2750285564.png)
 
@@ -432,7 +432,7 @@
 
 ![](images/clipboard-853183043.png)
 
-### PUT + PATCH + DELETE 
+### PUT + PATCH + DELETE
 
 ![](images/clipboard-1158220480.png)
 
@@ -456,7 +456,7 @@
 
 ![](images/clipboard-1599088933.png)
 
-###  Swagger
+### Swagger
 
 ![](images/clipboard-1738330863.png)
 
@@ -486,7 +486,7 @@
 
 ![](images/clipboard-191772874.png)
 
-### GET ALL y GET ONE+ crear 
+### GET ALL y GET ONE+ crear
 
 ![](images/clipboard-1773727491.png)
 
@@ -508,7 +508,7 @@
 
 ![](images/clipboard-3145381981.png)
 
-### Swagger 
+### Swagger
 
 ![](images/clipboard-2761919822.png)
 
@@ -558,4 +558,6 @@
 
 ![](images/clipboard-1815531472.png)
 
-### 
+### **14.8 Los seis modelos Sequelize**
+
+![](images/clipboard-2626333614.png)
