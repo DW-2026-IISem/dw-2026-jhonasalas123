@@ -7,6 +7,7 @@ exports.DEFAULT_SEED_COUNTS = {
     pets: 10,
     healthRecords: 10,
     pet_services: 10,
+    products: 10,
     service_appointments: 10,
 };
 function resolveSeedCounts(argv = process.argv.slice(2)) {

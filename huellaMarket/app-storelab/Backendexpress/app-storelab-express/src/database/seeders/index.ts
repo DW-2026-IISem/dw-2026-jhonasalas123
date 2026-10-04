@@ -12,6 +12,8 @@ import { seedHealthRecords } from "../../features/business/health-record/health-
 
 import "../../features/business/pet-service/pet-service.model";
 import { seedPetServices } from "../../features/business/pet-service/pet-service.seeder";
+import "../../features/business/product/product.model";
+import { seedProducts } from "../../features/business/product/product.seeder";
 
 import "../../features/business/service-appointment/service-appointment.model";
 import { seedServiceAppointments } from "../../features/business/service-appointment/service-appointment.seeder";
@@ -44,6 +46,7 @@ export async function runAllSeeders(): Promise<void> {
   await seedPets(counts.pets);
   await seedHealthRecords(counts.healthRecords);
   await seedPetServices(counts.pet_services);
+  await seedProducts(counts.products);
   await seedServiceAppointments(counts.service_appointments);
 
   console.log("🌱 SeedersRunner finalizado");

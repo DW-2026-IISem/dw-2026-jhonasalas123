@@ -14,6 +14,8 @@ require("../../features/business/health-record/health-record.model");
 const health_record_seeder_1 = require("../../features/business/health-record/health-record.seeder");
 require("../../features/business/pet-service/pet-service.model");
 const pet_service_seeder_1 = require("../../features/business/pet-service/pet-service.seeder");
+require("../../features/business/product/product.model");
+const product_seeder_1 = require("../../features/business/product/product.seeder");
 require("../../features/business/service-appointment/service-appointment.model");
 const service_appointment_seeder_1 = require("../../features/business/service-appointment/service-appointment.seeder");
 const counts_1 = require("./counts");
@@ -37,6 +39,7 @@ async function runAllSeeders() {
     await (0, pet_seeder_1.seedPets)(counts.pets);
     await (0, health_record_seeder_1.seedHealthRecords)(counts.healthRecords);
     await (0, pet_service_seeder_1.seedPetServices)(counts.pet_services);
+    await (0, product_seeder_1.seedProducts)(counts.products);
     await (0, service_appointment_seeder_1.seedServiceAppointments)(counts.service_appointments);
     console.log("🌱 SeedersRunner finalizado");
 }

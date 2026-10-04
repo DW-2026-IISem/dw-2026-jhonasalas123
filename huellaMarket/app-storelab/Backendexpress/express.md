@@ -337,3 +337,7 @@
 ###  **Cableado Routes + Config**
 
 ![](images/clipboard-2836163832.png)
+
+### **Seeder**
+
+![](images/clipboard-1383294243.png)
