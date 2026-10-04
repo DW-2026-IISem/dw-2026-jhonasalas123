@@ -473,3 +473,7 @@
 ### Modelo ventadetalle
 
 ![](images/clipboard-1137630126.png)
+
+### Controller + Routes
+
+![](images/clipboard-2675417610.png)
