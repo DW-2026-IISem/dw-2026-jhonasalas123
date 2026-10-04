@@ -553,3 +553,9 @@
 ![](images/clipboard-1344113736.png)
 
 ![](images/clipboard-3736078364.png)
+
+### **14.7 `swagger-security.ts` — seguridad reutilizable para OpenAPI**
+
+![](images/clipboard-1815531472.png)
+
+### 
