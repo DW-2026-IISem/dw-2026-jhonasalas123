@@ -499,3 +499,7 @@
 ### Modelo pago
 
 ![](images/clipboard-2925849071.png)
+
+### Controller + Routes
+
+![](images/clipboard-1436311315.png)
