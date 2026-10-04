@@ -463,3 +463,7 @@
 ### GET ALL
 
 ![](images/clipboard-2434755135.png)
+
+### GetOne y crear venta
+
+![](images/clipboard-4025632153.png)
