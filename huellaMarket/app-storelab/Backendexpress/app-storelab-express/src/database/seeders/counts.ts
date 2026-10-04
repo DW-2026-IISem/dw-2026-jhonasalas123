@@ -14,6 +14,7 @@ export type SeedCounts = {
   service_appointments: number;
   inventories: number;
   sales: number;
+  saleDetails: number;
 };
 
 export const DEFAULT_SEED_COUNTS: SeedCounts = {
@@ -26,6 +27,7 @@ export const DEFAULT_SEED_COUNTS: SeedCounts = {
   service_appointments: 10,
   inventories: 10,
   sales: 10,
+  saleDetails: 10,
 };
 
 export function resolveSeedCounts(

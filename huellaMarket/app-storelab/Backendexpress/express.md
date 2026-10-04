@@ -477,3 +477,7 @@
 ### Controller + Routes
 
 ![](images/clipboard-2675417610.png)
+
+### Seeder
+
+![](images/clipboard-2045802632.png)
