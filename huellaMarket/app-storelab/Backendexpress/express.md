@@ -485,3 +485,7 @@
 ### Swagger
 
 ![](images/clipboard-191772874.png)
+
+### GET ALL y GET ONE+ crear 
+
+![](images/clipboard-1773727491.png)
