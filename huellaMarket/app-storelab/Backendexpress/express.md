@@ -351,3 +351,7 @@
 ### GET ALL
 
 ![](images/clipboard-38379870.png)
+
+### GetOne
+
+![](images/clipboard-3442338231.png)
