@@ -19,7 +19,9 @@ const product_seeder_1 = require("../../features/business/product/product.seeder
 require("../../features/business/provider/provider.model");
 const provider_seeder_1 = require("../../features/business/provider/provider.seeder");
 require("../../features/business/service-appointment/service-appointment.model");
+require("../../features/business/inventory/inventory.model");
 const service_appointment_seeder_1 = require("../../features/business/service-appointment/service-appointment.seeder");
+const inventory_seeder_1 = require("../../features/business/inventory/inventory.seeder");
 const counts_1 = require("./counts");
 dotenv_1.default.config();
 /**
@@ -44,6 +46,7 @@ async function runAllSeeders() {
     await (0, product_seeder_1.seedProducts)(counts.products);
     await (0, provider_seeder_1.seedProviders)(counts.providers);
     await (0, service_appointment_seeder_1.seedServiceAppointments)(counts.service_appointments);
+    await (0, inventory_seeder_1.seedInventories)(counts.inventories);
     console.log("🌱 SeedersRunner finalizado");
 }
 if (require.main === module) {

@@ -7,6 +7,7 @@ const pet_service_routes_1 = require("../features/business/pet-service/pet-servi
 const service_appointment_routes_1 = require("../features/business/service-appointment/service-appointment.routes");
 const product_routes_1 = require("../features/business/product/product.routes");
 const provider_routes_1 = require("../features/business/provider/provider.routes");
+const inventory_routes_1 = require("../features/business/inventory/inventory.routes");
 class Routes {
     constructor() {
         this.petRoutes = new pet_routes_1.PetRoutes();
@@ -15,6 +16,7 @@ class Routes {
         this.serviceAppointmentRoutes = new service_appointment_routes_1.ServiceAppointmentRoutes();
         this.productRoutes = new product_routes_1.ProductRoutes();
         this.providerRoutes = new provider_routes_1.ProviderRoutes();
+        this.inventoryRoutes = new inventory_routes_1.InventoryRoutes();
     }
 }
 exports.Routes = Routes;
