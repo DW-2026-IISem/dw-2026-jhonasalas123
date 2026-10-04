@@ -447,3 +447,7 @@
 ![](images/clipboard-2128871545.png)
 
 ![](images/clipboard-2008173471.png)
+
+### Routes y Config
+
+![](images/clipboard-606990779.png)
