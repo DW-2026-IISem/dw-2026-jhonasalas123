@@ -289,3 +289,7 @@
 ## **Modelo  Citaservicio**
 
 ![](images/clipboard-2342968426.png)
+
+### **Esqueleto controller** 
+
+![](images/clipboard-623870664.png)
