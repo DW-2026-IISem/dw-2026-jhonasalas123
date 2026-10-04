@@ -297,3 +297,5 @@
 ### Agregador Routes + cableado en Config
 
 ![](images/clipboard-999289248.png)
+
+![](images/clipboard-2849417788.png)

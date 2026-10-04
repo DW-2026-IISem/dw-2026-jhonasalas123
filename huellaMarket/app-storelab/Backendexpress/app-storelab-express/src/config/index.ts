@@ -3,6 +3,7 @@ import { Application } from "express";
 import { sequelize, getDatabaseInfo, testConnection } from "../database/db";
 import "../features/business/client/client.model";
 import "../features/business/health-record/health-record.model";
+import "../features/business/service-appointment/service-appointment.model";
 import { Routes } from "../routes/index";
 
 dotenv.config();
@@ -23,6 +24,7 @@ export class App {
     this.routePrv.petRoutes.routes(this.app);
     this.routePrv.healthRecordRoutes.routes(this.app);
     this.routePrv.petServiceRoutes.routes(this.app);
+    this.routePrv.serviceAppointmentRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {
