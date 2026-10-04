@@ -387,3 +387,7 @@
 ###  **Swagger** 
 
 ![](images/clipboard-1167979107.png)
+
+### **GetAll y GetOne**
+
+![](images/clipboard-2678205855.png)
