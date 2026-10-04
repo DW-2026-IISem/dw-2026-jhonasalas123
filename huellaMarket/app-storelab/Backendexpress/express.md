@@ -535,3 +535,7 @@
 ### **14.2 `password.ts` — hash de contraseña y hashes de tokens**
 
 ![](images/clipboard-3817592344.png)
+
+### **14.3 `jwt.ts` — firma y verificación del access token**
+
+![](images/clipboard-13496416.png)
