@@ -250,7 +250,7 @@
 
 ![](images/clipboard-1959782840.png)
 
-##  **ISS-03-D — Feature petService — Update (PUT)** 
+## **ISS-03-D — Feature petService — Update (PUT)**
 
 ![](images/clipboard-3933299201.png)
 
@@ -262,7 +262,7 @@
 
 ![](images/clipboard-2429002990.png)
 
-###  **Seeder Feature petService**
+### **Seeder Feature petService**
 
 ![](images/clipboard-3607874329.png)
 
@@ -276,7 +276,7 @@
 
 ![](images/clipboard-2151712595.png)
 
-##  **ISS-05 — Swagger / OpenAPI (feature + registry externo)**
+## **ISS-05 — Swagger / OpenAPI (feature + registry externo)**
 
 ![](images/clipboard-450018100.png)
 
@@ -286,11 +286,11 @@
 
 ## **Entidad Citaservicio**
 
-## **Modelo  Citaservicio**
+### **Modelo Citaservicio**
 
 ![](images/clipboard-2342968426.png)
 
-### **Esqueleto controller** 
+### **Esqueleto controller**
 
 ![](images/clipboard-623870664.png)
 
@@ -302,7 +302,7 @@
 
 ![](images/clipboard-4166652556.png)
 
-###  **Update (PUT) y Update (PATCH)**
+### **Update (PUT) y Update (PATCH)**
 
 ![](images/clipboard-4130193148.png)
 
@@ -324,9 +324,9 @@
 
 ![](images/clipboard-2795349918.png)
 
-## **Entidad producto**
+## **Entidad- producto**
 
-## **Modelo  producto**
+### **Modelo producto**
 
 ![](images/clipboard-1198425113.png)
 
@@ -334,7 +334,7 @@
 
 ![](images/clipboard-2041985080.png)
 
-###  **Cableado Routes + Config**
+### **Cableado Routes + Config**
 
 ![](images/clipboard-2836163832.png)
 
@@ -342,7 +342,7 @@
 
 ![](images/clipboard-1383294243.png)
 
-### Swagger 
+### Swagger
 
 ![](images/clipboard-787751894.png)
 
@@ -356,7 +356,7 @@
 
 ![](images/clipboard-3442338231.png)
 
-### Crear producto 
+### Crear producto
 
 ![](images/clipboard-275010993.png)
 
@@ -365,3 +365,9 @@
 ![](images/clipboard-1404118038.png)
 
 ![](images/clipboard-2238138446.png)
+
+## **Entidad- proveedor**
+
+### **Modelo proveedor**
+
+![](images/clipboard-3595449174.png)
