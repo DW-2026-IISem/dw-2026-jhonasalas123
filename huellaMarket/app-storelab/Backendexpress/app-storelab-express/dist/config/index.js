@@ -10,6 +10,7 @@ require("../features/business/client/client.model");
 require("../features/business/health-record/health-record.model");
 require("../features/business/service-appointment/service-appointment.model");
 require("../features/business/product/product.model");
+require("../features/business/provider/provider.model");
 const index_1 = require("../routes/index");
 dotenv_1.default.config();
 exports.config = {
@@ -26,6 +27,7 @@ class App {
         this.routePrv.petServiceRoutes.routes(this.app);
         this.routePrv.serviceAppointmentRoutes.routes(this.app);
         this.routePrv.productRoutes.routes(this.app);
+        this.routePrv.providerRoutes.routes(this.app);
     }
     async dbConnection() {
         try {
