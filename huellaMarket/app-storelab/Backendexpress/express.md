@@ -431,3 +431,7 @@
 ### Crear inventario
 
 ![](images/clipboard-853183043.png)
+
+### PUT + PATCH + DELETE 
+
+![](images/clipboard-1158220480.png)
