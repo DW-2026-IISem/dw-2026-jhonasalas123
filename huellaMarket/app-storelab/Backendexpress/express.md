@@ -551,3 +551,5 @@
 ### **14.6 `error-response.ts` y PARCHE de `BaseController`**
 
 ![](images/clipboard-1344113736.png)
+
+![](images/clipboard-3736078364.png)
