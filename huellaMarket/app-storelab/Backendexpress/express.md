@@ -293,3 +293,7 @@
 ### **Esqueleto controller** 
 
 ![](images/clipboard-623870664.png)
+
+### Agregador Routes + cableado en Config
+
+![](images/clipboard-999289248.png)
