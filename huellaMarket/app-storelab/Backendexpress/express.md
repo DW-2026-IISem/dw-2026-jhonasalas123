@@ -283,3 +283,9 @@
 ### **OpenAPI**
 
 ![](images/clipboard-2359937609.png)
+
+## **Entidad Citaservicio**
+
+## **Modelo  Citaservicio**
+
+![](images/clipboard-2342968426.png)
