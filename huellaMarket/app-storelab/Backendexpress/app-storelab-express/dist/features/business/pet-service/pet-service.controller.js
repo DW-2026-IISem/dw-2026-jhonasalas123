@@ -7,7 +7,7 @@ class PetServiceController {
     async getAll(req, res) {
         try {
             const pet_services = await pet_service_model_1.PetService.findAll({
-                where: { is_active: true },
+                where: { isActive: true },
             });
             res.status(200).json({ pet_services });
         }
@@ -45,7 +45,7 @@ class PetServiceController {
             const pet_service = await pet_service_model_1.PetService.create({
                 nombre: body.nombre,
                 descripcion: body.descripcion ?? null,
-                is_active: body.is_active ?? true,
+                isActive: body.isActive ?? true,
             });
             res.status(201).json({ pet_service });
         }
@@ -71,7 +71,7 @@ class PetServiceController {
             await pet_service.update({
                 nombre: body.nombre,
                 descripcion: body.descripcion ?? null,
-                is_active: body.is_active ?? true,
+                isActive: body.isActive ?? true,
             });
             res.status(200).json({ pet_service });
         }
@@ -118,6 +118,7 @@ class PetServiceController {
             await pet_service.destroy();
             res.status(200).json({
                 message: "Pet service deleted successfully",
+                id,
             });
         }
         catch (error) {
@@ -139,10 +140,11 @@ class PetServiceController {
                 return;
             }
             await pet_service.update({
-                is_active: false,
+                isActive: false,
             });
             res.status(200).json({
                 message: "Pet service deactivated successfully",
+                id,
             });
         }
         catch (error) {

@@ -7,15 +7,20 @@ class PetService extends sequelize_1.Model {
 }
 exports.PetService = PetService;
 PetService.init({
+    id: {
+        type: sequelize_1.DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+    },
     nombre: {
-        type: sequelize_1.DataTypes.STRING(100),
+        type: sequelize_1.DataTypes.STRING(150),
         allowNull: false,
     },
     descripcion: {
         type: sequelize_1.DataTypes.TEXT,
         allowNull: true,
     },
-    is_active: {
+    isActive: {
         type: sequelize_1.DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false,
@@ -25,7 +30,5 @@ PetService.init({
     modelName: "PetService",
     tableName: "pet_services",
     timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
 });
 //# sourceMappingURL=pet-service.model.js.map

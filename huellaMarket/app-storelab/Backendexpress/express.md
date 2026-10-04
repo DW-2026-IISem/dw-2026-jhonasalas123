@@ -250,10 +250,14 @@
 
 ![](images/clipboard-1959782840.png)
 
-##  **ISS-03-D — Feature Client — Update (PUT)** 
+##  **ISS-03-D — Feature petService — Update (PUT)** 
 
 ![](images/clipboard-3933299201.png)
 
 ## **Update (PATCH)**
 
 ![](images/clipboard-4131953778.png)
+
+## **ISS-03-E — Feature petService — Eliminar (físico y lógico)**
+
+![](images/clipboard-2429002990.png)

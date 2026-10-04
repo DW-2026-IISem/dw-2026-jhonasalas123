@@ -5,31 +5,36 @@ export interface PetServiceI {
   id?: number;
   nombre: string;
   descripcion?: string | null;
-  is_active: boolean;
-  created_at?: Date;
-  updated_at?: Date;
+  isActive: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
-export class PetService extends Model {
+export class PetService extends Model implements PetServiceI {
   public id!: number;
   public nombre!: string;
   public descripcion!: string | null;
-  public is_active!: boolean;
-  public readonly created_at!: Date;
-  public readonly updated_at!: Date;
+  public isActive!: boolean;
+  public readonly createdAt!: Date;
+  public readonly updatedAt!: Date;
 }
 
 PetService.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
     nombre: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(150),
       allowNull: false,
     },
     descripcion: {
       type: DataTypes.TEXT,
       allowNull: true,
     },
-    is_active: {
+    isActive: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: false,
@@ -40,7 +45,5 @@ PetService.init(
     modelName: "PetService",
     tableName: "pet_services",
     timestamps: true,
-    createdAt: "created_at",
-    updatedAt: "updated_at",
   }
 );
