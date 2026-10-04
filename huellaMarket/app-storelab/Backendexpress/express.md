@@ -459,3 +459,7 @@
 ###  **Swagger**
 
 ![](images/clipboard-1738330863.png)
+
+### GET ALL
+
+![](images/clipboard-2434755135.png)

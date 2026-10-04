@@ -13,6 +13,7 @@ const service_appointment_swagger_1 = require("../features/business/service-appo
 const product_swagger_1 = require("../features/business/product/product.swagger");
 const provider_swagger_1 = require("../features/business/provider/provider.swagger");
 const inventory_swagger_1 = require("../features/business/inventory/inventory.swagger");
+const sale_swagger_1 = require("../features/business/sale/sale.swagger");
 /**
  * Registry externo: importa la documentación OpenAPI de cada feature.
  */
@@ -24,6 +25,7 @@ const featureSwaggerModules = [
     product_swagger_1.productSwagger,
     provider_swagger_1.providerSwagger,
     inventory_swagger_1.inventorySwagger,
+    sale_swagger_1.saleSwagger,
 ];
 function buildOpenApiDocument() {
     const tags = [];
