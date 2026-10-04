@@ -531,3 +531,7 @@
 ### **14.1 Dependencias y variables de entorno**
 
 ![](images/clipboard-1840933329.png)
+
+### **14.2 `password.ts` — hash de contraseña y hashes de tokens**
+
+![](images/clipboard-3817592344.png)
