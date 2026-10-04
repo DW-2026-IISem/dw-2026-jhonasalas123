@@ -309,3 +309,5 @@
 ### **Eliminar (físico y lógico)**
 
 ![](images/clipboard-2297112852.png)
+
+![](images/clipboard-2222651955.png)
