@@ -7,6 +7,7 @@ exports.DEFAULT_SEED_COUNTS = {
     pets: 10,
     healthRecords: 10,
     pet_services: 10,
+    service_appointments: 10,
 };
 function resolveSeedCounts(argv = process.argv.slice(2)) {
     const counts = { ...exports.DEFAULT_SEED_COUNTS };
@@ -21,6 +22,10 @@ function resolveSeedCounts(argv = process.argv.slice(2)) {
     const envHealthRecords = process.env.SEED_HEALTH_RECORDS;
     if (envHealthRecords !== undefined && envHealthRecords !== "") {
         counts.healthRecords = Number(envHealthRecords);
+    }
+    const envServiceAppointments = process.env.SEED_SERVICE_APPOINTMENTS;
+    if (envServiceAppointments !== undefined && envServiceAppointments !== "") {
+        counts.service_appointments = Number(envServiceAppointments);
     }
     const envPetServices = process.env.SEED_PET_SERVICES;
     if (envPetServices !== undefined && envPetServices !== "") {

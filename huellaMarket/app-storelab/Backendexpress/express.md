@@ -323,3 +323,9 @@
 ### **SeedersRunner**
 
 ![](images/clipboard-2795349918.png)
+
+## **Entidad producto**
+
+## **Modelo  producto**
+
+![](images/clipboard-1198425113.png)
