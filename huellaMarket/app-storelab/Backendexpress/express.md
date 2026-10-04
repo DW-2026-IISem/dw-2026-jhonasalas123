@@ -419,3 +419,7 @@
 ### Swagger
 
 ![](images/clipboard-3842101440.png)
+
+###  Registro de Inventario en Swagger
+
+![](images/clipboard-144624698.png)
