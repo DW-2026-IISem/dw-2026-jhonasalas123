@@ -359,3 +359,9 @@
 ### Crear producto 
 
 ![](images/clipboard-275010993.png)
+
+### Delete fisico-logico
+
+![](images/clipboard-1404118038.png)
+
+![](images/clipboard-2238138446.png)
