@@ -13,6 +13,9 @@ import { seedHealthRecords } from "../../features/business/health-record/health-
 import "../../features/business/pet-service/pet-service.model";
 import { seedPetServices } from "../../features/business/pet-service/pet-service.seeder";
 
+import "../../features/business/service-appointment/service-appointment.model";
+import { seedServiceAppointments } from "../../features/business/service-appointment/service-appointment.seeder";
+
 import { resolveSeedCounts } from "./counts";
 
 dotenv.config();
@@ -41,6 +44,7 @@ export async function runAllSeeders(): Promise<void> {
   await seedPets(counts.pets);
   await seedHealthRecords(counts.healthRecords);
   await seedPetServices(counts.pet_services);
+  await seedServiceAppointments(counts.service_appointments);
 
   console.log("🌱 SeedersRunner finalizado");
 }
