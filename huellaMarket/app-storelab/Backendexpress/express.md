@@ -427,3 +427,7 @@
 ### GET ONE 
 
 ![](images/clipboard-2750285564.png)
+
+### Crear inventario
+
+![](images/clipboard-853183043.png)
