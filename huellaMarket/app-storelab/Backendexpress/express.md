@@ -481,3 +481,7 @@
 ### Seeder
 
 ![](images/clipboard-2045802632.png)
+
+### Swagger
+
+![](images/clipboard-191772874.png)
