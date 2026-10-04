@@ -401,3 +401,7 @@
 ### **Modelo Inventario**
 
 ![](images/clipboard-323184114.png)
+
+###  Controller + Routes
+
+![](images/clipboard-3241429605.png)
