@@ -275,3 +275,7 @@
 ### Runner
 
 ![](images/clipboard-2151712595.png)
+
+##  **ISS-05 — Swagger / OpenAPI (feature + registry externo)**
+
+![](images/clipboard-450018100.png)
