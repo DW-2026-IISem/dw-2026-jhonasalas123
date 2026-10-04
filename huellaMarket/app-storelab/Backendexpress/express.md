@@ -261,3 +261,7 @@
 ## **ISS-03-E — Feature petService — Eliminar (físico y lógico)**
 
 ![](images/clipboard-2429002990.png)
+
+###  **Seeder Feature petService**
+
+![](images/clipboard-3607874329.png)
