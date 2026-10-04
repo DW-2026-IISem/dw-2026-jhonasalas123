@@ -547,3 +547,7 @@
 ### **14.5 `auth-user.ts` — la identidad en `Request`**
 
 ![](images/clipboard-1527496409.png)
+
+### **14.6 `error-response.ts` y PARCHE de `BaseController`**
+
+![](images/clipboard-1344113736.png)
