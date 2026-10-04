@@ -523,3 +523,11 @@
 # **Cierre**
 
 ![](images/clipboard-3483697605.png)
+
+# **Unidad ISS-09 · Auth base (seguridad y modelos)**
+
+## **Fase II: Auth con RBAC — ISS-09 — Base de seguridad compartida y modelos Auth**
+
+### **14.1 Dependencias y variables de entorno**
+
+![](images/clipboard-1840933329.png)
