@@ -441,3 +441,9 @@
 ### **Modelo venta**
 
 ![](images/clipboard-2220029352.png)
+
+### Controller + Routes
+
+![](images/clipboard-2128871545.png)
+
+![](images/clipboard-2008173471.png)
