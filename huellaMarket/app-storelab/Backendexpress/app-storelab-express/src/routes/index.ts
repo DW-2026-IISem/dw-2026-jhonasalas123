@@ -4,6 +4,7 @@ import { PetServiceRoutes } from "../features/business/pet-service/pet-service.r
 import { ServiceAppointmentRoutes } from "../features/business/service-appointment/service-appointment.routes";
 import { ProductRoutes } from "../features/business/product/product.routes";
 import { ProviderRoutes } from "../features/business/provider/provider.routes";
+import { InventoryRoutes } from "../features/business/inventory/inventory.routes";
 
 export class Routes {
   public petRoutes: PetRoutes = new PetRoutes();
@@ -13,4 +14,5 @@ export class Routes {
     new ServiceAppointmentRoutes();
   public productRoutes: ProductRoutes = new ProductRoutes();
   public providerRoutes: ProviderRoutes = new ProviderRoutes();
+  public inventoryRoutes: InventoryRoutes = new InventoryRoutes();
 }

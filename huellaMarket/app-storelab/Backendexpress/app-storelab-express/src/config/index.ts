@@ -6,6 +6,7 @@ import "../features/business/health-record/health-record.model";
 import "../features/business/service-appointment/service-appointment.model";
 import "../features/business/product/product.model";
 import "../features/business/provider/provider.model";
+import "../features/business/inventory/inventory.model";
 import { Routes } from "../routes/index";
 import { ProviderRoutes } from "../features/business/provider/provider.routes";
 
@@ -30,6 +31,7 @@ export class App {
     this.routePrv.serviceAppointmentRoutes.routes(this.app);
     this.routePrv.productRoutes.routes(this.app);
     this.routePrv.providerRoutes.routes(this.app);
+    this.routePrv.inventoryRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {
