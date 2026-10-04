@@ -489,3 +489,7 @@
 ### GET ALL y GET ONE+ crear 
 
 ![](images/clipboard-1773727491.png)
+
+### Update
+
+![](images/clipboard-388771660.png)
