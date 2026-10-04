@@ -375,3 +375,7 @@
 ### **controller + rutas** 
 
 ![](images/clipboard-2369224728.png)
+
+### **Agregador Routes + cableado en Config**
+
+![](images/clipboard-2584044214.png)

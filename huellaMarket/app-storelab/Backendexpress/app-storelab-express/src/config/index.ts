@@ -5,7 +5,9 @@ import "../features/business/client/client.model";
 import "../features/business/health-record/health-record.model";
 import "../features/business/service-appointment/service-appointment.model";
 import "../features/business/product/product.model";
+import "../features/business/provider/provider.model";
 import { Routes } from "../routes/index";
+import { ProviderRoutes } from "../features/business/provider/provider.routes";
 
 dotenv.config();
 
@@ -27,6 +29,7 @@ export class App {
     this.routePrv.petServiceRoutes.routes(this.app);
     this.routePrv.serviceAppointmentRoutes.routes(this.app);
     this.routePrv.productRoutes.routes(this.app);
+    this.routePrv.providerRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {
