@@ -371,3 +371,7 @@
 ### **Modelo proveedor**
 
 ![](images/clipboard-3595449174.png)
+
+### **controller + rutas** 
+
+![](images/clipboard-2369224728.png)
