@@ -284,7 +284,7 @@
 
 ![](images/clipboard-2359937609.png)
 
-## **Entidad Citaservicio**
+## **Entidad-Citaservicio**
 
 ### **Modelo Citaservicio**
 
@@ -395,3 +395,9 @@
 ### POST + PUT + PATCH + DELETE lógico
 
 ![](images/clipboard-3306285842.png)
+
+## **Entidad-Inventario**
+
+### **Modelo Inventario**
+
+![](images/clipboard-323184114.png)
