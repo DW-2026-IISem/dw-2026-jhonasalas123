@@ -298,4 +298,6 @@
 
 ![](images/clipboard-999289248.png)
 
-![](images/clipboard-2849417788.png)
+## **Feature Citaservicio — GetAll y GetOne**
+
+![](images/clipboard-4166652556.png)
