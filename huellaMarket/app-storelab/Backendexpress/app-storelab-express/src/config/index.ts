@@ -4,6 +4,7 @@ import { sequelize, getDatabaseInfo, testConnection } from "../database/db";
 import "../features/business/client/client.model";
 import "../features/business/health-record/health-record.model";
 import "../features/business/service-appointment/service-appointment.model";
+import "../features/business/product/product.model";
 import { Routes } from "../routes/index";
 
 dotenv.config();
@@ -25,6 +26,7 @@ export class App {
     this.routePrv.healthRecordRoutes.routes(this.app);
     this.routePrv.petServiceRoutes.routes(this.app);
     this.routePrv.serviceAppointmentRoutes.routes(this.app);
+    this.routePrv.productRoutes.routes(this.app);
   }
 
   public async dbConnection(): Promise<void> {

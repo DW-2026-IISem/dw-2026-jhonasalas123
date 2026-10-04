@@ -333,3 +333,7 @@
 ### **Controller + routes**
 
 ![](images/clipboard-2041985080.png)
+
+###  **Cableado Routes + Config**
+
+![](images/clipboard-2836163832.png)
