@@ -13,6 +13,7 @@ exports.DEFAULT_SEED_COUNTS = {
     inventories: 10,
     sales: 10,
     saleDetails: 10,
+    payments: 10,
 };
 function resolveSeedCounts(argv = process.argv.slice(2)) {
     const counts = { ...exports.DEFAULT_SEED_COUNTS };

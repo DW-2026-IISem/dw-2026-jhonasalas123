@@ -507,3 +507,7 @@
 ### Seeder + conteo + runner
 
 ![](images/clipboard-3145381981.png)
+
+### Swagger 
+
+![](images/clipboard-2761919822.png)

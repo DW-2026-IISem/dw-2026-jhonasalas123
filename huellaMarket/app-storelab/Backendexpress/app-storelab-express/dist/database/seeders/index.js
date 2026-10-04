@@ -25,6 +25,7 @@ const service_appointment_seeder_1 = require("../../features/business/service-ap
 const inventory_seeder_1 = require("../../features/business/inventory/inventory.seeder");
 const sale_seeder_1 = require("../../features/business/sale/sale.seeder");
 const sale_detail_seeder_1 = require("../../features/business/sale-detail/sale-detail.seeder");
+const payment_seeder_1 = require("../../features/business/payment/payment.seeder");
 const counts_1 = require("./counts");
 dotenv_1.default.config();
 /**
@@ -50,6 +51,7 @@ async function runAllSeeders() {
     await (0, provider_seeder_1.seedProviders)(counts.providers);
     await (0, service_appointment_seeder_1.seedServiceAppointments)(counts.service_appointments);
     await (0, inventory_seeder_1.seedInventories)(counts.inventories);
+    await (0, payment_seeder_1.seedPayments)(counts.payments);
     await (0, sale_detail_seeder_1.seedSaleDetails)(counts.saleDetails);
     await (0, sale_seeder_1.seedSales)(counts.sales);
     console.log("🌱 SeedersRunner finalizado");
