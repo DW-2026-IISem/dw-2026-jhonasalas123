@@ -1,51 +1,52 @@
-import { Router } from "express";
+import { Application } from "express";
 import { ServiceAppointmentController } from "./service-appointment.controller";
 
 export class ServiceAppointmentRoutes {
-  public router: Router;
-  private controller: ServiceAppointmentController;
+  private controller: ServiceAppointmentController =
+    new ServiceAppointmentController();
 
-  constructor() {
-    this.router = Router();
-    this.controller = new ServiceAppointmentController();
-  }
+  public routes(app: Application): void {
 
-  routes(): Router {
-    this.router.get(
-      "/",
+    // GET /api/citas-servicio
+    app.get(
+      "/api/citas-servicio",
       this.controller.getAll.bind(this.controller)
     );
 
-    this.router.get(
-      "/:id",
+    // GET /api/citas-servicio/:id
+    app.get(
+      "/api/citas-servicio/:id",
       this.controller.getOne.bind(this.controller)
     );
 
-    this.router.post(
-      "/",
+    // POST /api/citas-servicio
+    app.post(
+      "/api/citas-servicio",
       this.controller.create.bind(this.controller)
     );
 
-    this.router.put(
-      "/:id",
+    // PUT /api/citas-servicio/:id
+    app.put(
+      "/api/citas-servicio/:id",
       this.controller.updatePut.bind(this.controller)
     );
 
-    this.router.patch(
-      "/:id",
+    // PATCH /api/citas-servicio/:id
+    app.patch(
+      "/api/citas-servicio/:id",
       this.controller.updatePatch.bind(this.controller)
     );
 
-    this.router.delete(
-      "/:id",
+    // DELETE físico
+    app.delete(
+      "/api/citas-servicio/:id",
       this.controller.deletePhysical.bind(this.controller)
     );
 
-    this.router.delete(
-      "/:id/deactivate",
+    // DELETE lógico
+    app.delete(
+      "/api/citas-servicio/:id/deactivate",
       this.controller.deleteLogical.bind(this.controller)
     );
-
-    return this.router;
   }
 }

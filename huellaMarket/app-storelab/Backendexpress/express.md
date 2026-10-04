@@ -301,3 +301,7 @@
 ## **Feature Citaservicio — GetAll y GetOne**
 
 ![](images/clipboard-4166652556.png)
+
+###  **Update (PUT) y Update (PATCH)**
+
+![](images/clipboard-4130193148.png)

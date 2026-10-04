@@ -8,6 +8,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const db_1 = require("../database/db");
 require("../features/business/client/client.model");
 require("../features/business/health-record/health-record.model");
+require("../features/business/service-appointment/service-appointment.model");
 const index_1 = require("../routes/index");
 dotenv_1.default.config();
 exports.config = {
@@ -22,6 +23,7 @@ class App {
         this.routePrv.petRoutes.routes(this.app);
         this.routePrv.healthRecordRoutes.routes(this.app);
         this.routePrv.petServiceRoutes.routes(this.app);
+        this.routePrv.serviceAppointmentRoutes.routes(this.app);
     }
     async dbConnection() {
         try {

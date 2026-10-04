@@ -69,12 +69,62 @@ export class ServiceAppointmentController {
 
   // ISS-03-D — PUT /api/citas-servicio/:id
   public async updatePut(req: Request, res: Response): Promise<void> {
-    // TODO: implementar
+    try {
+      const id = Number(req.params.id);
+
+      const service_appointment =
+        await ServiceAppointment.findByPk(id);
+
+      if (!service_appointment) {
+        res.status(404).json({
+          error: "Service appointment not found",
+        });
+        return;
+      }
+
+      const body = req.body as ServiceAppointmentI;
+
+      await service_appointment.update({
+        nombre: body.nombre,
+        descripcion: body.descripcion ?? null,
+        isActive: body.isActive ?? true,
+      });
+
+      res.status(200).json({ service_appointment });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error updating service appointment",
+        detail: String(error),
+      });
+    }
   }
 
   // ISS-03-D — PATCH /api/citas-servicio/:id
   public async updatePatch(req: Request, res: Response): Promise<void> {
-    // TODO: implementar
+    try {
+      const id = Number(req.params.id);
+
+      const service_appointment =
+        await ServiceAppointment.findByPk(id);
+
+      if (!service_appointment) {
+        res.status(404).json({
+          error: "Service appointment not found",
+        });
+        return;
+      }
+
+      const body = req.body as Partial<ServiceAppointmentI>;
+
+      await service_appointment.update(body);
+
+      res.status(200).json({ service_appointment });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error patching service appointment",
+        detail: String(error),
+      });
+    }
   }
 
   // ISS-03-E — DELETE físico /api/citas-servicio/:id
