@@ -18,7 +18,9 @@ import "../../features/business/provider/provider.model";
 import { seedProviders } from "../../features/business/provider/provider.seeder";
 
 import "../../features/business/service-appointment/service-appointment.model";
+import "../../features/business/inventory/inventory.model";
 import { seedServiceAppointments } from "../../features/business/service-appointment/service-appointment.seeder";
+import { seedInventories } from "../../features/business/inventory/inventory.seeder";
 
 import { resolveSeedCounts } from "./counts";
 
@@ -51,6 +53,7 @@ export async function runAllSeeders(): Promise<void> {
   await seedProducts(counts.products);
     await seedProviders(counts.providers);
   await seedServiceAppointments(counts.service_appointments);
+  await seedInventories(counts.inventories);
 
   console.log("🌱 SeedersRunner finalizado");
 }
