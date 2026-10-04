@@ -12,6 +12,8 @@ require("../../features/business/pet/pet.model");
 const pet_seeder_1 = require("../../features/business/pet/pet.seeder");
 require("../../features/business/health-record/health-record.model");
 const health_record_seeder_1 = require("../../features/business/health-record/health-record.seeder");
+require("../../features/business/pet-service/pet-service.model");
+const pet_service_seeder_1 = require("../../features/business/pet-service/pet-service.seeder");
 const counts_1 = require("./counts");
 dotenv_1.default.config();
 /**
@@ -32,6 +34,7 @@ async function runAllSeeders() {
     await (0, client_seeder_1.seedClients)(counts.clients);
     await (0, pet_seeder_1.seedPets)(counts.pets);
     await (0, health_record_seeder_1.seedHealthRecords)(counts.healthRecords);
+    await (0, pet_service_seeder_1.seedPetServices)(counts.pet_services);
     console.log("🌱 SeedersRunner finalizado");
 }
 if (require.main === module) {

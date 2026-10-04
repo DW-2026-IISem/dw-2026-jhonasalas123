@@ -268,4 +268,10 @@
 
 ### **SeedersRunner + conteos por entidad**
 
+### **Conteos**
+
 ![](images/clipboard-3920671844.png)
+
+### Runner
+
+![](images/clipboard-2151712595.png)
