@@ -435,3 +435,9 @@
 ### PUT + PATCH + DELETE 
 
 ![](images/clipboard-1158220480.png)
+
+## **Entidad-Venta**
+
+### **Modelo venta**
+
+![](images/clipboard-2220029352.png)
