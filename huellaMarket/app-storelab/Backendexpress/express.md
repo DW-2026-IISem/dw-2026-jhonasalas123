@@ -329,3 +329,7 @@
 ## **Modelo  producto**
 
 ![](images/clipboard-1198425113.png)
+
+### **Controller + routes**
+
+![](images/clipboard-2041985080.png)
