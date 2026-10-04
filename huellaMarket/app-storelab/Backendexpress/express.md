@@ -493,3 +493,9 @@
 ### Update
 
 ![](images/clipboard-388771660.png)
+
+## Entidad- pago
+
+### Modelo pago
+
+![](images/clipboard-2925849071.png)
