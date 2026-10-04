@@ -511,3 +511,7 @@
 ### Swagger 
 
 ![](images/clipboard-2761919822.png)
+
+### GetAll y GetOne
+
+![](images/clipboard-49806785.png)
