@@ -8,7 +8,7 @@ class RefreshToken extends sequelize_1.Model {
 exports.RefreshToken = RefreshToken;
 RefreshToken.init({
     user_id: {
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER.UNSIGNED,
         allowNull: false,
     },
     token_hash: {

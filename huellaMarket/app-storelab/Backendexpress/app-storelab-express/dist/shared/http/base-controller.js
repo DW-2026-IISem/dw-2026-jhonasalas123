@@ -1,57 +1,37 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseController = void 0;
-const app_error_1 = require("../errors/app-error");
-const error_response_1 = require("./error-response");
-/**
- * Base de los controllers HTTP.
- *
- * Aísla las tres responsabilidades puramente HTTP que, si no, se repetirían en
- * los 7 métodos de cada controller:
- *
- *  - `run`:            ejecuta el cuerpo del handler y traduce el error a HTTP.
- *  - `paramId`:        lee y valida el `:id` de la URL.
- *  - `handleError`:    mapea `AppError` a su status y lo demás a 500.
- *
- * La capa de negocio (service) no conoce `req`/`res`.
- */
 class BaseController {
-    /**
-     * Ejecuta el cuerpo de un handler y centraliza el manejo de errores.
-     *
-     * Sin este helper, cada uno de los 35 métodos de los controllers tendría su
-     * propio `try/catch`. Aquí el `catch` vive una sola vez.
-     */
     async run(res, work) {
         try {
-            await work();
+            const result = await work();
+            if (result === undefined) {
+                res.status(204).send();
+                return;
+            }
+            res.status(200).json(result);
         }
         catch (error) {
-            this.handleError(res, error);
+            const status = typeof error === "object" &&
+                error !== null &&
+                "statusCode" in error &&
+                typeof error.statusCode === "number"
+                ? error.statusCode
+                : 500;
+            const message = error instanceof Error
+                ? error.message
+                : "Error interno del servidor";
+            res.status(status).json({
+                error: message,
+            });
         }
     }
-    /**
-     * Lee el `:id` de la URL y lo valida como entero positivo.
-     *
-     * Sin la validación, `GET /api/clientes/abc` llegaría al repository como
-     * `Number("abc") === NaN` y devolvería un 404 engañoso en vez de un 400.
-     */
     paramId(req) {
-        const raw = req.params.id;
-        const value = Array.isArray(raw) ? raw[0] : raw;
-        if (!value || !/^\d+$/.test(value) || Number(value) < 1) {
-            throw new app_error_1.AppError(400, "Invalid id: must be a positive integer");
+        const id = Number(req.params.id);
+        if (!Number.isInteger(id) || id <= 0) {
+            throw new Error("ID inválido");
         }
-        return Number(value);
-    }
-    /**
-     * Mapea errores: `AppError` -> su status; cualquier otro -> 500.
-     *
-     * La traducción vive en `sendError` porque los middlewares de acceso también
-     * la necesitan: un único punto decide el mapeo error -> HTTP.
-     */
-    handleError(res, error) {
-        (0, error_response_1.sendError)(res, error);
+        return id;
     }
 }
 exports.BaseController = BaseController;

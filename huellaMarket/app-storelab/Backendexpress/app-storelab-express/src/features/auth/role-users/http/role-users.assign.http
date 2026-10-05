@@ -1,0 +1,88 @@
+@baseUrl = http://localhost:4000
+
+### =========================
+### LOGIN ADMIN
+### =========================
+
+# @name loginAdmin
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123*"
+}
+
+###
+
+@adminToken = {{loginAdmin.response.body.accessToken}}
+
+### =========================
+### ROLE USERS
+### =========================
+
+### 1. Listar asignaciones
+GET {{baseUrl}}/api/asignaciones-rol
+Authorization: Bearer {{adminToken}}
+
+###
+
+### 2. Obtener asignación
+GET {{baseUrl}}/api/asignaciones-rol/1
+Authorization: Bearer {{adminToken}}
+
+###
+
+### 3. Asignar SELLER (user_id=2, role_id=1 ADMIN)
+POST {{baseUrl}}/api/asignaciones-rol
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "role_id": 1
+}
+
+###
+
+### 4. Repetir asignación -> debe responder 409
+POST {{baseUrl}}/api/asignaciones-rol
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "user_id": 2,
+  "role_id": 1
+}
+
+###
+
+### 5. Usuario inexistente -> debe responder 404
+POST {{baseUrl}}/api/asignaciones-rol
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "user_id": 99999,
+  "role_id": 1
+}
+
+###
+
+### 6. Desactivar asignación
+PATCH {{baseUrl}}/api/asignaciones-rol/1/deactivate
+Authorization: Bearer {{adminToken}}
+
+###
+
+### 7. Verificar permisos efectivos del usuario
+GET {{baseUrl}}/api/usuarios/2/permisos
+Authorization: Bearer {{adminToken}}
+
+###
+
+### 8. Reactivar asignación
+PATCH {{baseUrl}}/api/asignaciones-rol/1/reactivate
+Authorization: Bearer {{adminToken}}
+
+###

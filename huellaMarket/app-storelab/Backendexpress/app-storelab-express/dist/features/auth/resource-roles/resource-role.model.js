@@ -8,7 +8,7 @@ class ResourceRole extends sequelize_1.Model {
 exports.ResourceRole = ResourceRole;
 ResourceRole.init({
     role_id: {
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER.UNSIGNED,
         allowNull: false,
     },
     resource_id: {

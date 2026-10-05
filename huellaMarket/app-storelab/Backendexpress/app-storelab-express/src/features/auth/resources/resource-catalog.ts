@@ -10,14 +10,11 @@ export interface CatalogResource {
  *
  * Total: 58 recursos.
  *
- * `seller: true` marca los recursos que recibe el rol SELLER.
- * Las operaciones de sesión (`/api/sesion/*` y `/api/sesiones/*`) no son
- * recursos RBAC porque forman parte del flujo de autenticación.
+ * seller = true:
+ * recursos que puede ejecutar el rol SELLER.
  */
-export const RESOURCE_CATALOG: CatalogResource[] = [
-  // -------------------------------------------------------------------------
-  // Clientes — 7
-  // -------------------------------------------------------------------------
+export const RESOURCE_CATALOG: readonly CatalogResource[] = [
+  // ==================== CLIENTES (7) ====================
   {
     method: "GET",
     path: "/api/clientes",
@@ -27,7 +24,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/clientes/:id",
-    description: "Consultar cliente por ID",
+    description: "Consultar cliente",
     seller: true,
   },
   {
@@ -38,12 +35,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/clientes/:id",
-    description: "Actualizar cliente por PUT",
+    description: "Actualizar cliente",
   },
   {
     method: "PATCH",
     path: "/api/clientes/:id",
-    description: "Actualizar cliente por PATCH",
+    description: "Actualizar parcialmente cliente",
   },
   {
     method: "DELETE",
@@ -56,9 +53,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     description: "Desactivar cliente",
   },
 
-  // -------------------------------------------------------------------------
-  // Tipos de producto — 7
-  // -------------------------------------------------------------------------
+  // ==================== TIPOS DE PRODUCTO (7) ====================
   {
     method: "GET",
     path: "/api/tipos-producto",
@@ -67,7 +62,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/tipos-producto/:id",
-    description: "Consultar tipo de producto por ID",
+    description: "Consultar tipo de producto",
   },
   {
     method: "POST",
@@ -77,12 +72,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/tipos-producto/:id",
-    description: "Actualizar tipo de producto por PUT",
+    description: "Actualizar tipo de producto",
   },
   {
     method: "PATCH",
     path: "/api/tipos-producto/:id",
-    description: "Actualizar tipo de producto por PATCH",
+    description: "Actualizar parcialmente tipo de producto",
   },
   {
     method: "DELETE",
@@ -95,9 +90,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     description: "Desactivar tipo de producto",
   },
 
-  // -------------------------------------------------------------------------
-  // Productos — 7
-  // -------------------------------------------------------------------------
+  // ==================== PRODUCTOS (7) ====================
   {
     method: "GET",
     path: "/api/productos",
@@ -107,7 +100,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/productos/:id",
-    description: "Consultar producto por ID",
+    description: "Consultar producto",
     seller: true,
   },
   {
@@ -118,12 +111,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/productos/:id",
-    description: "Actualizar producto por PUT",
+    description: "Actualizar producto",
   },
   {
     method: "PATCH",
     path: "/api/productos/:id",
-    description: "Actualizar producto por PATCH",
+    description: "Actualizar parcialmente producto",
   },
   {
     method: "DELETE",
@@ -136,9 +129,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     description: "Desactivar producto",
   },
 
-  // -------------------------------------------------------------------------
-  // Ventas — 3
-  // -------------------------------------------------------------------------
+  // ==================== VENTAS (3) ====================
   {
     method: "GET",
     path: "/api/ventas",
@@ -148,7 +139,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/ventas/:id",
-    description: "Consultar venta por ID",
+    description: "Consultar venta",
     seller: true,
   },
   {
@@ -158,18 +149,14 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     seller: true,
   },
 
-  // -------------------------------------------------------------------------
-  // Detalle de ventas — 1
-  // -------------------------------------------------------------------------
+  // ==================== DETALLE DE VENTAS (1) ====================
   {
     method: "GET",
     path: "/api/ventas/:id/detalles",
     description: "Consultar detalle de una venta",
   },
 
-  // -------------------------------------------------------------------------
-  // Usuarios — 9
-  // -------------------------------------------------------------------------
+  // ==================== USUARIOS (9) ====================
   {
     method: "GET",
     path: "/api/usuarios",
@@ -178,7 +165,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/usuarios/:id",
-    description: "Consultar usuario por ID",
+    description: "Consultar usuario",
   },
   {
     method: "POST",
@@ -188,12 +175,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/usuarios/:id",
-    description: "Actualizar usuario por PUT",
+    description: "Actualizar usuario",
   },
   {
     method: "PATCH",
     path: "/api/usuarios/:id",
-    description: "Actualizar usuario por PATCH",
+    description: "Actualizar parcialmente usuario",
   },
   {
     method: "DELETE",
@@ -208,17 +195,15 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PATCH",
     path: "/api/usuarios/:id/password",
-    description: "Cambiar contraseña de usuario",
+    description: "Cambiar contraseña",
   },
   {
     method: "GET",
     path: "/api/usuarios/:id/permisos",
-    description: "Consultar permisos efectivos del usuario",
+    description: "Consultar permisos efectivos",
   },
 
-  // -------------------------------------------------------------------------
-  // Roles — 7
-  // -------------------------------------------------------------------------
+  // ==================== ROLES (7) ====================
   {
     method: "GET",
     path: "/api/roles",
@@ -227,7 +212,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/roles/:id",
-    description: "Consultar rol por ID",
+    description: "Consultar rol",
   },
   {
     method: "POST",
@@ -237,12 +222,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/roles/:id",
-    description: "Actualizar rol por PUT",
+    description: "Actualizar rol",
   },
   {
     method: "PATCH",
     path: "/api/roles/:id",
-    description: "Actualizar rol por PATCH",
+    description: "Actualizar parcialmente rol",
   },
   {
     method: "DELETE",
@@ -255,9 +240,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     description: "Desactivar rol",
   },
 
-  // -------------------------------------------------------------------------
-  // Recursos — 7
-  // -------------------------------------------------------------------------
+  // ==================== RECURSOS (7) ====================
   {
     method: "GET",
     path: "/api/recursos",
@@ -266,7 +249,7 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "GET",
     path: "/api/recursos/:id",
-    description: "Consultar recurso por ID",
+    description: "Consultar recurso",
   },
   {
     method: "POST",
@@ -276,12 +259,12 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
   {
     method: "PUT",
     path: "/api/recursos/:id",
-    description: "Actualizar recurso por PUT",
+    description: "Actualizar recurso",
   },
   {
     method: "PATCH",
     path: "/api/recursos/:id",
-    description: "Actualizar recurso por PATCH",
+    description: "Actualizar parcialmente recurso",
   },
   {
     method: "DELETE",
@@ -294,66 +277,81 @@ export const RESOURCE_CATALOG: CatalogResource[] = [
     description: "Desactivar recurso",
   },
 
-  // -------------------------------------------------------------------------
-  // Asignaciones usuario <-> rol — 5
-  // -------------------------------------------------------------------------
+  // ==================== ASIGNACIONES USUARIO-ROL (5) ====================
   {
     method: "GET",
-    path: "/api/usuarios/:id/roles",
-    description: "Consultar roles asignados a un usuario",
+    path: "/api/asignaciones-rol",
+    description: "Listar asignaciones usuario-rol",
+  },
+  {
+    method: "GET",
+    path: "/api/asignaciones-rol/:id",
+    description: "Consultar asignación usuario-rol",
   },
   {
     method: "POST",
-    path: "/api/usuarios/:id/roles",
+    path: "/api/asignaciones-rol",
     description: "Asignar rol a usuario",
   },
   {
-    method: "DELETE",
-    path: "/api/usuarios/:id/roles/:roleId",
+    method: "PATCH",
+    path: "/api/asignaciones-rol/:id/deactivate",
     description: "Retirar rol de usuario",
   },
   {
-    method: "GET",
-    path: "/api/roles/:id/usuarios",
-    description: "Consultar usuarios asignados a un rol",
-  },
-  {
-    method: "POST",
-    path: "/api/roles/:id/usuarios",
-    description: "Asignar usuario a rol",
+    method: "PATCH",
+    path: "/api/asignaciones-rol/:id/reactivate",
+    description: "Reactivar rol de usuario",
   },
 
-  // -------------------------------------------------------------------------
-  // Concesiones rol <-> recurso — 5
-  // -------------------------------------------------------------------------
+  // ==================== CONCESIONES ROL-RECURSO (5) ====================
   {
     method: "GET",
-    path: "/api/roles/:id/recursos",
-    description: "Consultar recursos asignados a un rol",
-  },
-  {
-    method: "POST",
-    path: "/api/roles/:id/recursos",
-    description: "Asignar recurso a rol",
-  },
-  {
-    method: "DELETE",
-    path: "/api/roles/:id/recursos/:resourceId",
-    description: "Retirar recurso de rol",
+    path: "/api/concesiones-rol",
+    description: "Listar concesiones rol-recurso",
   },
   {
     method: "GET",
-    path: "/api/recursos/:id/roles",
-    description: "Consultar roles asignados a un recurso",
+    path: "/api/concesiones-rol/:id",
+    description: "Consultar concesión rol-recurso",
   },
   {
     method: "POST",
-    path: "/api/recursos/:id/roles",
-    description: "Asignar rol a recurso",
+    path: "/api/concesiones-rol",
+    description: "Conceder recurso a rol",
   },
-];
+  {
+    method: "PATCH",
+    path: "/api/concesiones-rol/:id/deactivate",
+    description: "Revocar recurso de rol",
+  },
+  {
+    method: "PATCH",
+    path: "/api/concesiones-rol/:id/reactivate",
+    description: "Reactivar recurso de rol",
+  },
+] as const;
 
-/** Recursos que recibe el rol SELLER. */
+/**
+ * Recursos permitidos para SELLER.
+ *
+ * Debe contener exactamente 7 recursos.
+ */
 export const SELLER_RESOURCES = RESOURCE_CATALOG.filter(
   (resource) => resource.seller === true
 );
+
+/**
+ * Validación interna del catálogo.
+ */
+if (RESOURCE_CATALOG.length !== 58) {
+  throw new Error(
+    `RESOURCE_CATALOG debe contener 58 recursos; contiene ${RESOURCE_CATALOG.length}`
+  );
+}
+
+if (SELLER_RESOURCES.length !== 7) {
+  throw new Error(
+    `SELLER_RESOURCES debe contener 7 recursos; contiene ${SELLER_RESOURCES.length}`
+  );
+}

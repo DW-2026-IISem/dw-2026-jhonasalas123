@@ -33,6 +33,7 @@ class App {
         this.app = app;
     }
     routes() {
+        this.routePrv.sessionRoutes.routes(this.app);
         this.routePrv.petRoutes.routes(this.app);
         this.routePrv.healthRecordRoutes.routes(this.app);
         this.routePrv.petServiceRoutes.routes(this.app);

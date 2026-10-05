@@ -641,3 +641,9 @@
 ## Cierre
 
 ![](images/clipboard-4237420416.png)
+
+# **Unidad ISS-12 · Features RoleUsers y ResourceRoles**
+
+## **Fase II: Auth con RBAC — ISS-12 — Features RoleUsers y ResourceRoles (asignar roles y conceder permisos)**
+
+![](images/clipboard-2654773432.png)

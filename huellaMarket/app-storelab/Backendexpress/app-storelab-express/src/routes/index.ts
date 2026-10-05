@@ -1,3 +1,4 @@
+import { SessionRoutes } from "../features/auth/session/session.routes";
 import { PetRoutes } from "../features/business/pet/pet.routes";
 import { HealthRecordRoutes } from "../features/business/health-record/health-record.routes";
 import { PetServiceRoutes } from "../features/business/pet-service/pet-service.routes";
@@ -10,6 +11,7 @@ import { SaleDetailRoutes } from "../features/business/sale-detail/sale-detail.r
 import { PaymentRoutes } from "../features/business/payment/payment.routes";
 
 export class Routes {
+  public sessionRoutes: SessionRoutes = new SessionRoutes();
   public petRoutes: PetRoutes = new PetRoutes();
   public healthRecordRoutes: HealthRecordRoutes = new HealthRecordRoutes();
   public petServiceRoutes: PetServiceRoutes = new PetServiceRoutes();
