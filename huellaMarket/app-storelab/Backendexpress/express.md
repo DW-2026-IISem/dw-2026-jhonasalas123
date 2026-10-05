@@ -614,4 +614,6 @@
 
 ![](images/clipboard-3203539984.png)
 
-### 
+### **16.2 Feature Roles — repository, service, controller y rutas**
+
+![](images/clipboard-1892008834.png)
