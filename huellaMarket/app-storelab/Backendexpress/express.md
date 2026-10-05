@@ -617,3 +617,7 @@
 ### **16.2 Feature Roles — repository, service, controller y rutas**
 
 ![](images/clipboard-1892008834.png)
+
+### **16.3 Feature Roles — seeder y swagger**
+
+![](images/clipboard-1238839320.png)
