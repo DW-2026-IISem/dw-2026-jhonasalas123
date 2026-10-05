@@ -605,3 +605,13 @@
 ### **15.8 Pruebas HTTP**
 
 ![](images/clipboard-129744231.png)
+
+# **Unidad ISS-11 · Features Roles y Resources**
+
+## **Fase II: Auth con RBAC — ISS-11 — Features Roles y Resources (catálogo de autorización)**
+
+### **16.1 Feature Roles — DTOs**
+
+![](images/clipboard-3203539984.png)
+
+### 
