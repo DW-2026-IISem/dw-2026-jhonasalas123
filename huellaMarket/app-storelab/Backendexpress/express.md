@@ -589,3 +589,7 @@
 ### **15.4 Controller**
 
 ![](images/clipboard-204034451.png)
+
+### **15.5 Rutas (modalidad JWT + RBAC)**
+
+![](images/clipboard-1581473999.png)
