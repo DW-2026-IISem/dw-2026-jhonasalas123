@@ -5,6 +5,7 @@
  * CLI > variables de entorno > valores por defecto.
  */
 export type SeedCounts = {
+  users: number;
   clients: number;
   pets: number;
   healthRecords: number;
@@ -19,6 +20,7 @@ export type SeedCounts = {
 };
 
 export const DEFAULT_SEED_COUNTS: SeedCounts = {
+  users: 2,
   clients: 10,
   pets: 10,
   healthRecords: 10,
@@ -36,6 +38,11 @@ export function resolveSeedCounts(
   argv: string[] = process.argv.slice(2)
 ): SeedCounts {
   const counts: SeedCounts = { ...DEFAULT_SEED_COUNTS };
+
+  const envUsers = process.env.SEED_USERS;
+  if (envUsers !== undefined && envUsers !== "") {
+    counts.users = Number(envUsers);
+  }
 
   const envClients = process.env.SEED_CLIENTS;
   if (envClients !== undefined && envClients !== "") {

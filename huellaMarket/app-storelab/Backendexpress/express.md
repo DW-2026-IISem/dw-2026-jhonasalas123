@@ -659,3 +659,9 @@
 ## **Fase II: Auth con RBAC — ISS-14 — Feature RefreshTokens (sesiones renovables y revocables)**
 
 ![](images/clipboard-3977072356.png)
+
+# **Unidad ISS-15 · Feature Session (login y perfil)**
+
+## **Fase II: Auth con RBAC — ISS-15 — Feature Session (login, refresh, logout, perfil y permisos)**
+
+![](images/clipboard-3994245597.png)

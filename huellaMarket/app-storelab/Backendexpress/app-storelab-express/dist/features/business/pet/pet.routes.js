@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PetRoutes = void 0;
+const access_1 = require("../../auth/access");
 const pet_controller_1 = require("./pet.controller");
 class PetRoutes {
     constructor() {
@@ -11,15 +12,15 @@ class PetRoutes {
         // getAll
         app
             .route("/api/mascotas")
-            .get(this.petController.getAll.bind(this.petController));
+            .get(access_1.authenticate, access_1.authorize, this.petController.getAll.bind(this.petController));
         // getOne
         app
             .route("/api/mascotas/:id")
-            .get(this.petController.getOne.bind(this.petController));
+            .get(access_1.authenticate, access_1.authorize, this.petController.getOne.bind(this.petController));
         // ================== CREATE ==================
         app
             .route("/api/mascotas")
-            .post(this.petController.create.bind(this.petController));
+            .post(access_1.authenticate, access_1.authorize, this.petController.create.bind(this.petController));
         // ================== UPDATE ==================
         // (rellenar en ISS-03-D)
         // ================== DELETE ==================

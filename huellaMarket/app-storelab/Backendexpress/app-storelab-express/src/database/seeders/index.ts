@@ -28,6 +28,11 @@ import { seedPayments } from "../../features/business/payment/payment.seeder";
 
 import { resolveSeedCounts } from "./counts";
 import "../../features/auth/users/user.model";
+import { seedUsers } from "../../features/auth/users/users.seeder";
+import { seedRoles } from "../../features/auth/roles/roles.seeder";
+import { seedResources } from "../../features/auth/resources/resources.seeder";
+import { seedRoleUsers } from "../../features/auth/role-users/role-users.seeder";
+import { seedResourceRoles } from "../../features/auth/resource-roles/resource-roles.seeder";
 import "../../features/auth/roles/role.model";
 import "../../features/auth/resources/resource.model";
 import "../../features/auth/role-users/role-user.model";
@@ -54,6 +59,13 @@ export async function runAllSeeders(): Promise<void> {
   }
 
   await sequelize.sync({ force: false, alter: true });
+
+  // Orden: auth
+  await seedUsers(counts.users);
+  await seedRoles();
+  await seedResources();
+  await seedRoleUsers();
+  await seedResourceRoles();
 
   // Orden: business (padres → hijos)
   await seedClients(counts.clients);

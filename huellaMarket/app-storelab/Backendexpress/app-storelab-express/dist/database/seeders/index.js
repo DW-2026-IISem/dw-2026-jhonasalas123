@@ -28,6 +28,11 @@ const sale_detail_seeder_1 = require("../../features/business/sale-detail/sale-d
 const payment_seeder_1 = require("../../features/business/payment/payment.seeder");
 const counts_1 = require("./counts");
 require("../../features/auth/users/user.model");
+const users_seeder_1 = require("../../features/auth/users/users.seeder");
+const roles_seeder_1 = require("../../features/auth/roles/roles.seeder");
+const resources_seeder_1 = require("../../features/auth/resources/resources.seeder");
+const role_users_seeder_1 = require("../../features/auth/role-users/role-users.seeder");
+const resource_roles_seeder_1 = require("../../features/auth/resource-roles/resource-roles.seeder");
 require("../../features/auth/roles/role.model");
 require("../../features/auth/resources/resource.model");
 require("../../features/auth/role-users/role-user.model");
@@ -49,6 +54,12 @@ async function runAllSeeders() {
         throw new Error("No hay conexión a la base de datos");
     }
     await db_1.sequelize.sync({ force: false, alter: true });
+    // Orden: auth
+    await (0, users_seeder_1.seedUsers)(counts.users);
+    await (0, roles_seeder_1.seedRoles)();
+    await (0, resources_seeder_1.seedResources)();
+    await (0, role_users_seeder_1.seedRoleUsers)();
+    await (0, resource_roles_seeder_1.seedResourceRoles)();
     // Orden: business (padres → hijos)
     await (0, client_seeder_1.seedClients)(counts.clients);
     await (0, pet_seeder_1.seedPets)(counts.pets);

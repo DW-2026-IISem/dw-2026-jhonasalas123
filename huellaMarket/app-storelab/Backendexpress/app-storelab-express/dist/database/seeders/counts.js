@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DEFAULT_SEED_COUNTS = void 0;
 exports.resolveSeedCounts = resolveSeedCounts;
 exports.DEFAULT_SEED_COUNTS = {
+    users: 2,
     clients: 10,
     pets: 10,
     healthRecords: 10,
@@ -17,6 +18,10 @@ exports.DEFAULT_SEED_COUNTS = {
 };
 function resolveSeedCounts(argv = process.argv.slice(2)) {
     const counts = { ...exports.DEFAULT_SEED_COUNTS };
+    const envUsers = process.env.SEED_USERS;
+    if (envUsers !== undefined && envUsers !== "") {
+        counts.users = Number(envUsers);
+    }
     const envClients = process.env.SEED_CLIENTS;
     if (envClients !== undefined && envClients !== "") {
         counts.clients = Number(envClients);

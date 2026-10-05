@@ -1,28 +1,19 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.authenticate = authenticate;
-exports.authorize = authorize;
-const app_error_1 = require("../../../shared/errors/app-error");
-const jwt_1 = require("../../../shared/auth/jwt");
-async function authenticate(req, _res, next) {
-    try {
-        const token = (0, jwt_1.extractBearerToken)(req.headers.authorization);
-        if (!token) {
-            throw new app_error_1.AppError(401, "Token de acceso requerido");
-        }
-        const payload = (0, jwt_1.verifyAccessToken)(token);
-        req.auth = {
-            id: Number(payload.sub),
-            username: payload.username,
-            tokenId: payload.jti,
-        };
-        next();
-    }
-    catch (error) {
-        next(error);
-    }
-}
-function authorize(_req, _res, next) {
-    next();
-}
+__exportStar(require("./authenticate.middleware"), exports);
+__exportStar(require("./authorize.middleware"), exports);
 //# sourceMappingURL=index.js.map
