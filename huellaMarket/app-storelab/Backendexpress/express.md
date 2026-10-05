@@ -569,3 +569,11 @@
 ### **14.10 Cableado de modelos en `config` y `seeders`**
 
 ![](images/clipboard-3752984246.png)
+
+# **Unidad ISS-10 · Feature Users (identidad y contraseña)**
+
+## **Fase II: Auth con RBAC — ISS-10 — Feature Users (identidad y contraseña)**
+
+### **15.1 DTOs del feature**
+
+![](images/clipboard-1350562022.png)
