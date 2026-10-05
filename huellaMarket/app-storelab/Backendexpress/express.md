@@ -633,3 +633,7 @@
 ### **16.6 Feature Resources — seeder y swagger**
 
 ![](images/clipboard-142720479.png)
+
+### **16.7 Pruebas HTTP**
+
+![](images/clipboard-1736115407.png)
