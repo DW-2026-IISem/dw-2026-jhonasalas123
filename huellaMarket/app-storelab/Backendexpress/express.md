@@ -577,3 +577,7 @@
 ### **15.1 DTOs del feature**
 
 ![](images/clipboard-1350562022.png)
+
+### **15.2 Repository**
+
+![](images/clipboard-942452729.png)
