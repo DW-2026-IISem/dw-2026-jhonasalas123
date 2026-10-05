@@ -665,3 +665,11 @@
 ## **Fase II: Auth con RBAC — ISS-15 — Feature Session (login, refresh, logout, perfil y permisos)**
 
 ![](images/clipboard-3994245597.png)
+
+# **Unidad CIERRE-AUTH · Cierre Fase II — Auth con RBAC (backend completo)**
+
+## **Fase II: Auth con RBAC — Cierre del laboratorio (backend completo)**
+
+## CIERRE FINAL
+
+![](images/clipboard-1544258390.png)
