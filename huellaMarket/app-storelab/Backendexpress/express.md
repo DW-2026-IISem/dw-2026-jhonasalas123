@@ -629,3 +629,7 @@
 ### **16.5 Feature Resources — repository, service, controller y rutas**
 
 ![](images/clipboard-1003734806.png)
+
+### **16.6 Feature Resources — seeder y swagger**
+
+![](images/clipboard-142720479.png)
