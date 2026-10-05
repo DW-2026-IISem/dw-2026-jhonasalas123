@@ -653,3 +653,9 @@
 ## **Fase II: Auth con RBAC — ISS-13 — Middlewares de acceso y las tres modalidades en rutas**
 
 ![](images/clipboard-2055331801.png)
+
+# **Unidad ISS-14 · Feature RefreshTokens (sesiones)**
+
+## **Fase II: Auth con RBAC — ISS-14 — Feature RefreshTokens (sesiones renovables y revocables)**
+
+![](images/clipboard-3977072356.png)
