@@ -601,3 +601,7 @@
 ### **15.7 Swagger del feature**
 
 ![](images/clipboard-81587363.png)
+
+### **15.8 Pruebas HTTP**
+
+![](images/clipboard-129744231.png)
