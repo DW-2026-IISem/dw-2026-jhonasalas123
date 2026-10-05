@@ -625,3 +625,7 @@
 ### **16.4 Feature Resources — DTOs y catálogo semilla**
 
 ![](images/clipboard-306371893.png)
+
+### **16.5 Feature Resources — repository, service, controller y rutas**
+
+![](images/clipboard-1003734806.png)
