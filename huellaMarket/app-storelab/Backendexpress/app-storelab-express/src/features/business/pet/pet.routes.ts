@@ -1,3 +1,4 @@
+import { authenticate, authorize } from "../../auth/access";
 import { Application } from "express";
 import { PetController } from "./pet.controller";
 
@@ -10,18 +11,18 @@ export class PetRoutes {
     // getAll
     app
       .route("/api/mascotas")
-      .get(this.petController.getAll.bind(this.petController));
+      .get(authenticate, authorize, this.petController.getAll.bind(this.petController));
 
     // getOne
     app
       .route("/api/mascotas/:id")
-      .get(this.petController.getOne.bind(this.petController));
+      .get(authenticate, authorize, this.petController.getOne.bind(this.petController));
 
     // ================== CREATE ==================
    
 app
   .route("/api/mascotas")
-  .post(this.petController.create.bind(this.petController));
+  .post(authenticate, authorize, this.petController.create.bind(this.petController));
 
     // ================== UPDATE ==================
     // (rellenar en ISS-03-D)

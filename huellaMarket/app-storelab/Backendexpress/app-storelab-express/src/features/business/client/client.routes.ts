@@ -1,3 +1,4 @@
+import { authenticate, authorize } from "../../auth/access";
 import { Application } from "express";
 import { ClientController } from "./client.controller";
 

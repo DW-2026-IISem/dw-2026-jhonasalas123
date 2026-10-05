@@ -647,3 +647,9 @@
 ## **Fase II: Auth con RBAC — ISS-12 — Features RoleUsers y ResourceRoles (asignar roles y conceder permisos)**
 
 ![](images/clipboard-2654773432.png)
+
+# **Unidad ISS-13 · Middlewares de acceso y las 3 modalidades**
+
+## **Fase II: Auth con RBAC — ISS-13 — Middlewares de acceso y las tres modalidades en rutas**
+
+![](images/clipboard-2055331801.png)
