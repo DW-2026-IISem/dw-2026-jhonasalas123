@@ -7,6 +7,11 @@ class Role extends sequelize_1.Model {
 }
 exports.Role = Role;
 Role.init({
+    id: {
+        type: sequelize_1.DataTypes.INTEGER.UNSIGNED,
+        autoIncrement: true,
+        primaryKey: true,
+    },
     name: {
         type: sequelize_1.DataTypes.STRING(80),
         allowNull: false,

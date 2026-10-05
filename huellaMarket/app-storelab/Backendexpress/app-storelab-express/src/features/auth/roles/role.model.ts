@@ -21,7 +21,12 @@ export class Role extends Model {
 
 Role.init(
   {
-    name: {
+id: {
+  type: DataTypes.INTEGER.UNSIGNED,
+  autoIncrement: true,
+  primaryKey: true,
+},    
+name: {
       type: DataTypes.STRING(80),
       allowNull: false,
       unique: "uq_roles_name",

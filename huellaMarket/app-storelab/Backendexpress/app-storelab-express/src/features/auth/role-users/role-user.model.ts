@@ -22,11 +22,11 @@ export class RoleUser extends Model {
 RoleUser.init(
   {
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
     },
     role_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
     },
     status: {

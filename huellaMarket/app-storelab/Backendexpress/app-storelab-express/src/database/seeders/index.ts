@@ -27,7 +27,13 @@ import { seedSaleDetails } from "../../features/business/sale-detail/sale-detail
 import { seedPayments } from "../../features/business/payment/payment.seeder";
 
 import { resolveSeedCounts } from "./counts";
-
+import "../../features/auth/users/user.model";
+import "../../features/auth/roles/role.model";
+import "../../features/auth/resources/resource.model";
+import "../../features/auth/role-users/role-user.model";
+import "../../features/auth/resource-roles/resource-role.model";
+import "../../features/auth/refresh-tokens/refresh-token.model";
+import "../../features/auth/rbac.associations";
 dotenv.config();
 
 /**

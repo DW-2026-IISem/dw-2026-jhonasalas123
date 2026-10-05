@@ -22,7 +22,7 @@ export class ResourceRole extends Model {
 ResourceRole.init(
   {
     role_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
     },
     resource_id: {

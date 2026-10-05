@@ -27,6 +27,13 @@ const sale_seeder_1 = require("../../features/business/sale/sale.seeder");
 const sale_detail_seeder_1 = require("../../features/business/sale-detail/sale-detail.seeder");
 const payment_seeder_1 = require("../../features/business/payment/payment.seeder");
 const counts_1 = require("./counts");
+require("../../features/auth/users/user.model");
+require("../../features/auth/roles/role.model");
+require("../../features/auth/resources/resource.model");
+require("../../features/auth/role-users/role-user.model");
+require("../../features/auth/resource-roles/resource-role.model");
+require("../../features/auth/refresh-tokens/refresh-token.model");
+require("../../features/auth/rbac.associations");
 dotenv_1.default.config();
 /**
  * SeedersRunner — ejecuta TODOS los seeders de features.

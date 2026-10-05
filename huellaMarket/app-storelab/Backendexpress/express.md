@@ -565,3 +565,7 @@
 ### **14.9 `rbac.associations.ts` — el grafo en un solo lugar**
 
 ![](images/clipboard-655282584.png)
+
+### **14.10 Cableado de modelos en `config` y `seeders`**
+
+![](images/clipboard-3752984246.png)

@@ -16,6 +16,13 @@ require("../features/business/sale/sale.model");
 require("../features/business/sale-detail/sale-detail.model");
 require("../features/business/payment/payment.model");
 const index_1 = require("../routes/index");
+require("../features/auth/users/user.model");
+require("../features/auth/roles/role.model");
+require("../features/auth/resources/resource.model");
+require("../features/auth/role-users/role-user.model");
+require("../features/auth/resource-roles/resource-role.model");
+require("../features/auth/refresh-tokens/refresh-token.model");
+require("../features/auth/rbac.associations");
 dotenv_1.default.config();
 exports.config = {
     port: process.env.PORT || 4000,

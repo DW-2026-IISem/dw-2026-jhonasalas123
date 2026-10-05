@@ -28,7 +28,7 @@ export class RefreshToken extends Model {
 RefreshToken.init(
   {
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       allowNull: false,
     },
     token_hash: {

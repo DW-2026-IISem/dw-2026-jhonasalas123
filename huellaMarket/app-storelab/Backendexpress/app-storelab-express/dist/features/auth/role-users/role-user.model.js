@@ -8,11 +8,11 @@ class RoleUser extends sequelize_1.Model {
 exports.RoleUser = RoleUser;
 RoleUser.init({
     user_id: {
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER.UNSIGNED,
         allowNull: false,
     },
     role_id: {
-        type: sequelize_1.DataTypes.INTEGER,
+        type: sequelize_1.DataTypes.INTEGER.UNSIGNED,
         allowNull: false,
     },
     status: {
