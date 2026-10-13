@@ -679,3 +679,9 @@
 ## **1.Preparación**
 
 ![](images/clipboard-105269401.png)
+
+### **Sesión de inicio de sesión y permisos**
+
+#### **Iniciar sesión como administrador**
+
+![](images/clipboard-4090249441.png)
