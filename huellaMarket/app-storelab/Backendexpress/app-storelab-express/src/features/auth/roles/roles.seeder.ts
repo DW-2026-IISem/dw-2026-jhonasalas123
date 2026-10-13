@@ -8,7 +8,7 @@ import { Role } from "./role.model";
  * existía inactivo.
  *
  * Los roles nacen **sin permisos**: las concesiones las crea el seeder de
- * `resource_roles` (ADMIN recibe los 58 recursos, SELLER los 7 de operación).
+ * `resource_roles` (ADMIN recibe el catálogo HuellaMarket, SELLER los 7 de mostrador).
  */
 export const SEED_ROLES = [
   { name: "ADMIN", description: "Administración del sistema: gestiona usuarios, roles y permisos" },

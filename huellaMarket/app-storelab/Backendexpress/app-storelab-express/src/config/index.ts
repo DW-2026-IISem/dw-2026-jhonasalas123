@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+import "dotenv/config";
 import express, {
   Application,
   ErrorRequestHandler,
@@ -36,8 +36,6 @@ import "../features/auth/rbac.associations";
 
 import { Routes } from "../routes/index";
 import { setupSwagger } from "../swagger/index";
-
-dotenv.config();
 
 export class App {
   public app: Application;
@@ -146,7 +144,7 @@ export class App {
       try {
         await sequelize.sync({
           force,
-          alter: !force,
+          alter: false,
         });
       } finally {
         if (isMysql) {

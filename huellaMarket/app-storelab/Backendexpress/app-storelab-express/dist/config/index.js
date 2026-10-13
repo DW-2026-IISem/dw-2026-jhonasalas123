@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.App = void 0;
-const dotenv_1 = __importDefault(require("dotenv"));
+require("dotenv/config");
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
@@ -31,7 +31,6 @@ require("../features/auth/refresh-tokens/refresh-token.model");
 require("../features/auth/rbac.associations");
 const index_1 = require("../routes/index");
 const index_2 = require("../swagger/index");
-dotenv_1.default.config();
 class App {
     constructor(port) {
         this.port = port;
@@ -104,7 +103,7 @@ class App {
             try {
                 await db_1.sequelize.sync({
                     force,
-                    alter: !force,
+                    alter: false,
                 });
             }
             finally {

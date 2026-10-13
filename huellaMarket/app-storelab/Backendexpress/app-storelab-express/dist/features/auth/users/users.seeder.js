@@ -11,8 +11,8 @@ const faker_1 = require("@faker-js/faker");
  *
  * | username | password    | rol    | permisos |
  * |----------|-------------|--------|----------|
- * | `admin`  | `Admin123!` | ADMIN  | 58 recursos |
- * | `seller` | `Seller123!`| SELLER | 7 recursos |
+ * | `admin`  | `Admin123!` | ADMIN  | todo el catálogo HuellaMarket |
+ * | `seller` | `Seller123!`| SELLER | 7 recursos de mostrador |
  *
  * Si `count > 2`, se añaden usuarios aleatorios (sin rol asignado): sirven para
  * comprobar que **estar autenticado no basta**: recibirán 403 en todo.

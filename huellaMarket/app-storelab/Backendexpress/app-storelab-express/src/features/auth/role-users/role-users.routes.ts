@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { RoleUsersController } from "./role-users.controller";
-import { authenticate, authorize } from "../access";
+import { jwtRbac } from "../access";
 
 /**
  * Rutas del feature RoleUsers — modalidad 3 (JWT + RBAC).
@@ -15,8 +15,7 @@ export class RoleUsersRoutes {
     app
       .route("/api/asignaciones-rol")
       .get(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.roleUsersController.getAll.bind(
           this.roleUsersController
         )
@@ -25,8 +24,7 @@ export class RoleUsersRoutes {
     app
       .route("/api/asignaciones-rol/:id")
       .get(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.roleUsersController.getOne.bind(
           this.roleUsersController
         )
@@ -35,8 +33,7 @@ export class RoleUsersRoutes {
     app
       .route("/api/asignaciones-rol")
       .post(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.roleUsersController.assign.bind(
           this.roleUsersController
         )
@@ -45,8 +42,7 @@ export class RoleUsersRoutes {
     app
       .route("/api/asignaciones-rol/:id/deactivate")
       .patch(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.roleUsersController.deactivate.bind(
           this.roleUsersController
         )
@@ -55,8 +51,7 @@ export class RoleUsersRoutes {
     app
       .route("/api/asignaciones-rol/:id/reactivate")
       .patch(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.roleUsersController.reactivate.bind(
           this.roleUsersController
         )

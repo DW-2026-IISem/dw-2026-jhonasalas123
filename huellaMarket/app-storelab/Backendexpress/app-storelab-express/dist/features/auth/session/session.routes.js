@@ -35,11 +35,11 @@ class SessionRoutes {
         // PERFIL — JWT
         app
             .route("/api/sesion/perfil")
-            .get(access_1.authenticate, this.sessionController.profile.bind(this.sessionController));
+            .get(...access_1.jwtOnly, this.sessionController.profile.bind(this.sessionController));
         // PERMISOS — JWT
         app
             .route("/api/permisos")
-            .get(access_1.authenticate, this.sessionController.myPermissions.bind(this.sessionController));
+            .get(...access_1.jwtOnly, this.sessionController.myPermissions.bind(this.sessionController));
     }
 }
 exports.SessionRoutes = SessionRoutes;

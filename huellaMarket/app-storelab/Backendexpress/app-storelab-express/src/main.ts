@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { App } from "./config";
 
 async function main(): Promise<void> {

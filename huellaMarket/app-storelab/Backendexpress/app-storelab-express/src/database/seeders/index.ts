@@ -1,3 +1,4 @@
+import "dotenv/config";
 import dotenv from "dotenv";
 import { sequelize, testConnection } from "../db";
 
@@ -58,7 +59,7 @@ export async function runAllSeeders(): Promise<void> {
     throw new Error("No hay conexión a la base de datos");
   }
 
-  await sequelize.sync({ force: false, alter: true });
+  await sequelize.sync({ force: false, alter: false });
 
   // Orden: auth
   await seedUsers(counts.users);

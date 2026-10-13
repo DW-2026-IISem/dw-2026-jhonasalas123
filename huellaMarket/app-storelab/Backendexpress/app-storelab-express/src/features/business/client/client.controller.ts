@@ -1,162 +1,178 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Put,
-  Patch,
-  Delete,
-  Param,
-  Body,
-  NotFoundException,
-  HttpCode,
-  HttpStatus,
-} from "@nestjs/common";
+import { Request, Response } from "express";
 import { Client } from "./client.model";
 
-@Controller("api/clientes")
+function paramId(req: Request): number {
+  const raw = req.params.id;
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  return Number(value);
+}
+
 export class ClientController {
-  // ================== READ ==================
+  public async getAll(_req: Request, res: Response): Promise<void> {
+    try {
+      const clients = await Client.findAll({
+        where: { is_active: true },
+        attributes: { exclude: ["password"] },
+      });
 
-  @Get()
-  public async getAll() {
-    const clients = await Client.findAll({
-      where: { is_active: true },
-      attributes: {
-        exclude: ["password"],
-      },
-    });
-
-    return { clients };
+      res.status(200).json({ clients });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error fetching clients",
+        detail: String(error),
+      });
+    }
   }
 
-  @Get(":id")
-  public async getOne(@Param("id") id: string) {
-    const client = await Client.findByPk(Number(id), {
-      attributes: {
-        exclude: ["password"],
-      },
-    });
+  public async getOne(req: Request, res: Response): Promise<void> {
+    try {
+      const id = paramId(req);
+      const client = await Client.findByPk(id, {
+        attributes: { exclude: ["password"] },
+      });
 
-    if (!client) {
-      throw new NotFoundException("Client not found");
+      if (!client) {
+        res.status(404).json({ error: "Client not found" });
+        return;
+      }
+
+      res.status(200).json({ client });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error fetching client",
+        detail: String(error),
+      });
     }
-
-    return { client };
   }
 
-  // ================== CREATE ==================
+  public async create(req: Request, res: Response): Promise<void> {
+    try {
+      const body = req.body as {
+        tipo_documento: string;
+        numero_documento: string;
+        nombre: string;
+        telefono?: string;
+        email?: string;
+      };
 
-  @Post()
-  @HttpCode(HttpStatus.CREATED)
-  public async create(@Body() body: {
-    tipo_documento: string;
-    numero_documento: string;
-    nombre: string;
-    telefono?: string;
-    email?: string;
-  }) {
-    const client = await Client.create({
-      tipo_documento: body.tipo_documento,
-      numero_documento: body.numero_documento,
-      nombre: body.nombre,
-      telefono: body.telefono,
-      email: body.email,
-      is_active: true,
-    });
+      const client = await Client.create({
+        tipo_documento: body.tipo_documento,
+        numero_documento: body.numero_documento,
+        nombre: body.nombre,
+        telefono: body.telefono,
+        email: body.email,
+        is_active: true,
+      });
 
-    return { client };
+      res.status(201).json({ client });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error creating client",
+        detail: String(error),
+      });
+    }
   }
 
-  // ================== UPDATE ==================
+  public async updatePut(req: Request, res: Response): Promise<void> {
+    try {
+      const id = paramId(req);
+      const client = await Client.findByPk(id);
 
-  @Put(":id")
-  public async updatePut(
-    @Param("id") id: string,
-    @Body() body: {
-      tipo_documento: string;
-      numero_documento: string;
-      nombre: string;
-      telefono?: string;
-      email?: string;
-      is_active?: boolean;
+      if (!client) {
+        res.status(404).json({ error: "Client not found" });
+        return;
+      }
+
+      const body = req.body as {
+        tipo_documento: string;
+        numero_documento: string;
+        nombre: string;
+        telefono?: string;
+        email?: string;
+        is_active?: boolean;
+      };
+
+      await client.update({
+        tipo_documento: body.tipo_documento,
+        numero_documento: body.numero_documento,
+        nombre: body.nombre,
+        telefono: body.telefono,
+        email: body.email,
+        is_active: body.is_active ?? client.is_active,
+      });
+
+      res.status(200).json({ client });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error updating client (PUT)",
+        detail: String(error),
+      });
     }
-  ) {
-    const client = await Client.findByPk(Number(id));
-
-    if (!client) {
-      throw new NotFoundException("Client not found");
-    }
-
-    await client.update({
-      tipo_documento: body.tipo_documento,
-      numero_documento: body.numero_documento,
-      nombre: body.nombre,
-      telefono: body.telefono,
-      email: body.email,
-      is_active: body.is_active ?? client.is_active,
-    });
-
-    return { client };
   }
 
-  @Patch(":id")
-  public async updatePatch(
-    @Param("id") id: string,
-    @Body() body: Partial<{
-      tipo_documento: string;
-      numero_documento: string;
-      nombre: string;
-      telefono: string;
-      email: string;
-      is_active: boolean;
-    }>
-  ) {
-    const client = await Client.findByPk(Number(id));
+  public async updatePatch(req: Request, res: Response): Promise<void> {
+    try {
+      const id = paramId(req);
+      const client = await Client.findByPk(id);
 
-    if (!client) {
-      throw new NotFoundException("Client not found");
+      if (!client) {
+        res.status(404).json({ error: "Client not found" });
+        return;
+      }
+
+      await client.update(req.body);
+      res.status(200).json({ client });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error updating client (PATCH)",
+        detail: String(error),
+      });
     }
-
-    await client.update(body);
-
-    return { client };
   }
 
-  // ================== DELETE ==================
+  public async deletePhysical(req: Request, res: Response): Promise<void> {
+    try {
+      const id = paramId(req);
+      const client = await Client.findByPk(id);
 
-  /** Eliminación física */
-  @Delete(":id")
-  public async deletePhysical(@Param("id") id: string) {
-    const client = await Client.findByPk(Number(id));
+      if (!client) {
+        res.status(404).json({ error: "Client not found" });
+        return;
+      }
 
-    if (!client) {
-      throw new NotFoundException("Client not found");
+      await client.destroy();
+      res.status(200).json({
+        message: "Client permanently deleted",
+        id,
+      });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error deleting client",
+        detail: String(error),
+      });
     }
-
-    await client.destroy();
-
-    return {
-      message: "Client permanently deleted",
-      id: Number(id),
-    };
   }
 
-  /** Eliminación lógica → is_active = false */
-  @Patch(":id/deactivate")
-  public async deleteLogical(@Param("id") id: string) {
-    const client = await Client.findByPk(Number(id));
+  public async deleteLogical(req: Request, res: Response): Promise<void> {
+    try {
+      const id = paramId(req);
+      const client = await Client.findByPk(id);
 
-    if (!client) {
-      throw new NotFoundException("Client not found");
+      if (!client) {
+        res.status(404).json({ error: "Client not found" });
+        return;
+      }
+
+      await client.update({ is_active: false });
+      res.status(200).json({
+        message: "Client deactivated (logical delete)",
+        client,
+      });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error deactivating client",
+        detail: String(error),
+      });
     }
-
-    await client.update({
-      is_active: false,
-    });
-
-    return {
-      message: "Client deactivated (logical delete)",
-      client,
-    };
   }
 }

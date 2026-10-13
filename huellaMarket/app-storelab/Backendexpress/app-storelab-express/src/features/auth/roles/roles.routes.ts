@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { RolesController } from "./roles.controller";
-import { authenticate, authorize } from "../access";
+import { jwtRbac } from "../access";
 
 /** Rutas del feature Roles — **modalidad 3 (JWT + RBAC)** en todas las operaciones. */
 export class RolesRoutes {
@@ -10,36 +10,35 @@ export class RolesRoutes {
     // getAll
     app
       .route("/api/roles")
-      .get(authenticate, authorize, this.rolesController.getAll.bind(this.rolesController));
+      .get(...jwtRbac, this.rolesController.getAll.bind(this.rolesController));
 
     // getOne
     app
       .route("/api/roles/:id")
-      .get(authenticate, authorize, this.rolesController.getOne.bind(this.rolesController));
+      .get(...jwtRbac, this.rolesController.getOne.bind(this.rolesController));
 
     // create
     app
       .route("/api/roles")
-      .post(authenticate, authorize, this.rolesController.create.bind(this.rolesController));
+      .post(...jwtRbac, this.rolesController.create.bind(this.rolesController));
 
     // update (PUT / PATCH)
     app
       .route("/api/roles/:id")
-      .put(authenticate, authorize, this.rolesController.updatePut.bind(this.rolesController))
-      .patch(authenticate, authorize, this.rolesController.updatePatch.bind(this.rolesController));
+      .put(...jwtRbac, this.rolesController.updatePut.bind(this.rolesController))
+      .patch(...jwtRbac, this.rolesController.updatePatch.bind(this.rolesController));
 
     // delete físico
     app
       .route("/api/roles/:id")
       .delete(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.rolesController.deletePhysical.bind(this.rolesController)
       );
 
     // delete lógico
     app
       .route("/api/roles/:id/deactivate")
-      .patch(authenticate, authorize, this.rolesController.deleteLogical.bind(this.rolesController));
+      .patch(...jwtRbac, this.rolesController.deleteLogical.bind(this.rolesController));
   }
 }

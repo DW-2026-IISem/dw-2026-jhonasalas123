@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ACCESS_TOKEN_TTL_SECONDS = exports.TOKEN_AUDIENCE = exports.TOKEN_ISSUER = void 0;
+exports.getAccessTokenTtlSeconds = getAccessTokenTtlSeconds;
 exports.signAccessToken = signAccessToken;
 exports.verifyAccessToken = verifyAccessToken;
 exports.extractBearerToken = extractBearerToken;
@@ -28,8 +29,13 @@ const ALGORITHM = "HS256";
 /** Emisor/audiencia del sistema. Sirven para rechazar tokens de otro servicio. */
 exports.TOKEN_ISSUER = "app-storelab-express";
 exports.TOKEN_AUDIENCE = "app-storelab-api";
-/** Vida útil del access token. Corta por diseño (Owasp/OAuth2: token de vida corta). */
-exports.ACCESS_TOKEN_TTL_SECONDS = Number(process.env.JWT_ACCESS_TTL ?? 900); // 15 min
+/** Vida útil del access token. Se lee en tiempo de firma (después de dotenv). */
+function getAccessTokenTtlSeconds() {
+    const n = Number(process.env.JWT_ACCESS_TTL ?? 900);
+    return Number.isFinite(n) && n > 0 ? n : 900;
+}
+/** Valor por defecto documentado (15 min). Preferir `getAccessTokenTtlSeconds()`. */
+exports.ACCESS_TOKEN_TTL_SECONDS = 900;
 function getSecret() {
     const secret = process.env.JWT_SECRET;
     if (!secret || secret.length < 32) {
@@ -44,10 +50,10 @@ function signAccessToken(user) {
         subject: String(user.id),
         issuer: exports.TOKEN_ISSUER,
         audience: exports.TOKEN_AUDIENCE,
-        expiresIn: exports.ACCESS_TOKEN_TTL_SECONDS,
+        expiresIn: getAccessTokenTtlSeconds(),
         jwtid: (0, node_crypto_1.randomUUID)(),
     });
-    return { token, expiresIn: exports.ACCESS_TOKEN_TTL_SECONDS };
+    return { token, expiresIn: getAccessTokenTtlSeconds() };
 }
 /**
  * Verifica firma y *claims* y devuelve el payload.

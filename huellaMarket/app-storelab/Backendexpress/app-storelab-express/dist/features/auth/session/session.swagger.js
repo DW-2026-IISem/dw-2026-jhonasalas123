@@ -78,7 +78,7 @@ exports.sessionSwagger = {
             post: {
                 tags: ["Sesión"],
                 summary: "Cerrar sesión",
-                description: "Revoca el refresh token presentado.",
+                description: "Revoca la familia del refresh token presentado.",
                 security: swagger_security_1.openSecurity,
                 requestBody: {
                     required: true,

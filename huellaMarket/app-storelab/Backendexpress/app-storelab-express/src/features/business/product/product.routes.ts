@@ -1,49 +1,31 @@
-import { authenticate, authorize } from "../../auth/access";
 import { Application } from "express";
+import { jwtRbac } from "../../auth/access";
 import { ProductController } from "./product.controller";
 
 export class ProductRoutes {
   private controller: ProductController = new ProductController();
 
   public routes(app: Application): void {
+    app
+      .route("/api/productos")
+      .get(...jwtRbac, this.controller.getAll.bind(this.controller))
+      .post(...jwtRbac, this.controller.create.bind(this.controller));
 
-    // ISS-03-B — READ
-    app.get(
-      "/api/productos",
-      this.controller.getAll.bind(this.controller)
-    );
+    app
+      .route("/api/productos/:id")
+      .get(...jwtRbac, this.controller.getOne.bind(this.controller))
+      .put(...jwtRbac, this.controller.updatePut.bind(this.controller))
+      .patch(...jwtRbac, this.controller.updatePatch.bind(this.controller))
+      .delete(
+        ...jwtRbac,
+        this.controller.deletePhysical.bind(this.controller)
+      );
 
-    app.get(
-      "/api/productos/:id",
-      this.controller.getOne.bind(this.controller)
-    );
-
-    // ISS-03-C — CREATE
-    app.post(
-      "/api/productos",
-      this.controller.create.bind(this.controller)
-    );
-
-    // ISS-03-D — UPDATE
-    app.put(
-      "/api/productos/:id",
-      this.controller.updatePut.bind(this.controller)
-    );
-
-    app.patch(
-      "/api/productos/:id",
-      this.controller.updatePatch.bind(this.controller)
-    );
-
-    // ISS-03-E — DELETE
-    app.delete(
-      "/api/productos/:id",
-      this.controller.deletePhysical.bind(this.controller)
-    );
-
-    app.delete(
-      "/api/productos/:id/deactivate",
-      this.controller.deleteLogical.bind(this.controller)
-    );
+    app
+      .route("/api/productos/:id/deactivate")
+      .patch(
+        ...jwtRbac,
+        this.controller.deleteLogical.bind(this.controller)
+      );
   }
 }

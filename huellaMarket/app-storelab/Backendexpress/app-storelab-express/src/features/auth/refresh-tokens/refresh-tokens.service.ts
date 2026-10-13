@@ -13,9 +13,10 @@ import {
 } from "../../../shared/auth/password";
 import { withTransaction } from "../../../shared/database/with-transaction";
 
-const REFRESH_TTL_DAYS = Number(
-  process.env.JWT_REFRESH_TTL_DAYS ?? 7
-);
+function refreshTtlDays(): number {
+  const n = Number(process.env.JWT_REFRESH_TTL_DAYS ?? 7);
+  return Number.isFinite(n) && n > 0 ? n : 7;
+}
 
 export interface IssuedSession {
   rawToken: string;
@@ -216,14 +217,7 @@ export class RefreshTokensService {
       return false;
     }
 
-    if (token.status !== "active") {
-      return true;
-    }
-
-    await this.repository.update(token, {
-      status: "inactive",
-    });
-
+    await this.repository.revokeFamily(token.family_id);
     return true;
   }
 
@@ -243,7 +237,6 @@ export class RefreshTokensService {
 
 function expiryFromNow(): Date {
   return new Date(
-    Date.now() +
-      REFRESH_TTL_DAYS * 24 * 60 * 60 * 1000
+    Date.now() + refreshTtlDays() * 24 * 60 * 60 * 1000
   );
 }

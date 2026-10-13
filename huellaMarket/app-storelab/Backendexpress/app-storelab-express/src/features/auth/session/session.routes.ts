@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { SessionController } from "./session.controller";
-import { authenticate } from "../access";
+import { jwtOnly } from "../access";
 
 /**
  * Rutas del feature Session.
@@ -50,7 +50,7 @@ export class SessionRoutes {
     app
       .route("/api/sesion/perfil")
       .get(
-        authenticate,
+        ...jwtOnly,
         this.sessionController.profile.bind(
           this.sessionController
         )
@@ -60,7 +60,7 @@ export class SessionRoutes {
     app
       .route("/api/permisos")
       .get(
-        authenticate,
+        ...jwtOnly,
         this.sessionController.myPermissions.bind(
           this.sessionController
         )

@@ -7,7 +7,10 @@ const refresh_tokens_repository_1 = require("./refresh-tokens.repository");
 const app_error_1 = require("../../../shared/errors/app-error");
 const password_1 = require("../../../shared/auth/password");
 const with_transaction_1 = require("../../../shared/database/with-transaction");
-const REFRESH_TTL_DAYS = Number(process.env.JWT_REFRESH_TTL_DAYS ?? 7);
+function refreshTtlDays() {
+    const n = Number(process.env.JWT_REFRESH_TTL_DAYS ?? 7);
+    return Number.isFinite(n) && n > 0 ? n : 7;
+}
 class RefreshTokensService {
     constructor(repository = new refresh_tokens_repository_1.RefreshTokensRepository()) {
         this.repository = repository;
@@ -103,12 +106,7 @@ class RefreshTokensService {
         if (!token) {
             return false;
         }
-        if (token.status !== "active") {
-            return true;
-        }
-        await this.repository.update(token, {
-            status: "inactive",
-        });
+        await this.repository.revokeFamily(token.family_id);
         return true;
     }
     async findMineOrFail(userId, id) {
@@ -121,7 +119,6 @@ class RefreshTokensService {
 }
 exports.RefreshTokensService = RefreshTokensService;
 function expiryFromNow() {
-    return new Date(Date.now() +
-        REFRESH_TTL_DAYS * 24 * 60 * 60 * 1000);
+    return new Date(Date.now() + refreshTtlDays() * 24 * 60 * 60 * 1000);
 }
 //# sourceMappingURL=refresh-tokens.service.js.map

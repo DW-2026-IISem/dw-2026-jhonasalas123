@@ -150,7 +150,7 @@ export class SessionService {
   /**
    * LOGOUT
    *
-   * Revoca el refresh token presentado.
+   * Revoca la familia del refresh token presentado.
    */
   public async logout(
     body: LogoutSessionDto

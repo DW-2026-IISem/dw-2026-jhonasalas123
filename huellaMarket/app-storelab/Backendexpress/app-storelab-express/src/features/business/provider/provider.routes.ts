@@ -1,51 +1,31 @@
 import { Application } from "express";
+import { jwtRbac } from "../../auth/access";
 import { ProviderController } from "./provider.controller";
 
 export class ProviderRoutes {
   private controller: ProviderController = new ProviderController();
 
   public routes(app: Application): void {
+    app
+      .route("/api/proveedores")
+      .get(...jwtRbac, this.controller.getAll.bind(this.controller))
+      .post(...jwtRbac, this.controller.create.bind(this.controller));
 
-    // ISS-03-B — GET ALL
-    app.get(
-      "/api/proveedores",
-      this.controller.getAll.bind(this.controller)
-    );
+    app
+      .route("/api/proveedores/:id")
+      .get(...jwtRbac, this.controller.getOne.bind(this.controller))
+      .put(...jwtRbac, this.controller.updatePut.bind(this.controller))
+      .patch(...jwtRbac, this.controller.updatePatch.bind(this.controller))
+      .delete(
+        ...jwtRbac,
+        this.controller.deletePhysical.bind(this.controller)
+      );
 
-    // ISS-03-B — GET ONE
-    app.get(
-      "/api/proveedores/:id",
-      this.controller.getOne.bind(this.controller)
-    );
-
-    // ISS-03-C — CREATE
-    app.post(
-      "/api/proveedores",
-      this.controller.create.bind(this.controller)
-    );
-
-    // ISS-03-D — UPDATE PUT
-    app.put(
-      "/api/proveedores/:id",
-      this.controller.updatePut.bind(this.controller)
-    );
-
-    // ISS-03-D — UPDATE PATCH
-    app.patch(
-      "/api/proveedores/:id",
-      this.controller.updatePatch.bind(this.controller)
-    );
-
-    // ISS-03-E — DELETE FÍSICO
-    app.delete(
-      "/api/proveedores/:id",
-      this.controller.deletePhysical.bind(this.controller)
-    );
-
-    // ISS-03-E — DELETE LÓGICO
-    app.delete(
-      "/api/proveedores/:id/deactivate",
-      this.controller.deleteLogical.bind(this.controller)
-    );
+    app
+      .route("/api/proveedores/:id/deactivate")
+      .patch(
+        ...jwtRbac,
+        this.controller.deleteLogical.bind(this.controller)
+      );
   }
 }

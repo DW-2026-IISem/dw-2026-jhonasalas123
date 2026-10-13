@@ -12,28 +12,28 @@ class RolesRoutes {
         // getAll
         app
             .route("/api/roles")
-            .get(access_1.authenticate, access_1.authorize, this.rolesController.getAll.bind(this.rolesController));
+            .get(...access_1.jwtRbac, this.rolesController.getAll.bind(this.rolesController));
         // getOne
         app
             .route("/api/roles/:id")
-            .get(access_1.authenticate, access_1.authorize, this.rolesController.getOne.bind(this.rolesController));
+            .get(...access_1.jwtRbac, this.rolesController.getOne.bind(this.rolesController));
         // create
         app
             .route("/api/roles")
-            .post(access_1.authenticate, access_1.authorize, this.rolesController.create.bind(this.rolesController));
+            .post(...access_1.jwtRbac, this.rolesController.create.bind(this.rolesController));
         // update (PUT / PATCH)
         app
             .route("/api/roles/:id")
-            .put(access_1.authenticate, access_1.authorize, this.rolesController.updatePut.bind(this.rolesController))
-            .patch(access_1.authenticate, access_1.authorize, this.rolesController.updatePatch.bind(this.rolesController));
+            .put(...access_1.jwtRbac, this.rolesController.updatePut.bind(this.rolesController))
+            .patch(...access_1.jwtRbac, this.rolesController.updatePatch.bind(this.rolesController));
         // delete físico
         app
             .route("/api/roles/:id")
-            .delete(access_1.authenticate, access_1.authorize, this.rolesController.deletePhysical.bind(this.rolesController));
+            .delete(...access_1.jwtRbac, this.rolesController.deletePhysical.bind(this.rolesController));
         // delete lógico
         app
             .route("/api/roles/:id/deactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.rolesController.deleteLogical.bind(this.rolesController));
+            .patch(...access_1.jwtRbac, this.rolesController.deleteLogical.bind(this.rolesController));
     }
 }
 exports.RolesRoutes = RolesRoutes;

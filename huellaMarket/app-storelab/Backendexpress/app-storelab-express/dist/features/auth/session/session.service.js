@@ -70,7 +70,7 @@ class SessionService {
     /**
      * LOGOUT
      *
-     * Revoca el refresh token presentado.
+     * Revoca la familia del refresh token presentado.
      */
     async logout(body) {
         if (!body.refresh_token) {

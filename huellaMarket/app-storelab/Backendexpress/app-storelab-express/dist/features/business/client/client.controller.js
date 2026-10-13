@@ -1,159 +1,153 @@
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClientController = void 0;
-const common_1 = require("@nestjs/common");
 const client_model_1 = require("./client.model");
-let ClientController = class ClientController {
-    // ================== READ ==================
-    async getAll() {
-        const clients = await client_model_1.Client.findAll({
-            where: { is_active: true },
-            attributes: {
-                exclude: ["password"],
-            },
-        });
-        return { clients };
-    }
-    async getOne(id) {
-        const client = await client_model_1.Client.findByPk(Number(id), {
-            attributes: {
-                exclude: ["password"],
-            },
-        });
-        if (!client) {
-            throw new common_1.NotFoundException("Client not found");
+function paramId(req) {
+    const raw = req.params.id;
+    const value = Array.isArray(raw) ? raw[0] : raw;
+    return Number(value);
+}
+class ClientController {
+    async getAll(_req, res) {
+        try {
+            const clients = await client_model_1.Client.findAll({
+                where: { is_active: true },
+                attributes: { exclude: ["password"] },
+            });
+            res.status(200).json({ clients });
         }
-        return { client };
-    }
-    // ================== CREATE ==================
-    async create(body) {
-        const client = await client_model_1.Client.create({
-            tipo_documento: body.tipo_documento,
-            numero_documento: body.numero_documento,
-            nombre: body.nombre,
-            telefono: body.telefono,
-            email: body.email,
-            is_active: true,
-        });
-        return { client };
-    }
-    // ================== UPDATE ==================
-    async updatePut(id, body) {
-        const client = await client_model_1.Client.findByPk(Number(id));
-        if (!client) {
-            throw new common_1.NotFoundException("Client not found");
+        catch (error) {
+            res.status(500).json({
+                error: "Error fetching clients",
+                detail: String(error),
+            });
         }
-        await client.update({
-            tipo_documento: body.tipo_documento,
-            numero_documento: body.numero_documento,
-            nombre: body.nombre,
-            telefono: body.telefono,
-            email: body.email,
-            is_active: body.is_active ?? client.is_active,
-        });
-        return { client };
     }
-    async updatePatch(id, body) {
-        const client = await client_model_1.Client.findByPk(Number(id));
-        if (!client) {
-            throw new common_1.NotFoundException("Client not found");
+    async getOne(req, res) {
+        try {
+            const id = paramId(req);
+            const client = await client_model_1.Client.findByPk(id, {
+                attributes: { exclude: ["password"] },
+            });
+            if (!client) {
+                res.status(404).json({ error: "Client not found" });
+                return;
+            }
+            res.status(200).json({ client });
         }
-        await client.update(body);
-        return { client };
-    }
-    // ================== DELETE ==================
-    /** Eliminación física */
-    async deletePhysical(id) {
-        const client = await client_model_1.Client.findByPk(Number(id));
-        if (!client) {
-            throw new common_1.NotFoundException("Client not found");
+        catch (error) {
+            res.status(500).json({
+                error: "Error fetching client",
+                detail: String(error),
+            });
         }
-        await client.destroy();
-        return {
-            message: "Client permanently deleted",
-            id: Number(id),
-        };
     }
-    /** Eliminación lógica → is_active = false */
-    async deleteLogical(id) {
-        const client = await client_model_1.Client.findByPk(Number(id));
-        if (!client) {
-            throw new common_1.NotFoundException("Client not found");
+    async create(req, res) {
+        try {
+            const body = req.body;
+            const client = await client_model_1.Client.create({
+                tipo_documento: body.tipo_documento,
+                numero_documento: body.numero_documento,
+                nombre: body.nombre,
+                telefono: body.telefono,
+                email: body.email,
+                is_active: true,
+            });
+            res.status(201).json({ client });
         }
-        await client.update({
-            is_active: false,
-        });
-        return {
-            message: "Client deactivated (logical delete)",
-            client,
-        };
+        catch (error) {
+            res.status(500).json({
+                error: "Error creating client",
+                detail: String(error),
+            });
+        }
     }
-};
+    async updatePut(req, res) {
+        try {
+            const id = paramId(req);
+            const client = await client_model_1.Client.findByPk(id);
+            if (!client) {
+                res.status(404).json({ error: "Client not found" });
+                return;
+            }
+            const body = req.body;
+            await client.update({
+                tipo_documento: body.tipo_documento,
+                numero_documento: body.numero_documento,
+                nombre: body.nombre,
+                telefono: body.telefono,
+                email: body.email,
+                is_active: body.is_active ?? client.is_active,
+            });
+            res.status(200).json({ client });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error updating client (PUT)",
+                detail: String(error),
+            });
+        }
+    }
+    async updatePatch(req, res) {
+        try {
+            const id = paramId(req);
+            const client = await client_model_1.Client.findByPk(id);
+            if (!client) {
+                res.status(404).json({ error: "Client not found" });
+                return;
+            }
+            await client.update(req.body);
+            res.status(200).json({ client });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error updating client (PATCH)",
+                detail: String(error),
+            });
+        }
+    }
+    async deletePhysical(req, res) {
+        try {
+            const id = paramId(req);
+            const client = await client_model_1.Client.findByPk(id);
+            if (!client) {
+                res.status(404).json({ error: "Client not found" });
+                return;
+            }
+            await client.destroy();
+            res.status(200).json({
+                message: "Client permanently deleted",
+                id,
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deleting client",
+                detail: String(error),
+            });
+        }
+    }
+    async deleteLogical(req, res) {
+        try {
+            const id = paramId(req);
+            const client = await client_model_1.Client.findByPk(id);
+            if (!client) {
+                res.status(404).json({ error: "Client not found" });
+                return;
+            }
+            await client.update({ is_active: false });
+            res.status(200).json({
+                message: "Client deactivated (logical delete)",
+                client,
+            });
+        }
+        catch (error) {
+            res.status(500).json({
+                error: "Error deactivating client",
+                detail: String(error),
+            });
+        }
+    }
+}
 exports.ClientController = ClientController;
-__decorate([
-    (0, common_1.Get)(),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "getAll", null);
-__decorate([
-    (0, common_1.Get)(":id"),
-    __param(0, (0, common_1.Param)("id")),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "getOne", null);
-__decorate([
-    (0, common_1.Post)(),
-    (0, common_1.HttpCode)(common_1.HttpStatus.CREATED),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "create", null);
-__decorate([
-    (0, common_1.Put)(":id"),
-    __param(0, (0, common_1.Param)("id")),
-    __param(1, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "updatePut", null);
-__decorate([
-    (0, common_1.Patch)(":id"),
-    __param(0, (0, common_1.Param)("id")),
-    __param(1, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, Object]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "updatePatch", null);
-__decorate([
-    (0, common_1.Delete)(":id"),
-    __param(0, (0, common_1.Param)("id")),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "deletePhysical", null);
-__decorate([
-    (0, common_1.Patch)(":id/deactivate"),
-    __param(0, (0, common_1.Param)("id")),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], ClientController.prototype, "deleteLogical", null);
-exports.ClientController = ClientController = __decorate([
-    (0, common_1.Controller)("api/clientes")
-], ClientController);
 //# sourceMappingURL=client.controller.js.map

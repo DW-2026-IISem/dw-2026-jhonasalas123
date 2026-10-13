@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { ResourceRolesController } from "./resource-roles.controller";
-import { authenticate, authorize } from "../access";
+import { jwtRbac } from "../access";
 
 /**
  * Rutas del feature ResourceRoles — modalidad 3 (JWT + RBAC).
@@ -14,8 +14,7 @@ export class ResourceRolesRoutes {
     app
       .route("/api/concesiones-rol")
       .get(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.resourceRolesController.getAll.bind(
           this.resourceRolesController
         )
@@ -25,8 +24,7 @@ export class ResourceRolesRoutes {
     app
       .route("/api/concesiones-rol/:id")
       .get(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.resourceRolesController.getOne.bind(
           this.resourceRolesController
         )
@@ -36,8 +34,7 @@ export class ResourceRolesRoutes {
     app
       .route("/api/concesiones-rol")
       .post(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.resourceRolesController.grant.bind(
           this.resourceRolesController
         )
@@ -47,8 +44,7 @@ export class ResourceRolesRoutes {
     app
       .route("/api/concesiones-rol/:id/deactivate")
       .patch(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.resourceRolesController.deactivate.bind(
           this.resourceRolesController
         )
@@ -58,8 +54,7 @@ export class ResourceRolesRoutes {
     app
       .route("/api/concesiones-rol/:id/reactivate")
       .patch(
-        authenticate,
-        authorize,
+        ...jwtRbac,
         this.resourceRolesController.reactivate.bind(
           this.resourceRolesController
         )

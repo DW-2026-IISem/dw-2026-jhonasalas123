@@ -1,6 +1,6 @@
 import { Application } from "express";
 import { RefreshTokensController } from "./refresh-tokens.controller";
-import { authenticate } from "../access";
+import { jwtOnly } from "../access";
 
 /**
  * Rutas de RefreshTokens.
@@ -17,7 +17,7 @@ export class RefreshTokensRoutes {
     app
       .route("/api/sesiones")
       .get(
-        authenticate,
+        ...jwtOnly,
         this.refreshTokensController.getAll.bind(
           this.refreshTokensController
         )
@@ -27,7 +27,7 @@ export class RefreshTokensRoutes {
     app
       .route("/api/sesiones/deactivate-all")
       .patch(
-        authenticate,
+        ...jwtOnly,
         this.refreshTokensController.revokeAll.bind(
           this.refreshTokensController
         )
@@ -37,7 +37,7 @@ export class RefreshTokensRoutes {
     app
       .route("/api/sesiones/:id")
       .get(
-        authenticate,
+        ...jwtOnly,
         this.refreshTokensController.getOne.bind(
           this.refreshTokensController
         )
@@ -47,7 +47,7 @@ export class RefreshTokensRoutes {
     app
       .route("/api/sesiones/:id/deactivate")
       .patch(
-        authenticate,
+        ...jwtOnly,
         this.refreshTokensController.revokeOne.bind(
           this.refreshTokensController
         )
@@ -57,7 +57,7 @@ export class RefreshTokensRoutes {
     app
       .route("/api/sesiones")
       .delete(
-        authenticate,
+        ...jwtOnly,
         this.refreshTokensController.purge.bind(
           this.refreshTokensController
         )

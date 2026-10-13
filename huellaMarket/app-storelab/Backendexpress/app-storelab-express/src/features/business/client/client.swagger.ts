@@ -2,16 +2,16 @@ export const clientSwagger = {
   tags: [
     {
       name: "Clientes",
-      description: "Operaciones CRUD de clientes — SIN AUTH",
+      description: "Operaciones CRUD de clientes — JWT + RBAC",
     },
   ],
 
   paths: {
-    "/api/clients": {
+    "/api/clientes": {
       get: {
         tags: ["Clientes"],
         summary: "Listar clientes",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         responses: {
           "200": {
@@ -23,7 +23,7 @@ export const clientSwagger = {
       post: {
         tags: ["Clientes"],
         summary: "Crear cliente",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         requestBody: {
           required: true,
@@ -43,11 +43,11 @@ export const clientSwagger = {
       },
     },
 
-    "/api/clients/{id}": {
+    "/api/clientes/{id}": {
       get: {
         tags: ["Clientes"],
         summary: "Obtener cliente por ID",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         parameters: [
           {
@@ -72,7 +72,7 @@ export const clientSwagger = {
       put: {
         tags: ["Clientes"],
         summary: "Actualizar cliente",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         parameters: [
           {
@@ -107,7 +107,7 @@ export const clientSwagger = {
       patch: {
         tags: ["Clientes"],
         summary: "Actualizar parcialmente cliente",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         parameters: [
           {
@@ -142,7 +142,7 @@ export const clientSwagger = {
       delete: {
         tags: ["Clientes"],
         summary: "Eliminar cliente",
-        description: "SIN AUTH",
+        description: "JWT + RBAC",
         security: [],
         parameters: [
           {
@@ -165,7 +165,7 @@ export const clientSwagger = {
       },
     },
 
-    "/api/clients/{id}/deactivate": {
+    "/api/clientes/{id}/deactivate": {
       patch: {
         tags: ["Clientes"],
         summary: "Desactivar cliente",

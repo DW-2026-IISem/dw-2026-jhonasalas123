@@ -19,36 +19,36 @@ class UsersRoutes {
         // getAll
         app
             .route("/api/usuarios")
-            .get(access_1.authenticate, access_1.authorize, this.usersController.getAll.bind(this.usersController));
+            .get(...access_1.jwtRbac, this.usersController.getAll.bind(this.usersController));
         // getOne
         app
             .route("/api/usuarios/:id")
-            .get(access_1.authenticate, access_1.authorize, this.usersController.getOne.bind(this.usersController));
+            .get(...access_1.jwtRbac, this.usersController.getOne.bind(this.usersController));
         // create
         app
             .route("/api/usuarios")
-            .post(access_1.authenticate, access_1.authorize, this.usersController.create.bind(this.usersController));
+            .post(...access_1.jwtRbac, this.usersController.create.bind(this.usersController));
         // update (PUT / PATCH)
         app
             .route("/api/usuarios/:id")
-            .put(access_1.authenticate, access_1.authorize, this.usersController.updatePut.bind(this.usersController))
-            .patch(access_1.authenticate, access_1.authorize, this.usersController.updatePatch.bind(this.usersController));
+            .put(...access_1.jwtRbac, this.usersController.updatePut.bind(this.usersController))
+            .patch(...access_1.jwtRbac, this.usersController.updatePatch.bind(this.usersController));
         // delete físico
         app
             .route("/api/usuarios/:id")
-            .delete(access_1.authenticate, access_1.authorize, this.usersController.deletePhysical.bind(this.usersController));
+            .delete(...access_1.jwtRbac, this.usersController.deletePhysical.bind(this.usersController));
         // delete lógico
         app
             .route("/api/usuarios/:id/deactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.usersController.deleteLogical.bind(this.usersController));
+            .patch(...access_1.jwtRbac, this.usersController.deleteLogical.bind(this.usersController));
         // cambio de contraseña
         app
             .route("/api/usuarios/:id/password")
-            .patch(access_1.authenticate, access_1.authorize, this.usersController.changePassword.bind(this.usersController));
+            .patch(...access_1.jwtRbac, this.usersController.changePassword.bind(this.usersController));
         // permisos efectivos del usuario
         app
             .route("/api/usuarios/:id/permisos")
-            .get(access_1.authenticate, access_1.authorize, this.usersController.getEffectivePermissions.bind(this.usersController));
+            .get(...access_1.jwtRbac, this.usersController.getEffectivePermissions.bind(this.usersController));
     }
 }
 exports.UsersRoutes = UsersRoutes;

@@ -15,19 +15,19 @@ class RoleUsersRoutes {
     routes(app) {
         app
             .route("/api/asignaciones-rol")
-            .get(access_1.authenticate, access_1.authorize, this.roleUsersController.getAll.bind(this.roleUsersController));
+            .get(...access_1.jwtRbac, this.roleUsersController.getAll.bind(this.roleUsersController));
         app
             .route("/api/asignaciones-rol/:id")
-            .get(access_1.authenticate, access_1.authorize, this.roleUsersController.getOne.bind(this.roleUsersController));
+            .get(...access_1.jwtRbac, this.roleUsersController.getOne.bind(this.roleUsersController));
         app
             .route("/api/asignaciones-rol")
-            .post(access_1.authenticate, access_1.authorize, this.roleUsersController.assign.bind(this.roleUsersController));
+            .post(...access_1.jwtRbac, this.roleUsersController.assign.bind(this.roleUsersController));
         app
             .route("/api/asignaciones-rol/:id/deactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.roleUsersController.deactivate.bind(this.roleUsersController));
+            .patch(...access_1.jwtRbac, this.roleUsersController.deactivate.bind(this.roleUsersController));
         app
             .route("/api/asignaciones-rol/:id/reactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.roleUsersController.reactivate.bind(this.roleUsersController));
+            .patch(...access_1.jwtRbac, this.roleUsersController.reactivate.bind(this.roleUsersController));
     }
 }
 exports.RoleUsersRoutes = RoleUsersRoutes;

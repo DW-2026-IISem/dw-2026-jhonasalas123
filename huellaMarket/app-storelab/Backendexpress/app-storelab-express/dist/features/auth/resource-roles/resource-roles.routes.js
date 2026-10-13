@@ -14,23 +14,23 @@ class ResourceRolesRoutes {
         // getAll
         app
             .route("/api/concesiones-rol")
-            .get(access_1.authenticate, access_1.authorize, this.resourceRolesController.getAll.bind(this.resourceRolesController));
+            .get(...access_1.jwtRbac, this.resourceRolesController.getAll.bind(this.resourceRolesController));
         // getOne
         app
             .route("/api/concesiones-rol/:id")
-            .get(access_1.authenticate, access_1.authorize, this.resourceRolesController.getOne.bind(this.resourceRolesController));
+            .get(...access_1.jwtRbac, this.resourceRolesController.getOne.bind(this.resourceRolesController));
         // conceder recurso a rol
         app
             .route("/api/concesiones-rol")
-            .post(access_1.authenticate, access_1.authorize, this.resourceRolesController.grant.bind(this.resourceRolesController));
+            .post(...access_1.jwtRbac, this.resourceRolesController.grant.bind(this.resourceRolesController));
         // retirar permiso
         app
             .route("/api/concesiones-rol/:id/deactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.resourceRolesController.deactivate.bind(this.resourceRolesController));
+            .patch(...access_1.jwtRbac, this.resourceRolesController.deactivate.bind(this.resourceRolesController));
         // reactivar permiso
         app
             .route("/api/concesiones-rol/:id/reactivate")
-            .patch(access_1.authenticate, access_1.authorize, this.resourceRolesController.reactivate.bind(this.resourceRolesController));
+            .patch(...access_1.jwtRbac, this.resourceRolesController.reactivate.bind(this.resourceRolesController));
     }
 }
 exports.ResourceRolesRoutes = ResourceRolesRoutes;

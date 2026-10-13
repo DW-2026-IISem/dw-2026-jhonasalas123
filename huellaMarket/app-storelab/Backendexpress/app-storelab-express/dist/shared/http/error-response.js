@@ -19,6 +19,6 @@ function sendError(res, error) {
         res.status(error.statusCode).json({ error: error.message });
         return;
     }
-    res.status(500).json({ error: "Internal server error", detail: String(error) });
+    res.status(500).json({ error: "Internal server error" });
 }
 //# sourceMappingURL=error-response.js.map

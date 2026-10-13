@@ -11,6 +11,7 @@ import { User } from "./user.model";
 import { AppError } from "../../../shared/errors/app-error";
 import { comparePassword } from "../../../shared/auth/password";
 import { ResourceRolesService } from "../resource-roles/resource-roles.service";
+import { RefreshTokensService } from "../refresh-tokens/refresh-tokens.service";
 import { EffectivePermissionDto } from "../resource-roles/dto";
 
 /**
@@ -26,7 +27,8 @@ import { EffectivePermissionDto } from "../resource-roles/dto";
 export class UsersService {
   public constructor(
     private readonly repository: UsersRepository = new UsersRepository(),
-    private readonly resourceRolesService: ResourceRolesService = new ResourceRolesService()
+    private readonly resourceRolesService: ResourceRolesService = new ResourceRolesService(),
+    private readonly refreshTokensService: RefreshTokensService = new RefreshTokensService()
   ) {}
 
   // ================== READ ==================
@@ -107,12 +109,15 @@ export class UsersService {
     }
 
     await this.repository.update(user, { password: body.new_password });
+    await this.refreshTokensService.revokeAllMine(id);
   }
 
   // ================== DELETE ==================
   /** Eliminación física. */
   public async deletePhysical(id: number): Promise<void> {
     const user = await this.findOrFail(id, false);
+    await this.refreshTokensService.revokeAllMine(id);
+    await this.refreshTokensService.purgeMine(id);
     await this.repository.delete(user);
   }
 
@@ -120,6 +125,7 @@ export class UsersService {
   public async deleteLogical(id: number): Promise<UserResponseDto> {
     const user = await this.findOrFail(id);
     await this.repository.update(user, { status: "inactive" });
+    await this.refreshTokensService.revokeAllMine(id);
     return toUserResponse(user);
   }
 

@@ -1,37 +1,33 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseController = void 0;
+const app_error_1 = require("../errors/app-error");
+const error_response_1 = require("./error-response");
+/**
+ * Base de los controllers HTTP.
+ *
+ * `run` ejecuta el handler y traduce el error a HTTP.
+ * El handler es quien escribe la respuesta (`res.status(...).json(...)`).
+ */
 class BaseController {
     async run(res, work) {
         try {
-            const result = await work();
-            if (result === undefined) {
-                res.status(204).send();
-                return;
-            }
-            res.status(200).json(result);
+            await work();
         }
         catch (error) {
-            const status = typeof error === "object" &&
-                error !== null &&
-                "statusCode" in error &&
-                typeof error.statusCode === "number"
-                ? error.statusCode
-                : 500;
-            const message = error instanceof Error
-                ? error.message
-                : "Error interno del servidor";
-            res.status(status).json({
-                error: message,
-            });
+            this.handleError(res, error);
         }
     }
     paramId(req) {
-        const id = Number(req.params.id);
-        if (!Number.isInteger(id) || id <= 0) {
-            throw new Error("ID inválido");
+        const raw = req.params.id;
+        const value = Array.isArray(raw) ? raw[0] : raw;
+        if (!value || !/^\d+$/.test(value) || Number(value) < 1) {
+            throw new app_error_1.AppError(400, "Invalid id: must be a positive integer");
         }
-        return id;
+        return Number(value);
+    }
+    handleError(res, error) {
+        (0, error_response_1.sendError)(res, error);
     }
 }
 exports.BaseController = BaseController;

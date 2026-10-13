@@ -1,46 +1,36 @@
 import { Request, Response } from "express";
+import { AppError } from "../errors/app-error";
+import { sendError } from "./error-response";
 
+/**
+ * Base de los controllers HTTP.
+ *
+ * `run` ejecuta el handler y traduce el error a HTTP.
+ * El handler es quien escribe la respuesta (`res.status(...).json(...)`).
+ */
 export abstract class BaseController {
   protected async run<T>(
     res: Response,
     work: () => Promise<T>
   ): Promise<void> {
     try {
-      const result = await work();
-
-      if (result === undefined) {
-        res.status(204).send();
-        return;
-      }
-
-      res.status(200).json(result);
+      await work();
     } catch (error) {
-      const status =
-        typeof error === "object" &&
-        error !== null &&
-        "statusCode" in error &&
-        typeof (error as { statusCode?: unknown }).statusCode === "number"
-          ? (error as { statusCode: number }).statusCode
-          : 500;
-
-      const message =
-        error instanceof Error
-          ? error.message
-          : "Error interno del servidor";
-
-      res.status(status).json({
-        error: message,
-      });
+      this.handleError(res, error);
     }
   }
 
   protected paramId(req: Request): number {
-    const id = Number(req.params.id);
+    const raw = req.params.id;
+    const value = Array.isArray(raw) ? raw[0] : raw;
 
-    if (!Number.isInteger(id) || id <= 0) {
-      throw new Error("ID inválido");
+    if (!value || !/^\d+$/.test(value) || Number(value) < 1) {
+      throw new AppError(400, "Invalid id: must be a positive integer");
     }
+    return Number(value);
+  }
 
-    return id;
+  protected handleError(res: Response, error: unknown): void {
+    sendError(res, error);
   }
 }

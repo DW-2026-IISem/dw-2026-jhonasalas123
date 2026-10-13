@@ -1,4 +1,5 @@
 import { Application } from "express";
+import { jwtRbac } from "../../auth/access";
 import { HealthRecordController } from "./health-record.controller";
 
 export class HealthRecordRoutes {
@@ -6,62 +7,42 @@ export class HealthRecordRoutes {
     new HealthRecordController();
 
   public routes(app: Application): void {
-    // ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================
-
-    // getAll
     app
       .route("/api/fichas-sanitarias")
       .get(
-        this.healthRecordController.getAll.bind(
-          this.healthRecordController
-        )
-      );
-
-    // getOne
-    app
-      .route("/api/fichas-sanitarias/:id")
-      .get(
-        this.healthRecordController.getOne.bind(
-          this.healthRecordController
-        )
-      );
-
-    // create
-    app
-      .route("/api/fichas-sanitarias")
+        ...jwtRbac,
+        this.healthRecordController.getAll.bind(this.healthRecordController)
+      )
       .post(
-        this.healthRecordController.create.bind(
-          this.healthRecordController
-        )
+        ...jwtRbac,
+        this.healthRecordController.create.bind(this.healthRecordController)
       );
 
-    // update (PUT / PATCH)
     app
       .route("/api/fichas-sanitarias/:id")
+      .get(
+        ...jwtRbac,
+        this.healthRecordController.getOne.bind(this.healthRecordController)
+      )
       .put(
-        this.healthRecordController.updatePut.bind(
-          this.healthRecordController
-        )
+        ...jwtRbac,
+        this.healthRecordController.updatePut.bind(this.healthRecordController)
       )
       .patch(
-        this.healthRecordController.updatePatch.bind(
-          this.healthRecordController
-        )
-      );
-
-    // delete físico
-    app
-      .route("/api/fichas-sanitarias/:id")
+        ...jwtRbac,
+        this.healthRecordController.updatePatch.bind(this.healthRecordController)
+      )
       .delete(
+        ...jwtRbac,
         this.healthRecordController.deletePhysical.bind(
           this.healthRecordController
         )
       );
 
-    // delete lógico
     app
       .route("/api/fichas-sanitarias/:id/deactivate")
       .patch(
+        ...jwtRbac,
         this.healthRecordController.deleteLogical.bind(
           this.healthRecordController
         )

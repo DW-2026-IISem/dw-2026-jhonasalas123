@@ -6,6 +6,7 @@ const users_repository_1 = require("./users.repository");
 const app_error_1 = require("../../../shared/errors/app-error");
 const password_1 = require("../../../shared/auth/password");
 const resource_roles_service_1 = require("../resource-roles/resource-roles.service");
+const refresh_tokens_service_1 = require("../refresh-tokens/refresh-tokens.service");
 /**
  * Capa Service del feature Users.
  *
@@ -17,9 +18,10 @@ const resource_roles_service_1 = require("../resource-roles/resource-roles.servi
  * No conoce `req`/`res` ni escribe Sequelize directamente.
  */
 class UsersService {
-    constructor(repository = new users_repository_1.UsersRepository(), resourceRolesService = new resource_roles_service_1.ResourceRolesService()) {
+    constructor(repository = new users_repository_1.UsersRepository(), resourceRolesService = new resource_roles_service_1.ResourceRolesService(), refreshTokensService = new refresh_tokens_service_1.RefreshTokensService()) {
         this.repository = repository;
         this.resourceRolesService = resourceRolesService;
+        this.refreshTokensService = refreshTokensService;
     }
     // ================== READ ==================
     async getAll() {
@@ -86,17 +88,21 @@ class UsersService {
             throw new app_error_1.AppError(400, "Current password is incorrect");
         }
         await this.repository.update(user, { password: body.new_password });
+        await this.refreshTokensService.revokeAllMine(id);
     }
     // ================== DELETE ==================
     /** Eliminación física. */
     async deletePhysical(id) {
         const user = await this.findOrFail(id, false);
+        await this.refreshTokensService.revokeAllMine(id);
+        await this.refreshTokensService.purgeMine(id);
         await this.repository.delete(user);
     }
     /** Eliminación lógica -> `status = inactive`. */
     async deleteLogical(id) {
         const user = await this.findOrFail(id);
         await this.repository.update(user, { status: "inactive" });
+        await this.refreshTokensService.revokeAllMine(id);
         return (0, dto_1.toUserResponse)(user);
     }
     // ================== HELPERS ==================

@@ -673,3 +673,9 @@
 ## CIERRE FINAL
 
 ![](images/clipboard-1544258390.png)
+
+# **Pruebas - Proyecto completo**
+
+## **1.Preparación**
+
+![](images/clipboard-105269401.png)

@@ -17,23 +17,23 @@ class RefreshTokensRoutes {
         // Listar sesiones propias
         app
             .route("/api/sesiones")
-            .get(access_1.authenticate, this.refreshTokensController.getAll.bind(this.refreshTokensController));
+            .get(...access_1.jwtOnly, this.refreshTokensController.getAll.bind(this.refreshTokensController));
         // Revocar todas las sesiones
         app
             .route("/api/sesiones/deactivate-all")
-            .patch(access_1.authenticate, this.refreshTokensController.revokeAll.bind(this.refreshTokensController));
+            .patch(...access_1.jwtOnly, this.refreshTokensController.revokeAll.bind(this.refreshTokensController));
         // Consultar una sesión propia
         app
             .route("/api/sesiones/:id")
-            .get(access_1.authenticate, this.refreshTokensController.getOne.bind(this.refreshTokensController));
+            .get(...access_1.jwtOnly, this.refreshTokensController.getOne.bind(this.refreshTokensController));
         // Revocar una sesión concreta
         app
             .route("/api/sesiones/:id/deactivate")
-            .patch(access_1.authenticate, this.refreshTokensController.revokeOne.bind(this.refreshTokensController));
+            .patch(...access_1.jwtOnly, this.refreshTokensController.revokeOne.bind(this.refreshTokensController));
         // Purga de sesiones propias
         app
             .route("/api/sesiones")
-            .delete(access_1.authenticate, this.refreshTokensController.purge.bind(this.refreshTokensController));
+            .delete(...access_1.jwtOnly, this.refreshTokensController.purge.bind(this.refreshTokensController));
     }
 }
 exports.RefreshTokensRoutes = RefreshTokensRoutes;

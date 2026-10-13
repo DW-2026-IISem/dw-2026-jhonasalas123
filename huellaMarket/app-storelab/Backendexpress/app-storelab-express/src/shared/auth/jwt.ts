@@ -23,8 +23,14 @@ const ALGORITHM = "HS256";
 export const TOKEN_ISSUER = "app-storelab-express";
 export const TOKEN_AUDIENCE = "app-storelab-api";
 
-/** Vida útil del access token. Corta por diseño (Owasp/OAuth2: token de vida corta). */
-export const ACCESS_TOKEN_TTL_SECONDS = Number(process.env.JWT_ACCESS_TTL ?? 900); // 15 min
+/** Vida útil del access token. Se lee en tiempo de firma (después de dotenv). */
+export function getAccessTokenTtlSeconds(): number {
+  const n = Number(process.env.JWT_ACCESS_TTL ?? 900);
+  return Number.isFinite(n) && n > 0 ? n : 900;
+}
+
+/** Valor por defecto documentado (15 min). Preferir `getAccessTokenTtlSeconds()`. */
+export const ACCESS_TOKEN_TTL_SECONDS = 900;
 
 export interface AccessTokenPayload extends JwtPayload {
   sub: string;
@@ -56,11 +62,11 @@ export function signAccessToken(user: { id: number; username: string }): {
       subject: String(user.id),
       issuer: TOKEN_ISSUER,
       audience: TOKEN_AUDIENCE,
-      expiresIn: ACCESS_TOKEN_TTL_SECONDS,
+      expiresIn: getAccessTokenTtlSeconds(),
       jwtid: randomUUID(),
     }
   );
-  return { token, expiresIn: ACCESS_TOKEN_TTL_SECONDS };
+  return { token, expiresIn: getAccessTokenTtlSeconds() };
 }
 
 /**

@@ -93,7 +93,7 @@ export const sessionSwagger = {
         tags: ["Sesión"],
         summary: "Cerrar sesión",
         description:
-          "Revoca el refresh token presentado.",
+          "Revoca la familia del refresh token presentado.",
         security: openSecurity,
         requestBody: {
           required: true,

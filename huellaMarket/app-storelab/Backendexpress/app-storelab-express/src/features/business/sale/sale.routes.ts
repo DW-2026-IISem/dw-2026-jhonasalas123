@@ -1,44 +1,24 @@
-import { authenticate, authorize } from "../../auth/access";
 import { Application } from "express";
+import { jwtRbac } from "../../auth/access";
 import { SaleController } from "./sale.controller";
 
 export class SaleRoutes {
   private controller: SaleController = new SaleController();
 
   public routes(app: Application): void {
+    app
+      .route("/api/ventas")
+      .get(...jwtRbac, this.controller.getAll.bind(this.controller))
+      .post(...jwtRbac, this.controller.create.bind(this.controller));
 
-    // ISS-03-B — READ
-    app.get(
-      "/api/ventas",
-      this.controller.getAll.bind(this.controller)
-    );
-
-    app.get(
-      "/api/ventas/:id",
-      this.controller.getOne.bind(this.controller)
-    );
-
-    // ISS-03-C — CREATE
-    app.post(
-      "/api/ventas",
-      this.controller.create.bind(this.controller)
-    );
-
-    // ISS-03-D — UPDATE
-    app.put(
-      "/api/ventas/:id",
-      this.controller.updatePut.bind(this.controller)
-    );
-
-    app.patch(
-      "/api/ventas/:id",
-      this.controller.updatePatch.bind(this.controller)
-    );
-
-    // ISS-03-E — DELETE
-    app.delete(
-      "/api/ventas/:id",
-      this.controller.deletePhysical.bind(this.controller)
-    );
+    app
+      .route("/api/ventas/:id")
+      .get(...jwtRbac, this.controller.getOne.bind(this.controller))
+      .put(...jwtRbac, this.controller.updatePut.bind(this.controller))
+      .patch(...jwtRbac, this.controller.updatePatch.bind(this.controller))
+      .delete(
+        ...jwtRbac,
+        this.controller.deletePhysical.bind(this.controller)
+      );
   }
 }

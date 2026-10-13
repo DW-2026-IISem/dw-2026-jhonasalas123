@@ -8,23 +8,19 @@ class PetRoutes {
         this.petController = new pet_controller_1.PetController();
     }
     routes(app) {
-        // ================== RUTAS SIN AUTENTICACIÓN / SIN MIDDLEWARE JWT ==================
-        // getAll
         app
             .route("/api/mascotas")
-            .get(access_1.authenticate, access_1.authorize, this.petController.getAll.bind(this.petController));
-        // getOne
+            .get(...access_1.jwtRbac, this.petController.getAll.bind(this.petController))
+            .post(...access_1.jwtRbac, this.petController.create.bind(this.petController));
         app
             .route("/api/mascotas/:id")
-            .get(access_1.authenticate, access_1.authorize, this.petController.getOne.bind(this.petController));
-        // ================== CREATE ==================
+            .get(...access_1.jwtRbac, this.petController.getOne.bind(this.petController))
+            .put(...access_1.jwtRbac, this.petController.updatePut.bind(this.petController))
+            .patch(...access_1.jwtRbac, this.petController.updatePatch.bind(this.petController))
+            .delete(...access_1.jwtRbac, this.petController.deletePhysical.bind(this.petController));
         app
-            .route("/api/mascotas")
-            .post(access_1.authenticate, access_1.authorize, this.petController.create.bind(this.petController));
-        // ================== UPDATE ==================
-        // (rellenar en ISS-03-D)
-        // ================== DELETE ==================
-        // (rellenar en ISS-03-E)
+            .route("/api/mascotas/:id/deactivate")
+            .patch(...access_1.jwtRbac, this.petController.deleteLogical.bind(this.petController));
     }
 }
 exports.PetRoutes = PetRoutes;

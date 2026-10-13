@@ -1,18 +1,14 @@
 import { Request, Response } from "express";
-import {
-  ApiOperation,
-  ApiResponse,
-  ApiTags,
-} from "@nestjs/swagger";
 import { PetService, PetServiceI } from "./pet-service.model";
 
-@ApiTags("Servicios de Mascotas")
-export class PetServiceController {
+function paramId(req: Request): number {
+  const raw = req.params.id;
+  const value = Array.isArray(raw) ? raw[0] : raw;
+  return Number(value);
+}
 
-  // GET /api/servicios-mascota
-  @ApiOperation({ summary: "Obtener todos los servicios de mascotas" })
-  @ApiResponse({ status: 200, description: "Servicios obtenidos correctamente" })
-  public async getAll(req: Request, res: Response): Promise<void> {
+export class PetServiceController {
+  public async getAll(_req: Request, res: Response): Promise<void> {
     try {
       const pet_services = await PetService.findAll({
         where: { isActive: true },
@@ -27,14 +23,9 @@ export class PetServiceController {
     }
   }
 
-  // GET /api/servicios-mascota/:id
-  @ApiOperation({ summary: "Obtener un servicio de mascota por ID" })
-  @ApiResponse({ status: 200, description: "Servicio encontrado" })
-  @ApiResponse({ status: 404, description: "Servicio no encontrado" })
   public async getOne(req: Request, res: Response): Promise<void> {
     try {
-      const id = Number(req.params.id);
-
+      const id = paramId(req);
       const pet_service = await PetService.findByPk(id);
 
       if (!pet_service) {
@@ -53,9 +44,6 @@ export class PetServiceController {
     }
   }
 
-  // POST /api/servicios-mascota
-  @ApiOperation({ summary: "Crear un servicio de mascota" })
-  @ApiResponse({ status: 201, description: "Servicio creado correctamente" })
   public async create(req: Request, res: Response): Promise<void> {
     try {
       const body = req.body as PetServiceI;
@@ -75,14 +63,9 @@ export class PetServiceController {
     }
   }
 
-  // PUT /api/servicios-mascota/:id
-  @ApiOperation({ summary: "Actualizar un servicio de mascota" })
-  @ApiResponse({ status: 200, description: "Servicio actualizado correctamente" })
-  @ApiResponse({ status: 404, description: "Servicio no encontrado" })
   public async updatePut(req: Request, res: Response): Promise<void> {
     try {
-      const id = Number(req.params.id);
-
+      const id = paramId(req);
       const pet_service = await PetService.findByPk(id);
 
       if (!pet_service) {
@@ -109,13 +92,9 @@ export class PetServiceController {
     }
   }
 
-  // PATCH /api/servicios-mascota/:id
-  @ApiOperation({ summary: "Actualizar parcialmente un servicio de mascota" })
-  @ApiResponse({ status: 200, description: "Servicio actualizado parcialmente" })
   public async updatePatch(req: Request, res: Response): Promise<void> {
     try {
-      const id = Number(req.params.id);
-
+      const id = paramId(req);
       const pet_service = await PetService.findByPk(id);
 
       if (!pet_service) {
@@ -138,13 +117,9 @@ export class PetServiceController {
     }
   }
 
-  // DELETE físico /api/servicios-mascota/:id
-  @ApiOperation({ summary: "Eliminar físicamente un servicio de mascota" })
-  @ApiResponse({ status: 200, description: "Servicio eliminado correctamente" })
   public async deletePhysical(req: Request, res: Response): Promise<void> {
     try {
-      const id = Number(req.params.id);
-
+      const id = paramId(req);
       const pet_service = await PetService.findByPk(id);
 
       if (!pet_service) {
@@ -168,13 +143,9 @@ export class PetServiceController {
     }
   }
 
-  // DELETE lógico /api/servicios-mascota/:id/deactivate
-  @ApiOperation({ summary: "Desactivar un servicio de mascota" })
-  @ApiResponse({ status: 200, description: "Servicio desactivado correctamente" })
   public async deleteLogical(req: Request, res: Response): Promise<void> {
     try {
-      const id = Number(req.params.id);
-
+      const id = paramId(req);
       const pet_service = await PetService.findByPk(id);
 
       if (!pet_service) {
