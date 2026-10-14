@@ -680,7 +680,7 @@
 
 ![](images/clipboard-105269401.png)
 
-### **Sesión de inicio de sesión y permisos**
+### **BLOQUE A - Sesión de inicio de sesión y permisos**
 
 #### **Iniciar sesión como administrador**
 
@@ -701,3 +701,9 @@
 ### Consulta de permisos del vendedor
 
 ![](images/clipboard-3295317829.png)
+
+## **Bloque B — Sin Autenticación**
+
+### **Tabla Cliente**
+
+![](images/clipboard-3476589011.png)
