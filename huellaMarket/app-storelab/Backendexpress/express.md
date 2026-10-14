@@ -725,3 +725,7 @@
 #### Token
 
 ![](images/clipboard-2053839907.png)
+
+#### Token pet
+
+![](images/clipboard-1961399955.png)
