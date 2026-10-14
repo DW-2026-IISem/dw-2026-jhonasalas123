@@ -752,7 +752,7 @@
 
 ![](images/clipboard-3086738978.png)
 
-### Desactivar - Cliente
+#### Desactivar - Cliente
 
 ![](images/clipboard-2517333688.png)
 
@@ -763,3 +763,9 @@
 #### Actualizar Mascota
 
 ![](images/clipboard-3654318592.png)
+
+#### Desactivar - Mascota
+
+![](images/clipboard-589857191.png)
+
+#### 
