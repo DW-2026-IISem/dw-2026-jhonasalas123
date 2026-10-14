@@ -697,3 +697,7 @@
 ### **api/permisos Administrador** 
 
 ![](images/clipboard-2228484494.png)
+
+### Consulta de permisos del vendedor
+
+![](images/clipboard-3295317829.png)
