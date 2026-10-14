@@ -783,3 +783,7 @@
 #### Consultar
 
 ![](images/clipboard-3838819785.png)
+
+#### Actualizar
+
+![](images/clipboard-2285375316.png)
