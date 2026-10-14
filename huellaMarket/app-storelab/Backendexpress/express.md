@@ -779,3 +779,7 @@
 #### Crear
 
 ![](images/clipboard-2478722364.png)
+
+#### Consultar
+
+![](images/clipboard-3838819785.png)
