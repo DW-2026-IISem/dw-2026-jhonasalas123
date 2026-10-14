@@ -685,3 +685,7 @@
 #### **Iniciar sesión como administrador**
 
 ![](images/clipboard-4090249441.png)
+
+#### Iniciar sesion 
+
+![](images/clipboard-3144314582.png)
