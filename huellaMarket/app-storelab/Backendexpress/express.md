@@ -787,3 +787,7 @@
 #### Actualizar
 
 ![](images/clipboard-2285375316.png)
+
+#### Eliminar
+
+![](images/clipboard-3828587222.png)
