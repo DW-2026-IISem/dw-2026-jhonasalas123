@@ -768,4 +768,6 @@
 
 ![](images/clipboard-589857191.png)
 
-#### 
+#### Eliminar - Mascota
+
+![](images/clipboard-2546808109.png)
