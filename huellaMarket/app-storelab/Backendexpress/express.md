@@ -759,3 +759,7 @@
 #### Crear Mascota
 
 ![](images/clipboard-3102178650.png)
+
+#### Actualizar Mascota
+
+![](images/clipboard-3654318592.png)
