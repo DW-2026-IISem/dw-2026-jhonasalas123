@@ -693,3 +693,7 @@
 ### **api/sesión/perfil**
 
 ![](images/clipboard-1433949529.png)
+
+### **api/permisos Administrador** 
+
+![](images/clipboard-2228484494.png)
