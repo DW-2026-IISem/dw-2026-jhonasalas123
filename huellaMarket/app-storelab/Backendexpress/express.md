@@ -707,3 +707,7 @@
 ### **Tabla Cliente**
 
 ![](images/clipboard-3476589011.png)
+
+### **Tabla Mascotas**
+
+![](images/clipboard-3725446082.png)
