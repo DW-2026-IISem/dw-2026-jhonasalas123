@@ -771,3 +771,7 @@
 #### Eliminar - Mascota
 
 ![](images/clipboard-2546808109.png)
+
+### Swagger Cliente 
+
+![](images/clipboard-1902100252.png)
