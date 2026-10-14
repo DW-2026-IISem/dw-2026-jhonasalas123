@@ -752,4 +752,6 @@
 
 ![](images/clipboard-3086738978.png)
 
-### 
+### Desactivar - Cliente
+
+![](images/clipboard-2517333688.png)
