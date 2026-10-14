@@ -729,3 +729,11 @@
 #### Token pet
 
 ![](images/clipboard-1961399955.png)
+
+### Pruebas en Swagger 
+
+#### Con token
+
+![](images/clipboard-307219407.png)
+
+![](images/clipboard-466992230.png)
