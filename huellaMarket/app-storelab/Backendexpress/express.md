@@ -689,3 +689,7 @@
 #### Iniciar sesion 
 
 ![](images/clipboard-3144314582.png)
+
+### **api/sesión/perfil**
+
+![](images/clipboard-1433949529.png)
