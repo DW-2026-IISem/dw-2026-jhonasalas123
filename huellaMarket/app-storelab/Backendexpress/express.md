@@ -743,3 +743,9 @@
 ![](images/clipboard-3787220517.png)
 
 ![](images/clipboard-1585340059.png)
+
+### B2 - Crear cliente
+
+![](images/clipboard-3150076929.png)
+
+### 
