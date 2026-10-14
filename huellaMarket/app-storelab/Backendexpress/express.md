@@ -686,7 +686,7 @@
 
 ![](images/clipboard-4090249441.png)
 
-#### Iniciar sesion 
+#### Iniciar sesion
 
 ![](images/clipboard-3144314582.png)
 
@@ -694,7 +694,7 @@
 
 ![](images/clipboard-1433949529.png)
 
-### **api/permisos Administrador** 
+### **api/permisos Administrador**
 
 ![](images/clipboard-2228484494.png)
 
@@ -711,3 +711,9 @@
 ### **Tabla Mascotas**
 
 ![](images/clipboard-3725446082.png)
+
+#### Obtener todo - CLIENT
+
+#### Sin tokens 
+
+![](images/clipboard-1940181130.png)
