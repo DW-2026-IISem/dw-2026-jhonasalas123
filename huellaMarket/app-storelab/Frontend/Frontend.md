@@ -43,3 +43,7 @@
 #### 1.8 Primera ejecución
 
 ![](images/clipboard-827092409.png)
+
+#### 1.9 Anatomía del componente `demo/ejemplo` y signals
+
+![](images/clipboard-1353199431.png)
