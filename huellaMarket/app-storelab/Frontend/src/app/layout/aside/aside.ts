@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  imports: [],
   selector: 'app-aside',
-  styleUrl: './aside.css',
+  imports: [],
   templateUrl: './aside.html',
+  styleUrl: './aside.css',
+  host: { class: 'block' },
 })
 export class Aside {}

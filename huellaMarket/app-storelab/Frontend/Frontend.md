@@ -77,3 +77,7 @@
 #### Componentes
 
 ![](images/clipboard-1301634119.png)
+
+#### 1.3 Contenido de cada componente
+
+![](images/clipboard-2943158021.png)
