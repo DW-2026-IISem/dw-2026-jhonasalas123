@@ -39,3 +39,7 @@
 #### 1.7 Ajustar el presupuesto de build
 
 ![](images/clipboard-4206667787.png)
+
+#### 1.8 Primera ejecución
+
+![](images/clipboard-827092409.png)
