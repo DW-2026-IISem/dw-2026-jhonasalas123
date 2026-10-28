@@ -714,7 +714,7 @@
 
 #### Obtener todo - CLIENT
 
-#### Sin tokens 
+#### Sin tokens
 
 ![](images/clipboard-1940181130.png)
 
@@ -730,7 +730,7 @@
 
 ![](images/clipboard-1961399955.png)
 
-### Pruebas en Swagger 
+### Pruebas en Swagger
 
 #### Con token
 
@@ -772,7 +772,7 @@
 
 ![](images/clipboard-2546808109.png)
 
-### Swagger Cliente 
+### Swagger Cliente
 
 ![](images/clipboard-1902100252.png)
 

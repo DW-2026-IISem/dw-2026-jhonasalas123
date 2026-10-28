@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:4000
+
+### Iniciar sesión como administrador
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+
+### Obtener todas las ventas
+GET {{baseUrl}}/api/ventas
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}
+
+###
+
+### Obtener una venta por ID
+GET {{baseUrl}}/api/ventas/1
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}

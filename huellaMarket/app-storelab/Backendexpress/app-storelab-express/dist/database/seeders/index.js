@@ -54,7 +54,7 @@ async function runAllSeeders() {
     if (!ok) {
         throw new Error("No hay conexión a la base de datos");
     }
-    await db_1.sequelize.sync({ force: false, alter: true });
+    await db_1.sequelize.sync({ force: false, alter: false });
     // Orden: auth
     await (0, users_seeder_1.seedUsers)(counts.users);
     await (0, roles_seeder_1.seedRoles)();

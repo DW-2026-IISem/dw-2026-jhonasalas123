@@ -1,0 +1,27 @@
+@baseUrl = http://localhost:4000
+
+### Iniciar sesión como administrador
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+
+### Crear un pago de prueba
+POST {{baseUrl}}/api/pagos
+Content-Type: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}
+
+{
+  "referencia_tipo": "venta",
+  "referencia_id": 1,
+  "metodo": "efectivo",
+  "monto": 25000,
+  "fecha": "2026-10-27T10:00:00.000Z",
+  "estado": "pendiente"
+}

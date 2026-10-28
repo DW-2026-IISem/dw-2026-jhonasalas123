@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:4000
+
+### Iniciar sesión como administrador
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+
+### Desactivar lógicamente un proveedor
+PATCH {{baseUrl}}/api/proveedores/1/deactivate
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}
+
+###
+
+### Eliminar físicamente un proveedor
+DELETE {{baseUrl}}/api/proveedores/1
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}

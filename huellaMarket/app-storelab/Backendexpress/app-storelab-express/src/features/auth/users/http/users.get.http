@@ -1,9 +1,7 @@
-### Feature Users — GET ALL / GET ONE (modalidad JWT + RBAC)
-### JWT + RBAC: `authenticate` (401 si no hay identidad válida) +
-### `authorize` (403 si la matriz no concede el par method+path).
+```http
 @baseUrl = http://localhost:4000
 
-# @name loginAdmin
+@name loginAdmin
 POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
 
@@ -15,23 +13,18 @@ Content-Type: application/json
 @adminToken = {{loginAdmin.response.body.$.access_token}}
 @id = 1
 
-### getAll — recurso `GET /api/usuarios` (solo ADMIN). Nunca devuelve `password`.
 GET {{baseUrl}}/api/usuarios
 Authorization: Bearer {{adminToken}}
 
-### getOne — recurso `GET /api/usuarios/:id`
 GET {{baseUrl}}/api/usuarios/{{id}}
 Authorization: Bearer {{adminToken}}
 
-### 400 — id no es entero positivo (validado en BaseController.paramId)
 GET {{baseUrl}}/api/usuarios/abc
 Authorization: Bearer {{adminToken}}
 
-### 401 — sin token
 GET {{baseUrl}}/api/usuarios
 
-### 403 — el rol SELLER no tiene concedido `GET /api/usuarios`
-# @name loginSeller
+@name loginSeller
 POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
 
@@ -40,5 +33,6 @@ Content-Type: application/json
   "password": "Seller123!"
 }
 
-### GET {{baseUrl}}/api/usuarios
+GET {{baseUrl}}/api/usuarios
 Authorization: Bearer {{loginSeller.response.body.$.access_token}}
+```

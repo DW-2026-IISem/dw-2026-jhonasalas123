@@ -1,0 +1,24 @@
+@baseUrl = http://localhost:4000
+
+### Iniciar sesión como administrador
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+
+### Crear una cita de servicio
+POST {{baseUrl}}/api/citas-servicio
+Content-Type: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}
+
+{
+  "nombre": "Jornada de vacunación",
+  "descripcion": "Cita para vacunación de mascotas",
+  "isActive": true
+}

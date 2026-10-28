@@ -1,0 +1,25 @@
+@baseUrl = http://localhost:4000
+
+### 1. Iniciar sesión como administrador
+# @name loginAdmin
+POST {{baseUrl}}/api/sesion/login
+Content-Type: application/json
+
+{
+  "identifier": "admin",
+  "password": "Admin123!"
+}
+
+###
+
+### 2. Consultar todas las citas
+GET {{baseUrl}}/api/citas-servicio
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}
+
+###
+
+### 3. Consultar una cita por ID
+GET {{baseUrl}}/api/citas-servicio/1
+Accept: application/json
+Authorization: Bearer {{loginAdmin.response.body.access_token}}

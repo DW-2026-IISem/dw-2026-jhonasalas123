@@ -1,5 +1,4 @@
-### Feature HealthRecord — CREATE
-### Leyenda: SIN AUTH (sin middleware JWT / sin autenticación)
+
 @baseUrl = http://localhost:4000
 
 # @name createHealthRecord

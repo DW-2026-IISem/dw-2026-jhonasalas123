@@ -1,6 +1,8 @@
-### Feature Users — CREATE / UPDATE / DELETE (modalidad JWT + RBAC)
+# Usuarios — Create / Update / Delete (JWT + RBAC)
 @baseUrl = http://localhost:4000
+@id = 2
 
+### LoginAdmin
 # @name loginAdmin
 POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
@@ -9,57 +11,46 @@ Content-Type: application/json
   "identifier": "admin",
   "password": "Admin123!"
 }
+###
+@token= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNzkyMDIxNTk4LCJleHAiOjE3OTIwMjI0OTgsImF1ZCI6ImFwcC1zdG9yZWxhYi1hcGkiLCJpc3MiOiJhcHAtc3RvcmVsYWItZXhwcmVzcyIsInN1YiI6IjEiLCJqdGkiOiIwMDEzMDRjNi1lOTc5LTRmMjQtYTBiYy00MTAzYWJjZWYzMTIifQ.Wi2PKmmho75ik50X7QzumNZeHZUp9Y7s0tofc8z0zyo
 
-@token = {{loginAdmin.response.body.$.access_token}}
-@id = 2
-
-### CREATE — recurso `POST /api/usuarios`. El `password` se hashea (bcrypt, 12 rondas).
+### Create
 POST {{baseUrl}}/api/usuarios
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "username": "nuevo.usuario",
-  "email": "nuevo.usuario@storelab.local",
-  "password": "Password123!",
+  "username": "Jose s",
+  "email": "joses@storelab.local",
+  "password": "jose1455",
   "avatar": null
 }
 
-### 409 — username/email ya en uso
-POST {{baseUrl}}/api/usuarios
-Authorization: Bearer {{token}}
-Content-Type: application/json
 
-{
-  "username": "admin",
-  "email": "otro@storelab.local",
-  "password": "Password123!"
-}
 
-### UPDATE PUT — reemplazo completo. No cambia `password` ni `status`.
+### Put
 PUT {{baseUrl}}/api/usuarios/{{id}}
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 Content-Type: application/json
 
 {
-  "username": "seller",
-  "email": "seller@storelab.local",
+  "username": "Juan",
+  "email": "Juan@storelab.local",
   "avatar": "https://example.com/avatar.png"
 }
 
-### UPDATE PATCH — parcial
+### Patch
 PATCH {{baseUrl}}/api/usuarios/{{id}}
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 Content-Type: application/json
 
 {
   "avatar": null
 }
 
-### CAMBIO DE CONTRASEÑA — recurso `PATCH /api/usuarios/:id/password`.
-### Exige la contraseña ACTUAL (defensa en profundidad, incluso para un admin).
+### ChangePassword
 PATCH {{baseUrl}}/api/usuarios/{{id}}/password
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 Content-Type: application/json
 
 {
@@ -67,15 +58,14 @@ Content-Type: application/json
   "new_password": "Seller456!"
 }
 
-### PERMISOS EFECTIVOS del usuario — recurso `GET /api/usuarios/:id/permisos`.
-### Ejecuta la cadena RBAC completa (seller -> 7 permisos).
+### PermisosEfectivos
 GET {{baseUrl}}/api/usuarios/{{id}}/permisos
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### DELETE lógico — `status = inactive`. Efecto inmediato: sus tokens dejan de valer (401).
+### DeleteLogical
 PATCH {{baseUrl}}/api/usuarios/{{id}}/deactivate
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### DELETE físico — recurso `DELETE /api/usuarios/:id`
+### DeletePhysical
 DELETE {{baseUrl}}/api/usuarios/{{id}}
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}

@@ -1,8 +1,7 @@
-### Feature Roles — CRUD (modalidad JWT + RBAC)
-### El NOMBRE del rol no autoriza nada: la autorización son las filas de `resource_roles`.
-
+```http
 @baseUrl = http://localhost:4000
 
+### 1. LOGIN ADMIN
 # @name loginAdmin
 POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
@@ -12,6 +11,9 @@ Content-Type: application/json
   "password": "Admin123!"
 }
 
+###
+
+### 2. LOGIN SELLER
 # @name loginSeller
 POST {{baseUrl}}/api/sesion/login
 Content-Type: application/json
@@ -20,20 +22,24 @@ Content-Type: application/json
   "identifier": "seller",
   "password": "Seller123!"
 }
+###
 
-@token = {{loginAdmin.response.body.$.access_token}}
 
-### getAll — recurso `GET /api/roles` (ADMIN y SELLER)
+### 3. LISTAR ROLES — ADMIN
 GET {{baseUrl}}/api/roles
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### getOne
+###
+
+### 4. CONSULTAR ROL POR ID — ADMIN
 GET {{baseUrl}}/api/roles/1
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### CREATE — nace SIN permisos
+###
+
+### 5. CREAR ROL — ADMIN
 POST {{baseUrl}}/api/roles
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 Content-Type: application/json
 
 {
@@ -41,33 +47,44 @@ Content-Type: application/json
   "description": "Solo lectura de catálogo"
 }
 
-### UPDATE PUT
+###
+
+### 6. ACTUALIZAR ROL COMPLETO — ADMIN
 PUT {{baseUrl}}/api/roles/3
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 Content-Type: application/json
 
 {
   "name": "AUDITOR",
-  "description": "Solo lectura de catálogo y ventas"
-}
-
-### UPDATE PATCH
-PATCH {{baseUrl}}/api/roles/3
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-{
   "description": "Auditoría operativa"
 }
 
-### DELETE lógico
+###
+
+### 7. ACTUALIZAR ROL PARCIAL — ADMIN
+PATCH {{baseUrl}}/api/roles/3
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
+Content-Type: application/json
+
+{
+  "description": "Auditoría operativa actualizada"
+}
+
+###
+
+### 8. DESACTIVAR ROL — ADMIN
 PATCH {{baseUrl}}/api/roles/3/deactivate
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### DELETE físico
+###
+
+### 9. ELIMINAR ROL FÍSICAMENTE — ADMIN
 DELETE {{baseUrl}}/api/roles/3
-Authorization: Bearer {{token}}
+Authorization: Bearer {{loginAdmin.response.body.$.access_token}}
 
-### 403 — SELLER no tiene concedido `GET /api/roles`
+###
+
+### 10. PRUEBA DE AUTORIZACIÓN — SELLER
 GET {{baseUrl}}/api/roles
 Authorization: Bearer {{loginSeller.response.body.$.access_token}}
+```
