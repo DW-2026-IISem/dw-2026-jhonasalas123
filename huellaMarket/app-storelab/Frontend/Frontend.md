@@ -2,7 +2,7 @@
 
 ## ISS-01-E01-estructura-inicial
 
-![](../Backendexpress/images/clipboard-2683385096.png)
+## 1.7 Ajustar el presupuesto de build
 
 #### ISS-01-E02-instalacion-primeng
 
@@ -35,3 +35,7 @@
 #### 1.6 Personalizar `index.html`
 
 ![](../Backendexpress/images/clipboard-964325939.png)
+
+#### 1.7 Ajustar el presupuesto de build
+
+![](images/clipboard-4206667787.png)
