@@ -31,3 +31,7 @@
 ![](images/clipboard-886664677.png)
 
 ![](images/clipboard-175669201.png)
+
+#### 1.6 Personalizar `index.html`
+
+![](images/clipboard-964325939.png)
