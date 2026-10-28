@@ -7,3 +7,7 @@
 #### ISS-01-E02-instalacion-primeng
 
 ![](images/clipboard-3950535841.png)
+
+#### ISS-01-E03-instalacion-tailwind
+
+![](images/clipboard-2484577358.png)
