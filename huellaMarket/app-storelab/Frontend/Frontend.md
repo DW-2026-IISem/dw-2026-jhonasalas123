@@ -71,3 +71,9 @@
 ## Verificacion del ISS
 
 ![](images/clipboard-1928885789.png)
+
+# Fase I: Frontend — ISS-01A — Esqueleto Header / Aside / contenido / Footer
+
+#### Componentes
+
+![](images/clipboard-1301634119.png)
