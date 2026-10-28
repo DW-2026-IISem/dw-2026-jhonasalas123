@@ -51,3 +51,7 @@
 #### 1.9.1 De `index.html` a la pantalla - 1.9.2 Los cuatro archivos de un componente
 
 ![](images/clipboard-644466955.png)
+
+#### 1.9.3 Leer `ejemplo.ts` línea a línea
+
+![](images/clipboard-526041344.png)
