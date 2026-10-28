@@ -63,3 +63,7 @@
 #### 1.9.5 Signals: el estado que avisa a la vista
 
 ![](images/clipboard-3297736741.png)
+
+#### 1.9.6 - 1.9.9
+
+![](images/clipboard-3872407086.png)
