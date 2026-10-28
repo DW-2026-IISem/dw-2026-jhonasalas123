@@ -23,3 +23,11 @@
 ### 1.4.1 Licencia de PrimeNG 22 (obligatoria para la entrega limpia)
 
 ![](images/clipboard-2495897479.png)
+
+#### 1.5 Pantalla de arranque: `App` compone el componente `demo/ejemplo`
+
+![](images/clipboard-2370591051.png) 
+
+![](images/clipboard-886664677.png)
+
+![](images/clipboard-175669201.png)

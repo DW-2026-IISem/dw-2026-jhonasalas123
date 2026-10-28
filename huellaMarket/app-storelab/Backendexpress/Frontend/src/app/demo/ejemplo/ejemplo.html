@@ -1,0 +1,127 @@
+<div class="flex flex-col gap-6">
+  <p-card>
+    <ng-template #title>Objeto producto</ng-template>
+    <ng-template #subtitle>Ejemplo de estado reactivo con Angular Signals</ng-template>
+
+    <div class="mt-4 grid gap-6 md:grid-cols-2">
+      <div class="flex flex-col gap-4">
+        <label for="nombre" class="text-sm font-medium text-slate-700">
+          Nombre del producto
+        </label>
+
+        <input
+          id="nombre"
+          pInputText
+          [value]="producto().nombre"
+          (input)="cambiarNombre($event)"
+        />
+
+        <p class="text-sm text-slate-500">
+          Vista previa: <strong>{{ producto().nombre }}</strong>
+        </p>
+
+        <div>
+          <p class="text-sm text-slate-500">Precio base</p>
+          <p class="text-2xl font-bold text-slate-900">
+            {{ producto().precio }}
+          </p>
+          <p class="text-sm text-slate-500">
+            Precio final con IVA (19 %):
+            <strong>{{ precioFinal() }}</strong>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <button pButton type="button" (click)="variarPrecio(1000)">
+            <span pButtonLabel>+1000</span>
+          </button>
+
+          <button
+            pButton
+            type="button"
+            severity="secondary"
+            (click)="variarPrecio(-1000)"
+          >
+            <span pButtonLabel>-1000</span>
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <p-tag
+            [value]="estadoTexto()"
+            [severity]="producto().activo ? 'success' : 'danger'"
+          />
+
+          <button
+            pButton
+            type="button"
+            severity="contrast"
+            (click)="alternarEstado()"
+          >
+            <span pButtonLabel>Cambiar estado</span>
+          </button>
+
+          <button
+            pButton
+            type="button"
+            severity="secondary"
+            (click)="reiniciar()"
+          >
+            <span pButtonLabel>Reiniciar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-slate-50 p-5">
+        <h3 class="mb-3 text-lg font-semibold">Resumen</h3>
+
+        <p class="mb-2 text-sm text-slate-600">
+          Producto: {{ producto().nombre }}
+        </p>
+
+        <p class="mb-2 text-sm text-slate-600">
+          Precio base: {{ producto().precio }}
+        </p>
+
+        <p class="mb-4 text-sm text-slate-600">
+          Precio con IVA: {{ precioFinal() }}
+        </p>
+
+        @if (producto().activo) {
+          <p-message severity="success" variant="simple">
+            Producto activo: la API lo devolvería en
+            <code>GET /api/productos</code>.
+          </p-message>
+        } @else {
+          <p-message severity="warn" variant="simple">
+            Producto inactivo: el borrado lógico lo oculta de las listas.
+          </p-message>
+        }
+      </div>
+    </div>
+  </p-card>
+
+  <div class="grid gap-6 md:grid-cols-2">
+    <p-card>
+      <ng-template #title>Estado reactivo</ng-template>
+      <ng-template #subtitle>Signal, computed y effect</ng-template>
+
+      <p class="text-sm leading-6 text-slate-600">
+        El signal conserva el objeto del producto. El computed calcula el
+        precio con IVA y el estado, mientras que effect registra los cambios
+        en la consola.
+      </p>
+    </p-card>
+
+    <p-card>
+      <ng-template #title>Estilos</ng-template>
+      <ng-template #subtitle>Tailwind y estilos del componente</ng-template>
+
+      <div class="ejemplo-alcance mt-4 text-sm text-slate-700">
+        Esta caja utiliza una clase definida en
+        <code>ejemplo.css</code>. Los demás estilos se aplican mediante
+        utilidades Tailwind y componentes PrimeNG.
+      </div>
+    </p-card>
+  </div>
+</div>

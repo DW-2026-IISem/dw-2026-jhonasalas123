@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Ejemplo } from './demo/ejemplo/ejemplo';
 
+/**
+ * Componente principal (app-root).
+ * En ISS-01 compone el componente de ejemplo.
+ */
 @Component({
-  imports: [RouterOutlet],
+  host: { class: 'block' },
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [Ejemplo],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('Frontend');
-}
+export class App {}
