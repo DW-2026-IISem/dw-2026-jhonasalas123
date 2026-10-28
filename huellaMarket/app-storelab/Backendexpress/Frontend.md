@@ -19,3 +19,7 @@
 #### ISS-01-E05-build
 
 ![](images/clipboard-4066984654.png)
+
+### 1.4.1 Licencia de PrimeNG 22 (obligatoria para la entrega limpia)
+
+![](images/clipboard-2495897479.png)
