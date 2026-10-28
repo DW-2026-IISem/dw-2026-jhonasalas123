@@ -59,3 +59,7 @@
 #### 1.9.4 Las cuatro formas de conectar la clase con el HTML
 
 ![](images/clipboard-3409941300.png)
+
+#### 1.9.5 Signals: el estado que avisa a la vista
+
+![](images/clipboard-3297736741.png)
