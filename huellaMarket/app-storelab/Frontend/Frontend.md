@@ -55,3 +55,7 @@
 #### 1.9.3 Leer `ejemplo.ts` línea a línea
 
 ![](images/clipboard-526041344.png)
+
+#### 1.9.4 Las cuatro formas de conectar la clase con el HTML
+
+![](images/clipboard-3409941300.png)
