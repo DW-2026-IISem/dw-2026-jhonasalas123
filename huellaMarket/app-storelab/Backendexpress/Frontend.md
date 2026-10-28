@@ -11,3 +11,7 @@
 #### ISS-01-E03-instalacion-tailwind
 
 ![](images/clipboard-2484577358.png)
+
+#### ISS-01-E04-estilos-globales
+
+![](images/clipboard-4100407071.png)
