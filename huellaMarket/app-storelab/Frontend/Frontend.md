@@ -47,3 +47,7 @@
 #### 1.9 Anatomía del componente `demo/ejemplo` y signals
 
 ![](images/clipboard-1353199431.png)
+
+#### 1.9.1 De `index.html` a la pantalla - 1.9.2 Los cuatro archivos de un componente
+
+![](images/clipboard-644466955.png)
