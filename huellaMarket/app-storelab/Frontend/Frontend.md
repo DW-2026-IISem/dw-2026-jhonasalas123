@@ -67,3 +67,7 @@
 #### 1.9.6 - 1.9.9
 
 ![](images/clipboard-3872407086.png)
+
+## Verificacion del ISS
+
+![](images/clipboard-1928885789.png)
