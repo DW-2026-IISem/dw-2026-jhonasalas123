@@ -101,3 +101,7 @@
 ## 2.1 `environment`: una sola URL para todo el frente
 
 ![](images/clipboard-3882975197.png)
+
+### 2.1.1 Licencia PrimeUI (`primeUiLicense`)
+
+![](images/clipboard-3488404442.png)
