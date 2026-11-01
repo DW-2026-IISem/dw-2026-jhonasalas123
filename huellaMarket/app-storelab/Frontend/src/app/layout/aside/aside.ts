@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './aside.html',
   styleUrl: './aside.css',
-  host: { class: 'block' },
+  host: { class: 'block h-full' },
 })
 export class Aside {}

@@ -89,3 +89,9 @@
 ###  ISS-01A-02 — Estructura de las cuatro regiones en App
 
 ![](images/clipboard-743530761.png)
+
+### Cierre ISS Y Comprobacion 
+
+![](images/clipboard-4257750840.png)
+
+![](images/clipboard-3889312561.png)
