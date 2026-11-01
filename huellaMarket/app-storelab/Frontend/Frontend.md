@@ -119,3 +119,7 @@
 #### 2.4 Utilidades transversales: `toApiMessage` y `NotificationService`
 
 ![](images/clipboard-3611402894.png)
+
+#### 2.5 Componentes compartidos: `PageHeader`, `EmptyState`, `StatusTag`
+
+![](images/clipboard-3068213683.png)
