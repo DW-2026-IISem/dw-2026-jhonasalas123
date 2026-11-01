@@ -81,3 +81,7 @@
 #### 1.3 Contenido de cada componente
 
 ![](images/clipboard-2943158021.png)
+
+### 1.4 Componer las cuatro regiones en `App`
+
+![](images/clipboard-174430125.png)
