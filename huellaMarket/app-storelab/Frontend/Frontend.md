@@ -143,3 +143,9 @@
 #### 3.1 Generar componentes con CLI
 
 ![](images/clipboard-953810741.png)
+
+#### 3.2 Utilidad de filtro local
+
+![](images/clipboard-312586724.png)
+
+#### 
