@@ -123,3 +123,7 @@
 #### 2.5 Componentes compartidos: `PageHeader`, `EmptyState`, `StatusTag`
 
 ![](images/clipboard-3068213683.png)
+
+#### 2.6 `Shell`: conservar el esqueleto al navegar
+
+![![](images/clipboard-1243059021.png)](images/clipboard-2962217229.png)
