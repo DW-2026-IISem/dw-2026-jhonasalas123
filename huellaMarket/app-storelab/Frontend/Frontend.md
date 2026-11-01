@@ -131,3 +131,9 @@
 #### Rutas 
 
 ![](images/clipboard-1299252623.png)
+
+#### 2.7 Registrar `HttpClient` sin interceptores de sesión & 2.8 Comprobar antes de avanzar
+
+![](images/clipboard-1267007730.png)
+
+![](images/clipboard-515801685.png)
