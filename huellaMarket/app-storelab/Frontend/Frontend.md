@@ -105,3 +105,9 @@
 ### 2.1.1 Licencia PrimeUI (`primeUiLicense`)
 
 ![](images/clipboard-3488404442.png)
+
+#### 2.2 Modelos: reflejar el backend, no inventarlo
+
+##### Modelos
+
+![](images/clipboard-3589124205.png)
