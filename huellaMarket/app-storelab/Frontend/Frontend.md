@@ -82,6 +82,10 @@
 
 ![](images/clipboard-2943158021.png)
 
-### 1.4 Componer las cuatro regiones en `App`
+#### 1.4 Componer las cuatro regiones en `App`
 
 ![](images/clipboard-174430125.png)
+
+###  ISS-01A-02 — Estructura de las cuatro regiones en App
+
+![](images/clipboard-743530761.png)

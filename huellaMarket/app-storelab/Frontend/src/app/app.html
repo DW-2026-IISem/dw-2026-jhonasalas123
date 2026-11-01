@@ -1,7 +1,13 @@
-<!-- Marco de la aplicación: fondo, ancho máximo y padding con utilidades Tailwind. -->
-<main class="min-h-dvh bg-slate-50 p-6 text-slate-900">
-  <div class="mx-auto w-full max-w-4xl">
-    <!-- Composición: una etiqueta en la plantilla pinta el componente Ejemplo. -->
-    <app-ejemplo />
+<div class="min-h-dvh flex flex-col bg-slate-50 text-slate-900">
+  <app-header />
+
+  <div class="flex flex-1">
+    <app-aside />
+
+    <main class="flex-1 p-6">
+      <!-- Contenido principal de HuellaMarket -->
+    </main>
   </div>
-</main>
+
+  <app-footer />
+</div>
