@@ -95,3 +95,9 @@
 ![](images/clipboard-4257750840.png)
 
 ![](images/clipboard-3889312561.png)
+
+# Fase I: Frontend — ISS-02 — Núcleo: environment, modelos, servicios y layout
+
+## 2.1 `environment`: una sola URL para todo el frente
+
+![](images/clipboard-3882975197.png)
