@@ -127,3 +127,7 @@
 #### 2.6 `Shell`: conservar el esqueleto al navegar
 
 ![![](images/clipboard-1243059021.png)](images/clipboard-2962217229.png)
+
+#### Rutas 
+
+![](images/clipboard-1299252623.png)
