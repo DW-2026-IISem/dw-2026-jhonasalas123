@@ -115,3 +115,7 @@
 #### 2.3 Servicios HTTP por feature: desenvolver la respuesta
 
 ![](images/clipboard-2718435989.png)
+
+#### 2.4 Utilidades transversales: `toApiMessage` y `NotificationService`
+
+![](images/clipboard-3611402894.png)
