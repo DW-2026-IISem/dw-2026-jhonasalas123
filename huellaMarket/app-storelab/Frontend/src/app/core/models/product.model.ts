@@ -11,6 +11,14 @@ export interface Product {
   updatedAt?: string;
 }
 
+export interface ProductPayload {
+  sku: string;
+  nombre: string;
+  descripcion?: string | null;
+  precio: Money;
+  isActive?: boolean;
+}
+
 export interface ProductResponse {
   product: Product;
 }

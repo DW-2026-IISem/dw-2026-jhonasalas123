@@ -12,6 +12,15 @@ export interface Sale {
   updatedAt?: string;
 }
 
+export interface SalePayload {
+  cliente_id: number;
+  fecha?: string;
+  subtotal?: Money;
+  impuestos?: Money;
+  total?: Money;
+  estado?: string;
+}
+
 export interface SaleResponse {
   sale: Sale;
 }

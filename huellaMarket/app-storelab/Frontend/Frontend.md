@@ -111,3 +111,7 @@
 ##### Modelos
 
 ![](images/clipboard-3589124205.png)
+
+#### 2.3 Servicios HTTP por feature: desenvolver la respuesta
+
+![](images/clipboard-2718435989.png)

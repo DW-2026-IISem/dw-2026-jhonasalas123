@@ -10,6 +10,14 @@ export interface Client {
   updated_at: string;
 }
 
+export interface ClientPayload {
+  tipo_documento: string;
+  numero_documento: string;
+  nombre: string;
+  telefono?: string;
+  email?: string;
+}
+
 export interface ClientResponse {
   client: Client;
 }
