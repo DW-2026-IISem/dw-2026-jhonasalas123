@@ -137,3 +137,9 @@
 ![](images/clipboard-1267007730.png)
 
 ![](images/clipboard-515801685.png)
+
+# ISS-03 · CRUD de clientes con Signals
+
+#### 3.1 Generar componentes con CLI
+
+![](images/clipboard-953810741.png)
