@@ -15,14 +15,21 @@ export const routes: Routes = [
             (m) => m.ClientList,
           ),
       },
-  {
-    path: 'mascotas',
-    title: 'Mascotas · HuellaMarket',
-    loadComponent: () =>
-      import('./features/pets/pet-list/pet-list').then(
-        (m) => m.PetList,
-      ),
-  },
+      {
+        path: 'mascotas',
+        title: 'Mascotas · HuellaMarket',
+        loadComponent: () =>
+          import('./features/pets/pet-list/pet-list').then(
+            (m) => m.PetList,
+          ),
+      },
+      {
+        path: 'fichas-sanitarias',
+        title: 'Fichas Sanitarias · HuellaMarket',
+        loadComponent: () =>
+          import('./features/health-records/health-record-list/health-record-list')
+            .then((m) => m.HealthRecordList),
+      },
     ],
   },
   {
