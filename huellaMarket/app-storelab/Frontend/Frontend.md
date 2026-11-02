@@ -151,3 +151,7 @@
 #### 3.3 Formulario reactivo reutilizable
 
 ![![](images/clipboard-2732549097.png)](images/clipboard-4256191335.png)
+
+#### 3.4 Lista con estado en Signals
+
+![](images/clipboard-1601560673.png)
