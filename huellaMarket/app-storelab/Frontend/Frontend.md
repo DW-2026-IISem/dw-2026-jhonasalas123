@@ -167,3 +167,7 @@
 #### 3.7 Ruta y menú
 
 ![](images/clipboard-823179386.png)
+
+## Verificación del ISS
+
+![](images/clipboard-3844297771.png)
