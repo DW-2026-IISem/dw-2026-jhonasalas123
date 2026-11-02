@@ -1,1 +1,58 @@
-<p>pet-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="pet-name" class="mb-1 block text-sm font-medium text-slate-700">
+      Nombre <span class="text-red-500">*</span>
+    </label>
+
+    <input
+      id="pet-name"
+      pInputText
+      formControlName="nombre"
+      placeholder="Nombre de la mascota"
+      class="w-full"
+    />
+
+    @if (form.controls.nombre.touched && form.controls.nombre.invalid) {
+      <p-message severity="error" size="small" variant="simple" styleClass="mt-1">
+        El nombre es obligatorio y no debe superar los 100 caracteres.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="pet-description" class="mb-1 block text-sm font-medium text-slate-700">
+      Descripción
+    </label>
+
+    <textarea
+      id="pet-description"
+      pTextarea
+      formControlName="descripcion"
+      rows="3"
+      placeholder="Descripción de la mascota"
+      class="w-full"
+    ></textarea>
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      outlined
+      (click)="cancelled.emit()"
+    >
+      <span pButtonLabel>Cancelar</span>
+    </button>
+
+    <button
+      pButton
+      type="submit"
+      [loading]="saving()"
+      [disabled]="saving()"
+    >
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>
