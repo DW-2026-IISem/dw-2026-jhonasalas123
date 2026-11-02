@@ -155,3 +155,7 @@
 #### 3.4 Lista con estado en Signals
 
 ![](images/clipboard-1601560673.png)
+
+#### 3.5 Plantilla de la lista
+
+![](images/clipboard-40166866.png)
