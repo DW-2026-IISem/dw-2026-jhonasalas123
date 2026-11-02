@@ -207,3 +207,7 @@
 #### Plantilla 
 
 ![](images/clipboard-1437042027.png)
+
+#### 4.6 Ruta 
+
+![](images/clipboard-1520836015.png)

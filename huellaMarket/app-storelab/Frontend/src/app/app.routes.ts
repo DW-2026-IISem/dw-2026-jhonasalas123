@@ -15,6 +15,14 @@ export const routes: Routes = [
             (m) => m.ClientList,
           ),
       },
+  {
+    path: 'mascotas',
+    title: 'Mascotas · HuellaMarket',
+    loadComponent: () =>
+      import('./features/pets/pet-list/pet-list').then(
+        (m) => m.PetList,
+      ),
+  },
     ],
   },
   {
