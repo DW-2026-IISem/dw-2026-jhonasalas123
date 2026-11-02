@@ -86,11 +86,11 @@
 
 ![](images/clipboard-174430125.png)
 
-###  ISS-01A-02 — Estructura de las cuatro regiones en App
+### ISS-01A-02 — Estructura de las cuatro regiones en App
 
 ![](images/clipboard-743530761.png)
 
-### Cierre ISS Y Comprobacion 
+### Cierre ISS Y Comprobacion
 
 ![](images/clipboard-4257750840.png)
 
@@ -128,7 +128,7 @@
 
 ![![](images/clipboard-1243059021.png)](images/clipboard-2962217229.png)
 
-#### Rutas 
+#### Rutas
 
 ![](images/clipboard-1299252623.png)
 
@@ -138,7 +138,7 @@
 
 ![](images/clipboard-515801685.png)
 
-# ISS-03 · CRUD de clientes con Signals
+# ISS-03 · CRUD de clientes 
 
 #### 3.1 Generar componentes con CLI
 
@@ -171,3 +171,21 @@
 ## Verificación del ISS
 
 ![](images/clipboard-3844297771.png)
+
+# Fase I: Business — ISS-04 — CRUD de mascota
+
+## 4.1 Endpoint y contrato
+
+| Operación      | Método y ruta                        | Respuesta  |
+|----------------|--------------------------------------|------------|
+| Listar activos | `GET /api/mascotas`                  | `{ pets }` |
+| Obtener una    | `GET /api/mascotas/:id`              | `{ pet }`  |
+| Crear          | `POST /api/mascotas`                 | `{ pet }`  |
+| Actualizar     | `PATCH /api/mascotas/:id`            | `{ pet }`  |
+| Reemplazar     | `PUT /api/mascotas/:id`              | `{ pet }`  |
+| Baja lógica    | `PATCH /api/mascotas/:id/deactivate` | `{ pet }`  |
+| Baja física    | `DELETE /api/mascotas/:id`           | `204`      |
+
+#### 
+
+## 
