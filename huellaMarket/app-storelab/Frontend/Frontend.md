@@ -211,3 +211,9 @@
 #### 4.6 Ruta 
 
 ![](images/clipboard-1520836015.png)
+
+#### Comprobacion
+
+![](images/clipboard-4075221034.png)
+
+![](images/clipboard-1337200649.png)
