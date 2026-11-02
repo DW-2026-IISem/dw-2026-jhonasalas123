@@ -217,3 +217,9 @@
 ![](images/clipboard-4075221034.png)
 
 ![](images/clipboard-1337200649.png)
+
+# Fase I: Business — ISS-05 — CRUD de FichaSanitaria
+
+#### 5.2 Generar con CLI
+
+![](images/clipboard-2924560113.png)
