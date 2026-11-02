@@ -14,3 +14,9 @@ export interface PetResponse {
 export interface PetsResponse {
   pets: Pet[];
 }
+
+export interface PetPayload {
+  nombre: string;
+  descripcion?: string | null;
+  isActive?: boolean;
+}
