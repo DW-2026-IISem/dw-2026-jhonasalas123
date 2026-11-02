@@ -17,7 +17,6 @@ import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { StatusTag } from '../../../shared/ui/status-tag/status-tag';
 import { HealthRecordApi } from '../health-record-api';
 import { HealthRecordForm } from '../health-record-form/health-record-form';
-
 @Component({
   host: { class: 'block' },
   selector: 'app-health-record-list',
