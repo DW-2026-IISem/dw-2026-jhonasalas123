@@ -1,5 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
+import { ConfirmDialog } from 'primeng/confirmdialog';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
@@ -21,6 +23,7 @@ import { ClientForm } from '../client-form/client-form';
   selector: 'app-client-list',
   imports: [
     ButtonModule,
+    ConfirmDialog,
     DialogModule,
     EmptyState,
     InputTextModule,
@@ -38,6 +41,7 @@ import { ClientForm } from '../client-form/client-form';
 export class ClientList {
   private readonly api = inject(ClientApi);
   private readonly notify = inject(NotificationService);
+  private readonly confirmation = inject(ConfirmationService);
 
   /** Datos del backend. */
   readonly rows = signal<Client[]>([]);
@@ -123,4 +127,51 @@ export class ClientList {
       },
     });
   }
+
+  /** Baja lógica: PATCH /:id/deactivate. */
+  deactivate(client: Client): void {
+    this.confirmation.confirm({
+      header: 'Baja lógica',
+      message: `¿Desactivar a ${client.nombre}? Su estado pasará a inactivo.`,
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Desactivar',
+      rejectLabel: 'Cancelar',
+      acceptButtonStyleClass: 'p-button-warning',
+      accept: () => {
+        this.api.deactivate(client.id).subscribe({
+          next: () => {
+            this.notify.warn('Cliente desactivado');
+            this.load();
+          },
+          error: (error: unknown) => {
+            this.notify.error('No se pudo desactivar', toApiMessage(error));
+          },
+        });
+      },
+    });
+  }
+
+  /** Baja física: DELETE /:id. */
+  remove(client: Client): void {
+    this.confirmation.confirm({
+      header: 'Eliminar definitivamente',
+      message: `Se borrará ${client.nombre} de la base de datos. Esta acción no se puede deshacer.`,
+      icon: 'pi pi-trash',
+      acceptLabel: 'Eliminar',
+      rejectLabel: 'Cancelar',
+      acceptButtonStyleClass: 'p-button-danger',
+      accept: () => {
+        this.api.remove(client.id).subscribe({
+          next: () => {
+            this.notify.success('Cliente eliminado');
+            this.load();
+          },
+          error: (error: unknown) => {
+            this.notify.error('No se pudo eliminar', toApiMessage(error));
+          },
+        });
+      },
+    });
+  }
+
 }

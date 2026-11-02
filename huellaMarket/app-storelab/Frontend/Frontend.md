@@ -159,3 +159,7 @@
 #### 3.5 Plantilla de la lista
 
 ![](images/clipboard-40166866.png)
+
+#### 3.6 Baja lógica vs baja física
+
+![](images/clipboard-1465248721.png)
