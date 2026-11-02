@@ -163,3 +163,7 @@
 #### 3.6 Baja lógica vs baja física
 
 ![](images/clipboard-1465248721.png)
+
+#### 3.7 Ruta y menú
+
+![](images/clipboard-823179386.png)
