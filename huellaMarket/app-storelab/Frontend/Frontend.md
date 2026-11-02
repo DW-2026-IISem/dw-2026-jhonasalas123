@@ -174,7 +174,7 @@
 
 # Fase I: Business — ISS-04 — CRUD de mascota
 
-## 4.1 Endpoint y contrato
+#### 4.1 Endpoint y contrato
 
 | Operación      | Método y ruta                        | Respuesta  |
 |----------------|--------------------------------------|------------|
@@ -186,6 +186,6 @@
 | Baja lógica    | `PATCH /api/mascotas/:id/deactivate` | `{ pet }`  |
 | Baja física    | `DELETE /api/mascotas/:id`           | `204`      |
 
-#### 
+#### 4.2 Generar con CLI
 
-## 
+## ![](images/clipboard-2122865401.png)
