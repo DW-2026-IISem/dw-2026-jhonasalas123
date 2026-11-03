@@ -459,3 +459,7 @@
 #### `15.5AuthService`
 
 ![](images/clipboard-1653325224.png)
+
+####  15.6 Interceptor 
+
+![](images/clipboard-1801095272.png)
