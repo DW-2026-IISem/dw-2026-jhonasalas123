@@ -17,7 +17,12 @@ import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
 import { PageHeader } from '../../../shared/ui/page-header/page-header';
 import { SaleApi } from '../sale-api';
 import { SaleForm } from '../sale-form/sale-form';
-
+import { forkJoin } from 'rxjs';
+import { Product } from '../../../core/models/product.model';
+import { SaleDetail } from '../../../core/models/sale-detail.model';
+import { ProductApi } from '../../products/product-api';
+import { SaleDetailApi } from '../../sale-details/sale-detail-api';
+import { SaleDetail as SaleDetailView } from '../sale-detail/sale-detail';
 @Component({
   host: { class: 'block' },
   selector: 'app-sale-list',
@@ -35,6 +40,7 @@ import { SaleForm } from '../sale-form/sale-form';
     TableModule,
     TagModule,
     TooltipModule,
+    SaleDetailView,
   ],
   templateUrl: './sale-list.html',
   styleUrl: './sale-list.css',
@@ -43,7 +49,15 @@ export class SaleList {
   private readonly api = inject(SaleApi);
   private readonly notify = inject(NotificationService);
   private readonly confirmation = inject(ConfirmationService);
+  private readonly detailApi = inject(SaleDetailApi);
+private readonly productApi = inject(ProductApi);
 
+readonly detailVisible = signal(false);
+readonly selectedSale = signal<Sale | null>(null);
+readonly saleDetails = signal<SaleDetail[]>([]);
+readonly products = signal<Product[]>([]);
+readonly detailLoading = signal(false);
+readonly detailError = signal<string | null>(null); 
   readonly rows = signal<Sale[]>([]);
   readonly loading = signal(true);
   readonly saving = signal(false);
@@ -126,7 +140,31 @@ export class SaleList {
       },
     });
   }
+openDetail(row: Sale): void {
+  this.selectedSale.set(row);
+  this.saleDetails.set([]);
+  this.products.set([]);
+  this.detailError.set(null);
+  this.detailLoading.set(true);
+  this.detailVisible.set(true);
 
+  forkJoin({
+    details: this.detailApi.list(),
+    products: this.productApi.list(),
+  }).subscribe({
+    next: ({ details, products }) => {
+      this.saleDetails.set(
+        details.filter((item) => item.cabecera_id === row.id),
+      );
+      this.products.set(products);
+      this.detailLoading.set(false);
+    },
+    error: (error: unknown) => {
+      this.detailError.set(toApiMessage(error));
+      this.detailLoading.set(false);
+    },
+  });
+}
   remove(row: Sale): void {
     this.confirmation.confirm({
       header: 'Eliminar venta',

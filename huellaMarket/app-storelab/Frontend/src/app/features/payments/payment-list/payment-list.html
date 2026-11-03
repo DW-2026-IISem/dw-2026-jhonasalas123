@@ -1,83 +1,123 @@
-<app-page-header title="Pagos" subtitle="Administración de pagos">
+<app-page-header
+  title="Pagos"
+  subtitle="Consulta, registra y administra los pagos de HuellaMarket"
+>
   <button pButton type="button" (click)="openCreate()">
     <i pButtonIcon class="pi pi-plus"></i>
     <span pButtonLabel>Nuevo pago</span>
   </button>
 </app-page-header>
 
-<div class="mb-4">
-  <input
-    pInputText
-    type="text"
-    placeholder="Buscar pagos..."
-    [ngModel]="search()"
-    (ngModelChange)="search.set($event)"
-    class="w-full"
-  />
-</div>
+<section class="mb-4">
+  <div class="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+    <div>
+      <h2 class="text-lg font-semibold">Listado de pagos</h2>
+      <p class="text-sm text-gray-500">
+        Consulta los pagos registrados y su estado actual.
+      </p>
+    </div>
 
-<p-table
-  [value]="filteredPayments()"
-  [loading]="loading()"
-  dataKey="id"
-  stripedRows
-  responsiveLayout="scroll"
->
-  <ng-template #header>
-    <tr>
-      <th>ID</th>
-      <th>Referencia</th>
-      <th>Método</th>
-      <th>Monto</th>
-      <th>Fecha</th>
-      <th>Estado</th>
-      <th>Acciones</th>
-    </tr>
-  </ng-template>
+    <input
+      pInputText
+      type="text"
+      placeholder="Buscar por referencia, método o estado..."
+      [ngModel]="search()"
+      (ngModelChange)="search.set($event)"
+      class="w-full sm:max-w-sm"
+    />
+  </div>
 
-  <ng-template #body let-payment>
-    <tr>
-      <td>{{ payment.id }}</td>
-      <td>{{ payment.referencia_tipo }} #{{ payment.referencia_id }}</td>
-      <td>{{ payment.metodo }}</td>
-      <td>{{ payment.monto | currency:'COP':'symbol-narrow' }}</td>
-      <td>{{ payment.fecha | date:'dd/MM/yyyy' }}</td>
-      <td>{{ payment.estado }}</td>
-      <td>
-        <div class="flex gap-2">
-          <button
-            pButton
-            type="button"
-            severity="secondary"
-            (click)="openEdit(payment)"
+  <p-table
+    [value]="filteredPayments()"
+    [loading]="loading()"
+    dataKey="id"
+    stripedRows
+    showGridlines
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    responsiveLayout="scroll"
+    currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} pagos"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template #header>
+      <tr>
+        <th>ID</th>
+        <th>Tipo de referencia</th>
+        <th>ID de referencia</th>
+        <th>Método de pago</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th class="text-center">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-payment>
+      <tr>
+        <td class="font-medium">#{{ payment.id }}</td>
+        <td>{{ payment.referencia_tipo }}</td>
+        <td>#{{ payment.referencia_id }}</td>
+        <td>
+          <span class="capitalize">{{ payment.metodo }}</span>
+        </td>
+        <td class="font-semibold">
+          {{ payment.monto | currency:'COP':'symbol-narrow':'1.0-2' }}
+        </td>
+        <td>{{ payment.fecha | date:'dd/MM/yyyy HH:mm' }}</td>
+        <td>
+          <span
+            class="inline-flex rounded-full px-3 py-1 text-xs font-semibold"
+            [class.bg-green-100]="payment.estado === 'pagado'"
+            [class.text-green-700]="payment.estado === 'pagado'"
+            [class.bg-yellow-100]="payment.estado === 'pendiente'"
+            [class.text-yellow-700]="payment.estado === 'pendiente'"
+            [class.bg-red-100]="payment.estado === 'anulado'"
+            [class.text-red-700]="payment.estado === 'anulado'"
           >
-            <i pButtonIcon class="pi pi-pencil"></i>
-          </button>
+            {{ payment.estado }}
+          </span>
+        </td>
+        <td>
+          <div class="flex justify-center gap-2">
+            <button
+              pButton
+              type="button"
+              severity="secondary"
+              [text]="true"
+              (click)="openEdit(payment)"
+              pTooltip="Editar pago"
+            >
+              <i pButtonIcon class="pi pi-pencil"></i>
+            </button>
 
-          <button
-            pButton
-            type="button"
-            severity="danger"
-            (click)="remove(payment)"
-          >
-            <i pButtonIcon class="pi pi-trash"></i>
-          </button>
-        </div>
-      </td>
-    </tr>
-  </ng-template>
+            <button
+              pButton
+              type="button"
+              severity="danger"
+              [text]="true"
+              (click)="remove(payment)"
+              pTooltip="Eliminar pago"
+            >
+              <i pButtonIcon class="pi pi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
 
-  <ng-template #emptymessage>
-    <tr>
-      <td colspan="7">
-        <app-empty-state
-          title="No hay pagos registrados"
-          description="Registra un pago para comenzar."
-        />
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="8">
+          <app-empty-state
+            title="No hay pagos registrados"
+            description="Todavía no existen pagos para mostrar. Puedes registrar uno nuevo."
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>
 
 <p-dialog
   [header]="title()"
@@ -86,6 +126,7 @@
   [modal]="true"
   [style]="{ width: 'min(42rem, 95vw)' }"
   [draggable]="false"
+  [resizable]="false"
 >
   <app-payment-form
     [payment]="selectedPayment()"

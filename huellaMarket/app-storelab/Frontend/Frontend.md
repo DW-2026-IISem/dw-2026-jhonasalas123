@@ -427,3 +427,9 @@
 #### Comprobacion 
 
 ![](images/clipboard-3748742683.png)
+
+# Cierre Fase I: ISS-14
+
+#### 14.1Crear Dashboard 
+
+![](images/clipboard-3052872615.png)

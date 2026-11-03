@@ -73,6 +73,17 @@
             <button
               pButton
               type="button"
+              severity="info"
+              [text]="true"
+              pTooltip="Ver detalle"
+              (click)="openDetail(row)"
+            >
+              <i pButtonIcon class="pi pi-eye"></i>
+            </button>
+
+            <button
+              pButton
+              type="button"
               severity="secondary"
               [text]="true"
               pTooltip="Editar"
@@ -124,6 +135,32 @@
     (saved)="save($event)"
     (cancelled)="dialogVisible.set(false)"
   />
+</p-dialog>
+
+<p-dialog
+  header="Detalle de venta"
+  [visible]="detailVisible()"
+  (visibleChange)="detailVisible.set($event)"
+  [modal]="true"
+  [style]="{ width: 'min(65rem, 95vw)' }"
+  [draggable]="false"
+>
+  @if (detailLoading()) {
+    <div class="p-6 text-center">
+      <i class="pi pi-spin pi-spinner text-2xl"></i>
+      <p class="mt-2">Cargando detalle de venta...</p>
+    </div>
+  } @else if (detailError()) {
+    <p-message severity="error" styleClass="w-full">
+      {{ detailError() }}
+    </p-message>
+  } @else if (selectedSale(); as sale) {
+    <app-sale-detail
+      [sale]="sale"
+      [details]="saleDetails()"
+      [products]="products()"
+    />
+  }
 </p-dialog>
 
 <p-confirmdialog />

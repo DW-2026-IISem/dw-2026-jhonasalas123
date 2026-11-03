@@ -1,0 +1,81 @@
+<section class="flex flex-col gap-5">
+  <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+    <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <span class="text-sm text-slate-500">Venta</span>
+      <p class="mt-1 text-xl font-semibold">#{{ sale().id }}</p>
+    </div>
+
+    <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <span class="text-sm text-slate-500">Cliente</span>
+      <p class="mt-1 text-xl font-semibold">#{{ sale().cliente_id }}</p>
+    </div>
+
+    <div class="rounded-lg border border-slate-200 bg-slate-50 p-4">
+      <span class="text-sm text-slate-500">Fecha</span>
+      <p class="mt-1 text-base font-semibold">
+        {{ sale().fecha | date: 'short' }}
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="mb-3 text-lg font-semibold">Productos vendidos</h3>
+
+    @if (details().length > 0) {
+      <div class="overflow-x-auto rounded-lg border border-slate-200">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-left">
+            <tr>
+              <th class="p-3">Producto</th>
+              <th class="p-3 text-center">Cantidad</th>
+              <th class="p-3 text-right">Valor unitario</th>
+              <th class="p-3 text-right">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (item of details(); track item.id) {
+              <tr class="border-t border-slate-200">
+                <td class="p-3">
+                  {{ productName()(item.item_id) }}
+                </td>
+                <td class="p-3 text-center">{{ item.cantidad }}</td>
+                <td class="p-3 text-right">
+                  {{ item.valor_unitario | currency: 'COP' : 'symbol-narrow' }}
+                </td>
+                <td class="p-3 text-right font-medium">
+                  {{ item.total | currency: 'COP' : 'symbol-narrow' }}
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <p class="rounded-lg border border-dashed border-slate-300 p-6 text-center text-slate-500">
+        Esta venta todavía no tiene productos registrados.
+      </p>
+    }
+  </div>
+
+  <div class="ml-auto w-full max-w-sm space-y-2 rounded-lg bg-slate-50 p-4">
+    <div class="flex justify-between">
+      <span class="text-slate-600">Unidades</span>
+      <strong>{{ itemCount() }}</strong>
+    </div>
+    <div class="flex justify-between">
+      <span class="text-slate-600">Subtotal registrado</span>
+      <strong>{{ sale().subtotal | currency: 'COP' : 'symbol-narrow' }}</strong>
+    </div>
+    <div class="flex justify-between">
+      <span class="text-slate-600">Impuestos</span>
+      <strong>{{ sale().impuestos | currency: 'COP' : 'symbol-narrow' }}</strong>
+    </div>
+    <div class="flex justify-between border-t border-slate-300 pt-2 text-lg">
+      <span class="font-semibold">Total de venta</span>
+      <strong>{{ sale().total | currency: 'COP' : 'symbol-narrow' }}</strong>
+    </div>
+    <p class="text-xs text-slate-500">
+      Total de las líneas: {{ detailsTotal() | currency: 'COP' : 'symbol-narrow' }}
+    </p>
+  </div>
+</section>
