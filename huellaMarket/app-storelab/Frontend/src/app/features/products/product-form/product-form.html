@@ -1,1 +1,88 @@
-<p>product-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="product-sku" class="mb-1 block text-sm font-medium">SKU *</label>
+    <input
+      id="product-sku"
+      pInputText
+      formControlName="sku"
+      placeholder="ALI-001"
+      class="w-full"
+    />
+    @if (form.controls.sku.touched && form.controls.sku.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El SKU es obligatorio.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="product-name" class="mb-1 block text-sm font-medium">Nombre *</label>
+    <input
+      id="product-name"
+      pInputText
+      formControlName="nombre"
+      placeholder="Alimento para perros"
+      class="w-full"
+    />
+    @if (form.controls.nombre.touched && form.controls.nombre.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El nombre es obligatorio.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="product-description" class="mb-1 block text-sm font-medium">
+      Descripción
+    </label>
+    <textarea
+      id="product-description"
+      pTextarea
+      formControlName="descripcion"
+      rows="3"
+      placeholder="Descripción del producto"
+      class="w-full"
+    ></textarea>
+  </div>
+
+  <div>
+    <label for="product-price" class="mb-1 block text-sm font-medium">Precio *</label>
+    <input
+      id="product-price"
+      pInputText
+      type="number"
+      formControlName="precio"
+      min="0.01"
+      step="0.01"
+      placeholder="25000"
+      class="w-full"
+    />
+    @if (form.controls.precio.touched && form.controls.precio.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El precio debe ser mayor que cero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="product-status" class="mb-1 block text-sm font-medium">Estado</label>
+    <p-select
+      [fluid]="true"
+      inputId="product-status"
+      formControlName="is_active"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+    />
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>
