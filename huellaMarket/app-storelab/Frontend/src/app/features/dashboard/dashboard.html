@@ -1,1 +1,136 @@
-<p>dashboard works!</p>
+<section class="space-y-6">
+
+  <div>
+    <h1 class="text-2xl font-bold text-slate-800">Dashboard</h1>
+    <p class="text-slate-500">
+      Resumen general de HuellaMarket.
+    </p>
+  </div>
+
+  @if (loading()) {
+    <div class="rounded-xl border border-slate-200 bg-white p-8 text-center">
+      <i class="pi pi-spin pi-spinner text-3xl text-blue-600"></i>
+      <p class="mt-3 text-slate-500">Cargando información...</p>
+    </div>
+  } @else if (error()) {
+    <div class="rounded-xl border border-red-200 bg-red-50 p-5">
+      <p class="font-medium text-red-700">{{ error() }}</p>
+      <button
+        type="button"
+        (click)="load()"
+        class="mt-3 rounded-lg bg-red-600 px-4 py-2 text-white"
+      >
+        Reintentar
+      </button>
+    </div>
+  } @else {
+
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-500">Clientes</span>
+          <i class="pi pi-users text-2xl text-blue-600"></i>
+        </div>
+        <p class="mt-3 text-3xl font-bold text-slate-800">
+          {{ clients().length }}
+        </p>
+        <p class="mt-1 text-sm text-slate-500">Clientes registrados</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-500">Productos</span>
+          <i class="pi pi-box text-2xl text-emerald-600"></i>
+        </div>
+        <p class="mt-3 text-3xl font-bold text-slate-800">
+          {{ products().length }}
+        </p>
+        <p class="mt-1 text-sm text-slate-500">Productos registrados</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-500">Ventas</span>
+          <i class="pi pi-shopping-cart text-2xl text-violet-600"></i>
+        </div>
+        <p class="mt-3 text-3xl font-bold text-slate-800">
+          {{ sales().length }}
+        </p>
+        <p class="mt-1 text-sm text-slate-500">Ventas registradas</p>
+      </article>
+
+      <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-medium text-slate-500">Stock bajo</span>
+          <i class="pi pi-exclamation-triangle text-2xl text-orange-500"></i>
+        </div>
+        <p class="mt-3 text-3xl font-bold text-slate-800">
+          {{ lowStock().length }}
+        </p>
+        <p class="mt-1 text-sm text-slate-500">Registros por revisar</p>
+      </article>
+
+    </div>
+
+    <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="flex items-center gap-3">
+        <div class="flex size-12 items-center justify-center rounded-lg bg-emerald-50">
+          <i class="pi pi-wallet text-2xl text-emerald-600"></i>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500">Ingresos totales registrados</p>
+          <p class="text-2xl font-bold text-slate-800">
+            {{ revenue() | currency:'COP':'symbol-narrow':'1.0-0' }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+      <div class="border-b border-slate-200 p-5">
+        <h2 class="text-lg font-semibold text-slate-800">Últimas ventas</h2>
+        <p class="text-sm text-slate-500">
+          Las cinco ventas más recientes.
+        </p>
+      </div>
+
+      @if (latestSales().length > 0) {
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead class="bg-slate-50 text-left text-slate-600">
+              <tr>
+                <th class="px-5 py-3">Venta</th>
+                <th class="px-5 py-3">Cliente</th>
+                <th class="px-5 py-3">Fecha</th>
+                <th class="px-5 py-3">Total</th>
+                <th class="px-5 py-3">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (sale of latestSales(); track sale.id) {
+                <tr class="border-t border-slate-100">
+                  <td class="px-5 py-3 font-medium">#{{ sale.id }}</td>
+                  <td class="px-5 py-3">#{{ sale.cliente_id }}</td>
+                  <td class="px-5 py-3">{{ sale.fecha | date:'short' }}</td>
+                  <td class="px-5 py-3 font-semibold">
+                    {{ sale.total | currency:'COP':'symbol-narrow':'1.0-0' }}
+                  </td>
+                  <td class="px-5 py-3">
+                    <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
+                      {{ sale.estado }}
+                    </span>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      } @else {
+        <p class="p-8 text-center text-slate-500">
+          Todavía no hay ventas registradas.
+        </p>
+      }
+    </div>
+  }
+</section>

@@ -433,3 +433,7 @@
 #### 14.1Crear Dashboard 
 
 ![](images/clipboard-3052872615.png)
+
+#### Dashboard Funcionando 
+
+![](images/clipboard-327338954.png)
