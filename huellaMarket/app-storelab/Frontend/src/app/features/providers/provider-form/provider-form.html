@@ -1,1 +1,96 @@
-<p>provider-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="provider-nit" class="mb-1 block text-sm font-medium">NIT *</label>
+    <input
+      id="provider-nit"
+      pInputText
+      formControlName="nit"
+      placeholder="900123456-1"
+      class="w-full"
+    />
+    @if (form.controls.nit.touched && form.controls.nit.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El NIT es obligatorio.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="provider-business-name" class="mb-1 block text-sm font-medium">
+      Razón social *
+    </label>
+    <input
+      id="provider-business-name"
+      pInputText
+      formControlName="razonSocial"
+      placeholder="Distribuidora de productos S.A.S."
+      class="w-full"
+    />
+    @if (form.controls.razonSocial.touched && form.controls.razonSocial.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        La razón social es obligatoria.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="provider-contact" class="mb-1 block text-sm font-medium">Contacto</label>
+    <input
+      id="provider-contact"
+      pInputText
+      formControlName="contacto"
+      placeholder="Nombre de la persona de contacto"
+      class="w-full"
+    />
+  </div>
+
+  <div>
+    <label for="provider-phone" class="mb-1 block text-sm font-medium">Teléfono</label>
+    <input
+      id="provider-phone"
+      pInputText
+      formControlName="telefono"
+      placeholder="3001234567"
+      class="w-full"
+    />
+  </div>
+
+  <div>
+    <label for="provider-email" class="mb-1 block text-sm font-medium">Correo electrónico</label>
+    <input
+      id="provider-email"
+      pInputText
+      type="email"
+      formControlName="email"
+      placeholder="contacto@empresa.com"
+      class="w-full"
+    />
+    @if (form.controls.email.touched && form.controls.email.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        Ingresa un correo electrónico válido.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="provider-status" class="mb-1 block text-sm font-medium">Estado</label>
+    <p-select
+      [fluid]="true"
+      inputId="provider-status"
+      formControlName="isActive"
+      [options]="statusOptions"
+      optionLabel="label"
+      optionValue="value"
+    />
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button pButton type="button" severity="secondary" outlined (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>
