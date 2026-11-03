@@ -451,3 +451,7 @@
 #### 15.3HttpClient e interceptores
 
 ![](images/clipboard-200932511.png)
+
+#### 15.4 `SessionStore`
+
+![](images/clipboard-2041992370.png)
