@@ -396,13 +396,13 @@
 
 ![](images/clipboard-3359933489.png)
 
-#### 12.4 Lista & 12.5 Ruta 
+#### 12.4 Lista & 12.5 Ruta
 
 #### ![](images/clipboard-2480990355.png)
 
 ![](images/clipboard-694856716.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-1815513329.png)
 
@@ -418,23 +418,23 @@
 
 ![](images/clipboard-4088588420.png)
 
-#### 13.3 Lista & 13.4 Ruta 
+#### 13.3 Lista & 13.4 Ruta
 
 #### ![](images/clipboard-3122585865.png)
 
 ![](images/clipboard-733008208.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-3748742683.png)
 
 # Cierre Fase I: ISS-14
 
-#### 14.1Crear Dashboard 
+#### 14.1Crear Dashboard
 
 ![](images/clipboard-3052872615.png)
 
-#### Dashboard Funcionando 
+#### Dashboard Funcionando
 
 ![](images/clipboard-327338954.png)
 
@@ -444,6 +444,10 @@
 
 ![](images/clipboard-740974483.png)
 
-####  15.2Modelos de sesión & 15.2A Generar interceptores funcionales
+#### 15.2Modelos de sesión & 15.2A Generar interceptores funcionales
 
 ![](images/clipboard-3102476954.png)
+
+#### 15.3HttpClient e interceptores
+
+![](images/clipboard-200932511.png)
