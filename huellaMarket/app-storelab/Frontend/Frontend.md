@@ -443,3 +443,7 @@
 #### 15.1Activar Fase II
 
 ![](images/clipboard-740974483.png)
+
+####  15.2Modelos de sesión & 15.2A Generar interceptores funcionales
+
+![](images/clipboard-3102476954.png)
