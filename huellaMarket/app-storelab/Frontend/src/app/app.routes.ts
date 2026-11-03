@@ -76,6 +76,14 @@ export const routes: Routes = [
       (m) => m.SaleList,
     ),
 },
+{
+  path: 'venta-detalles',
+  title: 'Detalles de venta · HuellaMarket',
+  loadComponent: () =>
+    import('./features/sale-details/sale-detail-list/sale-detail-list').then(
+      (m) => m.SaleDetailList,
+    ),
+},
     ],
   },
   {
