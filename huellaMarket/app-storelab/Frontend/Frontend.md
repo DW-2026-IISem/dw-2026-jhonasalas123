@@ -293,3 +293,9 @@
 ![](images/clipboard-2946648224.png)
 
 ![](images/clipboard-4053531358.png)
+
+# Fase I: ISS-08— CRUD de Producto
+
+#### 8.1 Generar con CLI
+
+![](images/clipboard-1679731076.png)
