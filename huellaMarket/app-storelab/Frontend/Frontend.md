@@ -281,3 +281,9 @@
 #### 7.3 Formulario
 
 ![](images/clipboard-2212649587.png)
+
+#### 7.4 Lista & 7.5 Ruta 
+
+![](images/clipboard-1216790123.png)
+
+![](images/clipboard-3516803801.png)

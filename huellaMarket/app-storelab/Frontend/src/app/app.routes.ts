@@ -31,6 +31,13 @@ export const routes: Routes = [
             .then((m) => m.HealthRecordList),
       },
       {
+        path: 'citas-servicio',
+        title: 'Citas de servicio · HuellaMarket',
+        loadComponent: () =>
+          import('./features/service-appointments/service-appointment-list/service-appointment-list')
+            .then((m) => m.ServiceAppointmentList),
+      },
+      {
         path: 'servicios-mascota',
         title: 'Servicios para mascotas · HuellaMarket',
         loadComponent: () =>
