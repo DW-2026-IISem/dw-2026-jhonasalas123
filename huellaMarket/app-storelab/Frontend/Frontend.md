@@ -455,3 +455,7 @@
 #### 15.4 `SessionStore`
 
 ![](images/clipboard-2041992370.png)
+
+#### `15.5AuthService`
+
+![](images/clipboard-1653325224.png)
