@@ -138,7 +138,7 @@
 
 ![](images/clipboard-515801685.png)
 
-# ISS-03 · CRUD de clientes 
+# ISS-03 · CRUD de clientes
 
 #### 3.1 Generar componentes con CLI
 
@@ -204,11 +204,11 @@
 
 ![](images/clipboard-885581395.png)
 
-#### Plantilla 
+#### Plantilla
 
 ![](images/clipboard-1437042027.png)
 
-#### 4.6 Ruta 
+#### 4.6 Ruta
 
 ![](images/clipboard-1520836015.png)
 
@@ -238,7 +238,7 @@
 
 ![](images/clipboard-3877778461.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-1825730250.png)
 
@@ -254,17 +254,17 @@
 
 ![](images/clipboard-1689816057.png)
 
-#### 6.3 Formulario 
+#### 6.3 Formulario
 
 ![](images/clipboard-462900698.png)
 
-####  6.4 Lista & 6.5 Ruta 
+#### 6.4 Lista & 6.5 Ruta
 
 ![](images/clipboard-2980007968.png)
 
 ![](images/clipboard-2065113795.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-2953688626.png)
 
@@ -282,13 +282,13 @@
 
 ![](images/clipboard-2212649587.png)
 
-#### 7.4 Lista & 7.5 Ruta 
+#### 7.4 Lista & 7.5 Ruta
 
 ![](images/clipboard-1216790123.png)
 
 ![](images/clipboard-3516803801.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-2946648224.png)
 
@@ -308,17 +308,17 @@
 
 ![](images/clipboard-2588521350.png)
 
-#### 8.4  Lista & 8.5 Ruta 
+#### 8.4 Lista & 8.5 Ruta
 
 ![](images/clipboard-882012431.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-2395449170.png)
 
 ![](images/clipboard-321034137.png)
 
-# Fase I: ISS-09— CRUD de Proveedor 
+# Fase I: ISS-09— CRUD de Proveedor
 
 #### 9.1 Generar con CLI
 
@@ -338,7 +338,7 @@
 
 ![](images/clipboard-2147307770.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-138515666.png)
 
@@ -346,7 +346,7 @@
 
 ![](images/clipboard-4208290696.png)
 
-# Fase I: ISS-10— CRUD de Inventario 
+# Fase I: ISS-10— CRUD de Inventario
 
 #### 10.1Generar con CLI
 
@@ -356,15 +356,15 @@
 
 ![](images/clipboard-2702871633.png)
 
-#### 10.3 Formulario 
+#### 10.3 Formulario
 
 ![](images/clipboard-2978137706.png)
 
-#### 10.4 lista & 10.5 Ruta 
+#### 10.4 lista & 10.5 Ruta
 
 ![![](images/clipboard-2852717543.png)](images/clipboard-1955414968.png)
 
-#### Comprobacion 
+#### Comprobacion
 
 ![](images/clipboard-2194781252.png)
 
@@ -374,10 +374,16 @@
 
 ![](images/clipboard-1494587130.png)
 
-#### 11.2 Lista 
+#### 11.2 Lista
 
 ![](images/clipboard-2279419304.png)
 
 #### Comprobacion
 
 ![](images/clipboard-1171745241.png)
+
+# Fase I: ISS-12— CRUD de VentaDetalle
+
+#### 12.1Generar con CLI
+
+#### ![](images/clipboard-107595222.png)
