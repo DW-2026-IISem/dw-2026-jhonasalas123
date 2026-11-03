@@ -31,6 +31,14 @@ export const routes: Routes = [
             (m) => m.ProductList,
           ),
       },
+            {
+        path: 'inventario',
+        title: 'Inventario · HuellaMarket',
+        loadComponent: () =>
+          import('./features/inventory/inventory-list/inventory-list').then(
+            (m) => m.InventoryList,
+          ),
+      },
       {
         path: 'mascotas',
         title: 'Mascotas · HuellaMarket',

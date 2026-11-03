@@ -1,1 +1,90 @@
-<p>inventory-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="space-y-4">
+  <div>
+    <label for="inventory-location" class="mb-1 block text-sm font-medium">
+      ID de ubicación *
+    </label>
+    <p-inputnumber
+      inputId="inventory-location"
+      formControlName="ubicacion_id"
+      [min]="1"
+      [useGrouping]="false"
+      [fluid]="true"
+    />
+    @if (form.controls.ubicacion_id.touched && form.controls.ubicacion_id.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El ID de ubicación es obligatorio y debe ser mayor que cero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="inventory-item" class="mb-1 block text-sm font-medium">
+      ID de artículo *
+    </label>
+    <p-inputnumber
+      inputId="inventory-item"
+      formControlName="item_id"
+      [min]="1"
+      [useGrouping]="false"
+      [fluid]="true"
+    />
+    @if (form.controls.item_id.touched && form.controls.item_id.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El ID del artículo es obligatorio y debe ser mayor que cero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="inventory-quantity" class="mb-1 block text-sm font-medium">
+      Cantidad *
+    </label>
+    <p-inputnumber
+      inputId="inventory-quantity"
+      formControlName="cantidad"
+      [min]="0"
+      [useGrouping]="false"
+      [fluid]="true"
+    />
+    @if (form.controls.cantidad.touched && form.controls.cantidad.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        La cantidad debe ser mayor o igual a cero.
+      </p-message>
+    }
+  </div>
+
+  <div>
+    <label for="inventory-minimum" class="mb-1 block text-sm font-medium">
+      Stock mínimo *
+    </label>
+    <p-inputnumber
+      inputId="inventory-minimum"
+      formControlName="stock_minimo"
+      [min]="0"
+      [useGrouping]="false"
+      [fluid]="true"
+    />
+    @if (form.controls.stock_minimo.touched && form.controls.stock_minimo.invalid) {
+      <p-message severity="error" size="small" variant="simple">
+        El stock mínimo debe ser mayor o igual a cero.
+      </p-message>
+    }
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-100 pt-4">
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      outlined
+      (click)="cancelled.emit()"
+    >
+      <span pButtonLabel>Cancelar</span>
+    </button>
+
+    <button pButton type="submit" [loading]="saving()">
+      <i pButtonIcon class="pi pi-check"></i>
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+</form>
