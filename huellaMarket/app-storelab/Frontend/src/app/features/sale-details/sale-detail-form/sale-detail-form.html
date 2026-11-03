@@ -1,1 +1,94 @@
-<p>sale-detail-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-4">
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="flex flex-col gap-1">
+      <label for="cabecera_id" class="text-sm font-medium">ID de venta</label>
+      <p-inputnumber
+        inputId="cabecera_id"
+        formControlName="cabecera_id"
+        [min]="1"
+        [useGrouping]="false"
+        styleClass="w-full"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="item_id" class="text-sm font-medium">ID del artículo</label>
+      <p-inputnumber
+        inputId="item_id"
+        formControlName="item_id"
+        [min]="1"
+        [useGrouping]="false"
+        styleClass="w-full"
+      />
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="flex flex-col gap-1">
+      <label for="cantidad" class="text-sm font-medium">Cantidad</label>
+      <p-inputnumber
+        inputId="cantidad"
+        formControlName="cantidad"
+        [min]="1"
+        [useGrouping]="false"
+        styleClass="w-full"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="valor_unitario" class="text-sm font-medium">Valor unitario</label>
+      <p-inputnumber
+        inputId="valor_unitario"
+        formControlName="valor_unitario"
+        mode="decimal"
+        [min]="0"
+        [minFractionDigits]="2"
+        [maxFractionDigits]="2"
+        styleClass="w-full"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="total" class="text-sm font-medium">Total</label>
+    <p-inputnumber
+      inputId="total"
+      formControlName="total"
+      mode="decimal"
+      [min]="0"
+      [minFractionDigits]="2"
+      [maxFractionDigits]="2"
+      styleClass="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="observaciones" class="text-sm font-medium">Observaciones</label>
+    <textarea
+      id="observaciones"
+      pInputText
+      formControlName="observaciones"
+      rows="3"
+      placeholder="Observaciones del detalle"
+      class="w-full"
+    ></textarea>
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-200 pt-4">
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      [outlined]="true"
+      (click)="cancelled.emit()"
+    >
+      <span pButtonLabel>Cancelar</span>
+    </button>
+
+    <button pButton type="submit" [disabled]="saving()">
+      <i pButtonIcon class="pi pi-save"></i>
+      <span pButtonLabel>Guardar detalle</span>
+    </button>
+  </div>
+</form>
