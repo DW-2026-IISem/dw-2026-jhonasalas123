@@ -14,13 +14,13 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.jwtOnly = exports.jwtRbac = void 0;
+exports.jwtRbac = exports.jwtOnly = void 0;
 const authenticate_middleware_1 = require("./authenticate.middleware");
 const authorize_middleware_1 = require("./authorize.middleware");
 __exportStar(require("./authenticate.middleware"), exports);
 __exportStar(require("./authorize.middleware"), exports);
-/** Modalidad JWT + RBAC: identidad y concesión method+path. */
-exports.jwtRbac = [authenticate_middleware_1.authenticate, authorize_middleware_1.authorize];
-/** Modalidad JWT: identidad, sin consultar la matriz de permisos. */
+/** JWT: autenticación sin autorización por permisos. */
 exports.jwtOnly = [authenticate_middleware_1.authenticate];
+/** JWT + RBAC: autenticación y autorización por permisos. */
+exports.jwtRbac = [authenticate_middleware_1.authenticate, authorize_middleware_1.authorize];
 //# sourceMappingURL=index.js.map

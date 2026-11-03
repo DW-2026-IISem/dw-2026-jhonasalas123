@@ -471,3 +471,13 @@
 #### 15.8 Perfil y logout
 
 ![![](images/clipboard-2919444645.png)](images/clipboard-3822261897.png)
+
+## Rutas de Fase II
+
+![](images/clipboard-2549469211.png)
+
+### Pruebas 
+
+![![](images/clipboard-247777182.png)](images/clipboard-2122911143.png)
+
+![](images/clipboard-3228312378.png)

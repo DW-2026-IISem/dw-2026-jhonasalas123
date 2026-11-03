@@ -18,6 +18,7 @@ export class Login {
 
   readonly loading = signal(false);
   readonly error = signal<string | null>(null);
+  readonly showPassword = signal(false);
 
   readonly form = this.fb.group({
     identifier: ['', [Validators.required]],

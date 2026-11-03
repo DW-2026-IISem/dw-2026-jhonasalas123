@@ -1,5 +1,13 @@
 <div class="flex min-h-screen flex-col bg-slate-100">
-  <app-header (menuRequested)="onMenuToggle()" />
+  <app-header
+  [username]="username()"
+  [initials]="initials()"
+  [roleLabel]="roleLabel()"
+  [authEnabled]="session.authEnabled"
+  [showSession]="showSession()"
+  [userItems]="userItems"
+  (menuRequested)="onMenuToggle()"
+/>
 
   <div class="flex flex-1">
     @if (!sidebarCollapsed()) {

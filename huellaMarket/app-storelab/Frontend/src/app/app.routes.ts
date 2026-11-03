@@ -1,8 +1,18 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth-guard';
+import { guestGuard } from './core/guards/guest-guard';
 
 export const routes: Routes = [
   {
+    path: 'login',
+    title: 'Iniciar sesión · HuellaMarket',
+    canActivate: [guestGuard],
+    loadComponent: () =>
+      import('./features/auth/login/login').then((m) => m.Login),
+  },
+  {
     path: '',
+    canActivate: [authGuard],
     loadComponent: () =>
       import('./layout/shell/shell').then((m) => m.Shell),
     children: [
@@ -11,49 +21,37 @@ export const routes: Routes = [
         path: 'dashboard',
         title: 'Dashboard · HuellaMarket',
         loadComponent: () =>
-          import('./features/dashboard/dashboard').then(
-            (m) => m.Dashboard,
-          ),
+          import('./features/dashboard/dashboard').then((m) => m.Dashboard),
       },
       {
         path: 'clientes',
         title: 'Clientes · HuellaMarket',
         loadComponent: () =>
-          import('./features/clients/client-list/client-list').then(
-            (m) => m.ClientList,
-          ),
+          import('./features/clients/client-list/client-list').then((m) => m.ClientList),
       },
       {
         path: 'proveedores',
         title: 'Proveedores · HuellaMarket',
         loadComponent: () =>
-          import('./features/providers/provider-list/provider-list').then(
-            (m) => m.ProviderList,
-          ),
+          import('./features/providers/provider-list/provider-list').then((m) => m.ProviderList),
       },
       {
         path: 'productos',
         title: 'Productos · HuellaMarket',
         loadComponent: () =>
-          import('./features/products/product-list/product-list').then(
-            (m) => m.ProductList,
-          ),
+          import('./features/products/product-list/product-list').then((m) => m.ProductList),
       },
-            {
+      {
         path: 'inventario',
         title: 'Inventario · HuellaMarket',
         loadComponent: () =>
-          import('./features/inventory/inventory-list/inventory-list').then(
-            (m) => m.InventoryList,
-          ),
+          import('./features/inventory/inventory-list/inventory-list').then((m) => m.InventoryList),
       },
       {
         path: 'mascotas',
         title: 'Mascotas · HuellaMarket',
         loadComponent: () =>
-          import('./features/pets/pet-list/pet-list').then(
-            (m) => m.PetList,
-          ),
+          import('./features/pets/pet-list/pet-list').then((m) => m.PetList),
       },
       {
         path: 'fichas-sanitarias',
@@ -76,34 +74,40 @@ export const routes: Routes = [
           import('./features/pet-services/pet-service-list/pet-service-list')
             .then((m) => m.PetServiceList),
       },
-{
-  path: 'ventas',
-  title: 'Ventas · HuellaMarket',
-  loadComponent: () =>
-    import('./features/sales/sale-list/sale-list').then(
-      (m) => m.SaleList,
-    ),
-},
-{
-  path: 'venta-detalles',
-  title: 'Detalles de venta · HuellaMarket',
-  loadComponent: () =>
-    import('./features/sale-details/sale-detail-list/sale-detail-list').then(
-      (m) => m.SaleDetailList,
-    ),
-},
-{
+      {
+        path: 'ventas',
+        title: 'Ventas · HuellaMarket',
+        loadComponent: () =>
+          import('./features/sales/sale-list/sale-list').then((m) => m.SaleList),
+      },
+      {
+        path: 'venta-detalles',
+        title: 'Detalles de venta · HuellaMarket',
+        loadComponent: () =>
+          import('./features/sale-details/sale-detail-list/sale-detail-list')
+            .then((m) => m.SaleDetailList),
+      },
+      {
         path: 'pagos',
         title: 'Pagos · HuellaMarket',
         loadComponent: () =>
-          import('./features/payments/payment-list/payment-list').then(
-            (m) => m.PaymentList,
-          ),
+          import('./features/payments/payment-list/payment-list').then((m) => m.PaymentList),
+      },
+      {
+        path: 'perfil',
+        title: 'Mi perfil · HuellaMarket',
+        loadComponent: () =>
+          import('./features/auth/profile/profile').then((m) => m.Profile),
+      },
+      {
+        path: 'forbidden',
+        title: 'Acceso denegado · HuellaMarket',
+        loadComponent: () =>
+          import('./features/auth/forbidden/forbidden').then((m) => m.Forbidden),
       },
     ],
   },
-  {
-    path: 'construir',
+  { path: 'construir', canActivate: [authGuard],
     loadComponent: () =>
       import('./features/construir/construir').then((m) => m.Construir),
   },

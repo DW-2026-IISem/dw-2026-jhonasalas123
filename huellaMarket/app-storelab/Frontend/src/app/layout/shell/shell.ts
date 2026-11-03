@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -8,7 +8,8 @@ import { watchMediaQuery } from '../../core/utils/media-query';
 import { Aside } from '../aside/aside';
 import { Footer } from '../footer/footer';
 import { Header } from '../header/header';
-
+import { RouterLink } from '@angular/router';
+import { SessionStore } from '../../core/services/session-store';
 @Component({
   standalone: true,
   host: { class: 'block' },
@@ -26,6 +27,35 @@ import { Header } from '../header/header';
   styleUrl: './shell.css',
 })
 export class Shell {
+private readonly session = inject(SessionStore);
+
+readonly username = computed(
+  () => this.session.user()?.username ?? this.session.user()?.email ?? '',
+);
+
+readonly initials = computed(() => {
+  const name = this.username().trim();
+
+  return name
+    ? name.slice(0, 2).toUpperCase()
+    : 'US';
+});
+
+readonly roleLabel = computed(
+  () => this.session.roleNames().join(', ') || 'Sin rol',
+);
+
+readonly showSession = computed(
+  () => this.session.authEnabled && this.session.isAuthenticated(),
+);
+
+readonly userItems: MenuItem[] = [
+  {
+    label: 'Mi perfil',
+    icon: 'pi pi-user',
+    routerLink: '/perfil',
+  },
+];
   private readonly isDesktop = watchMediaQuery('(min-width: 1024px)');
 
   readonly sidebarCollapsed = signal(false);

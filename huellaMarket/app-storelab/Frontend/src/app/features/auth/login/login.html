@@ -1,1 +1,76 @@
-<p>login works!</p>
+<div class="flex min-h-[80vh] items-center justify-center px-4 py-10">
+  <section class="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
+    <div class="mb-8 text-center">
+      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-100 text-3xl">
+        🐾
+      </div>
+      <h1 class="text-2xl font-bold text-slate-800">HuellaMarket</h1>
+      <p class="mt-2 text-sm text-slate-500">Inicia sesión para continuar</p>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-5">
+      <div>
+        <label for="identifier" class="mb-2 block text-sm font-semibold text-slate-700">
+          Usuario o correo electrónico
+        </label>
+        <input
+          id="identifier"
+          type="text"
+          formControlName="identifier"
+          placeholder="Ingresa tu usuario o correo"
+          autocomplete="username"
+          class="w-full rounded-lg border border-slate-300 px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        />
+        @if (form.controls.identifier.touched && form.controls.identifier.invalid) {
+          <p class="mt-1 text-sm text-red-600">Este campo es obligatorio.</p>
+        }
+      </div>
+
+      <div>
+        <label for="password" class="mb-2 block text-sm font-semibold text-slate-700">
+          Contraseña
+        </label>
+
+        <div class="relative">
+          <input
+            id="password"
+            [type]="showPassword() ? 'text' : 'password'"
+            formControlName="password"
+            placeholder="Ingresa tu contraseña"
+            autocomplete="current-password"
+            class="w-full rounded-lg border border-slate-300 px-4 py-3 pr-24 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+          />
+          <button
+            type="button"
+            (click)="showPassword.update(value => !value)"
+            class="absolute inset-y-0 right-3 text-sm font-semibold text-blue-600 hover:text-blue-800"
+          >
+            {{ showPassword() ? 'Ocultar' : 'Mostrar' }}
+          </button>
+        </div>
+
+        @if (form.controls.password.touched && form.controls.password.invalid) {
+          <p class="mt-1 text-sm text-red-600">La contraseña es obligatoria.</p>
+        }
+      </div>
+
+      @if (error()) {
+        <div class="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          {{ error() }}
+        </div>
+      }
+
+      <button
+        type="submit"
+        [disabled]="loading()"
+        class="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {{ loading() ? 'Ingresando...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-xs text-slate-400">
+      HuellaMarket · Gestión integral para mascotas
+    </p>
+  </section>
+</div>
