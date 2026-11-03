@@ -7,6 +7,7 @@ import {
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextModule } from 'primeng/inputtext';
+import { SelectModule } from 'primeng/select';
 import { Sale, SalePayload } from '../../../core/models/sale.model';
 
 @Component({
@@ -16,6 +17,7 @@ import { Sale, SalePayload } from '../../../core/models/sale.model';
     ButtonModule,
     InputNumberModule,
     InputTextModule,
+    SelectModule,
     ReactiveFormsModule,
   ],
   templateUrl: './sale-form.html',
@@ -28,6 +30,12 @@ export class SaleForm {
 
   readonly saved = output<SalePayload>();
   readonly cancelled = output<void>();
+
+  readonly estados = [
+    { label: 'Pendiente', value: 'pendiente' },
+    { label: 'Pagada', value: 'pagada' },
+    { label: 'Anulada', value: 'anulada' },
+  ];
 
   private readonly fb = inject(NonNullableFormBuilder);
 

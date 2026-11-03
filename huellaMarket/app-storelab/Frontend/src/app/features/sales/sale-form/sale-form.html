@@ -1,1 +1,95 @@
-<p>sale-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-4">
+
+  <div class="flex flex-col gap-1">
+    <label for="cliente_id" class="font-medium text-sm">ID del cliente</label>
+    <p-inputnumber
+      inputId="cliente_id"
+      formControlName="cliente_id"
+      [min]="1"
+      [useGrouping]="false"
+      styleClass="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="fecha" class="font-medium text-sm">Fecha de venta</label>
+    <input
+      id="fecha"
+      type="datetime-local"
+      pInputText
+      formControlName="fecha"
+      class="w-full"
+    />
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="flex flex-col gap-1">
+      <label for="subtotal" class="font-medium text-sm">Subtotal</label>
+      <p-inputnumber
+        inputId="subtotal"
+        formControlName="subtotal"
+        mode="decimal"
+        [min]="0"
+        [minFractionDigits]="2"
+        [maxFractionDigits]="2"
+        styleClass="w-full"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1">
+      <label for="impuestos" class="font-medium text-sm">Impuestos</label>
+      <p-inputnumber
+        inputId="impuestos"
+        formControlName="impuestos"
+        mode="decimal"
+        [min]="0"
+        [minFractionDigits]="2"
+        [maxFractionDigits]="2"
+        styleClass="w-full"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="total" class="font-medium text-sm">Total</label>
+    <p-inputnumber
+      inputId="total"
+      formControlName="total"
+      mode="decimal"
+      [min]="0"
+      [minFractionDigits]="2"
+      [maxFractionDigits]="2"
+      styleClass="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <label for="estado" class="font-medium text-sm">Estado</label>
+    <p-select
+      inputId="estado"
+      formControlName="estado"
+      [options]="estados"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Selecciona un estado"
+      styleClass="w-full"
+    />
+  </div>
+
+  <div class="flex justify-end gap-2 border-t border-slate-200 pt-4">
+    <button
+      pButton
+      type="button"
+      severity="secondary"
+      [outlined]="true"
+      (click)="cancelled.emit()"
+    >
+      <span pButtonLabel>Cancelar</span>
+    </button>
+
+    <button pButton type="submit" [disabled]="saving()">
+      <i pButtonIcon class="pi pi-save"></i>
+      <span pButtonLabel>Guardar venta</span>
+    </button>
+  </div>
+</form>

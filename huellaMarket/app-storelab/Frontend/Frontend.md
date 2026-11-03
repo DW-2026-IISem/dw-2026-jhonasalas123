@@ -377,3 +377,7 @@
 #### 11.2 Lista 
 
 ![](images/clipboard-2279419304.png)
+
+#### Comprobacion
+
+![](images/clipboard-1171745241.png)

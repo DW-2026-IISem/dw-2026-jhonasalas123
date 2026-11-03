@@ -68,6 +68,14 @@ export const routes: Routes = [
           import('./features/pet-services/pet-service-list/pet-service-list')
             .then((m) => m.PetServiceList),
       },
+{
+  path: 'ventas',
+  title: 'Ventas · HuellaMarket',
+  loadComponent: () =>
+    import('./features/sales/sale-list/sale-list').then(
+      (m) => m.SaleList,
+    ),
+},
     ],
   },
   {
