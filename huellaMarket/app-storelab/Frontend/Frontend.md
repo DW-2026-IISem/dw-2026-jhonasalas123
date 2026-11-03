@@ -244,7 +244,7 @@
 
 ![](images/clipboard-101374891.png)
 
-# Fase I: ISS-05 — CRUD de ServicioMascota
+# Fase I: ISS-06 — CRUD de ServicioMascota
 
 #### 6.1 Generar con CLI
 
@@ -267,3 +267,9 @@
 #### Comprobacion 
 
 ![](images/clipboard-2953688626.png)
+
+# Fase I: ISS-07— CRUD de CitaServicio
+
+#### 7.1 Generar con CLI
+
+![](images/clipboard-2967795195.png)
