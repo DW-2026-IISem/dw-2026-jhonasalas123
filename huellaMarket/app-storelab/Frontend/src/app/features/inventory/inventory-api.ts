@@ -12,7 +12,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class InventoryApi {
   private readonly http = inject(HttpClient);
-  private readonly base = `${environment.apiUrl}/inventario`;
+  private readonly base = `${environment.apiUrl}/inventarios`;
 
   list(): Observable<Inventory[]> {
     return this.http
