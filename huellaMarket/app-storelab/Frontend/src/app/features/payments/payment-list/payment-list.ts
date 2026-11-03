@@ -47,7 +47,15 @@ export class PaymentList {
   readonly search = signal('');
 
   readonly filteredPayments = () =>
-    filterRows(this.payments(), this.search());
+    filterRows(this.payments(), this.search(), (payment) => [
+      payment.id,
+      payment.referencia_tipo,
+      payment.referencia_id,
+      payment.metodo,
+      payment.monto,
+      payment.fecha,
+      payment.estado,
+    ]);
 
   readonly title = () =>
     this.selectedPayment() ? 'Editar pago' : 'Nuevo pago';

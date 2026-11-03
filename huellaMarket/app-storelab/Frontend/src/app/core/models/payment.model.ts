@@ -19,3 +19,8 @@ export interface PaymentResponse {
 export interface PaymentsResponse {
   payments: Payment[];
 }
+
+export type PaymentPayload = Omit<
+  Payment,
+  'id' | 'createdAt' | 'updatedAt'
+>;

@@ -423,3 +423,7 @@
 #### ![](images/clipboard-3122585865.png)
 
 ![](images/clipboard-733008208.png)
+
+#### Comprobacion 
+
+![](images/clipboard-3748742683.png)
