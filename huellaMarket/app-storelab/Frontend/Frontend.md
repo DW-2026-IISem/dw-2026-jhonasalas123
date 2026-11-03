@@ -401,3 +401,9 @@
 #### ![](images/clipboard-2480990355.png)
 
 ![](images/clipboard-694856716.png)
+
+#### Comprobacion 
+
+![](images/clipboard-1815513329.png)
+
+![](images/clipboard-1486850911.png)
