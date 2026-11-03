@@ -7,103 +7,124 @@
     severity="info"
     [rounded]="true"
   />
-  <button
-    pButton
-    label="Nuevo registro"
-    icon="pi pi-plus"
-    (click)="openCreate()"
-  ></button>
+
+  <button pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nuevo registro</span>
+  </button>
 </app-page-header>
 
-<p-confirmdialog />
-
-<div class="mb-4">
-  <input
-    pInputText
-    type="text"
-    placeholder="Buscar por ubicación, artículo o stock..."
-    [ngModel]="filter()"
-    (ngModelChange)="filter.set($event)"
-    class="w-full md:w-80"
-  />
-</div>
-
 @if (error()) {
-  <p-message severity="error">{{ error() }}</p-message>
+  <p-message severity="error" styleClass="mb-4 w-full">
+    {{ error() }}
+  </p-message>
 }
 
-<p-table
-  [value]="visibleRows()"
-  [loading]="loading()"
-  dataKey="id"
-  [tableStyle]="{ 'min-width': '45rem' }"
->
-  <ng-template #header>
-    <tr>
-      <th>ID</th>
-      <th>Ubicación</th>
-      <th>Artículo</th>
-      <th>Cantidad</th>
-      <th>Stock mínimo</th>
-      <th>Actualización</th>
-      <th>Acciones</th>
-    </tr>
-  </ng-template>
-
-  <ng-template #body let-row>
-    <tr>
-      <td>{{ row.id }}</td>
-      <td>{{ row.ubicacion_id }}</td>
-      <td>{{ row.item_id }}</td>
-      <td>{{ row.cantidad }}</td>
-      <td>{{ row.stock_minimo }}</td>
-      <td>{{ row.updatedAt ? (row.updatedAt | date: 'short') : '—' }}</td>
-      <td>
-        <button
-          pButton
-          text
-          rounded
-          icon="pi pi-pencil"
-          pTooltip="Editar"
-          (click)="openEdit(row)"
-        ></button>
-        <button
-          pButton
-          text
-          rounded
-          severity="danger"
-          icon="pi pi-trash"
-          pTooltip="Eliminar"
-          (click)="remove(row)"
-        ></button>
-      </td>
-    </tr>
-  </ng-template>
-
-  <ng-template #emptymessage>
-    <tr>
-      <td colspan="7">
-        <app-empty-state
-          title="Sin registros de inventario"
-          description="No hay registros que coincidan con la búsqueda."
+<div class="rounded-xl border border-slate-200 bg-white">
+  <p-table
+    [value]="visibleRows()"
+    [loading]="loading()"
+    [paginator]="visibleRows().length > 10"
+    [rows]="10"
+    dataKey="id"
+    tableStyleClass="min-w-3xl"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <i class="pi pi-search text-slate-400"></i>
+        <input
+          pInputText
+          type="search"
+          aria-label="Buscar inventario"
+          placeholder="Buscar por ubicación, artículo o stock..."
+          [value]="filter()"
+          (input)="filter.set($any($event.target).value)"
+          class="w-full"
         />
-      </td>
-    </tr>
-  </ng-template>
-</p-table>
+      </div>
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th>ID</th>
+        <th>Ubicación</th>
+        <th>Artículo</th>
+        <th>Cantidad</th>
+        <th>Stock mínimo</th>
+        <th>Actualización</th>
+        <th class="w-24 text-right">Acciones</th>
+      </tr>
+    </ng-template>
+
+    <ng-template #body let-row>
+      <tr>
+        <td>{{ row.id }}</td>
+        <td>{{ row.ubicacion_id }}</td>
+        <td>{{ row.item_id }}</td>
+        <td>{{ row.cantidad }}</td>
+        <td>{{ row.stock_minimo }}</td>
+        <td>{{ row.updatedAt ? (row.updatedAt | date: 'short') : '—' }}</td>
+        <td>
+          <div class="flex justify-end gap-1">
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="secondary"
+              icon="pi pi-pencil"
+              aria-label="Editar inventario"
+              pTooltip="Editar"
+              (click)="openEdit(row)"
+            ></button>
+
+            <button
+              pButton
+              type="button"
+              text
+              rounded
+              severity="danger"
+              icon="pi pi-trash"
+              aria-label="Eliminar inventario"
+              pTooltip="Eliminar"
+              (click)="remove(row)"
+            ></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="7">
+          <app-empty-state
+            icon="pi pi-box"
+            title="Sin registros de inventario"
+            message="Crea el primer registro con el botón «Nuevo registro»."
+          />
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
 
 <p-dialog
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
   [header]="title()"
-  [(visible)]="dialogVisible"
   [modal]="true"
-  [style]="{ width: 'min(95vw, 34rem)' }"
-  [breakpoints]="{ '640px': '95vw' }"
+  [draggable]="false"
+  [resizable]="false"
+  [dismissableMask]="true"
+  styleClass="w-full max-w-2xl mx-4"
 >
   <app-inventory-form
     [inventory]="editing()"
-    [resetKey]="resetKey()"
     [saving]="saving()"
+    [resetKey]="resetKey()"
     (saved)="save($event)"
     (cancelled)="dialogVisible.set(false)"
   />
 </p-dialog>
+
+<p-confirmdialog />

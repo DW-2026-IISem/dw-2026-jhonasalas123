@@ -363,3 +363,7 @@
 #### 10.4 lista & 10.5 Ruta 
 
 ![![](images/clipboard-2852717543.png)](images/clipboard-1955414968.png)
+
+#### Comprobacion 
+
+![](images/clipboard-2194781252.png)
