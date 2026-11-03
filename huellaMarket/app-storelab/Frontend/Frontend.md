@@ -413,3 +413,7 @@
 #### 13.1Generar con CLI
 
 ![](images/clipboard-2537949099.png)
+
+#### 13.2 Formulario
+
+![](images/clipboard-4088588420.png)

@@ -1,1 +1,87 @@
-<p>payment-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-4">
+
+  <div class="flex flex-col gap-2">
+    <label for="referencia_tipo">Tipo de referencia</label>
+    <p-select
+      inputId="referencia_tipo"
+      formControlName="referencia_tipo"
+      [options]="referencias"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Seleccione el tipo"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="referencia_id">ID de referencia</label>
+    <p-inputnumber
+      inputId="referencia_id"
+      formControlName="referencia_id"
+      [min]="1"
+      [useGrouping]="false"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="metodo">Método de pago</label>
+    <p-select
+      inputId="metodo"
+      formControlName="metodo"
+      [options]="metodos"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Seleccione el método"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="monto">Monto</label>
+    <p-inputnumber
+      inputId="monto"
+      formControlName="monto"
+      mode="currency"
+      currency="COP"
+      locale="es-CO"
+      [min]="0"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="fecha">Fecha</label>
+    <p-datepicker
+      inputId="fecha"
+      formControlName="fecha"
+      dateFormat="dd/mm/yy"
+      [showIcon]="true"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="estado">Estado</label>
+    <p-select
+      inputId="estado"
+      formControlName="estado"
+      [options]="estados"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Seleccione el estado"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex justify-end gap-2">
+    <button pButton type="button" severity="secondary" (click)="cancelled.emit()">
+      <span pButtonLabel>Cancelar</span>
+    </button>
+
+    <button pButton type="submit">
+      <span pButtonLabel>Guardar</span>
+    </button>
+  </div>
+
+</form>
