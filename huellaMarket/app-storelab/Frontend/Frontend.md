@@ -307,3 +307,13 @@
 #### 8.3 Formulario
 
 ![](images/clipboard-2588521350.png)
+
+#### 8.4  Lista & 8.5 Ruta 
+
+![](images/clipboard-882012431.png)
+
+#### Comprobacion 
+
+![](images/clipboard-2395449170.png)
+
+![](images/clipboard-321034137.png)

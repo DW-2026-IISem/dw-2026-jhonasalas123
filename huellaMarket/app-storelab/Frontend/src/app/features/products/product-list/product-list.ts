@@ -1,9 +1,174 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
+import { ConfirmationService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialog } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessageModule } from 'primeng/message';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { TooltipModule } from 'primeng/tooltip';
+import { Product, ProductPayload } from '../../../core/models/product.model';
+import { NotificationService } from '../../../core/services/notification';
+import { toApiMessage } from '../../../core/utils/api-error';
+import { filterRows } from '../../../core/utils/filter-rows';
+import { EmptyState } from '../../../shared/ui/empty-state/empty-state';
+import { PageHeader } from '../../../shared/ui/page-header/page-header';
+import { ProductApi } from '../product-api';
+import { ProductForm } from '../product-form/product-form';
 
 @Component({
-  imports: [],
+  host: { class: 'block' },
   selector: 'app-product-list',
-  styleUrl: './product-list.css',
+  imports: [
+    ButtonModule,
+    ConfirmDialog,
+    DialogModule,
+    EmptyState,
+    InputTextModule,
+    MessageModule,
+    PageHeader,
+    TableModule,
+    TagModule,
+    TooltipModule,
+    ProductForm,
+  ],
   templateUrl: './product-list.html',
+  styleUrl: './product-list.css',
 })
-export class ProductList {}
+export class ProductList {
+  private readonly api = inject(ProductApi);
+  private readonly notify = inject(NotificationService);
+  private readonly confirmation = inject(ConfirmationService);
+
+  readonly rows = signal<Product[]>([]);
+  readonly loading = signal(true);
+  readonly saving = signal(false);
+  readonly error = signal<string | null>(null);
+  readonly filter = signal('');
+
+  readonly visibleRows = computed(() =>
+    filterRows(this.rows(), this.filter(), (product) => [
+      product.sku,
+      product.nombre,
+      product.descripcion,
+    ]),
+  );
+
+  readonly activeCount = computed(() =>
+    this.rows().filter((product) => product.isActive).length,
+  );
+
+  readonly dialogVisible = signal(false);
+  readonly editing = signal<Product | null>(null);
+  readonly resetKey = signal(0);
+
+  readonly title = computed(() =>
+    this.editing() ? 'Editar producto' : 'Nuevo producto',
+  );
+
+  constructor() {
+    this.load();
+  }
+
+  /** GET /api/productos */
+  load(): void {
+    this.loading.set(true);
+    this.error.set(null);
+
+    this.api.list().subscribe({
+      next: (rows) => {
+        this.rows.set(rows);
+        this.loading.set(false);
+      },
+      error: (error: unknown) => {
+        this.rows.set([]);
+        this.error.set(toApiMessage(error));
+        this.loading.set(false);
+      },
+    });
+  }
+
+  openCreate(): void {
+    this.editing.set(null);
+    this.resetKey.update((key) => key + 1);
+    this.dialogVisible.set(true);
+  }
+
+  openEdit(product: Product): void {
+    this.editing.set(product);
+    this.resetKey.update((key) => key + 1);
+    this.dialogVisible.set(true);
+  }
+
+  /** Crea o actualiza un producto. */
+  save(payload: ProductPayload): void {
+    const current = this.editing();
+    this.saving.set(true);
+
+    const request = current
+      ? this.api.update(current.id, payload)
+      : this.api.create(payload);
+
+    request.subscribe({
+      next: () => {
+        this.saving.set(false);
+        this.dialogVisible.set(false);
+        this.notify.success(
+          current ? 'Producto actualizado' : 'Producto creado',
+        );
+        this.load();
+      },
+      error: (error: unknown) => {
+        this.saving.set(false);
+        this.notify.error('No se pudo guardar', toApiMessage(error));
+      },
+    });
+  }
+
+  /** Baja lógica: PATCH /:id/deactivate. */
+  deactivate(product: Product): void {
+    this.confirmation.confirm({
+      header: 'Baja lógica',
+      message: `¿Desactivar el producto ${product.nombre}?`,
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Desactivar',
+      rejectLabel: 'Cancelar',
+      acceptButtonStyleClass: 'p-button-warning',
+      accept: () => {
+        this.api.deactivate(product.id).subscribe({
+          next: () => {
+            this.notify.warn('Producto desactivado');
+            this.load();
+          },
+          error: (error: unknown) => {
+            this.notify.error('No se pudo desactivar', toApiMessage(error));
+          },
+        });
+      },
+    });
+  }
+
+  /** Baja física: DELETE /:id. */
+  remove(product: Product): void {
+    this.confirmation.confirm({
+      header: 'Eliminar definitivamente',
+      message: `Se eliminará ${product.nombre} de la base de datos. Esta acción no se puede deshacer.`,
+      icon: 'pi pi-trash',
+      acceptLabel: 'Eliminar',
+      rejectLabel: 'Cancelar',
+      acceptButtonStyleClass: 'p-button-danger',
+      accept: () => {
+        this.api.remove(product.id).subscribe({
+          next: () => {
+            this.notify.success('Producto eliminado');
+            this.load();
+          },
+          error: (error: unknown) => {
+            this.notify.error('No se pudo eliminar', toApiMessage(error));
+          },
+        });
+      },
+    });
+  }
+}

@@ -16,6 +16,14 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'productos',
+        title: 'Productos · HuellaMarket',
+        loadComponent: () =>
+          import('./features/products/product-list/product-list').then(
+            (m) => m.ProductList,
+          ),
+      },
+      {
         path: 'mascotas',
         title: 'Mascotas · HuellaMarket',
         loadComponent: () =>

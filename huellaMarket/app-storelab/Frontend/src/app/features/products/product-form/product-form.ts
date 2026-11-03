@@ -41,7 +41,7 @@ export class ProductForm {
     nombre: ['', [Validators.required, Validators.maxLength(120)]],
     descripcion: [''],
     precio: [0, [Validators.required, Validators.min(0.01)]],
-    is_active: [true, [Validators.required]],
+    isActive: [true, [Validators.required]],
   });
 
   constructor() {
@@ -53,8 +53,8 @@ export class ProductForm {
         sku: current?.sku ?? '',
         nombre: current?.nombre ?? '',
         descripcion: current?.descripcion ?? '',
-        precio: current?.precio ?? 0,
-        is_active: current?.is_active ?? true,
+        precio: current?.precio == null ? 0 : Number(current.precio),
+        isActive: current?.isActive ?? true,
       });
     });
   }
@@ -72,7 +72,7 @@ export class ProductForm {
       nombre: value.nombre.trim(),
       descripcion: value.descripcion.trim() || null,
       precio: value.precio,
-      is_active: value.is_active,
+      isActive: value.isActive,
     });
   }
 }
