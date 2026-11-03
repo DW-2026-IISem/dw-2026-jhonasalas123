@@ -1,24 +1,13 @@
-import type { Money } from './api.model';
-
 export interface SaleDetail {
   id: number;
   cabecera_id: number;
   item_id: number;
   cantidad: number;
-  valor_unitario: Money;
-  total: Money;
+  valor_unitario: number | string;
+  total: number | string;
   observaciones?: string;
   createdAt?: string;
   updatedAt?: string;
-}
-
-export interface SaleDetailPayload {
-  cabecera_id: number;
-  item_id: number;
-  cantidad: number;
-  valor_unitario: Money;
-  total: Money;
-  observaciones?: string;
 }
 
 export interface SaleDetailResponse {
@@ -28,3 +17,8 @@ export interface SaleDetailResponse {
 export interface SaleDetailsResponse {
   saleDetails: SaleDetail[];
 }
+
+export type SaleDetailPayload = Omit<
+  SaleDetail,
+  'id' | 'createdAt' | 'updatedAt'
+>;
