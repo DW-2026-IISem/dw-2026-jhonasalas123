@@ -299,3 +299,7 @@
 #### 8.1 Generar con CLI
 
 ![](images/clipboard-1679731076.png)
+
+#### 8.2 Servicio
+
+![](images/clipboard-3189635746.png)

@@ -2,11 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import {
-  Product,
-  ProductPayload,
-} from '../../core/models/product.model';
+import { Product, ProductPayload } from '../../core/models/product.model';
 
+/** /api/productos — API de productos de HuellaMarket. */
 @Injectable({ providedIn: 'root' })
 export class ProductApi {
   private readonly http = inject(HttpClient);
@@ -33,12 +31,6 @@ export class ProductApi {
   update(id: number, payload: Partial<ProductPayload>): Observable<Product> {
     return this.http
       .patch<{ product: Product }>(`${this.base}/${id}`, payload)
-      .pipe(map((response) => response.product));
-  }
-
-  replace(id: number, payload: ProductPayload): Observable<Product> {
-    return this.http
-      .put<{ product: Product }>(`${this.base}/${id}`, payload)
       .pipe(map((response) => response.product));
   }
 
