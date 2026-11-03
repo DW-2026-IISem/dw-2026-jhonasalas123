@@ -367,3 +367,9 @@
 #### Comprobacion 
 
 ![](images/clipboard-2194781252.png)
+
+# Fase I: ISS-11— CRUD de Venta
+
+#### 11.1 Formulario
+
+![](images/clipboard-1494587130.png)
