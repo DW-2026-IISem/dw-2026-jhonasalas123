@@ -317,3 +317,9 @@
 ![](images/clipboard-2395449170.png)
 
 ![](images/clipboard-321034137.png)
+
+# Fase I: ISS-09— CRUD de Proveedor 
+
+## 9.1 Generar con CLI
+
+![](images/clipboard-958723589.png)
