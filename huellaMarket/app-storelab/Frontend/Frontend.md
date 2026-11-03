@@ -243,3 +243,9 @@
 ![](images/clipboard-1825730250.png)
 
 ![](images/clipboard-101374891.png)
+
+# Fase I: ISS-05 — CRUD de ServicioMascota
+
+#### 6.1 Generar con CLI
+
+![](images/clipboard-2038803076.png)
