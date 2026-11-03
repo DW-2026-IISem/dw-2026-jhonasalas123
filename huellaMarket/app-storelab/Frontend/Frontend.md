@@ -407,3 +407,9 @@
 ![](images/clipboard-1815513329.png)
 
 ![](images/clipboard-1486850911.png)
+
+# Fase I: ISS-13— CRUD de Pago
+
+#### 13.1Generar con CLI
+
+![](images/clipboard-2537949099.png)
