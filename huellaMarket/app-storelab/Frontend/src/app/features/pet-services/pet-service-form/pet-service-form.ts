@@ -26,6 +26,7 @@ import { PetService } from '../../../core/models/pet-service.model';
 export class PetServiceForm {
   readonly petService = input<PetService | null>(null);
   readonly saving = input(false);
+  readonly resetKey = input(0);
 
   readonly saved = output<Partial<PetService>>();
   readonly cancelled = output<void>();
@@ -39,6 +40,7 @@ export class PetServiceForm {
 
   constructor() {
     effect(() => {
+      this.resetKey();
       const current = this.petService();
 
       this.form.reset({

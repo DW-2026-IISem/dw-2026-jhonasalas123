@@ -30,6 +30,13 @@ export const routes: Routes = [
           import('./features/health-records/health-record-list/health-record-list')
             .then((m) => m.HealthRecordList),
       },
+      {
+        path: 'servicios-mascota',
+        title: 'Servicios para mascotas · HuellaMarket',
+        loadComponent: () =>
+          import('./features/pet-services/pet-service-list/pet-service-list')
+            .then((m) => m.PetServiceList),
+      },
     ],
   },
   {
