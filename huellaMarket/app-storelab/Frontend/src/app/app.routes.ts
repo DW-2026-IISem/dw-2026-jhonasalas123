@@ -55,6 +55,14 @@ export const routes: Routes = [
     ],
   },
   {
+    path: 'proveedores',
+    title: 'Proveedores · HuellaMarket',
+    loadComponent: () =>
+      import('./features/providers/provider-list/provider-list').then(
+        (m) => m.ProviderList,
+      ),
+  },
+  {
     path: 'construir',
     loadComponent: () =>
       import('./features/construir/construir').then((m) => m.Construir),
