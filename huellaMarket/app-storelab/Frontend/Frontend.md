@@ -263,3 +263,7 @@
 ![](images/clipboard-2980007968.png)
 
 ![](images/clipboard-2065113795.png)
+
+#### Comprobacion 
+
+![](images/clipboard-2953688626.png)
