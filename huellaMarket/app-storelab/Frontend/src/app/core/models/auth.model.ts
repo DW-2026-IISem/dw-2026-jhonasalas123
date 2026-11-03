@@ -41,3 +41,19 @@ export interface AccessPayload {
   user: User;
   permissions: EffectivePermission[];
 }
+
+/** Permiso de un recurso asignado a un usuario. */
+export interface Permission {
+  id?: number;
+  resource_id?: number;
+  method: HttpMethod;
+  path: string;
+  description?: string | null;
+  status?: 'active' | 'inactive';
+}
+
+/** Datos para cambiar la contraseña de un usuario. */
+export interface ChangePasswordPayload {
+  currentPassword?: string;
+  newPassword: string;
+}

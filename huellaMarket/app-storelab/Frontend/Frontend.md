@@ -467,3 +467,7 @@
 #### 15.7 Login
 
 ![](images/clipboard-2215611390.png)
+
+#### 15.8 Perfil y logout
+
+![![](images/clipboard-2919444645.png)](images/clipboard-3822261897.png)
