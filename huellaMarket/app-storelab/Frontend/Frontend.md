@@ -345,3 +345,9 @@
 ![](images/clipboard-138826286.png)
 
 ![](images/clipboard-4208290696.png)
+
+# Fase I: ISS-10— CRUD de Inventario 
+
+#### 10.1Generar con CLI
+
+![](images/clipboard-3123670165.png)
