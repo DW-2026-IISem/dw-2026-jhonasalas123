@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { ConfirmationService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
@@ -24,6 +24,7 @@ import { SaleForm } from '../sale-form/sale-form';
   imports: [
     ButtonModule,
     ConfirmDialog,
+    CurrencyPipe,
     DatePipe,
     DialogModule,
     EmptyState,
