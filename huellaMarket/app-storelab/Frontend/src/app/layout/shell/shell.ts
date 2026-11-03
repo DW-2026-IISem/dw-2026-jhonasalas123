@@ -32,16 +32,91 @@ export class Shell {
   readonly mobileOpen = signal(false);
 
   readonly items: MenuItem[] = [
-    { label: 'Dashboard', icon: 'pi pi-chart-bar', routerLink: '/dashboard' },
-    { label: 'Clientes', icon: 'pi pi-users', routerLink: '/clientes' },
-    { label: 'Prototipo', icon: 'pi pi-desktop', routerLink: '/construir' },
+    {
+      label: 'Dashboard',
+      icon: 'pi pi-chart-bar',
+      routerLink: '/dashboard',
+    },
+    {
+      label: 'Gestión comercial',
+      icon: 'pi pi-shopping-bag',
+      items: [
+        {
+          label: 'Clientes',
+          icon: 'pi pi-users',
+          routerLink: '/clientes',
+        },
+        {
+          label: 'Proveedores',
+          icon: 'pi pi-truck',
+          routerLink: '/proveedores',
+        },
+        {
+          label: 'Productos',
+          icon: 'pi pi-box',
+          routerLink: '/productos',
+        },
+        {
+          label: 'Inventario',
+          icon: 'pi pi-warehouse',
+          routerLink: '/inventario',
+        },
+        {
+          label: 'Ventas',
+          icon: 'pi pi-shopping-cart',
+          routerLink: '/ventas',
+        },
+        {
+          label: 'Detalles de venta',
+          icon: 'pi pi-list',
+          routerLink: '/venta-detalles',
+        },
+        {
+          label: 'Pagos',
+          icon: 'pi pi-credit-card',
+          routerLink: '/pagos',
+        },
+      ],
+    },
+    {
+      label: 'Gestión de mascotas',
+      icon: 'pi pi-heart',
+      items: [
+        {
+          label: 'Mascotas',
+          icon: 'pi pi-github',
+          routerLink: '/mascotas',
+        },
+        {
+          label: 'Fichas sanitarias',
+          icon: 'pi pi-file',
+          routerLink: '/fichas-sanitarias',
+        },
+        {
+          label: 'Servicios para mascotas',
+          icon: 'pi pi-star',
+          routerLink: '/servicios-mascota',
+        },
+        {
+          label: 'Citas de servicio',
+          icon: 'pi pi-calendar',
+          routerLink: '/citas-servicio',
+        },
+      ],
+    },
+    {
+      label: 'Prototipo',
+      icon: 'pi pi-desktop',
+      routerLink: '/construir',
+    },
   ];
 
   protected onMenuToggle(): void {
     if (this.isDesktop()) {
-      this.sidebarCollapsed.update(collapsed => !collapsed);
+      this.sidebarCollapsed.update((collapsed) => !collapsed);
       return;
     }
+
     this.mobileOpen.set(true);
   }
 }

@@ -6,7 +6,7 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./layout/shell/shell').then((m) => m.Shell),
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'clientes' },
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       {
         path: 'dashboard',
         title: 'Dashboard · HuellaMarket',
@@ -107,5 +107,5 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/construir/construir').then((m) => m.Construir),
   },
-  { path: '**', redirectTo: 'clientes' },
+  { path: '**', redirectTo: 'dashboard' },
 ];

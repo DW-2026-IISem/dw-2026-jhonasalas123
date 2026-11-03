@@ -437,3 +437,9 @@
 #### Dashboard Funcionando 
 
 ![](images/clipboard-327338954.png)
+
+# Fase II: Auth con RBAC — ISS-15 — Autenticación JWT, perfil y permisos efectivos
+
+#### 15.1Activar Fase II
+
+![](images/clipboard-740974483.png)
