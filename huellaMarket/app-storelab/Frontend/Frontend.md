@@ -320,6 +320,10 @@
 
 # Fase I: ISS-09— CRUD de Proveedor 
 
-## 9.1 Generar con CLI
+#### 9.1 Generar con CLI
 
 ![](images/clipboard-958723589.png)
+
+#### 9.2 Servicio
+
+![](images/clipboard-3876744161.png)
