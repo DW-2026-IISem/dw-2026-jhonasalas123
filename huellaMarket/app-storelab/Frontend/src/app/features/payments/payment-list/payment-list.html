@@ -1,1 +1,97 @@
-<p>payment-list works!</p>
+<app-page-header title="Pagos" subtitle="Administración de pagos">
+  <button pButton type="button" (click)="openCreate()">
+    <i pButtonIcon class="pi pi-plus"></i>
+    <span pButtonLabel>Nuevo pago</span>
+  </button>
+</app-page-header>
+
+<div class="mb-4">
+  <input
+    pInputText
+    type="text"
+    placeholder="Buscar pagos..."
+    [ngModel]="search()"
+    (ngModelChange)="search.set($event)"
+    class="w-full"
+  />
+</div>
+
+<p-table
+  [value]="filteredPayments()"
+  [loading]="loading()"
+  dataKey="id"
+  stripedRows
+  responsiveLayout="scroll"
+>
+  <ng-template #header>
+    <tr>
+      <th>ID</th>
+      <th>Referencia</th>
+      <th>Método</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </ng-template>
+
+  <ng-template #body let-payment>
+    <tr>
+      <td>{{ payment.id }}</td>
+      <td>{{ payment.referencia_tipo }} #{{ payment.referencia_id }}</td>
+      <td>{{ payment.metodo }}</td>
+      <td>{{ payment.monto | currency:'COP':'symbol-narrow' }}</td>
+      <td>{{ payment.fecha | date:'dd/MM/yyyy' }}</td>
+      <td>{{ payment.estado }}</td>
+      <td>
+        <div class="flex gap-2">
+          <button
+            pButton
+            type="button"
+            severity="secondary"
+            (click)="openEdit(payment)"
+          >
+            <i pButtonIcon class="pi pi-pencil"></i>
+          </button>
+
+          <button
+            pButton
+            type="button"
+            severity="danger"
+            (click)="remove(payment)"
+          >
+            <i pButtonIcon class="pi pi-trash"></i>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template #emptymessage>
+    <tr>
+      <td colspan="7">
+        <app-empty-state
+          title="No hay pagos registrados"
+          description="Registra un pago para comenzar."
+        />
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  [header]="title()"
+  [visible]="dialogVisible()"
+  (visibleChange)="dialogVisible.set($event)"
+  [modal]="true"
+  [style]="{ width: 'min(42rem, 95vw)' }"
+  [draggable]="false"
+>
+  <app-payment-form
+    [payment]="selectedPayment()"
+    (saved)="save($event)"
+    (cancelled)="dialogVisible.set(false)"
+  />
+</p-dialog>
+
+<p-confirmdialog />

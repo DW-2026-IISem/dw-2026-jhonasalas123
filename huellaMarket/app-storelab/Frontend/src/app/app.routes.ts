@@ -84,6 +84,14 @@ export const routes: Routes = [
       (m) => m.SaleDetailList,
     ),
 },
+{
+        path: 'pagos',
+        title: 'Pagos · HuellaMarket',
+        loadComponent: () =>
+          import('./features/payments/payment-list/payment-list').then(
+            (m) => m.PaymentList,
+          ),
+      },
     ],
   },
   {
