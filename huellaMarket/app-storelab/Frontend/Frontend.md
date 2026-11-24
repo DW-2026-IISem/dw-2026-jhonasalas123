@@ -518,3 +518,7 @@
 | `/venta-detalles`    | `GET /api/venta-detalles`    |
 | `/pagos`             | `GET /api/pagos`             |
 | `/dashboard`         | `GET /api/ventas`            |
+
+### 16.5 Directiva `*appHasPermission`
+
+![](images/clipboard-516011527.png)
