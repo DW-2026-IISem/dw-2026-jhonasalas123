@@ -493,3 +493,7 @@
 ### 16.1 `authGuard`
 
 ![](images/clipboard-2569155185.png)
+
+### 16.2 `guestGuard`
+
+![](images/clipboard-1114122565.png)
