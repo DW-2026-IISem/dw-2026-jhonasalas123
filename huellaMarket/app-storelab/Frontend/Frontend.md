@@ -522,3 +522,29 @@
 ### 16.5 Directiva `*appHasPermission`
 
 ![](images/clipboard-516011527.png)
+
+### Permisos exactos por acción (pantallas de Fase I)
+
+| **Pantalla** | **Crear** | **Editar** | **Baja lógica** | **Baja física** |
+|----|----|----|----|----|
+| Clientes | `POST /api/clientes` | `PATCH /api/clientes/:id` | `PATCH /api/clientes/:id/deactivate` | `DELETE /api/clientes/:id` |
+| Mascotas | `POST /api/mascotas` | `PATCH /api/mascotas/:id` | `PATCH /api/mascotas/:id/deactivate` | `DELETE /api/mascotas/:id` |
+| Fichas sanitarias | `POST /api/fichas-sanitarias` | `PATCH /api/fichas-sanitarias/:id` | `PATCH /api/fichas-sanitarias/:id/deactivate` | `DELETE /api/fichas-sanitarias/:id` |
+| Servicios de mascota | `POST /api/servicios-mascota` | `PATCH /api/servicios-mascota/:id` | `PATCH /api/servicios-mascota/:id/deactivate` | `DELETE /api/servicios-mascota/:id` |
+| Citas de servicio | `POST /api/citas-servicio` | `PATCH /api/citas-servicio/:id` | `PATCH /api/citas-servicio/:id/deactivate` | `DELETE /api/citas-servicio/:id` |
+| Productos | `POST /api/productos` | `PATCH /api/productos/:id` | `PATCH /api/productos/:id/deactivate` | `DELETE /api/productos/:id` |
+| Proveedores | `POST /api/proveedores` | `PATCH /api/proveedores/:id` | `PATCH /api/proveedores/:id/deactivate` | `DELETE /api/proveedores/:id` |
+| Inventario | `POST /api/inventarios` | `PATCH /api/inventarios/:id` | — | `DELETE /api/inventarios/:id` |
+| Ventas | `POST /api/ventas` | — | — | — |
+| Detalles de venta | — | — | — | — |
+| Pagos | `POST /api/pagos` | `PATCH /api/pagos/:id` | — | `DELETE /api/pagos/:id` |
+
+**Auth:** el bloque 3 (ISS-10) utiliza la misma mecánica.
+
+| **Pantalla** | **Crear** | **Editar** | **Baja lógica** | **Baja física** |
+|----|----|----|----|----|
+| Usuarios | `POST /api/usuarios` | `PATCH /api/usuarios/:id` | `PATCH /api/usuarios/:id/deactivate` | `DELETE /api/usuarios/:id` |
+| Roles | `POST /api/roles` | `PATCH /api/roles/:id` | `PATCH /api/roles/:id/deactivate` | `DELETE /api/roles/:id` |
+| Recursos | `POST /api/recursos` | `PATCH /api/recursos/:id` | `PATCH /api/recursos/:id/deactivate` | `DELETE /api/recursos/:id` |
+| Asignaciones | `POST /api/asignaciones-rol` | — | `PATCH /api/asignaciones-rol/:id/deactivate` | — |
+| Concesiones | `POST /api/concesiones-rol` | — | `PATCH /api/concesiones-rol/:id/deactivate` |  |
