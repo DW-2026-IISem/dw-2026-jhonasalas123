@@ -556,3 +556,7 @@
 ### 16.7 `/forbidden`: explicar el 403
 
 ![](images/clipboard-4102905854.png)
+
+### Comprobacion 
+
+![](images/clipboard-2496607313.png)
