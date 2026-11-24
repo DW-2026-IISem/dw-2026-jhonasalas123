@@ -563,4 +563,4 @@
 
 ![![](images/clipboard-1593959811.png)](images/clipboard-1117061105.png)
 
-![![](images/clipboard-4258876354.png)](images/clipboard-2162303232.png)
+![](images/clipboard-2162303232.png)
