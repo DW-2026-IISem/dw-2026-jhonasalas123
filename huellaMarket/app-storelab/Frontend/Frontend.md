@@ -552,3 +552,7 @@
 ### 16.6 Menú lateral con `computed`
 
 ![](images/clipboard-2575215464.png)
+
+### 16.7 `/forbidden`: explicar el 403
+
+![](images/clipboard-4102905854.png)

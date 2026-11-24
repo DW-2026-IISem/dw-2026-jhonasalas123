@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   imports: [],
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './forbidden.css',
   templateUrl: './forbidden.html',
 })
-export class Forbidden {}
+export class Forbidden {
+  private readonly route = inject(ActivatedRoute);
+
+  readonly permission = this.route.snapshot.queryParamMap.get('permission');
+}
