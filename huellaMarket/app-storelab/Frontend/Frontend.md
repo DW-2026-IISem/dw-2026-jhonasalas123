@@ -489,3 +489,7 @@
 ### 16.0 Generar guards y directiva
 
 ![](images/clipboard-1043597116.png)
+
+### 16.1 `authGuard`
+
+![](images/clipboard-2569155185.png)
