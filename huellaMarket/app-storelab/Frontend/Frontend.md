@@ -460,7 +460,7 @@
 
 ![](images/clipboard-1653325224.png)
 
-####  15.6 Interceptor 
+#### 15.6 Interceptor
 
 ![](images/clipboard-1801095272.png)
 
@@ -476,10 +476,16 @@
 
 ![](images/clipboard-2549469211.png)
 
-### Pruebas 
+### Pruebas
 
 ![](images/clipboard-2122911143.png)
 
 ![](images/clipboard-3228312378.png)
 
 ### ![](images/clipboard-2757395131.png)
+
+# Fase II: Auth con RBAC — ISS-16 — Guards y RBAC en las pantallas Business
+
+### 16.0 Generar guards y directiva
+
+![](images/clipboard-1043597116.png)
