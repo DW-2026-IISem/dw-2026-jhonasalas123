@@ -501,3 +501,20 @@
 ### 16.3 `permissionGuard`
 
 ![](images/clipboard-992467863.png)
+
+## 16.4 Matriz de rutas de Fase II
+
+| Ruta frontend        | Permiso requerido            |
+|----------------------|------------------------------|
+| `/clientes`          | `GET /api/clientes`          |
+| `/mascotas`          | `GET /api/mascotas`          |
+| `/fichas-sanitarias` | `GET /api/fichas-sanitarias` |
+| `/servicios-mascota` | `GET /api/servicios-mascota` |
+| `/citas-servicio`    | `GET /api/citas-servicio`    |
+| `/productos`         | `GET /api/productos`         |
+| `/proveedores`       | `GET /api/proveedores`       |
+| `/inventario`        | `GET /api/inventarios`       |
+| `/ventas`            | `GET /api/ventas`            |
+| `/venta-detalles`    | `GET /api/venta-detalles`    |
+| `/pagos`             | `GET /api/pagos`             |
+| `/dashboard`         | `GET /api/ventas`            |
