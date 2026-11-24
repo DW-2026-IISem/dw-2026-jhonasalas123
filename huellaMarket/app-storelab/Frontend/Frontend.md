@@ -548,3 +548,7 @@
 | Recursos | `POST /api/recursos` | `PATCH /api/recursos/:id` | `PATCH /api/recursos/:id/deactivate` | `DELETE /api/recursos/:id` |
 | Asignaciones | `POST /api/asignaciones-rol` | — | `PATCH /api/asignaciones-rol/:id/deactivate` | — |
 | Concesiones | `POST /api/concesiones-rol` | — | `PATCH /api/concesiones-rol/:id/deactivate` |  |
+
+### 16.6 Menú lateral con `computed`
+
+![](images/clipboard-2575215464.png)
