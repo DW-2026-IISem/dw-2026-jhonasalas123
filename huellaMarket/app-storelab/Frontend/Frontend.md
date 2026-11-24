@@ -497,3 +497,7 @@
 ### 16.2 `guestGuard`
 
 ![](images/clipboard-1114122565.png)
+
+### 16.3 `permissionGuard`
+
+![](images/clipboard-992467863.png)
