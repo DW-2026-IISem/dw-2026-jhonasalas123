@@ -596,3 +596,7 @@
 #### Formulario y validación de path
 
 #### ![](images/clipboard-1360465205.png)
+
+#### 17.6 Asignaciones usuario ↔ rol
+
+![](images/clipboard-2729790423.png)
