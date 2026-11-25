@@ -576,3 +576,9 @@
 ### 17.3 Usuarios
 
 ### ![](images/clipboard-4190481399.png)
+
+### 17.4 Roles
+
+#### Servicio
+
+![](images/clipboard-221554066.png)
