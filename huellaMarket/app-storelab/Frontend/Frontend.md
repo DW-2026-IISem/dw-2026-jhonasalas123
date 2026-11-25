@@ -566,3 +566,9 @@
 ![](images/clipboard-2162303232.png)
 
 ![![](images/clipboard-957743996.png)](images/clipboard-3795580686.png)
+
+# Fase II: Auth con RBAC — ISS-17 — Formularios de las entidades Auth
+
+### 17.2 Generar con CLI
+
+![](images/clipboard-2396064191.png)
