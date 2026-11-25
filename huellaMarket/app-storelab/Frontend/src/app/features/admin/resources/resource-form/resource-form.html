@@ -1,1 +1,89 @@
-<p>resource-form works!</p>
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+  class="flex flex-col gap-4"
+>
+  <div class="flex flex-col gap-2">
+    <label for="path" class="font-medium text-slate-700">
+      Ruta del recurso *
+    </label>
+
+    <input
+      pInputText
+      id="path"
+      formControlName="path"
+      placeholder="/api/clientes/:id"
+      class="w-full"
+    />
+
+    @if (form.controls.path.touched && form.controls.path.invalid) {
+      <small class="text-red-500">
+        La ruta es obligatoria y debe comenzar por /.
+      </small>
+    }
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="method" class="font-medium text-slate-700">
+      Método HTTP *
+    </label>
+
+    <p-select
+      inputId="method"
+      formControlName="method"
+      [options]="methods"
+      optionLabel="label"
+      optionValue="value"
+      placeholder="Seleccionar método"
+      class="w-full"
+    />
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="description" class="font-medium text-slate-700">
+      Descripción
+    </label>
+
+    <input
+      pInputText
+      id="description"
+      formControlName="description"
+      placeholder="Descripción del recurso"
+      class="w-full"
+    />
+  </div>
+
+  @if (!resource()) {
+    <div class="flex flex-col gap-2">
+      <label for="status" class="font-medium text-slate-700">
+        Estado *
+      </label>
+
+      <p-select
+        inputId="status"
+        formControlName="status"
+        [options]="statuses"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Seleccionar estado"
+        class="w-full"
+      />
+    </div>
+  }
+
+  <div class="flex justify-end gap-2 pt-3">
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      [outlined]="true"
+      type="button"
+      (onClick)="cancelled.emit()"
+    />
+
+    <p-button
+      [label]="resource() ? 'Guardar cambios' : 'Crear recurso'"
+      icon="pi pi-save"
+      type="submit"
+    />
+  </div>
+</form>
