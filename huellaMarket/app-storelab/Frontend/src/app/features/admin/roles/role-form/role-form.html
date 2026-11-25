@@ -1,1 +1,72 @@
-<p>role-form works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()" class="flex flex-col gap-4">
+
+  <div class="flex flex-col gap-2">
+    <label for="name" class="font-medium text-slate-700">
+      Nombre del rol *
+    </label>
+
+    <input
+      pInputText
+      id="name"
+      formControlName="name"
+      placeholder="Ej. SELLER"
+      class="w-full"
+      maxlength="60"
+    />
+
+    @if (form.controls.name.touched && form.controls.name.invalid) {
+      <small class="text-red-500">
+        El nombre es obligatorio y admite máximo 60 caracteres.
+      </small>
+    }
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label for="description" class="font-medium text-slate-700">
+      Descripción
+    </label>
+
+    <textarea
+      id="description"
+      formControlName="description"
+      rows="3"
+      placeholder="Descripción de las funciones del rol"
+      class="w-full rounded-lg border border-slate-300 p-3 outline-none focus:border-primary"
+    ></textarea>
+  </div>
+
+  @if (!role()) {
+    <div class="flex flex-col gap-2">
+      <label for="status" class="font-medium text-slate-700">
+        Estado *
+      </label>
+
+      <p-select
+        inputId="status"
+        formControlName="status"
+        [options]="statuses"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Seleccionar estado"
+        class="w-full"
+      />
+    </div>
+  }
+
+  <div class="flex justify-end gap-2 pt-3">
+    <p-button
+      label="Cancelar"
+      severity="secondary"
+      [outlined]="true"
+      type="button"
+      (onClick)="cancelled.emit()"
+    />
+
+    <p-button
+      [label]="role() ? 'Guardar cambios' : 'Crear rol'"
+      icon="pi pi-save"
+      type="submit"
+    />
+  </div>
+
+</form>
