@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from '../../../../environments/environment';
-import { Resource } from '../../../core/models/role.model';
+import { Resource, HttpMethod } from '../../../core/models/resource.model';
 
 export interface ResourceCreate {
-  method: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
+  method: HttpMethod;
   path: string;
   description?: string | null;
   status?: 'active' | 'inactive';
@@ -19,23 +19,27 @@ export class ResourceApi {
   private readonly base = `${environment.apiUrl}/recursos`;
 
   list(): Observable<Resource[]> {
-    return this.http.get<Resource[]>(this.base);
+    return this.http
+      .get<{ resources: Resource[] }>(this.base)
+      .pipe(map(response => response.resources));
   }
 
   get(id: number): Observable<Resource> {
-    return this.http.get<Resource>(`${this.base}/${id}`);
+    return this.http
+      .get<{ resource: Resource }>(`${this.base}/${id}`)
+      .pipe(map(response => response.resource));
   }
 
   create(payload: ResourceCreate): Observable<Resource> {
-    return this.http.post<Resource>(this.base, payload);
+    return this.http
+      .post<{ resource: Resource }>(this.base, payload)
+      .pipe(map(response => response.resource));
   }
 
   update(id: number, payload: Partial<ResourceUpdate>): Observable<Resource> {
-    return this.http.patch<Resource>(`${this.base}/${id}`, payload);
-  }
-
-  replace(id: number, payload: ResourceUpdate): Observable<Resource> {
-    return this.http.put<Resource>(`${this.base}/${id}`, payload);
+    return this.http
+      .patch<{ resource: Resource }>(`${this.base}/${id}`, payload)
+      .pipe(map(response => response.resource));
   }
 
   deactivate(id: number): Observable<unknown> {
