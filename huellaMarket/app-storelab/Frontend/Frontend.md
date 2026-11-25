@@ -526,7 +526,7 @@
 ### Permisos exactos por acción (pantallas de Fase I)
 
 | **Pantalla** | **Crear** | **Editar** | **Baja lógica** | **Baja física** |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Clientes | `POST /api/clientes` | `PATCH /api/clientes/:id` | `PATCH /api/clientes/:id/deactivate` | `DELETE /api/clientes/:id` |
 | Mascotas | `POST /api/mascotas` | `PATCH /api/mascotas/:id` | `PATCH /api/mascotas/:id/deactivate` | `DELETE /api/mascotas/:id` |
 | Fichas sanitarias | `POST /api/fichas-sanitarias` | `PATCH /api/fichas-sanitarias/:id` | `PATCH /api/fichas-sanitarias/:id/deactivate` | `DELETE /api/fichas-sanitarias/:id` |
@@ -542,7 +542,7 @@
 **Auth:** el bloque 3 (ISS-10) utiliza la misma mecánica.
 
 | **Pantalla** | **Crear** | **Editar** | **Baja lógica** | **Baja física** |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Usuarios | `POST /api/usuarios` | `PATCH /api/usuarios/:id` | `PATCH /api/usuarios/:id/deactivate` | `DELETE /api/usuarios/:id` |
 | Roles | `POST /api/roles` | `PATCH /api/roles/:id` | `PATCH /api/roles/:id/deactivate` | `DELETE /api/roles/:id` |
 | Recursos | `POST /api/recursos` | `PATCH /api/recursos/:id` | `PATCH /api/recursos/:id/deactivate` | `DELETE /api/recursos/:id` |
@@ -557,7 +557,7 @@
 
 ![](images/clipboard-4102905854.png)
 
-### Comprobacion 
+### Comprobacion
 
 ![](images/clipboard-2496607313.png)
 
@@ -600,3 +600,7 @@
 #### 17.6 Asignaciones usuario ↔ rol
 
 ![](images/clipboard-2729790423.png)
+
+#### 17.7 Concesiones rol ↔ recurso
+
+![](images/clipboard-3883166092.png)
